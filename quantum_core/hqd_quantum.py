@@ -3,48 +3,64 @@ import torch
 import torch.nn as nn
 from pennylane.qnn import TorchLayer
 
-# Configuration: Number of qubits matching the compressed feature vector (4 to 8 qubits)
-n_qubits = 4
+# Configuration: Number of qubits matching the compressed feature vector (10 qubits for 10-biomarker clinical data)
+n_qubits = 10
 
 # Initialize the local high-performance quantum simulator device
 dev = qml.device("default.qubit", wires=n_qubits)
 
-@qml.qnode(dev, diff_method="parameter-shift", interface="torch")
+@qml.qnode(dev, diff_method="finite-diff", interface="torch")
 def quantum_circuit(inputs, weights):
-    # State Encoding Layer using Pure Angle Embedding (Ry rotation gates)
-    qml.AngleEmbedding(inputs, wires=range(n_qubits), rotation='Y')
+    # Angle Embedding across 10 qubits using Y-axis rotations
+    # Maps 10 clinical biomarkers to quantum state amplitudes
+    # Use float64 for accurate finite-difference gradient computation
+    inputs_64 = inputs.to(torch.float64) if isinstance(inputs, torch.Tensor) else torch.tensor(inputs, dtype=torch.float64)
+    qml.AngleEmbedding(inputs_64, wires=range(n_qubits), rotation='Y')
     
-    # Variational Quantum Classifier (VQC) Ansatz
+    # Parameterized Ansatz: Strongly Entangling Layers for quantum feature extraction
+    # Builds entanglement across all 10 qubits
     qml.StronglyEntanglingLayers(weights, wires=range(n_qubits))
     
-    # Measure expectation values of Pauli-Z operators for each qubit
+    # Measure Pauli-Z expectation values across all 10 qubits
+    # Provides 10-dimensional quantum feature vector
     return [qml.expval(qml.PauliZ(i)) for i in range(n_qubits)]
 
 class DressedVQC(nn.Module):
-    def __init__(self, n_layers=2):
+    def __init__(self, n_layers=3):
         super().__init__()
-        # Shape for StronglyEntanglingLayers weights: (n_layers, n_qubits, 3)
+        # Shape of weights for Strongly Entangling Layers: (n_layers, n_qubits, 3)
+        # 3 parameters per gate rotation (RX, RY, RZ equivalents)
         weight_shapes = {"weights": (n_layers, n_qubits, 3)}
         
-        # Updated TorchLayer import fix
-        self.qlayer = TorchLayer(quantum_circuit, weight_shapes)
+        # Quantum layer: executes parameterized quantum circuit
+        self.q_layer = TorchLayer(quantum_circuit, weight_shapes)
         
-        # Classical 2-Neuron Dressed Circuit (Softmax Layer)
-        self.fc = nn.Linear(n_qubits, 2)
-        self.softmax = nn.Softmax(dim=1)
+        # Classical post-processing: 10-dimensional quantum output → 2-class probabilities
+        # Multi-layer perceptron provides additional expressivity for classification
+        self.post_processing = nn.Sequential(
+            nn.Linear(n_qubits, 16),
+            nn.ReLU(),
+            nn.Linear(16, 2),
+            nn.Softmax(dim=1)
+        )
 
     def forward(self, x):
-        q_out = self.qlayer(x)
-        logits = self.fc(q_out)
-        return self.softmax(logits)
+        # Quantum feature extraction
+        q_out = self.q_layer(x)
+        # Classical post-processing for final classification
+        return self.post_processing(q_out)
 
 # Example usage for training loop initialization:
 if __name__ == "__main__":
-    model = DressedVQC(n_layers=2)
+    # Initialize 10-qubit VQC with 3 entangling layers
+    model = DressedVQC(n_layers=3)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
     
-    # Dummy batch of patient biological states (batch_size=2, features=4)
-    sample_patient_features = torch.tensor([[0.5, -1.2, 0.8, 0.1], [0.2, 0.4, -0.5, 0.9]], dtype=torch.float32)
+    # Test batch: 2 patients with 10 clinical biomarkers each
+    sample_patient_features = torch.randn(2, n_qubits, dtype=torch.float32)
     
     predictions = model(sample_patient_features)
-    print("Diagnostic Probabilities Output:", predictions)
+    print(f"10-Qubit VQC Model Test")
+    print(f"Input Shape: {sample_patient_features.shape}")
+    print(f"Output Probabilities Shape: {predictions.shape}")
+    print(f"Sample Predictions: {predictions}")
