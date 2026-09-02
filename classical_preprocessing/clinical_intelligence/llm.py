@@ -1,8 +1,8 @@
 """
-Evidence-Grounded Clinical LLM Provider Abstraction & Orchestration (Phase 3).
+Evidence-Grounded Clinical LLM Provider Abstraction & Orchestration (Phase 8.5).
 
 Provides vendor-agnostic provider abstractions, deterministic MockLLMProvider,
-safety validation rules, JSON response parsing, and fallback report generation.
+live external APIProvider, safety validation rules, JSON response parsing, and fallback report generation.
 Strictly excludes raw quantum state telemetry and latent 10-D vectors from LLM requests.
 """
 
@@ -111,7 +111,7 @@ class MockLLMProvider(ClinicalLLM):
         # Build recommendations
         recommendations = []
         if evidence_items:
-            recommendations.append(f"Consider clinical correlation of key biomarkers per guideline recommendations in [E1].")
+            recommendations.append("Consider clinical correlation of key biomarkers per guideline recommendations in [E1].")
             recommendations.append("Schedule follow-up evaluation and standard diagnostic verification.")
         else:
             recommendations.append("No evidence-grounded recommendations available; clinical evaluation recommended.")
@@ -136,38 +136,86 @@ class APIProvider(ClinicalLLM):
     Uses standard library urllib.request without external vendor dependencies.
     """
 
-    def __init__(self, api_key_env: str = "CLINICAL_LLM_API_KEY", api_url_env: str = "CLINICAL_LLM_URL"):
-        self.api_key = os.getenv(api_key_env, "")
-        self.api_url = os.getenv(api_url_env, "")
+    def __init__(
+        self,
+        api_key_env: str = "CLINICAL_LLM_API_KEY",
+        api_url_env: str = "CLINICAL_LLM_URL",
+        model_env: str = "CLINICAL_LLM_MODEL",
+    ):
+        self.api_key = os.getenv(api_key_env, "").strip()
+        self.api_url = os.getenv(api_url_env, "").strip()
+        self.model = os.getenv(model_env, "gpt-4o-mini").strip()
 
     def generate(self, request: ClinicalLLMRequest) -> ClinicalLLMResponse:
         if not self.api_key or not self.api_url:
-            raise RuntimeError("APIProvider unconfigured: missing environment variables.")
+            raise RuntimeError("LIVE_LLM_NOT_CONFIGURED: Missing CLINICAL_LLM_API_KEY or CLINICAL_LLM_URL environment variables.")
 
         prompt_str = ClinicalPromptBuilder.build_prompt(request, request.evidence_bundle)
-        payload_data = json.dumps({
-            "prompt": prompt_str,
+        payload_dict = {
+            "model": self.model,
+            "messages": [{"role": "user", "content": prompt_str}],
             "temperature": 0.1,
             "max_tokens": 1024,
-        }).encode("utf-8")
+        }
+        payload_bytes = json.dumps(payload_dict).encode("utf-8")
 
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {self.api_key}",
         }
 
-        req = urllib.request.Request(self.api_url, data=payload_data, headers=headers, method="POST")
+        req = urllib.request.Request(self.api_url, data=payload_bytes, headers=headers, method="POST")
         try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
+            with urllib.request.urlopen(req, timeout=20) as resp:
                 resp_bytes = resp.read()
                 resp_json = json.loads(resp_bytes.decode("utf-8"))
-                text_out = resp_json.get("text", resp_json.get("choices", [{}])[0].get("text", ""))
 
-                # Attempt JSON extraction
+                text_out = ""
+                if "choices" in resp_json and len(resp_json["choices"]) > 0:
+                    choice = resp_json["choices"][0]
+                    if isinstance(choice, dict):
+                        if "message" in choice and isinstance(choice["message"], dict):
+                            text_out = choice["message"].get("content", "")
+                        elif "text" in choice:
+                            text_out = choice.get("text", "")
+                elif "text" in resp_json:
+                    text_out = str(resp_json["text"])
+                elif "content" in resp_json:
+                    text_out = str(resp_json["content"])
+
+                if not text_out:
+                    text_out = json.dumps(resp_json)
+
                 parsed = extract_json_payload(text_out)
-                return ClinicalLLMResponse(raw_text=text_out, parsed_json=parsed, provider_name="APIProvider")
+                return ClinicalLLMResponse(raw_text=text_out, parsed_json=parsed, provider_name=f"APIProvider({self.model})")
+
+        except urllib.error.HTTPError as err:
+            if err.code in (401, 403):
+                raise RuntimeError(f"LIVE_LLM_AUTH_ERROR: Authentication failed for external LLM API (HTTP {err.code}).") from err
+            else:
+                raise RuntimeError(f"LIVE_LLM_ERROR: External LLM API returned HTTP error {err.code}.") from err
+        except urllib.error.URLError as err:
+            if isinstance(err.reason, TimeoutError) or "timed out" in str(err.reason).lower():
+                raise RuntimeError("LIVE_LLM_TIMEOUT: External LLM API request timed out.") from err
+            raise RuntimeError(f"LIVE_LLM_CONNECTION_ERROR: Failed to connect to external LLM API ({err.reason}).") from err
+        except TimeoutError as err:
+            raise RuntimeError("LIVE_LLM_TIMEOUT: External LLM API request timed out.") from err
         except Exception as err:
-            raise RuntimeError(f"APIProvider execution failed: {err}") from err
+            raise RuntimeError(f"LIVE_LLM_ERROR: {err}") from err
+
+
+def get_configured_llm_provider() -> ClinicalLLM:
+    """
+    Factory creating active LLM provider based on LLM_MODE environment variable.
+    Valid modes: "mock" (default), "live".
+    """
+    mode = os.getenv("LLM_MODE", "mock").lower().strip()
+    if mode == "live":
+        return APIProvider()
+    elif mode == "mock":
+        return MockLLMProvider()
+    else:
+        raise ValueError(f"Invalid LLM_MODE: '{mode}'. Valid modes are 'mock' and 'live'.")
 
 
 def extract_json_payload(text: str) -> Optional[Dict[str, Any]]:
@@ -226,21 +274,32 @@ def generate_fallback_clinical_report(request: ClinicalLLMRequest, error_reason:
 def validate_and_build_report(request: ClinicalLLMRequest, response_dict: Dict[str, Any]) -> ClinicalReport:
     """
     Validates LLM response dictionary against safety rules and constructs an immutable ClinicalReport.
+    Enforces absolute quantum prediction immutability and disclaimer protection.
     """
+    if not isinstance(response_dict, dict):
+        raise ValueError("LLM_VALIDATION_ERROR: Provider output is not a valid dictionary structure.")
+
     summary = str(response_dict.get("diagnostic_summary", "")).strip()
     interpretation = str(response_dict.get("risk_assessment_interpretation", "")).strip()
 
     if not summary or not interpretation:
-        raise ValueError("LLM response missing required summary or interpretation text.")
+        raise ValueError("LLM_VALIDATION_ERROR: LLM response missing required summary or interpretation text.")
 
     # 1. Evidence Citation Verification
-    # Check that referenced [E{idx}] tags do not exceed retrieved evidence bounds
     max_evidence_count = len(request.evidence_bundle.items)
-    cited_e_ids = re.findall(r"\[E(\d+)\]", summary + " " + interpretation)
+    full_text = summary + " " + interpretation
+
+    # Reject invalid evidence index citations
+    cited_e_ids = re.findall(r"\[E(\d+)\]", full_text)
     for eid_str in cited_e_ids:
         eid = int(eid_str)
         if eid < 1 or eid > max_evidence_count:
-            raise ValueError(f"LLM cited invalid evidence tag [E{eid}], but only {max_evidence_count} evidence items exist.")
+            raise ValueError(f"LLM_CITATION_VALIDATION_ERROR: LLM cited invalid evidence tag [E{eid}], but only {max_evidence_count} evidence items exist.")
+
+    # Reject hallucinated citation tags like [GUIDELINE], [WHO], [PUBMED...]
+    hallucinated_tags = re.findall(r"\[(GUIDELINE|WHO|PUBMED|NCBI|REF|PMC|ARTICLE|PAPER)[\w_-]*\]", full_text, re.IGNORECASE)
+    if hallucinated_tags:
+        raise ValueError(f"LLM_CITATION_VALIDATION_ERROR: LLM output contains illegal or hallucinated citation tags: {hallucinated_tags}")
 
     # 2. Biomarker Analysis Validation
     raw_biomarkers = response_dict.get("primary_biomarker_analysis", [])
@@ -252,15 +311,17 @@ def validate_and_build_report(request: ClinicalLLMRequest, response_dict: Dict[s
             b_name = str(item.get("biomarker", "")).strip()
             finding = str(item.get("finding", "")).strip()
             if b_name and finding:
-                # Check for hallucinated biomarker names not present in inputs/evidence
-                if valid_biomarker_names and b_name.lower() not in valid_biomarker_names:
-                    # Filter out or raise if completely hallucinated
-                    pass
                 biomarker_analysis_list.append({"biomarker": b_name, "finding": finding})
 
     # 3. Recommendations
     raw_recs = response_dict.get("clinical_recommendations", [])
     recommendations_tuple = tuple(str(rec).strip() for rec in raw_recs if str(rec).strip())
+
+    # Mandatory Immutable Clinical Disclaimer
+    mandatory_disclaimer = (
+        "This report is generated for clinical decision support. Final diagnostic authority "
+        "remains solely with the attending licensed medical practitioner."
+    )
 
     return ClinicalReport(
         sample_id=request.sample_id,
@@ -269,6 +330,7 @@ def validate_and_build_report(request: ClinicalLLMRequest, response_dict: Dict[s
         primary_biomarker_analysis=tuple(biomarker_analysis_list),
         retrieved_evidence=request.evidence_bundle.items,
         clinical_recommendations=recommendations_tuple,
+        limitations_and_disclaimer=mandatory_disclaimer,
     )
 
 
@@ -278,7 +340,7 @@ def generate_clinical_report(
     llm: Optional[ClinicalLLM] = None,
 ) -> ClinicalReport:
     """
-    Orchestrates Phase 3 report generation:
+    Orchestrates report generation:
     PostQuantumResult + EvidenceBundle -> ClinicalLLMRequest -> ClinicalLLM -> Validation -> ClinicalReport.
     """
     if not isinstance(result, PostQuantumResult):
@@ -286,7 +348,7 @@ def generate_clinical_report(
     if not isinstance(evidence, EvidenceBundle):
         raise TypeError(f"Expected EvidenceBundle, got {type(evidence).__name__}")
 
-    # Build dedicated LLM Request (EXCLUDES latent_vector_10d and telemetry)
+    # Build dedicated LLM Request (EXCLUDES latent_vector_10d, theta, and telemetry)
     request = ClinicalLLMRequest(
         sample_id=result.sample_id,
         quantum_prediction=result.quantum_prediction,
@@ -296,18 +358,17 @@ def generate_clinical_report(
         evidence_bundle=evidence,
     )
 
-    provider = llm or MockLLMProvider()
+    provider = llm or get_configured_llm_provider()
 
     try:
         response = provider.generate(request)
         if response.parsed_json:
             return validate_and_build_report(request, response.parsed_json)
-        
-        # Try parsing raw text if parsed_json was None
+
         parsed = extract_json_payload(response.raw_text)
         if parsed:
             return validate_and_build_report(request, parsed)
-        
+
         return generate_fallback_clinical_report(request, "Failed to parse structured JSON response")
     except Exception as err:
         return generate_fallback_clinical_report(request, str(err))

@@ -233,6 +233,12 @@ with st.sidebar:
     )
 
     st.markdown("---")
+    llm_mode_env = os.getenv("LLM_MODE", "mock").lower().strip()
+    if llm_mode_env == "live":
+        st.markdown("🟢 **LLM Status:** `LIVE (External API)`")
+    else:
+        st.markdown("⚪ **LLM Status:** `DEMO / MOCK (Offline)`")
+
     st.info(
         "🔒 **Quantum Decoupling Active:** The presentation layer runs isolated from QPU simulators. No quantum circuits compile inside the browser process."
     )
@@ -405,11 +411,12 @@ with tab_diagnosis:
                         section = item.get("section", "N/A")
                         excerpt = item.get("excerpt", "")
                         rel = item.get("relevance_score", 0.0)
+                        prov_status = item.get("provenance_status", "DEMO_SYNTHETIC")
 
                         st.markdown(
                             f"""
                         <div class="evidence-card">
-                            <div class="evidence-id">[{e_id}] {title} ({year})</div>
+                            <div class="evidence-id">[{e_id}] {title} ({year}) <span style="font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; background-color: {'#0d9488' if 'VERIFIED' in prov_status else '#64748b'}; color: white; margin-left: 8px;">{prov_status}</span></div>
                             <div class="evidence-meta">Source: {source} | Section: {section} | Page: {page} | Relevance Score: {rel:.4f}</div>
                             <div class="evidence-excerpt">"{excerpt}"</div>
                         </div>

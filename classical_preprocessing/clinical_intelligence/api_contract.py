@@ -6,6 +6,7 @@ payload structures for presentation layers and frontend consumption.
 Preserves exact numerical precision (float scores), verdicts, QuXAI attributions, and evidence provenance.
 """
 
+import os
 from typing import Any, Dict, List, Optional
 from classical_preprocessing.clinical_intelligence.contracts import (
     ClinicalReport,
@@ -88,6 +89,14 @@ def build_api_response_payload(
             "excerpt": item.excerpt,
             "relevance_score": item.relevance_score,
             "reranking_score": item.reranking_score,
+            "provenance_status": item.provenance_status,
+            "document_id": item.document_id,
+            "source_url": item.source_url,
+            "doi": item.doi,
+            "pmid": item.pmid,
+            "authors": item.authors,
+            "publisher": item.publisher,
+            "license": item.license,
         }
         for idx, item in enumerate(evidence.items, start=1)
     ]
@@ -111,6 +120,8 @@ def build_api_response_payload(
         "meta_summary": {
             "system_name": "HQD-Net OS",
             "active_modalities": list(result.active_modalities),
+            "llm_mode": os.getenv("LLM_MODE", "mock").lower().strip(),
+            "llm_status": "LIVE" if os.getenv("LLM_MODE", "mock").lower().strip() == "live" else "DEMO / MOCK",
         },
         "latent_representation": {
             "dimensions": 10,

@@ -1,0 +1,46 @@
+[
+  {
+    "source_id": "SRC_NIH_PMC_001",
+    "name": "NIH National Library of Medicine / PubMed Central",
+    "publisher": "National Institutes of Health (NIH)",
+    "source_type": "PUBMED_PMC",
+    "base_url": "https://www.ncbi.nlm.nih.gov/pmc/",
+    "license": "Public Domain / CC BY Open Access",
+    "access_method": "NCBI Entrez API / PMC Open Access Literature",
+    "provenance_policy": "VERIFIED_PRIMARY",
+    "enabled": true
+  },
+  {
+    "source_id": "SRC_PUBMED_NCBI",
+    "name": "NCBI PubMed Medical Literature Database",
+    "publisher": "National Center for Biotechnology Information",
+    "source_type": "PUBMED",
+    "base_url": "https://pubmed.ncbi.nlm.nih.gov/",
+    "license": "Public Domain",
+    "access_method": "PubMed E-utilities API",
+    "provenance_policy": "VERIFIED_PRIMARY",
+    "enabled": true
+  },
+  {
+    "source_id": "SRC_WHO_CARDIO",
+    "name": "World Health Organization Clinical Guidance",
+    "publisher": "World Health Organization",
+    "source_type": "WHO",
+    "base_url": "https://www.who.int/cardiovascular_diseases/",
+    "license": "CC BY-NC-SA 3.0 IGO",
+    "access_method": "WHO Official Publications Access",
+    "provenance_policy": "VERIFIED_SECONDARY",
+    "enabled": true
+  },
+  {
+    "source_id": "SRC_DEMO_CARDIOLOGY",
+    "name": "Synthetic Demonstration Knowledge Base (2025)",
+    "publisher": "HQD-Net Demonstration Suite",
+    "source_type": "DEMO",
+    "base_url": "internal://hqd-net/demo",
+    "license": "HQD-Net Educational / Demonstration Use Only",
+    "access_method": "Local JSON Ingestion",
+    "provenance_policy": "DEMO_SYNTHETIC",
+    "enabled": true
+  }
+]

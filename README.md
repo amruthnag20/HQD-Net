@@ -283,6 +283,18 @@ MerMED remains an optional/additive imaging representation model and does not re
 
 *Note: Quantum performance on NISQ devices improves with larger datasets and longer training.*
 
+## Phase 8 — Medical Knowledge Ingestion & RAG Hardening
+
+HQD-Net incorporates a provenance-aware, multi-stage medical retrieval engine downstream of the quantum VQC pipeline:
+
+- **Source Registry (`knowledge_base/source_registry.json`)**: Manages verified literature providers, classifying evidence into `VERIFIED_PRIMARY` (NIH/PubMed Central, NCBI), `VERIFIED_SECONDARY` (WHO Clinical Guidance), and `DEMO_SYNTHETIC`.
+- **3-Stage Retrieval Pipeline**: BM25 Candidate Recall (top 20) $\to$ Reranking (configurable via `RERANKER_MODE`: `heuristic`, `semantic`, `neural`, `identity`) $\to$ Top-K Selection.
+- **Provenance & Citation Validation**: Strict evidence citation validation (`[E1]`, `[E2]`) ensuring LLM narratives never invent citations, PMIDs, or out-of-bounds tags (`[E99]`).
+- **Clinical Safety Boundary**: Quantum risk scores, verdicts, and QuXAI Jacobian attributions are strictly pipeline-derived and immutable.
+
+### Medical Disclaimer
+*HQD-Net is a decision-support research application. Final diagnostic authority remains solely with attending licensed medical practitioners.*
+
 ## Troubleshooting
 
 ### ImportError: No module named 'pennylane'

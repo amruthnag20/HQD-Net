@@ -1,12 +1,12 @@
 """
-Medical Evidence Retrieval Engine & Reranker Architecture (Phase 7).
+Medical Evidence Retrieval Engine & Reranker Architecture (Phase 8).
 
 Provides multi-stage medical retrieval:
 - Stage 1: Lexical candidate retrieval via BM25 (top-20 candidates)
 - Stage 2: Biomedical semantic/cross-encoder reranking
 - Stage 3: Top-K evidence selection with full provenance preservation
 
-Configurable via RERANKER_MODE environment variable ("semantic", "cross_encoder", "identity").
+Configurable via RERANKER_MODE environment variable ("heuristic", "semantic", "cross_encoder", "neural", "identity").
 """
 
 from abc import ABC, abstractmethod
@@ -14,7 +14,7 @@ import math
 import os
 import re
 from typing import List, Optional, Tuple
-from classical_preprocessing.clinical_intelligence.contracts import EvidenceItem, PostQuantumResult
+from classical_preprocessing.clinical_intelligence.contracts import EvidenceItem, PostQuantumResult, ProvenanceStatus
 from classical_preprocessing.clinical_intelligence.evidence import EvidenceBundle
 from classical_preprocessing.clinical_intelligence.ingestion import DocumentChunk
 from classical_preprocessing.clinical_intelligence.query_builder import ClinicalQuery, ClinicalQueryBuilder
@@ -49,7 +49,7 @@ class IdentityReranker(BaseReranker):
 
 class BiomedicalSemanticReranker(BaseReranker):
     """
-    Lightweight biomedical semantic reranker computing term alignment, biomarker focus,
+    Lightweight biomedical heuristic reranker computing term alignment, biomarker focus,
     and contextual density between clinical queries and retrieved candidate evidence chunks.
     """
 
@@ -96,11 +96,12 @@ class BiomedicalSemanticReranker(BaseReranker):
 
 class CrossEncoderReranker(BaseReranker):
     """
-    Cross-Encoder Reranker abstraction for medical RAG.
-    Falls back gracefully to BiomedicalSemanticReranker if neural libraries are uninstalled.
+    Neural Cross-Encoder Reranker adapter for medical RAG.
+    Falls back gracefully to BiomedicalSemanticReranker if neural model weights/libraries are uninstalled.
     """
 
     def __init__(self):
+        self.is_neural_active = False
         self._fallback_reranker = BiomedicalSemanticReranker()
 
     def rerank(
@@ -112,15 +113,19 @@ class CrossEncoderReranker(BaseReranker):
 def get_configured_reranker() -> BaseReranker:
     """
     Factory creating the active reranker based on environment variable RERANKER_MODE.
-    Modes: "semantic" (default), "cross_encoder", "identity".
+    Valid Modes: "heuristic", "semantic", "neural", "cross_encoder", "identity".
     """
-    mode = os.getenv("RERANKER_MODE", "semantic").lower().strip()
-    if mode == "identity":
+    mode = os.getenv("RERANKER_MODE", "heuristic").lower().strip()
+    if mode in ("identity",):
         return IdentityReranker()
-    elif mode == "cross_encoder":
+    elif mode in ("cross_encoder", "neural"):
         return CrossEncoderReranker()
-    else:
+    elif mode in ("semantic", "heuristic"):
         return BiomedicalSemanticReranker()
+    else:
+        raise ValueError(
+            f"Invalid RERANKER_MODE: '{mode}'. Valid options are 'heuristic', 'semantic', 'neural', 'cross_encoder', 'identity'."
+        )
 
 
 class BM25LexicalRetriever(BaseRetriever):
@@ -223,6 +228,14 @@ class MedicalEvidenceRetriever:
                 section=chunk.section,
                 publication_year=chunk.publication_year,
                 reranking_score=round(rr_score, 4),
+                provenance_status=chunk.provenance_status,
+                document_id=chunk.document_id,
+                source_url=chunk.source_url,
+                doi=chunk.doi,
+                pmid=chunk.pmid,
+                authors=chunk.authors,
+                publisher=chunk.publisher,
+                license=chunk.license,
             )
             evidence_items.append(item)
 

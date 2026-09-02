@@ -17,7 +17,11 @@ from classical_preprocessing.clinical_intelligence.api_contract import (
 )
 from classical_preprocessing.clinical_intelligence.contracts import post_quantum_result_from_payload
 from classical_preprocessing.clinical_intelligence.ingestion import DocumentChunk, ingest_knowledge_directory
-from classical_preprocessing.clinical_intelligence.llm import ClinicalLLM, generate_clinical_report
+from classical_preprocessing.clinical_intelligence.llm import (
+    ClinicalLLM,
+    generate_clinical_report,
+    get_configured_llm_provider,
+)
 from classical_preprocessing.clinical_intelligence.retrieval import MedicalEvidenceRetriever
 from classical_preprocessing.pipeline_runner import run_hqd_real_pipeline
 
@@ -46,28 +50,6 @@ def run_clinical_analysis(
 ) -> Dict[str, Any]:
     """
     Executes the end-to-end clinical intelligence analysis pipeline in a single pass.
-
-    Parameters
-    ----------
-    raw_features : Optional[List[float]]
-        24-feature clinical array.
-    tabular_file_path : Optional[Union[str, Path]]
-        CSV/XLSX file path.
-    image_2d_path : Optional[Union[str, Path]]
-        2D Chest X-Ray image file path.
-    image_3d_path : Optional[Union[str, Path]]
-        3D NIfTI/DICOM volume file path.
-    backend_choice : str
-        Quantum core backend selection ("VQC" or "QSVM").
-    kb_dir : str
-        Directory path containing medical knowledge base files.
-    llm_provider : Optional[ClinicalLLM]
-        Optional LLM provider instance (defaults to MockLLMProvider).
-
-    Returns
-    -------
-    Dict[str, Any]
-        Stable API response payload.
     """
     try:
         # 1. Run core preprocessing & quantum model pipeline (ONE execution)
@@ -92,7 +74,8 @@ def run_clinical_analysis(
         evidence_bundle = retrieval_engine.retrieve_evidence(post_q_result, top_k=3)
 
         # 4. Generate Evidence-Grounded Clinical Report
-        clinical_report = generate_clinical_report(post_q_result, evidence_bundle, llm=llm_provider)
+        active_llm = llm_provider or get_configured_llm_provider()
+        clinical_report = generate_clinical_report(post_q_result, evidence_bundle, llm=active_llm)
 
         # 5. Build and return stable API payload
         return build_api_response_payload(post_q_result, evidence_bundle, clinical_report)

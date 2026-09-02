@@ -123,7 +123,7 @@ class TestClinicalIntelligenceLLM(unittest.TestCase):
         self.assertIn("SYSTEM ROLE & SAFETY RULES", prompt)
         self.assertIn("0.7840", prompt)
         self.assertIn("Fasting Blood Glucose", prompt)
-        self.assertIn("--- RETRIEVED MEDICAL EVIDENCE ---", prompt)
+        self.assertIn("UNTRUSTED RETRIEVED MEDICAL EVIDENCE DATA", prompt)
 
     # -------------------------------------------------------------------------
     # 4. Mock Provider Determinism & Report Output

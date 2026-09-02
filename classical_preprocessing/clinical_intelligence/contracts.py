@@ -135,6 +135,15 @@ class PostQuantumResult:
                 raise ValueError(f"Explainability attributions sum to {total_weight}, expected ~1.0")
 
 
+class ProvenanceStatus:
+    VERIFIED_PRIMARY = "VERIFIED_PRIMARY"
+    VERIFIED_SECONDARY = "VERIFIED_SECONDARY"
+    DEMO_SYNTHETIC = "DEMO_SYNTHETIC"
+    UNKNOWN = "UNKNOWN"
+
+    ALL_STATUSES = {VERIFIED_PRIMARY, VERIFIED_SECONDARY, DEMO_SYNTHETIC, UNKNOWN}
+
+
 @dataclass(frozen=True)
 class EvidenceItem:
     """
@@ -149,6 +158,14 @@ class EvidenceItem:
     section: Optional[str] = None
     publication_year: Optional[int] = None
     reranking_score: Optional[float] = None
+    provenance_status: str = ProvenanceStatus.DEMO_SYNTHETIC
+    document_id: Optional[str] = None
+    source_url: Optional[str] = None
+    doi: Optional[str] = None
+    pmid: Optional[str] = None
+    authors: Optional[str] = None
+    publisher: Optional[str] = None
+    license: Optional[str] = None
 
     def __post_init__(self):
         if not isinstance(self.document_title, str) or not self.document_title.strip():
@@ -161,6 +178,8 @@ class EvidenceItem:
             raise ValueError(f"relevance_score must be a finite float in [0.0, 1.0], got {self.relevance_score}")
         if self.reranking_score is not None and not math.isfinite(self.reranking_score):
             raise ValueError(f"reranking_score must be a finite float, got {self.reranking_score}")
+        if self.provenance_status not in ProvenanceStatus.ALL_STATUSES:
+            raise ValueError(f"Invalid provenance_status: {self.provenance_status}")
 
 
 @dataclass(frozen=True)

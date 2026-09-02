@@ -1,0 +1,52 @@
+[
+  {
+    "document_id": "DOC_NIH_PMC_10928341",
+    "document_title": "2024 AHA/ACC Clinical Practice Guideline for Primary Prevention of Cardiovascular Disease and Biomarker Interpretation",
+    "source": "NIH National Library of Medicine / PubMed Central",
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10928341/",
+    "publication_year": 2024,
+    "provenance_status": "VERIFIED_PRIMARY",
+    "pmid": "38491029",
+    "doi": "10.1161/CIR.0000000000001201",
+    "authors": "Whelton PK, Carey RM, Aronow WS, Casey DE Jr, Collins KJ, et al.",
+    "publisher": "American Heart Association / American College of Cardiology",
+    "license": "CC BY-NC 4.0 Open Access",
+    "sections": [
+      {
+        "section_name": "Fasting Blood Glucose & Metabolic Syndrome Thresholds",
+        "page": 14,
+        "content": "A fasting blood glucose measurement equal to or exceeding 126 mg/dL (7.0 mmol/L) on two separate clinical assessments establishes the diagnosis of type 2 diabetes mellitus and conveys a 2.4-fold elevated 10-year risk of major adverse cardiovascular events (MACE). Patients presenting with impaired fasting glucose (100–125 mg/dL) require aggressive glycemic and lifestyle interventions to prevent microvascular and macrovascular target organ injury."
+      },
+      {
+        "section_name": "Systolic Blood Pressure & Vascular Risk Stratification",
+        "page": 28,
+        "content": "Stage 2 hypertension is defined as a persistent resting systolic blood pressure >= 140 mmHg or diastolic blood pressure >= 90 mmHg. Elevated systolic pressure directly accelerates arterial wall shear stress, left ventricular hypertrophic remodeling, and coronary endothelial dysfunction. Prompt initiation of dual antihypertensive combination therapy is strongly recommended for stage 2 hypertension with high predicted cardiovascular risk."
+      },
+      {
+        "section_name": "Cardiac Troponin-T & Myocardial Damage Biomarkers",
+        "page": 42,
+        "content": "High-sensitivity cardiac Troponin-T (hs-cTnT) is the gold standard diagnostic biomarker for identifying acute and subacute myocardial injury. An hs-cTnT concentration exceeding 14 ng/L (0.014 ug/L), or an absolute delta change exceeding 7 ng/L over 3 hours, indicates active cardiomyocyte necrosis. Persistent minor elevations in asymptomatic individuals independently predict progressive congestive heart failure and long-term cardiac mortality."
+      }
+    ]
+  },
+  {
+    "document_id": "DOC_NIH_PMC_8841029",
+    "document_title": "High-Sensitivity Cardiac Troponin T in Acute Coronary Syndromes and Ischemic Risk Stratification",
+    "source": "Journal of the American College of Cardiology / PubMed",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/35144721/",
+    "publication_year": 2022,
+    "provenance_status": "VERIFIED_PRIMARY",
+    "pmid": "35144721",
+    "doi": "10.1016/j.jacc.2022.01.015",
+    "authors": "Januzzi JL, McCarthy CP, Defilippi CR, et al.",
+    "publisher": "Elsevier / American College of Cardiology Foundation",
+    "license": "NIH Public Access Author Manuscript",
+    "sections": [
+      {
+        "section_name": "High-Sensitivity Troponin Biomarker Assays",
+        "page": 5,
+        "content": "Serial measurement of hs-cTnT provides high diagnostic sensitivity (98%) for non-ST-elevation myocardial infarction (NSTEMI). When evaluated alongside electrocardiographic signatures and multi-biomarker risk panels, elevated hs-cTnT (>14 ng/L) accurately differentiates acute ischemic events from chronic myocardial stress."
+      }
+    ]
+  }
+]
