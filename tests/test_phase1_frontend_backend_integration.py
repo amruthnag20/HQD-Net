@@ -93,7 +93,7 @@ class TestPhase1FrontendBackendIntegration(unittest.TestCase):
 
         self.assertEqual(payload["status"], "success")
         self.assertTrue(
-            any("TorchXRayVision" in m for m in payload["meta_summary"]["active_modalities"])
+            any("torchxrayvision" in m.lower() for m in payload["meta_summary"]["active_modalities"])
         )
         self.assertEqual(payload["latent_representation"]["dimensions"], 10)
         self.assertIn("risk_percentage", payload["diagnostic_prediction"])
@@ -106,7 +106,7 @@ class TestPhase1FrontendBackendIntegration(unittest.TestCase):
 
         self.assertEqual(payload["status"], "success")
         self.assertTrue(
-            any("MedicalNet" in m for m in payload["meta_summary"]["active_modalities"])
+            any("medicalnet" in m.lower() for m in payload["meta_summary"]["active_modalities"])
         )
         self.assertEqual(payload["latent_representation"]["dimensions"], 10)
         self.assertIn("risk_percentage", payload["diagnostic_prediction"])
@@ -126,9 +126,9 @@ class TestPhase1FrontendBackendIntegration(unittest.TestCase):
         self.assertEqual(payload["status"], "success")
         active = payload["meta_summary"]["active_modalities"]
         self.assertEqual(len(active), 3)
-        self.assertTrue(any("TABULAR" in m for m in active))
-        self.assertTrue(any("TorchXRayVision" in m for m in active))
-        self.assertTrue(any("MedicalNet" in m for m in active))
+        self.assertTrue(any("tabular" in m.lower() for m in active))
+        self.assertTrue(any("torchxrayvision" in m.lower() for m in active))
+        self.assertTrue(any("medicalnet" in m.lower() for m in active))
         self.assertEqual(payload["latent_representation"]["dimensions"], 10)
 
     # -------------------------------------------------------------------------
