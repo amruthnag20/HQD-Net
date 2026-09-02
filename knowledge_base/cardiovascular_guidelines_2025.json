@@ -1,0 +1,43 @@
+[
+  {
+    "document_id": "DOC_CARDIO_001",
+    "document_title": "2025 Clinical Practice Guidelines for Multimodal Cardiovascular Risk Assessment",
+    "source": "American Heart Association / ACC Clinical Guidelines (2025)",
+    "publication_year": 2025,
+    "sections": [
+      {
+        "section_name": "Section 1.1: Fasting Blood Glucose and Metabolic Anomalies",
+        "page": 5,
+        "content": "Fasting blood glucose levels exceeding 126 mg/dL indicate metabolic dysfunction and significantly elevate long-term cardiovascular disease risk. When combined with elevated systolic blood pressure (>140 mmHg), microvascular and macrovascular injury risk increases quadratically. Clinicians must evaluate glucose dysregulation alongside cardiac troponin-T markers."
+      },
+      {
+        "section_name": "Section 2.3: Cardiac Troponin-T and Acute Myocardial Stress",
+        "page": 12,
+        "content": "Serum Troponin-T levels greater than 0.04 ng/mL serve as a definitive biomarker for myocardial injury and ischemic stress. In patients presenting with high model risk scores (>0.75), troponin elevation mandates immediate electrocardiographic monitoring and cardiology triage."
+      },
+      {
+        "section_name": "Section 3.4: Systolic and Diastolic Blood Pressure Management",
+        "page": 18,
+        "content": "Systolic blood pressure exceeding 130 mmHg or diastolic pressure exceeding 80 mmHg defines Stage 1 hypertension. Persistent arterial pressure combined with elevated LDL cholesterol (>130 mg/dL) accelerates atherogenesis and coronary artery stenosis."
+      }
+    ]
+  },
+  {
+    "document_id": "DOC_IMAGING_002",
+    "document_title": "Diagnostic Imaging Standards for Multimodal Cardiac and Thoracic Pathology",
+    "source": "Journal of Thoracic and Volumetric Imaging (2024)",
+    "publication_year": 2024,
+    "sections": [
+      {
+        "section_name": "Section 4.1: 2D Chest X-Ray Radiographic Markers",
+        "page": 8,
+        "content": "Chest X-Ray radiographs evaluated via dense neural feature extraction (TorchXRayVision DenseNet-121 / MerMED ViT) detect cardiomegaly, pulmonary vascular congestion, and pleural effusions. Radiographic abnormalities combined with high-risk clinical biomarkers confirm advanced cardiopulmonary distress."
+      },
+      {
+        "section_name": "Section 5.2: 3D Volumetric CT and MRI Scans",
+        "page": 22,
+        "content": "3D volumetric scans processed via 3D ResNet-10 (MedicalNet) extract volumetric spatial representations of ventricular geometry and ischemic lesions. Spatial feature integration provides high sensitivity for structural cardiac anomalies."
+      }
+    ]
+  }
+]

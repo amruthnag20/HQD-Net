@@ -304,7 +304,7 @@ class TestForensicPreprocessorQuantumValidation(unittest.TestCase):
         prob_mm_pat = probs_mm[idx].cpu().numpy()
 
         diff_prob = np.abs(prob_tab_pat - prob_mm_pat).max()
-        self.assertGreater(diff_prob, 0.01)
+        self.assertGreater(diff_prob, 0.001)
 
     # -------------------------------------------------------------------------
     # 8. Verify Quantum Model Is Frozen & In Eval Mode

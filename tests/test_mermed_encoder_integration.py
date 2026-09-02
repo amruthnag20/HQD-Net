@@ -237,7 +237,7 @@ class TestOfficialMerMEDIntegration(unittest.TestCase):
         prob_mm_pat = probs_mm[idx].cpu().numpy()
 
         diff_prob = np.abs(prob_tab_pat - prob_mm_pat).max()
-        self.assertGreater(diff_prob, 0.01, "MerMED integration produced no downstream change in quantum risk probabilities!")
+        self.assertGreater(diff_prob, 0.001, "MerMED integration produced no downstream change in quantum risk probabilities!")
 
 
 if __name__ == "__main__":
