@@ -269,7 +269,7 @@ def run_prompt17_validation():
     print(f"  - Multimodal Quantum Output Max Difference across runs: {diff_mm:.8e}")
     assert diff_mm < 1e-6, "Multimodal quantum outputs are non-deterministic!"
 
-    print("  ✅ PASS: All pipeline outputs are 100% deterministic and reproducible.")
+    print("  [PASS] All pipeline outputs are 100% deterministic and reproducible.")
 
     # -------------------------------------------------------------------------
     # 7. Error Handling Verification

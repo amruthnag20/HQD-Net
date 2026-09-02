@@ -10,6 +10,8 @@ from typing import Any, Dict, List, Optional, Union
 import numpy as np
 import pandas as pd
 import torch
+import joblib
+import os
 
 from classical_preprocessing.imaging_2d.config import Imaging2DConfig
 from classical_preprocessing.imaging_2d.encoder import TorchXRayVisionEncoder
@@ -215,8 +217,16 @@ class HQDNetPipelineRunner:
         # ---------------------------------------------------------------------
         # 7. Classical Baseline Comparison (SVM & Random Forest)
         # ---------------------------------------------------------------------
-        # Simulated baseline score derivation for side-by-side comparison contract
-        classical_svm_risk = float(np.clip(primary_risk * 0.85 + 0.05, 0.0, 1.0))
+        try:
+            svm_path = os.path.join(os.path.dirname(__file__), "svm_model.pkl")
+            clf_svm = joblib.load(svm_path)
+            # z is the 10-D representation vector (shape [1, 10])
+            classical_svm_risk = float(clf_svm.predict_proba(z)[0, 1])
+        except Exception as e:
+            # Fallback if model missing or incompatible
+            classical_svm_risk = float(np.clip(primary_risk * 0.85 + 0.05, 0.0, 1.0))
+            telemetry_logs.append(f"Warning: Could not run real SVM ({str(e)}), used estimated baseline.")
+
         classical_rf_risk = float(np.clip(primary_risk * 0.82 + 0.08, 0.0, 1.0))
         quantum_lift = (primary_risk - classical_svm_risk) * 100.0
 

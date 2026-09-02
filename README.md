@@ -199,6 +199,80 @@ git branch -M main
 git push -u origin main
 ```
 
+## MerMED Model Setup
+
+HQD-Net optionally uses the pretrained **MerMED ViT-B/16** medical imaging model.
+
+The MerMED model weights are approximately 1.6 GB and are therefore **not stored inside this GitHub repository**.
+
+Before running HQD-Net with MerMED enabled, download the official pretrained checkpoint from:
+
+**Hugging Face:** `youngzhou12/MerMED`
+
+The required file is:
+
+```text
+MerMED.pth
+```
+
+After downloading, place it at:
+
+```text
+weights/MerMED.pth
+```
+
+The expected project structure is:
+
+```text
+HQD-Net/
+├── weights/
+│   └── MerMED.pth
+├── classical_preprocessing/
+├── quantum_core/
+├── tests/
+└── ...
+```
+
+### Recommended Setup Order
+
+Run the project in this order:
+
+```text
+1. Clone the HQD-Net repository
+2. Install the project dependencies
+3. Download the official MerMED.pth checkpoint from Hugging Face
+4. Place MerMED.pth inside the weights/ directory
+5. Run the project/tests
+```
+
+### Checkpoint Verification
+
+The expected SHA-256 checksum of the verified checkpoint is:
+
+```text
+e7ba97b9328352a705b30e54133e2cfb7e62a6e980f2d6f730033e938380f0a0
+```
+
+Users can verify the downloaded file with:
+
+```bash
+python -c "import hashlib; print(hashlib.sha256(open('weights/MerMED.pth','rb').read()).hexdigest())"
+```
+
+The printed hash should match:
+
+```text
+e7ba97b9328352a705b30e54133e2cfb7e62a6e980f2d6f730033e938380f0a0
+```
+
+### Important
+
+If `weights/MerMED.pth` is missing while MerMED is enabled, HQD-Net should report a clear checkpoint-not-found error.
+
+Do **not** introduce a random or substitute model fallback.
+
+MerMED remains an optional/additive imaging representation model and does not replace the existing TorchXRayVision pipeline.
+
 ## Performance Benchmarks
 
 | Model | Accuracy | ROC-AUC | Training Time |

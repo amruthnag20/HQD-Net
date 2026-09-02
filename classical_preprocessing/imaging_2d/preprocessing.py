@@ -3,7 +3,7 @@ Deterministic 2D Image Preprocessing for Medical Features.
 """
 
 from pathlib import Path
-from typing import Any, Dict, Tuple, Union
+from typing import Any, Dict, Tuple, Union, Optional
 import numpy as np
 from PIL import Image
 import torch

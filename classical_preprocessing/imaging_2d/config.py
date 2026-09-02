@@ -3,7 +3,7 @@ Configuration dataclass for Phase 1 2D Medical Imaging Pipeline.
 """
 
 from dataclasses import dataclass
-from typing import Tuple
+from typing import Tuple, Optional
 
 
 @dataclass

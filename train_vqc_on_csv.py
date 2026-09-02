@@ -32,6 +32,7 @@ import pennylane as qml
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, recall_score, f1_score, roc_auc_score
+import joblib
 
 # Inject project folders into PYTHONPATH
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -159,6 +160,7 @@ def train_and_execute_backend(csv_path=None, epochs=25, batch_size=32, learning_
     if csv_path is None:
         # Check for common clinical dataset locations
         default_paths = [
+            "clinical_data_real.csv",
             "clinical_data.csv",
             "data/clinical_data.csv",
             "datasets/clinical_data.csv",
@@ -289,6 +291,11 @@ def train_and_execute_backend(csv_path=None, epochs=25, batch_size=32, learning_
     svm_preds = clf_svm.predict(X_test_np)
     svm_probs = clf_svm.predict_proba(X_test_np)[:, 1]
     
+    # Save the SVM model for later classical baseline inference
+    svm_path = os.path.join(PROJECT_ROOT, "classical_preprocessing", "svm_model.pkl")
+    joblib.dump(clf_svm, svm_path)
+    print(f"  [+] Exported classical SVM baseline to: {svm_path}")
+
     # Classical Baseline B: Random Forest
     print("  Training Random Forest (100 trees)...")
     clf_rf = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
