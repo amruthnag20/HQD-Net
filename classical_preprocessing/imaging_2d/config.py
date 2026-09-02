@@ -18,7 +18,7 @@ class Imaging2DConfig:
     modality: str = "chest_xray"
     batch_size: int = 16
     device: str = "cpu"
-    encoder_name: str = "lightweight_cnn"
-    embedding_dim: int = 512
-    mermed_enabled: bool = False
+    encoder_name: str = "mermed"
+    embedding_dim: int = 768
+    mermed_enabled: bool = True
     mermed_weights_path: Optional[str] = "weights/MerMED.pth"

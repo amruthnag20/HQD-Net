@@ -77,18 +77,20 @@ class Unified10DProjector:
 
         n_samples = len(batch.sample_ids)
 
+        # Always initialize deterministic MultimodalFusionNetwork as fallback/projection engine
+        self.model = MultimodalFusionNetwork(
+            d_tab=self.d_tab,
+            d_2d=self.d_2d,
+            d_3d=self.d_3d,
+            modality_hidden_dim=self.config.modality_hidden_dim,
+            fusion_hidden_dim=self.config.fusion_hidden_dim,
+            output_dim=self.config.output_dim,
+            seed=self.config.random_state,
+        ).to(self.config.device)
+        self.model.eval()
+
         if y is not None and self.config.projection_method == "learned_mlp":
             # Train supervised PyTorch Multimodal Fusion Network
-            self.model = MultimodalFusionNetwork(
-                d_tab=self.d_tab,
-                d_2d=self.d_2d,
-                d_3d=self.d_3d,
-                modality_hidden_dim=self.config.modality_hidden_dim,
-                fusion_hidden_dim=self.config.fusion_hidden_dim,
-                output_dim=self.config.output_dim,
-                seed=self.config.random_state,
-            ).to(self.config.device)
-
             y_arr = np.asarray(y)
             if y_arr.ndim > 1:
                 y_arr = y_arr.ravel()
@@ -126,8 +128,8 @@ class Unified10DProjector:
 
             self.model.eval()
 
-        else:
-            # Unsupervised PCA fallback
+        elif self.config.projection_method == "unsupervised_pca" and n_samples > 1:
+            # Unsupervised PCA for multi-sample batches
             fused_list = []
             if batch.tabular is not None:
                 fused_list.append(batch.tabular)
@@ -180,19 +182,9 @@ class Unified10DProjector:
         batch = align_multimodal_inputs(tabular, image_2d, image_3d, sample_ids=sample_ids)
         n_samples = len(batch.sample_ids)
 
-        if self.model is not None:
-            tab_t = torch.tensor(batch.tabular, dtype=torch.float32, device=self.config.device) if batch.tabular is not None else None
-            img2d_t = torch.tensor(batch.image_2d, dtype=torch.float32, device=self.config.device) if batch.image_2d is not None else None
-            img3d_t = torch.tensor(batch.image_3d, dtype=torch.float32, device=self.config.device) if batch.image_3d is not None else None
-            mask_t = torch.tensor(batch.presence_mask, dtype=torch.bool, device=self.config.device)
+        rep_matrix = None
 
-            self.model.eval()
-            with torch.no_grad():
-                z_tensor = self.model(tab_t, img2d_t, img3d_t, mask_t)
-
-            rep_matrix = z_tensor.cpu().numpy().astype(np.float64)
-
-        else:
+        if self.pca_model is not None and n_samples > 1:
             fused_list = []
             if batch.tabular is not None:
                 fused_list.append(batch.tabular)
@@ -212,6 +204,19 @@ class Unified10DProjector:
                 rep_matrix = np.hstack([pca_out, np.zeros((n_samples, pad_cols), dtype=np.float64)])
             else:
                 rep_matrix = pca_out[:, : self.config.output_dim]
+
+        # Use neural fusion model if PCA is not used, if N=1, or if rep_matrix is zero
+        if rep_matrix is None or np.allclose(rep_matrix, 0.0):
+            tab_t = torch.tensor(batch.tabular, dtype=torch.float32, device=self.config.device) if batch.tabular is not None else None
+            img2d_t = torch.tensor(batch.image_2d, dtype=torch.float32, device=self.config.device) if batch.image_2d is not None else None
+            img3d_t = torch.tensor(batch.image_3d, dtype=torch.float32, device=self.config.device) if batch.image_3d is not None else None
+            mask_t = torch.tensor(batch.presence_mask, dtype=torch.bool, device=self.config.device)
+
+            self.model.eval()
+            with torch.no_grad():
+                z_tensor = self.model(tab_t, img2d_t, img3d_t, mask_t)
+
+            rep_matrix = z_tensor.cpu().numpy().astype(np.float64)
 
         if rep_matrix.shape[1] != self.config.output_dim:
             raise ValueError(f"Expected output dimension {self.config.output_dim}, got {rep_matrix.shape[1]}")

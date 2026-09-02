@@ -46,9 +46,23 @@ def load_real_clinical_csv(csv_path, target_column, drop_columns=None, n_feature
             - feature_names: list of selected biomarker names
     """
     
-    if not os.path.exists(csv_path):
+    candidate_paths = [
+        csv_path,
+        os.path.join("data", "processed", os.path.basename(csv_path)),
+        os.path.join("data", "raw", os.path.basename(csv_path)),
+        os.path.join("data", "processed", csv_path),
+        os.path.join("data", "raw", csv_path),
+    ]
+    resolved_path = None
+    for p in candidate_paths:
+        if p and os.path.exists(p):
+            resolved_path = p
+            break
+
+    if not resolved_path:
         raise FileNotFoundError(f"Clinical CSV file not found at path: {csv_path}")
 
+    csv_path = resolved_path
     print(f"\n[Phase 1] Loading raw clinical CSV: {csv_path}")
     df = pd.read_csv(csv_path)
     print(f"  [+] Extracted {len(df)} patient records with {len(df.columns)} raw columns")

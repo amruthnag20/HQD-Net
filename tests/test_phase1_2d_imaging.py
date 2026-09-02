@@ -120,7 +120,7 @@ class TestPhase12DImaging(unittest.TestCase):
     # Test 8 — Batch Processing & Ordering Preservation
     # -------------------------------------------------------------
     def test_batch_processing_and_ordering(self):
-        config = Imaging2DConfig(batch_size=2, embedding_dim=512)
+        config = Imaging2DConfig(batch_size=2, encoder_name="lightweight_cnn", embedding_dim=512)
         pipeline = Imaging2DPipeline(config=config)
 
         images = [self.valid_png_path, self.rgb_png_path, self.valid_png_path]
@@ -151,7 +151,7 @@ class TestPhase12DImaging(unittest.TestCase):
 
         self.assertIn("SECRET_PATIENT_999", result.sample_ids)
         # Verify sample_id is NOT in numerical matrix
-        self.assertEqual(result.embeddings.shape, (1, 512))
+        self.assertEqual(result.embeddings.shape, (1, pipeline.config.embedding_dim))
 
     # -------------------------------------------------------------
     # Test 11 — Encoder Interface Modularity

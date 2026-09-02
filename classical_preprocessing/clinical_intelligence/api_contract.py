@@ -113,16 +113,29 @@ def build_api_response_payload(
 
     latent_vec = list(result.latent_vector_10d) if result.latent_vector_10d else [0.0] * 10
 
-    # Assemble complete payload
+    provider_key = os.getenv("CLINICAL_LLM_PROVIDER", "").lower().strip()
+    if not provider_key:
+        provider_key = os.getenv("LLM_MODE", "mock").lower().strip()
+
+    if provider_key in ("mediphi", "local"):
+        llm_mode_val = "mediphi"
+        llm_status_val = "MEDIPHI LOCAL"
+    elif provider_key in ("api", "live"):
+        llm_mode_val = "api"
+        llm_status_val = "LIVE API"
+    else:
+        llm_mode_val = "mock"
+        llm_status_val = "DEMO / MOCK"
+
     payload = {
         "status": "success",
         "sample_id": result.sample_id,
         "meta_summary": {
             "system_name": "HQD-Net OS",
-            "active_modalities": list(result.active_modalities),
-            "llm_mode": os.getenv("LLM_MODE", "mock").lower().strip(),
-            "llm_status": "LIVE" if os.getenv("LLM_MODE", "mock").lower().strip() == "live" else "DEMO / MOCK",
-        },
+                "active_modalities": list(result.active_modalities),
+                "llm_mode": llm_mode_val,
+                "llm_status": llm_status_val,
+            },
         "latent_representation": {
             "dimensions": 10,
             "latent_biomarkers_vector": latent_vec,

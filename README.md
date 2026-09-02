@@ -295,6 +295,20 @@ HQD-Net incorporates a provenance-aware, multi-stage medical retrieval engine do
 ### Medical Disclaimer
 *HQD-Net is a decision-support research application. Final diagnostic authority remains solely with attending licensed medical practitioners.*
 
+## Local Clinical LLM Integration — Microsoft MediPhi-Instruct
+
+HQD-Net supports **Microsoft MediPhi-Instruct (`microsoft/MediPhi-Instruct`)** as a local, evidence-grounded clinical language generation layer:
+
+- **Lazy Loading**: `MediPhiLLMProvider` initializes tokenizer and model parameters lazily on the first generation request to prevent memory overhead during import or UI launch.
+- **Provider Abstraction**: Implements the `ClinicalLLM` contract and can be configured via environment variables:
+  ```bash
+  CLINICAL_LLM_PROVIDER=mediphi   # Options: "mock", "api", "mediphi"
+  MEDIPHI_MODEL=microsoft/MediPhi-Instruct
+  MEDIPHI_DEVICE=auto              # Options: "auto" (detects CUDA), "cuda", "cpu"
+  ```
+- **Zero-Telemetry Safety Contract**: The LLM consumes structured findings (`ClinicalLLMRequest`), structured evidence, and QuXAI biomarker attributions. It has zero access to raw 10-D latent vectors, variational angles ($\theta$), or quantum circuit parameters.
+- **Authoritative Quantum Preservation**: Numerical diagnostic risk scores and verdicts originate strictly from the frozen 10-qubit VQC output and cannot be overridden by LLM narratives.
+
 ## Troubleshooting
 
 ### ImportError: No module named 'pennylane'

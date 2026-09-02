@@ -221,7 +221,19 @@ class MedicalNet3DEncoder(Medical3DEncoder):
         self.model = ResNet3D10(in_channels=1, shortcut_type="B").to(self.device)
 
         # Pretrained Checkpoint Loading & Verification
-        ckpt_path = checkpoint_path or "resnet_10_23dataset.pth"
+        candidate_paths = [
+            checkpoint_path,
+            "resnet_10_23dataset.pth",
+            "models/imaging/medicalnet/resnet_10_23dataset.pth",
+        ]
+        ckpt_path = None
+        for p in candidate_paths:
+            if p and os.path.exists(p):
+                ckpt_path = p
+                break
+        if not ckpt_path:
+            ckpt_path = checkpoint_path or "models/imaging/medicalnet/resnet_10_23dataset.pth"
+
         if not os.path.exists(ckpt_path):
             try:
                 print(f"Downloading MedicalNet ResNet-10 pretrained weights from {self.DEFAULT_CHECKPOINT_URL}...")

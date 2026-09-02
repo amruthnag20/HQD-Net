@@ -26,6 +26,8 @@ class TestPhase1Tabular(unittest.TestCase):
     # -------------------------------------------------------------
     def test_process_real_synthetic_csv(self):
         csv_path = "clinical_data_synthetic.csv"
+        if not Path(csv_path).exists():
+            csv_path = "data/processed/clinical_data_synthetic.csv"
         self.assertTrue(Path(csv_path).exists(), "clinical_data_synthetic.csv must exist")
 
         pipeline = TabularPreprocessingPipeline()

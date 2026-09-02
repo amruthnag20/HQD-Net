@@ -9,6 +9,7 @@ or quantum projection.
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
+import os
 import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
@@ -124,6 +125,15 @@ class TabularPreprocessingPipeline:
 
         if isinstance(input_data, (str, Path)):
             path_str = str(input_data)
+            candidate_paths = [
+                path_str,
+                os.path.join("data", "processed", os.path.basename(path_str)),
+                os.path.join("data", "raw", os.path.basename(path_str)),
+            ]
+            for p in candidate_paths:
+                if os.path.exists(p):
+                    path_str = p
+                    break
             ext = decision.extension or Path(path_str).suffix.lower()
             if ext == ".csv":
                 df = pd.read_csv(path_str)

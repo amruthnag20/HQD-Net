@@ -10,6 +10,7 @@ import torch.nn as nn
 class MultimodalFusionNetwork(nn.Module):
     """
     Modality-aware PyTorch Neural Network projecting heterogeneous clinical inputs into a 10-D latent vector.
+    Uses LayerNorm for deterministic single-sample (N=1) and batch processing.
     """
 
     def __init__(
@@ -36,7 +37,7 @@ class MultimodalFusionNetwork(nn.Module):
         if d_tab > 0:
             self.tab_branch = nn.Sequential(
                 nn.Linear(d_tab, modality_hidden_dim),
-                nn.BatchNorm1d(modality_hidden_dim),
+                nn.LayerNorm(modality_hidden_dim),
                 nn.ReLU(inplace=True),
             )
             fused_in_dim += modality_hidden_dim
@@ -46,7 +47,7 @@ class MultimodalFusionNetwork(nn.Module):
         if d_2d > 0:
             self.img2d_branch = nn.Sequential(
                 nn.Linear(d_2d, modality_hidden_dim),
-                nn.BatchNorm1d(modality_hidden_dim),
+                nn.LayerNorm(modality_hidden_dim),
                 nn.ReLU(inplace=True),
             )
             fused_in_dim += modality_hidden_dim
@@ -56,7 +57,7 @@ class MultimodalFusionNetwork(nn.Module):
         if d_3d > 0:
             self.img3d_branch = nn.Sequential(
                 nn.Linear(d_3d, modality_hidden_dim),
-                nn.BatchNorm1d(modality_hidden_dim),
+                nn.LayerNorm(modality_hidden_dim),
                 nn.ReLU(inplace=True),
             )
             fused_in_dim += modality_hidden_dim
@@ -66,10 +67,11 @@ class MultimodalFusionNetwork(nn.Module):
         # 2. Shared fusion bottleneck layers
         self.fusion_mlp = nn.Sequential(
             nn.Linear(fused_in_dim, fusion_hidden_dim),
-            nn.BatchNorm1d(fusion_hidden_dim),
+            nn.LayerNorm(fusion_hidden_dim),
             nn.ReLU(inplace=True),
             nn.Linear(fusion_hidden_dim, output_dim),
         )
+        self.eval()
 
     def forward(
         self,
@@ -124,3 +126,4 @@ class MultimodalFusionNetwork(nn.Module):
         concat_feats = torch.cat(feats, dim=1)
         z_out = self.fusion_mlp(concat_feats)
         return z_out
+

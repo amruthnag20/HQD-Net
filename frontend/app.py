@@ -233,8 +233,13 @@ with st.sidebar:
     )
 
     st.markdown("---")
-    llm_mode_env = os.getenv("LLM_MODE", "mock").lower().strip()
-    if llm_mode_env == "live":
+    llm_provider_env = os.getenv("CLINICAL_LLM_PROVIDER", "").lower().strip()
+    if not llm_provider_env:
+        llm_provider_env = os.getenv("LLM_MODE", "mock").lower().strip()
+
+    if llm_provider_env in ("mediphi", "local"):
+        st.markdown("🟢 **LLM Status:** `MEDIPHI LOCAL`")
+    elif llm_provider_env in ("live", "api"):
         st.markdown("🟢 **LLM Status:** `LIVE (External API)`")
     else:
         st.markdown("⚪ **LLM Status:** `DEMO / MOCK (Offline)`")

@@ -204,18 +204,153 @@ class APIProvider(ClinicalLLM):
             raise RuntimeError(f"LIVE_LLM_ERROR: {err}") from err
 
 
+class MediPhiLLMProvider(ClinicalLLM):
+    """
+    Local Clinical LLM provider using Microsoft MediPhi-Instruct (microsoft/MediPhi-Instruct).
+    Loads model and tokenizer lazily on first generation request.
+    Strictly consumes ClinicalLLMRequest and generates structured ClinicalLLMResponse.
+    Does not modify or recalculate authoritative quantum risk scores or QuXAI attributions.
+    """
+
+    def __init__(
+        self,
+        model_name: Optional[str] = None,
+        device: Optional[str] = None,
+        torch_dtype: Optional[Any] = None,
+    ):
+        self.model_name = model_name or os.getenv("MEDIPHI_MODEL", "microsoft/MediPhi-Instruct")
+        self.device_setting = device or os.getenv("MEDIPHI_DEVICE", "auto")
+        self.torch_dtype = torch_dtype
+        self._model = None
+        self._tokenizer = None
+        self.is_loaded = False
+        self._resolved_device = None
+
+    def _resolve_device(self) -> str:
+        dev = self.device_setting.lower().strip()
+        if dev == "auto":
+            try:
+                import torch
+                return "cuda" if torch.cuda.is_available() else "cpu"
+            except Exception:
+                return "cpu"
+        elif dev in ("cuda", "gpu"):
+            return "cuda"
+        else:
+            return "cpu"
+
+    def _load_model(self) -> None:
+        if self.is_loaded:
+            return
+
+        self._resolved_device = self._resolve_device()
+
+        try:
+            import torch
+            from transformers import AutoModelForCausalLM, AutoTokenizer
+        except ImportError as err:
+            raise RuntimeError(
+                f"MEDIPHI_DEPENDENCY_ERROR: Required packages 'transformers' or 'torch' are missing: {err}"
+            ) from err
+
+        try:
+            self._tokenizer = AutoTokenizer.from_pretrained(self.model_name, trust_remote_code=True)
+
+            model_kwargs = {"trust_remote_code": True}
+            if self._resolved_device == "cuda":
+                model_kwargs["device_map"] = "auto"
+                if self.torch_dtype is not None:
+                    model_kwargs["torch_dtype"] = self.torch_dtype
+                else:
+                    model_kwargs["torch_dtype"] = torch.float16
+            else:
+                model_kwargs["device_map"] = None
+                if self.torch_dtype is not None:
+                    model_kwargs["torch_dtype"] = self.torch_dtype
+
+            self._model = AutoModelForCausalLM.from_pretrained(self.model_name, **model_kwargs)
+            if self._resolved_device == "cpu" or not getattr(self._model, "is_loaded_in_4bit", False):
+                self._model = self._model.to(self._resolved_device)
+
+            self._model.eval()
+            self.is_loaded = True
+        except Exception as err:
+            raise RuntimeError(
+                f"MEDIPHI_LOAD_ERROR: Failed to load MediPhi-Instruct model '{self.model_name}': {err}"
+            ) from err
+
+    def generate(self, request: ClinicalLLMRequest) -> ClinicalLLMResponse:
+        self._load_model()
+        import torch
+
+        prompt_str = ClinicalPromptBuilder.build_prompt(request, request.evidence_bundle)
+
+        messages = [
+            {"role": "system", "content": "You are MediPhi-Instruct, an evidence-grounded clinical decision support assistant."},
+            {"role": "user", "content": prompt_str},
+        ]
+
+        if hasattr(self._tokenizer, "apply_chat_template"):
+            try:
+                formatted_input = self._tokenizer.apply_chat_template(
+                    messages, tokenize=False, add_generation_prompt=True
+                )
+            except Exception:
+                formatted_input = prompt_str
+        else:
+            formatted_input = prompt_str
+
+        inputs = self._tokenizer(formatted_input, return_tensors="pt").to(self._resolved_device)
+
+        with torch.no_grad():
+            output_tokens = self._model.generate(
+                **inputs,
+                max_new_tokens=1024,
+                temperature=0.1,
+                do_sample=False,
+                pad_token_id=self._tokenizer.eos_token_id,
+            )
+
+        input_len = inputs["input_ids"].shape[1]
+        generated_tokens = output_tokens[0][input_len:]
+        raw_text = self._tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
+
+        parsed = extract_json_payload(raw_text)
+        return ClinicalLLMResponse(
+            raw_text=raw_text,
+            parsed_json=parsed,
+            provider_name=f"MediPhiLLMProvider({self.model_name})",
+        )
+
+
 def get_configured_llm_provider() -> ClinicalLLM:
     """
-    Factory creating active LLM provider based on LLM_MODE environment variable.
-    Valid modes: "mock" (default), "live".
+    Factory creating active LLM provider based on CLINICAL_LLM_PROVIDER or LLM_MODE environment variables.
+    Supported providers: "mock" (default), "api" (or "live"), "mediphi" (or "local").
     """
-    mode = os.getenv("LLM_MODE", "mock").lower().strip()
-    if mode == "live":
-        return APIProvider()
-    elif mode == "mock":
+    provider_str = os.getenv("CLINICAL_LLM_PROVIDER", "").lower().strip()
+    if not provider_str:
+        # Fallback check on LLM_MODE for backwards compatibility
+        llm_mode = os.getenv("LLM_MODE", "mock").lower().strip()
+        if llm_mode in ("live", "api"):
+            provider_str = "api"
+        elif llm_mode in ("mediphi", "local"):
+            provider_str = "mediphi"
+        elif llm_mode in ("mock", "demo"):
+            provider_str = "mock"
+        else:
+            raise ValueError(f"Invalid LLM_MODE: '{llm_mode}'. Valid modes are 'mock', 'live', or 'mediphi'.")
+
+    if provider_str in ("mock", "demo"):
         return MockLLMProvider()
+    elif provider_str in ("api", "live"):
+        return APIProvider()
+    elif provider_str in ("mediphi", "local"):
+        return MediPhiLLMProvider()
     else:
-        raise ValueError(f"Invalid LLM_MODE: '{mode}'. Valid modes are 'mock' and 'live'.")
+        raise ValueError(
+            f"Invalid CLINICAL_LLM_PROVIDER: '{provider_str}'. Valid choices are 'mock', 'api', or 'mediphi'."
+        )
 
 
 def extract_json_payload(text: str) -> Optional[Dict[str, Any]]:

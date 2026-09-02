@@ -52,7 +52,7 @@ class HQDNetPipelineRunner:
         self.handoff_adapter = QuantumHandoffAdapter()
         self.tabular_compressor = TabularCompressor(config=CompressionConfig(n_components=5))
 
-    def _get_2d_pipeline(self, encoder_name: str = "torchxrayvision") -> Imaging2DPipeline:
+    def _get_2d_pipeline(self, encoder_name: str = "mermed") -> Imaging2DPipeline:
         if self._2d_pipeline is None or self._2d_pipeline.config.encoder_name != encoder_name:
             from classical_preprocessing.imaging_2d.encoder import get_medical_encoder
             cfg = Imaging2DConfig(
@@ -77,7 +77,7 @@ class HQDNetPipelineRunner:
         image_3d_input: Optional[Union[str, Path, List[Union[str, Path]]]] = None,
         sample_ids: Optional[List[str]] = None,
         backend_choice: str = "VQC",
-        encoder_2d: str = "torchxrayvision",
+        encoder_2d: str = "mermed",
     ) -> Dict[str, Any]:
         """
         Execute the complete real end-to-end HQD-Net pipeline.

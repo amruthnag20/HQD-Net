@@ -80,7 +80,9 @@ class TestPhase1Stage10Validation(unittest.TestCase):
     # -------------------------------------------------------------
     def test_e2e_tabular_pipeline_with_real_csv(self):
         csv_path = Path("clinical_data_synthetic.csv")
-        self.assertTrue(csv_path.exists(), "clinical_data_synthetic.csv must exist in repository root.")
+        if not csv_path.exists():
+            csv_path = Path("data/processed/clinical_data_synthetic.csv")
+        self.assertTrue(csv_path.exists(), "clinical_data_synthetic.csv must exist in repository root or data/processed.")
 
         # Step 2: Router Dispatch
         router = InputRouter()
@@ -132,7 +134,7 @@ class TestPhase1Stage10Validation(unittest.TestCase):
         # Stage 6: 2D Imaging branch
         pipeline_2d = Imaging2DPipeline()
         rep_2d = pipeline_2d.process_image(self.img2d_path, sample_id=sample_ids[0])
-        self.assertEqual(rep_2d.embeddings.shape, (1, 512))
+        self.assertEqual(rep_2d.embeddings.shape, (1, 768))
 
         # Stage 7: 3D Imaging branch
         cfg_3d = Imaging3DConfig(modality="MRI")
@@ -170,6 +172,8 @@ class TestPhase1Stage10Validation(unittest.TestCase):
     # -------------------------------------------------------------
     def test_data_leakage_and_train_test_isolation(self):
         csv_path = Path("clinical_data_synthetic.csv")
+        if not csv_path.exists():
+            csv_path = Path("data/processed/clinical_data_synthetic.csv")
         tab_pipeline = TabularPreprocessingPipeline()
         tab_res = tab_pipeline.fit_transform(csv_path)
 
