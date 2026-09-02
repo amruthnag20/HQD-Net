@@ -38,12 +38,12 @@ class TestMerMEDLivePlumbing(unittest.TestCase):
         # Assert dimensionality
         self.assertEqual(payload["latent_representation"]["dimensions"], 10)
         self.assertEqual(len(payload["latent_representation"]["latent_biomarkers_vector"]), 10)
-        
+
         # Verify the logs explicitly state MerMED was used and returned a 768-D embedding prior to fusion
         logs = payload.get("telemetry_logs", [])
         mermed_log_found = any("MERMED" in log.upper() for log in logs)
         self.assertTrue(mermed_log_found, "Logs should explicitly indicate MerMED was used.")
-        
+
         dim_768_log_found = any("768-D EMBEDDING" in log.upper() for log in logs)
         self.assertTrue(dim_768_log_found, "Logs should trace the 768-D MerMED embedding dimension.")
 
