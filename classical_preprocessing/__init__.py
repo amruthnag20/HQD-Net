@@ -1,0 +1,163 @@
+"""
+Phase 1 Classical Preprocessing Package for HQD-Net.
+
+Establishes foundational data contracts, constants, contract validator,
+input router dispatch, tabular preprocessing & validation, multi-signal feature selection,
+tabular representation compression, 2D imaging pipeline, 3D volumetric MRI/CT imaging pipeline,
+unified multimodal 10-D projection, quantum handoff adapter, and quantum angle projection utilities.
+"""
+
+from classical_preprocessing.compression import (
+    CompressionConfig,
+    InformationRetentionReport,
+    TabularCompressionResult,
+    TabularCompressor,
+    evaluate_information_retention,
+)
+from classical_preprocessing.constants import (
+    CLASSICAL_DTYPE,
+    QUANTUM_DTYPE,
+    QUANTUM_INPUT_DIM,
+    QUANTUM_MAX_ANGLE,
+    QUANTUM_MIN_ANGLE,
+)
+from classical_preprocessing.contracts import (
+    ImageTensorContract,
+    LatentVectorContract,
+    RawInputContract,
+    TabularFeatureContract,
+    Unified10DRepresentation,
+)
+from classical_preprocessing.feature_selection import (
+    FeatureSelectionConfig,
+    MultiSignalFeatureSelector,
+    MultiSignalSelectionResult,
+    aggregate_signal_rankings,
+    group_feature_scores,
+)
+from classical_preprocessing.imaging_2d import (
+    ImageRepresentation,
+    ImageValidationReport,
+    Imaging2DConfig,
+    Imaging2DPipeline,
+    LightweightMedicalEncoder,
+    MedicalImageEncoder,
+    TorchXRayVisionEncoder,
+    get_medical_encoder,
+    preprocess_2d_image,
+    validate_2d_image,
+)
+from classical_preprocessing.imaging_3d import (
+    Imaging3DConfig,
+    Imaging3DPipeline,
+    LightweightMedical3DEncoder,
+    Medical3DEncoder,
+    MedicalNet3DEncoder,
+    Volume3DData,
+    VolumeRepresentation,
+    VolumeValidationReport,
+    get_medical_3d_encoder,
+    load_3d_volume,
+    preprocess_3d_volume,
+    validate_3d_volume,
+)
+from classical_preprocessing.projection.unified_projection import project_to_quantum_angles
+from classical_preprocessing.quantum_handoff import QuantumHandoffAdapter, map_latent_to_quantum_angles
+from classical_preprocessing.router.input_router import (
+    InputKind,
+    InputRouter,
+    ProcessingPath,
+    RoutingDecision,
+    UnsupportedFormatError,
+    route_input,
+)
+from classical_preprocessing.tabular import (
+    TabularPreprocessingPipeline,
+    TabularPreprocessingResult,
+    TabularValidationReport,
+    analyze_missing_values,
+    validate_tabular_schema,
+)
+from classical_preprocessing.unified_projection import (
+    AlignedMultimodalBatch,
+    MultimodalFusionNetwork,
+    ProjectionEvaluationReport,
+    Unified10DProjector,
+    UnifiedProjectionConfig,
+    UnifiedRepresentation,
+    align_multimodal_inputs,
+    evaluate_10d_projection,
+)
+from classical_preprocessing.validation.contract_validator import (
+    QuantumInputValidator,
+    validate_quantum_input,
+)
+
+__all__ = [
+    "QUANTUM_INPUT_DIM",
+    "QUANTUM_MIN_ANGLE",
+    "QUANTUM_MAX_ANGLE",
+    "QUANTUM_DTYPE",
+    "CLASSICAL_DTYPE",
+    "RawInputContract",
+    "TabularFeatureContract",
+    "ImageTensorContract",
+    "LatentVectorContract",
+    "Unified10DRepresentation",
+    "validate_quantum_input",
+    "QuantumInputValidator",
+    "project_to_quantum_angles",
+    "InputKind",
+    "ProcessingPath",
+    "RoutingDecision",
+    "UnsupportedFormatError",
+    "route_input",
+    "InputRouter",
+    "validate_tabular_schema",
+    "analyze_missing_values",
+    "TabularValidationReport",
+    "TabularPreprocessingPipeline",
+    "TabularPreprocessingResult",
+    "FeatureSelectionConfig",
+    "MultiSignalFeatureSelector",
+    "MultiSignalSelectionResult",
+    "aggregate_signal_rankings",
+    "group_feature_scores",
+    "CompressionConfig",
+    "TabularCompressor",
+    "TabularCompressionResult",
+    "InformationRetentionReport",
+    "evaluate_information_retention",
+    "Imaging2DConfig",
+    "validate_2d_image",
+    "ImageValidationReport",
+    "preprocess_2d_image",
+    "MedicalImageEncoder",
+    "LightweightMedicalEncoder",
+    "TorchXRayVisionEncoder",
+    "get_medical_encoder",
+    "Imaging2DPipeline",
+    "ImageRepresentation",
+    "Imaging3DConfig",
+    "Volume3DData",
+    "load_3d_volume",
+    "validate_3d_volume",
+    "VolumeValidationReport",
+    "preprocess_3d_volume",
+    "Medical3DEncoder",
+    "LightweightMedical3DEncoder",
+    "MedicalNet3DEncoder",
+    "get_medical_3d_encoder",
+    "Imaging3DPipeline",
+    "VolumeRepresentation",
+    "UnifiedProjectionConfig",
+    "AlignedMultimodalBatch",
+    "align_multimodal_inputs",
+    "MultimodalFusionNetwork",
+    "Unified10DProjector",
+    "UnifiedRepresentation",
+    "ProjectionEvaluationReport",
+    "evaluate_10d_projection",
+    "map_latent_to_quantum_angles",
+    "QuantumHandoffAdapter",
+]
