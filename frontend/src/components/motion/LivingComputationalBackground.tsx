@@ -273,21 +273,45 @@ export function LivingComputationalBackground({ intensity }: LivingComputational
       })
     }
 
+    let isTicking = false
+
+    function startTicker() {
+      if (!isTicking && !document.hidden && !prefersReducedMotion) {
+        lastTime = performance.now() / 1000
+        gsap.ticker.add(tick)
+        isTicking = true
+      }
+    }
+
+    function stopTicker() {
+      if (isTicking) {
+        gsap.ticker.remove(tick)
+        isTicking = false
+      }
+    }
+
+    const onVisibilityChange = () => {
+      if (document.hidden) stopTicker()
+      else startTicker()
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange)
+
     if (prefersReducedMotion) {
       // One static, coherent frame — no drift, no signals, no topology shifts.
       // dt=1 snaps opacity straight to its resting value (see applySize).
       draw(1)
     } else {
-      gsap.ticker.add(tick)
+      startTicker()
       scheduleSignal()
       scheduleTopologyShift()
     }
 
     return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange)
       window.removeEventListener('resize', onResize)
       window.removeEventListener('pointermove', onPointerMove)
       cancelAnimationFrame(resizeRaf)
-      gsap.ticker.remove(tick)
+      stopTicker()
       signalTimer?.kill()
       topologyTimer?.kill()
       unsubscribeRouter()

@@ -30,53 +30,59 @@ export function ArchitectureSection() {
     // Register ScrollTrigger (may already be registered by HeroArchitectureFlow)
     gsap.registerPlugin(ScrollTrigger)
 
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches
+
     const ctx = gsap.context(() => {
-      // Spine draw-in
+      // Spine fill — continuously scrubbed to how far the viewer has
+      // actually scrolled through the pipeline, not a fixed-duration tween.
+      // This is what makes the timeline read as "progress", not "reveal".
       if (spineRef.current) {
         const spineLength = spineRef.current.getTotalLength?.() ?? 500
         gsap.set(spineRef.current, { strokeDasharray: spineLength, strokeDashoffset: spineLength })
         gsap.to(spineRef.current, {
           strokeDashoffset: 0,
-          duration: 1.4,
-          ease: 'power2.inOut',
+          ease: 'none',
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 75%',
-            toggleActions: 'play none none none',
+            end: 'bottom 55%',
+            scrub: 0.6,
           },
         })
       }
 
-      // Stage nodes — pop in after spine draws
-      gsap.from('.arch-node', {
-        scale: 0,
-        opacity: 0,
-        duration: 0.35,
-        ease: 'back.out(2)',
-        stagger: 0.2,
-        delay: 0.6,
-        transformOrigin: '50% 50%',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-          toggleActions: 'play none none none',
-        },
-      })
+      // Each stage gets its own scroll-scrubbed cinematic reveal — blur
+      // resolves into focus, content settles in, and its spine node lights
+      // up as that stage crosses into view. Desktop only: on narrow
+      // viewports (and reduced motion) everything is simply visible, no
+      // per-stage motion, so the pipeline never blocks reading on mobile.
+      if (isDesktop) {
+        gsap.utils.toArray<HTMLElement>('.arch-stage').forEach((stage, i) => {
+          const trigger = {
+            trigger: stage,
+            start: 'top 88%',
+            end: 'top 45%',
+            scrub: 0.6,
+          }
+          gsap.fromTo(
+            stage,
+            { opacity: 0, x: 28, filter: 'blur(8px)' },
+            { opacity: 1, x: 0, filter: 'blur(0px)', ease: 'none', scrollTrigger: trigger },
+          )
 
-      // Stage content — stagger in from right
-      gsap.from('.arch-stage', {
-        opacity: 0,
-        x: 20,
-        duration: 0.55,
-        ease: 'power3.out',
-        stagger: 0.18,
-        delay: 0.5,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 70%',
-          toggleActions: 'play none none none',
-        },
-      })
+          const node = document.querySelectorAll('.arch-node')[i]
+          if (node) {
+            gsap.fromTo(
+              node,
+              { scale: 0.3, opacity: 0.3, transformOrigin: '50% 50%' },
+              { scale: 1, opacity: 1, ease: 'none', scrollTrigger: trigger },
+            )
+          }
+        })
+      } else {
+        gsap.set('.arch-stage', { opacity: 1, x: 0, filter: 'blur(0px)' })
+        gsap.set('.arch-node', { scale: 1, opacity: 1 })
+      }
 
       // Headline
       gsap.from('.arch-headline .clip-inner', {

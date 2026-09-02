@@ -1,22 +1,48 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import gsap from 'gsap'
 import { landingCopy } from '@/content/landingCopy'
+
+// The page's closing "font revelation" — each word of the headline
+// materializes out of a soft blur and a masked vertical reveal, staggered
+// word-by-word. This mirrors the Hero wordmark's masked reveal, so the page
+// opens and closes on the same signature typographic gesture.
+const headlineContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } },
+}
+// Framer Motion v13's Variants type only accepts its named Easing strings for
+// `ease`, not a cubic-bezier array or CSS string (see EvidenceSection for
+// precedent) — 'circOut' gives the same "settling into focus" curve.
+const headlineWord = {
+  hidden: { y: '100%', filter: 'blur(16px)' },
+  visible: {
+    y: '0%',
+    filter: 'blur(0px)',
+    transition: { duration: 1.1, ease: 'circOut' as const },
+  },
+}
 
 /**
  * Final CTA — ENTER HQD-NET.
  *
- * Dark canvas. The culmination of the page experience.
- * Large display headline. Restrained editorial button. No pill.
- * Subtle top rule in Caramel to close the paper section's visual energy.
+ * The culmination of the page experience.
+ * Large display headline with a cinematic font revelation. Restrained
+ * editorial button. No pill. Subtle top rule in Royal Blue to close the
+ * paper section's visual energy.
  */
 export function FinalCta() {
   const navigate = useNavigate()
   const { headline, subhead, cta, secondary } = landingCopy.finalCta
   const prefersReducedMotion = useReducedMotion()
-  
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end end'] })
+  const glowY = useTransform(scrollYProgress, [0, 1], [prefersReducedMotion ? 0 : -40, 0])
+
+  const words = headline.split(' ')
+
   const [isNavigating, setIsNavigating] = useState(false)
 
   const handleNavigateAuth = () => {
@@ -38,29 +64,46 @@ export function FinalCta() {
 
   return (
     <section
+      ref={sectionRef}
       className="relative overflow-hidden px-6 py-[var(--landing-section-pad-y)] md:px-16 lg:px-24"
       style={{ background: 'var(--color-bg-canvas)' }}
       aria-label="Get started"
     >
-      <div className="mx-auto max-w-[var(--container-max)]">
+      {/* Ambient glow — a quiet echo of the hero's quantum core, drifting
+          gently as the section scrolls into place. */}
+      <motion.div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+        style={{
+          y: glowY,
+          background:
+            'radial-gradient(ellipse 45% 55% at 22% 25%, rgba(14,47,118,0.06), transparent 65%)',
+        }}
+      />
+
+      <div className="relative mx-auto max-w-[var(--container-max)]">
 
 
-        {/* Headline — massive display */}
-        <div className="mt-6 overflow-hidden">
-          <motion.h2
-            className="font-display leading-none text-primary"
-            style={{
-              fontSize: 'clamp(3.5rem, 6vw + 1.5rem, 10rem)',
-              letterSpacing: '0.1em',
-            }}
-            initial={prefersReducedMotion ? false : { y: '110%' }}
-            whileInView={{ y: '0%' }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            {headline}
-          </motion.h2>
-        </div>
+        {/* Headline — massive display, word-by-word font revelation */}
+        <motion.h2
+          className="font-display leading-none text-primary mt-6 flex flex-wrap"
+          style={{
+            fontSize: 'clamp(3.5rem, 6vw + 1.5rem, 10rem)',
+            letterSpacing: '0.1em',
+          }}
+          initial={prefersReducedMotion ? undefined : 'hidden'}
+          whileInView={prefersReducedMotion ? undefined : 'visible'}
+          viewport={{ once: true, margin: '-100px' }}
+          variants={prefersReducedMotion ? undefined : headlineContainer}
+        >
+          {words.map((word, i) => (
+            <span key={i} className="overflow-hidden pb-[0.1em] pr-[0.22em] inline-block">
+              <motion.span className="inline-block" variants={prefersReducedMotion ? undefined : headlineWord}>
+                {word}
+              </motion.span>
+            </span>
+          ))}
+        </motion.h2>
 
         {/* Subhead */}
         <motion.p
@@ -81,7 +124,7 @@ export function FinalCta() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
         >
-          {/* Primary CTA — Caramel fill, square, restrained */}
+          {/* Primary CTA — Royal Blue fill, square, restrained */}
           <button
             className="group focus-ring inline-flex items-center gap-3 border border-accent bg-accent px-8 py-4 font-display text-sm tracking-widest text-accent-fg transition-all duration-200 ease-out hover:bg-accent-hover hover:border-accent-hover active:scale-[0.98] disabled:opacity-80 disabled:pointer-events-none"
             style={{ borderRadius: '2px' }}

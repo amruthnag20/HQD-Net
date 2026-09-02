@@ -12,7 +12,7 @@ export const landingCopy = {
     eyebrowLine2: 'Diagnostic Network',
     heading: 'HQD-Net',
     subhead:
-      'Classical preprocessing. Quantum representation. Explainable clinical output — with every step kept visible.',
+      'Classical preprocessing. Quantum representation. Explainable clinical output with every step kept visible.',
     primaryCta: 'Begin Analysis',
     secondaryCta: 'Sign in',
     tagline: 'Classical → Quantum → Clinical',

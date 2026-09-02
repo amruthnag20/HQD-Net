@@ -103,7 +103,11 @@ export function HistoryWorkspace() {
           
           {/* Left Column (List & Trend) */}
           <div className={`flex flex-col transition-all duration-300 w-full ${selectedId ? 'xl:w-[40%]' : 'xl:w-full'}`}>
-            <HistoryTrend data={processedData} />
+            <HistoryTrend 
+              data={processedData} 
+              selectedId={selectedId} 
+              onSelect={(id) => setSelectedId(id === selectedId ? null : id)} 
+            />
             <HistoryFilters filters={filters} setFilters={setFilters} />
             
             {processedData.length === 0 ? (

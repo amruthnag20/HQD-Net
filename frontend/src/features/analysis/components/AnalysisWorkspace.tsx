@@ -71,7 +71,7 @@ export function AnalysisWorkspace() {
               transition={transition}
               className="w-full flex flex-col items-center justify-center"
             >
-               <DiagnosticInput 
+               <DiagnosticInput
                  state={state}
                  input={input}
                  onUpload={actions.handleUpload}

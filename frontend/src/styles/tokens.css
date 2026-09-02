@@ -80,4 +80,28 @@
   /* ---- Landing editorial layout ---- */
   --landing-grid-opacity: 0.035;
   --landing-section-pad-y: clamp(4rem, 6vw, 6rem);
+
+  /* ---- Hero gradient accent (scoped to the hero moment only — wordmark,
+   * subtitle, primary CTA, decorative art. Deliberately NOT part of the
+   * app-wide Royal Blue palette above; every other surface keeps the
+   * solid --color-accent system untouched. ---- */
+  --hero-gradient-from: #2D74D7;
+  --hero-gradient-to: #8A5FF0;
+  --hero-gradient-subtle-from: #88AFE7;
+  --hero-gradient-subtle-to: #6F5FDC;
+  --hero-gradient-cta-from: #4254E4;
+  --hero-gradient-cta-to: #8A60F0;
+  --hero-gradient-mesh-from: #E8A9D0;
+  --hero-gradient-mesh-to: #6F93E0;
+
+  /* ---- Hero atmosphere — cool scientific ground + luminance ramp.
+   * Keeps the hero light (never pure white, never dark) while giving the
+   * background layers real tonal depth instead of pale-on-pale wash-out. */
+  --hero-atmo-center: rgba(221, 235, 255, 0.85);
+  --hero-atmo-mid: rgba(246, 248, 253, 0.95);
+  --hero-atmo-edge: rgba(238, 243, 251, 1);
+  --hero-depth-distant: #E5EBF7;
+  --hero-depth-mid: #C9D8F2;
+  --hero-depth-strong: #8FA8D8;
+  --hero-depth-node: #315DA8;
 }

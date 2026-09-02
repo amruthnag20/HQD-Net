@@ -9,6 +9,8 @@ import { SignUp } from '@/pages/SignUp'
 import { Home } from '@/pages/Home'
 import { History } from '@/pages/History'
 import { Settings } from '@/pages/Settings'
+import { DataIngestion } from '@/pages/DataIngestion'
+import { Preprocessing } from '@/pages/Preprocessing'
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +40,8 @@ export const router = createBrowserRouter([
         children: [
           { index: true, element: <Navigate to="home" replace /> },
           { path: 'home', element: <Home /> },
+          { path: 'data', element: <DataIngestion /> },
+          { path: 'preprocessing', element: <Preprocessing /> },
           { path: 'history', element: <History /> },
           { path: 'settings', element: <Settings /> },
         ],

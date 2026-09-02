@@ -5,7 +5,7 @@
  * Design intent: the field is NOT a symmetric circuit board. It is a sparse,
  * deliberate schematic where classical zones converge asymmetrically toward
  * the central quantum cluster, and diverge back out on the right. The signal
- * path (Caramel) travels the full journey — this is the page's signature visual.
+ * path (Royal Blue) travels the full journey — this is the page's signature visual.
  *
  * Zones (left-to-right):
  *   classical-in  x: 0–380
@@ -116,7 +116,7 @@ export const classicalOutPaths: FieldLine[] = [
 ]
 
 /**
- * Signal waypoints — the Caramel dot travels this path.
+ * Signal waypoints — the Royal Blue dot travels this path.
  * Tagged by zone so the GSAP timeline knows when to flash.
  * This is the CLASSICAL → QUANTUM → CLASSICAL journey.
  */
@@ -151,3 +151,56 @@ export const probabilityRadiants: FieldLine[] = [
   [quantumNodes[4], { x: 430, y: 300 }], // upper-left
   [quantumNodes[4], { x: 970, y: 280 }], // upper-right
 ]
+
+/* ---- Entanglement threads — organic motion metadata ----
+ *
+ * The hero field renders its connectors as soft bowed bezier "threads"
+ * rather than rigid orthogonal circuit traces. Each thread gets a stable,
+ * deterministic (not truly random — seeded by index) bow/amplitude/frequency/
+ * phase so the field has a consistent identity across reloads while still
+ * breathing continuously once mounted.
+ */
+export type ThreadMeta = {
+  /** Rest-state perpendicular offset of the curve's control point. */
+  bow: number
+  /** How far the bow oscillates from rest, per frame. */
+  amp: number
+  /** Oscillation speed (radians/sec). */
+  freq: number
+  /** Phase offset so threads don't breathe in lockstep. */
+  phase: number
+}
+
+/** Deterministic pseudo-random unit value in [0, 1), seeded by index. */
+function seededUnit(index: number): number {
+  const seed = Math.sin(index * 12.9898 + 78.233) * 43758.5453
+  return seed - Math.floor(seed)
+}
+
+export function threadMeta(index: number, baseBow: number): ThreadMeta {
+  const unit = seededUnit(index)
+  return {
+    bow: baseBow,
+    amp: 5 + unit * 11,
+    freq: 0.12 + unit * 0.22,
+    phase: unit * Math.PI * 2,
+  }
+}
+
+/**
+ * Quadratic bezier "thread" path between two nodes, bowed perpendicular to
+ * the connecting line by `bow` units. This is what turns rigid connectors
+ * into soft, organic strands.
+ */
+export function threadPath(a: FieldNode, b: FieldNode, bow: number): string {
+  const mx = (a.x + b.x) / 2
+  const my = (a.y + b.y) / 2
+  const dx = b.x - a.x
+  const dy = b.y - a.y
+  const len = Math.hypot(dx, dy) || 1
+  const nx = -dy / len
+  const ny = dx / len
+  const cx = mx + nx * bow
+  const cy = my + ny * bow
+  return `M ${a.x} ${a.y} Q ${cx} ${cy} ${b.x} ${b.y}`
+}

@@ -62,7 +62,7 @@ export function LandingNav() {
           </button>
         </motion.div>
 
-        {/* Sign up — editorial border button, square corners, Caramel accent */}
+        {/* Sign up — editorial border button, square corners, Royal Blue accent */}
         <motion.div variants={prefersReducedMotion ? undefined : navItemVariants}>
           <button
             className="focus-ring inline-flex items-center border border-accent px-4 py-2 font-display text-xs tracking-widest text-accent transition-all duration-150 ease-out hover:bg-accent hover:text-accent-fg active:scale-[0.97]"

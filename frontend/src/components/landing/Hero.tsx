@@ -96,14 +96,14 @@ export function Hero({ onCtaHoverChange }: HeroProps) {
 
       {/* Eyebrow: HYBRID QUANTUM */}
       <div className="hero-eyebrow-1 clip-reveal overflow-hidden">
-        <p className="clip-inner font-display text-[clamp(1.5rem,3vw+0.5rem,3.25rem)] leading-none tracking-wide text-secondary">
+        <p className="clip-inner font-display text-[clamp(1.5rem,3vw+0.5rem,3.25rem)] leading-none tracking-wide text-primary">
           {landingCopy.hero.eyebrowLine1}
         </p>
       </div>
 
       {/* Eyebrow: DIAGNOSTIC NETWORK */}
       <div className="hero-eyebrow-2 clip-reveal overflow-hidden mt-1">
-        <p className="clip-inner font-display text-[clamp(1.5rem,3vw+0.5rem,3.25rem)] leading-none tracking-wide text-muted">
+        <p className="clip-inner font-display text-[clamp(1.5rem,3vw+0.5rem,3.25rem)] leading-none tracking-wide text-primary">
           {landingCopy.hero.eyebrowLine2}
         </p>
       </div>
@@ -112,12 +112,11 @@ export function Hero({ onCtaHoverChange }: HeroProps) {
       <div className="hero-wordmark clip-reveal overflow-hidden mt-3">
         <h1
           className="clip-inner font-display text-[length:var(--text-hero)] leading-none text-primary"
-          style={{ letterSpacing: '0.12em' }}
+          style={{ letterSpacing: '0.04em' }}
         >
           {landingCopy.hero.heading}
         </h1>
       </div>
-
 
       {/* Subhead */}
       <p className="hero-subhead mt-7 max-w-[36ch] text-sm leading-relaxed text-secondary sm:text-base">
@@ -133,7 +132,7 @@ export function Hero({ onCtaHoverChange }: HeroProps) {
       <div className="hero-cta-group mt-8 flex items-center gap-4">
         {/* Primary — Begin Analysis */}
         <button
-          className="group focus-ring inline-flex items-center gap-2 border border-accent bg-accent px-6 py-3 font-display text-sm tracking-widest text-accent-fg transition-all duration-200 ease-out hover:bg-accent-hover hover:border-accent-hover active:scale-[0.98]"
+          className="group focus-ring inline-flex items-center gap-2 border border-accent bg-accent px-10 py-3.5 font-display text-sm tracking-widest text-accent-fg transition-all duration-200 ease-out hover:bg-accent-hover hover:border-accent-hover active:scale-[0.98]"
           style={{ borderRadius: '2px' }}
           onMouseEnter={() => onCtaHoverChange?.(true)}
           onMouseLeave={() => onCtaHoverChange?.(false)}
