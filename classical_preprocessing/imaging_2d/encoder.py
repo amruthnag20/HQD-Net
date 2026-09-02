@@ -201,6 +201,9 @@ def get_medical_encoder(config: Optional[Imaging2DConfig] = None) -> MedicalImag
     Factory function for 2D medical image encoders.
     """
     cfg = config or Imaging2DConfig()
+    if cfg.encoder_name == "mermed":
+        from classical_preprocessing.imaging_2d.mermed_encoder import MerMEDEncoder
+        return MerMEDEncoder(config=cfg)
     if cfg.encoder_name == "torchxrayvision":
         return TorchXRayVisionEncoder(config=cfg)
     return LightweightMedicalEncoder(config=cfg)

@@ -9,6 +9,7 @@ from classical_preprocessing.imaging_2d.encoder import (
     TorchXRayVisionEncoder,
     get_medical_encoder,
 )
+from classical_preprocessing.imaging_2d.mermed_encoder import MerMEDEncoder, MerMEDViTBackbone
 from classical_preprocessing.imaging_2d.pipeline import Imaging2DPipeline, ImageRepresentation
 from classical_preprocessing.imaging_2d.preprocessing import preprocess_2d_image
 from classical_preprocessing.imaging_2d.validator import ImageValidationReport, validate_2d_image
@@ -21,6 +22,8 @@ __all__ = [
     "MedicalImageEncoder",
     "LightweightMedicalEncoder",
     "TorchXRayVisionEncoder",
+    "MerMEDEncoder",
+    "MerMEDViTBackbone",
     "get_medical_encoder",
     "Imaging2DPipeline",
     "ImageRepresentation",

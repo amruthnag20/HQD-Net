@@ -20,3 +20,5 @@ class Imaging2DConfig:
     device: str = "cpu"
     encoder_name: str = "lightweight_cnn"
     embedding_dim: int = 512
+    mermed_enabled: bool = False
+    mermed_weights_path: Optional[str] = None

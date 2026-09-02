@@ -40,7 +40,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 model.train()
 for epoch in range(1):
     optimizer.zero_grad()
-    batch_X = X_train[:32]  # Single batch
+    batch_X = X_train[:32].float()  # Single batch
     batch_y = y_train[:32]
     
     print(f"  - Input batch dtype: {batch_X.dtype}")
