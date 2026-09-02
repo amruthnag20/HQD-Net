@@ -128,7 +128,7 @@ class Imaging3DPipeline:
             sub_embeddings = self.encoder.encode(batch_tensor)
             all_embeddings.append(sub_embeddings)
 
-        embeddings_matrix = np.vstack(all_embeddings).astype(np.float64)
+        embeddings_matrix = np.vstack(all_embeddings).astype(np.float32)
 
         if not np.isfinite(embeddings_matrix).all():
             raise ValueError("Generated 3D volume embeddings contain NaN or Inf values.")

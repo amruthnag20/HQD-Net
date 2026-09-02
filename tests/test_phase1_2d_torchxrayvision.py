@@ -79,7 +79,7 @@ class TestPhase12DTorchXRayVision(unittest.TestCase):
 
         self.assertIsInstance(rep, ImageRepresentation)
         self.assertEqual(rep.embeddings.shape, (1, 1024))
-        self.assertEqual(rep.embeddings.dtype, np.float64)
+        self.assertEqual(rep.embeddings.dtype, np.float32)
         self.assertTrue(np.isfinite(rep.embeddings).all())
 
     # -------------------------------------------------------------

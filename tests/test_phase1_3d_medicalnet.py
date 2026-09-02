@@ -90,7 +90,7 @@ class TestPhase13DMedicalNet(unittest.TestCase):
 
         self.assertIsInstance(rep, VolumeRepresentation)
         self.assertEqual(rep.embeddings.shape, (1, 512))
-        self.assertEqual(rep.embeddings.dtype, np.float64)
+        self.assertEqual(rep.embeddings.dtype, np.float32)
         self.assertTrue(np.isfinite(rep.embeddings).all())
 
     # -------------------------------------------------------------

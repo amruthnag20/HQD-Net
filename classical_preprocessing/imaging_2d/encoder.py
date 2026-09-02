@@ -110,7 +110,7 @@ class LightweightMedicalEncoder(MedicalImageEncoder):
         with torch.no_grad():
             embeddings_tensor = self.model(image_batch)
 
-        embeddings_arr = embeddings_tensor.cpu().numpy().astype(np.float64)
+        embeddings_arr = embeddings_tensor.cpu().numpy().astype(np.float32)
 
         if not np.isfinite(embeddings_arr).all():
             raise ValueError("Medical image encoder output contains NaN or Inf values.")
@@ -188,7 +188,7 @@ class TorchXRayVisionEncoder(MedicalImageEncoder):
             pooled_features = torch.nn.functional.adaptive_avg_pool2d(features, (1, 1))
             flat_features = torch.flatten(pooled_features, 1)
 
-        embeddings_arr = flat_features.cpu().numpy().astype(np.float64)
+        embeddings_arr = flat_features.cpu().numpy().astype(np.float32)
 
         if not np.isfinite(embeddings_arr).all():
             raise ValueError("TorchXRayVision encoder output contains NaN or Inf values.")

@@ -114,7 +114,7 @@ class LightweightMedical3DEncoder(Medical3DEncoder):
         with torch.no_grad():
             embeddings_tensor = self.model(volume_batch)
 
-        embeddings_arr = embeddings_tensor.cpu().numpy().astype(np.float64)
+        embeddings_arr = embeddings_tensor.cpu().numpy().astype(np.float32)
 
         if not np.isfinite(embeddings_arr).all():
             raise ValueError("3D Medical image encoder output contains NaN or Inf values.")
@@ -276,7 +276,7 @@ class MedicalNet3DEncoder(Medical3DEncoder):
         with torch.no_grad():
             features_tensor = self.model.extract_features(volume_batch)
 
-        embeddings_arr = features_tensor.cpu().numpy().astype(np.float64)
+        embeddings_arr = features_tensor.cpu().numpy().astype(np.float32)
 
         if not np.isfinite(embeddings_arr).all():
             raise ValueError("MedicalNet 3D encoder output contains NaN or Inf values.")

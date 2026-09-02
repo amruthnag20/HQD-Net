@@ -132,7 +132,7 @@ class TestOfficialMerMEDIntegration(unittest.TestCase):
         emb_random = random_encoder.encode(dummy_img)
 
         self.assertEqual(emb_pretrained.shape, (1, 768))
-        self.assertEqual(emb_pretrained.dtype, np.float64)
+        self.assertEqual(emb_pretrained.dtype, np.float32)
         self.assertTrue(np.isfinite(emb_pretrained).all())
 
         diff = np.abs(emb_pretrained - emb_random).max()

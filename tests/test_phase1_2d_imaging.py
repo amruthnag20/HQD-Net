@@ -140,7 +140,7 @@ class TestPhase12DImaging(unittest.TestCase):
         pipeline = Imaging2DPipeline()
         result = pipeline.process_image(self.valid_png_path)
         self.assertTrue(np.isfinite(result.embeddings).all())
-        self.assertEqual(result.embeddings.dtype, np.float64)
+        self.assertEqual(result.embeddings.dtype, np.float32)
 
     # -------------------------------------------------------------
     # Test 10 — Metadata & Patient ID Separation

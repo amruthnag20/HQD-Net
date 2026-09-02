@@ -182,7 +182,7 @@ class TestPhase13DImaging(unittest.TestCase):
         result = pipeline.process_volume(self.nii_path)
 
         self.assertTrue(np.isfinite(result.embeddings).all())
-        self.assertEqual(result.embeddings.dtype, np.float64)
+        self.assertEqual(result.embeddings.dtype, np.float32)
 
     # -------------------------------------------------------------
     # Test 14 — CPU Execution Safety

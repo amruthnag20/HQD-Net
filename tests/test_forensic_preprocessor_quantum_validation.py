@@ -150,7 +150,7 @@ class TestForensicPreprocessorQuantumValidation(unittest.TestCase):
         emb = img_rep.embeddings
 
         self.assertEqual(emb.shape, (1, 1024))
-        self.assertEqual(emb.dtype, np.float64)
+        self.assertEqual(emb.dtype, np.float32)
         self.assertTrue(np.isfinite(emb).all())
         self.assertFalse((emb == 0.0).all())
 

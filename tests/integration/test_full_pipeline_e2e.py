@@ -133,7 +133,7 @@ class TestFullPipelineE2E(unittest.TestCase):
         mermed_emb = mermed_encoder.encode(dummy_tensor)
 
         self.assertEqual(mermed_emb.shape, (1, 768))
-        self.assertEqual(mermed_emb.dtype, np.float64)
+        self.assertEqual(mermed_emb.dtype, np.float32)
         self.assertTrue(np.isfinite(mermed_emb).all())
 
         # C. Verify TorchXRayVision Encoder Output
