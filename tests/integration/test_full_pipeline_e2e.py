@@ -165,7 +165,7 @@ class TestFullPipelineE2E(unittest.TestCase):
 
         self.assertEqual(result["status"], "success")
         self.assertIn("TABULAR", result["meta_summary"]["active_modalities"])
-        self.assertIn("IMAGE_2D (TorchXRayVision DenseNet-121)", result["meta_summary"]["active_modalities"])
+        self.assertIn("IMAGE_2D (TORCHXRAYVISION)", result["meta_summary"]["active_modalities"])
 
         # Verify 10-D projection boundary
         z = np.array(result["latent_representation"]["latent_biomarkers_vector"])

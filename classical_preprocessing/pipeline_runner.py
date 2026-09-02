@@ -52,10 +52,14 @@ class HQDNetPipelineRunner:
         self.handoff_adapter = QuantumHandoffAdapter()
         self.tabular_compressor = TabularCompressor(config=CompressionConfig(n_components=5))
 
-    def _get_2d_pipeline(self) -> Imaging2DPipeline:
-        if self._2d_pipeline is None:
-            cfg = Imaging2DConfig(encoder_name="torchxrayvision")
-            encoder = TorchXRayVisionEncoder(config=cfg, weights=None)
+    def _get_2d_pipeline(self, encoder_name: str = "torchxrayvision") -> Imaging2DPipeline:
+        if self._2d_pipeline is None or self._2d_pipeline.config.encoder_name != encoder_name:
+            from classical_preprocessing.imaging_2d.encoder import get_medical_encoder
+            cfg = Imaging2DConfig(
+                encoder_name=encoder_name,
+                mermed_enabled=(encoder_name == "mermed")
+            )
+            encoder = get_medical_encoder(config=cfg)
             self._2d_pipeline = Imaging2DPipeline(config=cfg, encoder=encoder)
         return self._2d_pipeline
 
@@ -73,6 +77,7 @@ class HQDNetPipelineRunner:
         image_3d_input: Optional[Union[str, Path, List[Union[str, Path]]]] = None,
         sample_ids: Optional[List[str]] = None,
         backend_choice: str = "VQC",
+        encoder_2d: str = "torchxrayvision",
     ) -> Dict[str, Any]:
         """
         Execute the complete real end-to-end HQD-Net pipeline.
@@ -133,10 +138,10 @@ class HQDNetPipelineRunner:
             paths_2d = [image_2d_input] if isinstance(image_2d_input, (str, Path)) else image_2d_input
             p2d_ids = sample_ids or [f"PATIENT_{i+1:03d}" for i in range(len(paths_2d))]
 
-            pipeline_2d = self._get_2d_pipeline()
+            pipeline_2d = self._get_2d_pipeline(encoder_name=encoder_2d)
             rep_2d = pipeline_2d.process_batch(paths_2d, sample_ids=p2d_ids)
-            active_modalities.append("IMAGE_2D (TorchXRayVision DenseNet-121)")
-            telemetry_logs.append(f"[2/5 2D X-Ray] Encoded {len(paths_2d)} 2D CXR scans -> {rep_2d.embeddings.shape[1]}-D embedding")
+            active_modalities.append(f"IMAGE_2D ({encoder_2d.upper()})")
+            telemetry_logs.append(f"[2/5 2D X-Ray] Encoded {len(paths_2d)} 2D CXR scans using {encoder_2d.upper()} -> {rep_2d.embeddings.shape[1]}-D embedding")
 
         # ---------------------------------------------------------------------
         # 3. 3D Medical Imaging Processing (MedicalNet ResNet-10)
@@ -299,6 +304,7 @@ def run_hqd_real_pipeline(
     image_3d_input: Optional[Union[str, Path, List[Union[str, Path]]]] = None,
     sample_ids: Optional[List[str]] = None,
     backend_choice: str = "VQC",
+    encoder_2d: str = "torchxrayvision",
 ) -> Dict[str, Any]:
     """
     Exposed functional API to run the real HQD-Net pipeline.
@@ -309,4 +315,5 @@ def run_hqd_real_pipeline(
         image_3d_input=image_3d_input,
         sample_ids=sample_ids,
         backend_choice=backend_choice,
+        encoder_2d=encoder_2d,
     )
