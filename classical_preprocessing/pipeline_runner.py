@@ -85,31 +85,35 @@ class HQDNetPipelineRunner:
         tab_sample_ids = None
 
         if tabular_input is not None:
-            if isinstance(tabular_input, (str, Path)):
-                filePath = str(tabular_input)
-                if filePath.endswith(".csv"):
-                    df = pd.read_csv(filePath)
-                elif filePath.endswith(".xlsx") or filePath.endswith(".xls"):
-                    df = pd.read_excel(filePath)
+            if isinstance(tabular_input, (str, Path, pd.DataFrame)):
+                from classical_preprocessing.tabular.pipeline import TabularPreprocessingPipeline
+                if isinstance(tabular_input, (str, Path)):
+                    filePath = str(tabular_input)
+                    if filePath.endswith(".csv"):
+                        df = pd.read_csv(filePath)
+                    elif filePath.endswith(".xlsx") or filePath.endswith(".xls"):
+                        df = pd.read_excel(filePath)
+                    else:
+                        raise ValueError(f"Unsupported tabular file format: {filePath}")
                 else:
-                    raise ValueError(f"Unsupported tabular file format: {filePath}")
+                    df = tabular_input
 
-                numeric_df = df.select_dtypes(include=[np.number])
-                tab_matrix = numeric_df.values.astype(np.float64)
-                if "sample_id" in df.columns:
+                tab_pipe = TabularPreprocessingPipeline()
+                tab_res = tab_pipe.fit_transform(df)
+                tab_matrix = tab_res.processed_features
+                if "patient_id" in tab_res.traceability_metadata:
+                    tab_sample_ids = tab_res.traceability_metadata["patient_id"]
+                elif "sample_id" in df.columns:
                     tab_sample_ids = list(df["sample_id"].astype(str))
                 elif "patient_id" in df.columns:
                     tab_sample_ids = list(df["patient_id"].astype(str))
                 else:
-                    tab_sample_ids = [f"PATIENT_{i+1:03d}" for i in range(len(df))]
-
-            elif isinstance(tabular_input, pd.DataFrame):
-                numeric_df = tabular_input.select_dtypes(include=[np.number])
-                tab_matrix = numeric_df.values.astype(np.float64)
-                tab_sample_ids = [f"PATIENT_{i+1:03d}" for i in range(len(tabular_input))]
-
+                    tab_sample_ids = [f"PATIENT_{i+1:03d}" for i in range(len(tab_matrix))]
             else:
                 arr = np.asarray(tabular_input, dtype=np.float64)
+                if np.isnan(arr).any():
+                    from sklearn.impute import SimpleImputer
+                    arr = SimpleImputer(strategy="mean").fit_transform(arr if arr.ndim == 2 else arr.reshape(1, -1))
                 if arr.ndim == 1:
                     tab_matrix = arr.reshape(1, -1)
                 else:
