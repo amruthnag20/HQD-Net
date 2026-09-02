@@ -1,0 +1,83 @@
+/**
+ * HQD-Net design tokens — raw values.
+ *
+ * Tokens that Tailwind renames for nicer utility ergonomics (backgrounds,
+ * foreground text, borders) live here and are aliased into Tailwind's
+ * `@theme` block in global.css (e.g. --color-bg-canvas -> `bg-canvas`).
+ *
+ * Tokens with no Tailwind utility-generating namespace (motion, z-index,
+ * shell layout dimensions) also live here and are consumed directly via
+ * var(...) in component CSS or arbitrary-value Tailwind classes.
+ *
+ * Tokens Tailwind DOES generate utilities for under their exact semantic
+ * name (accent/baby/success/warning/danger/info colors, the light "paper"
+ * surface + "ink" text ramp, type scale, radius, shadow) are defined
+ * directly inside the `@theme` block in global.css — duplicating them here
+ * under the same name would create a self-referencing CSS custom property.
+ * global.css's `@theme` block is their source of truth.
+ *
+ * Palette:
+ *  - Ice White: #F4FEFF (primary environment — canvas, surfaces, paper)
+ *  - Royal Blue: #0E2F76 (structure — primary text, navigation, primary actions)
+ *  - Powder Blue: #A9C0E0 (secondary/supporting surfaces, inactive states)
+ */
+:root {
+  /* ---- Backgrounds — Ice White + Powder Blue tint ramp ---- */
+  --color-bg-canvas: #F4FEFF;         /* Ice White — primary environment */
+  --color-bg-surface: #EBF7FB;        /* ~12% Powder Blue tint over Ice White */
+  --color-bg-surface-raised: #E5F2F9; /* ~20% Powder Blue tint — raised panels/popovers */
+  --color-bg-sunken: #F1FCFE;         /* ~4% tint — subtle recess */
+
+  /* ---- Foreground (Royal Blue ramp on light canvas) ---- */
+  --color-fg-primary: #0E2F76;   /* Royal Blue — primary text */
+  --color-fg-secondary: #4E699C; /* Royal Blue mixed ~72% toward white */
+  --color-fg-muted: #7186B0;     /* Royal Blue mixed ~45% — labels/metadata, not body copy */
+  --color-fg-disabled: #AEBCD3;
+
+  /* ---- Borders ---- */
+  --color-border-subtle: rgba(14, 47, 118, 0.08);
+  --color-border-default: rgba(14, 47, 118, 0.16);
+  --color-border-strong: rgba(14, 47, 118, 0.28);
+
+  /* ---- Spacing (4px base — matches Tailwind's default scale 1:1) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ---- Motion ---- */
+  --duration-instant: 100ms;
+  --duration-micro: 150ms;
+  --duration-standard: 250ms;
+  --duration-major: 350ms;
+  --duration-slow: 500ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---- Z-index ---- */
+  --z-background: -1;
+  --z-base: 0;
+  --z-sidebar: 10;
+  --z-header: 20;
+  --z-drawer: 30;
+  --z-popover: 40;
+  --z-toast: 50;
+
+  /* ---- Shell layout ---- */
+  --sidebar-width-collapsed: 68px;
+  --sidebar-width-expanded: 236px;
+  --header-height: 60px;
+  --container-max: 1120px;
+
+  /* ---- Landing editorial layout ---- */
+  --landing-grid-opacity: 0.035;
+  --landing-section-pad-y: clamp(4rem, 6vw, 6rem);
+}

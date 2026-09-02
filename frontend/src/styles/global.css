@@ -1,0 +1,204 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/* Self-hosted fonts — no external font-CDN request. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/big-shoulders-display/600';
+@import '@fontsource/big-shoulders-display/700';
+@import '@fontsource/big-shoulders-display/800';
+
+/**
+ * Tailwind v4 theme.
+ * Standardized to HQD-Net authoritative palette:
+ *  - Ice White: #F4FEFF
+ *  - Royal Blue: #0E2F76
+ *  - Powder Blue: #A9C0E0
+ */
+@theme {
+  /* Colors — aliased from tokens.css */
+  --color-canvas: var(--color-bg-canvas);
+  --color-surface: var(--color-bg-surface);
+  --color-surface-raised: var(--color-bg-surface-raised);
+  --color-surface-elevated: var(--color-bg-surface-raised);
+  --color-surface-subtle: #F0FAFD;
+  --color-sunken: var(--color-bg-sunken);
+
+  --color-primary: var(--color-fg-primary);
+  --color-secondary: var(--color-fg-secondary);
+  --color-muted: var(--color-fg-muted);
+  --color-disabled: var(--color-fg-disabled);
+
+  --color-line-subtle: var(--color-border-subtle);
+  --color-line: var(--color-border-default);
+  --color-line-strong: var(--color-border-strong);
+
+  /* Colors — accent (Royal Blue #0E2F76 — primary actions, structure, telemetry) */
+  --color-accent: #0E2F76;
+  --color-accent-hover: #0A2358;
+  --color-accent-muted: rgba(14, 47, 118, 0.10);
+  --color-accent-fg: #F4FEFF; /* Ice White text for on-royal-blue fills */
+
+  /* Colors — secondary accent (Powder Blue #A9C0E0 — secondary/supporting, inactive) */
+  --color-baby: #A9C0E0;
+  --color-baby-hover: #93AEDA;
+  --color-baby-muted: rgba(169, 192, 224, 0.22);
+  --color-baby-fg: #0E2F76;
+
+  /* Colors — light "paper" surface ramp (same light family as canvas) */
+  --color-paper: #F4FEFF;
+  --color-paper-raised: #EBF7FB;
+  --color-paper-sunken: #E5F2F9;
+  --color-border-paper: rgba(14, 47, 118, 0.10);
+
+  /* Colors — "ink" text ramp for text on paper */
+  --color-ink: #0E2F76;
+  --color-ink-secondary: #4E699C;
+  --color-ink-muted: #7186B0;
+
+  /* Colors — semantic (kept distinct from the brand blues so status stays legible) */
+  --color-success: #2F8555;
+  --color-success-muted: rgba(47, 133, 85, 0.14);
+  --color-warning: #9A6B12;
+  --color-warning-muted: rgba(154, 107, 18, 0.14);
+  --color-danger: #C23B3B;
+  --color-danger-muted: rgba(194, 59, 59, 0.14);
+  --color-info: var(--color-accent);
+  --color-info-muted: var(--color-accent-muted);
+
+  /* Typography
+   * Display: Big Shoulders Display — tall, condensed, editorial. Wordmark,
+   *   section headlines, major number statements. weight 700–800.
+   * Sans: Inter — everything else (body, UI, labels).
+   * Mono: IBM Plex Mono — technical metadata only. Sparse. */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --text-xs: 0.6875rem;   /* 11px */
+  --text-sm: 0.8125rem;   /* 13px */
+  --text-base: 0.9375rem; /* 15px — body default */
+  --text-md: 1rem;        /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 2rem;       /* 32px */
+  --text-3xl: 2.75rem;    /* 44px */
+  --text-4xl: 3.5rem;     /* 56px */
+  /* Fluid hero display — wordmark scale */
+  --text-hero: clamp(5.5rem, 7vw + 3.5rem, 13rem);
+  /* Fluid sub-hero — section statement scale */
+  --text-section: clamp(2.75rem, 3.5vw + 1.5rem, 6rem);
+
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.28;
+  --leading-normal: 1.55;
+
+  --tracking-tighter: -0.02em;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.16em;
+
+  /* Radius — restrained, architectural. Never pill on hero elements. */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 999px;
+
+  /* Shadow — minimal depth, no glow halos */
+  --shadow-sm: 0 1px 2px rgba(14, 47, 118, 0.08);
+  --shadow-md: 0 4px 12px rgba(14, 47, 118, 0.10);
+  --shadow-popover: 0 4px 20px rgba(14, 47, 118, 0.12), 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  /* Z-index — aliased from tokens.css */
+  --z-index-background: var(--z-background);
+  --z-index-sidebar: var(--z-sidebar);
+  --z-index-header: var(--z-header);
+  --z-index-drawer: var(--z-drawer);
+  --z-index-popover: var(--z-popover);
+  --z-index-toast: var(--z-toast);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Display face: tall, condensed — wordmark and headline moments only. */
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+  }
+
+  /* Vertical clip mask for the premium line-reveal animation. */
+  .clip-reveal {
+    overflow: hidden;
+  }
+
+  /* Single shared focus treatment */
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background-color: rgba(169, 192, 224, 0.45);
+    color: var(--color-primary);
+  }
+}
+
+/* ---- Landing-specific keyframes ---- */
+
+@keyframes signal-travel {
+  0%, 100% { opacity: 0.9; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes field-breathe {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(5px); }
+}
+
+@keyframes status-ping {
+  0%   { transform: scale(1); opacity: 0.7; }
+  70%  { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
