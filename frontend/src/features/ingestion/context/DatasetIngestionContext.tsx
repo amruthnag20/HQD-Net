@@ -79,7 +79,10 @@ export function DatasetIngestionProvider({ children }: { children: ReactNode }) 
     return buildDatasetState({ file: loaded.file, parsed: loaded.parsed, targetColumn })
   }, [loaded, targetColumn])
 
-  const canContinue = dataset !== null && dataset.validationStatus !== 'invalid' && dataset.targetColumn !== null
+  // Target selection is optional for this milestone — it belongs to a future
+  // supervised-training stage, not to ingestion/preprocessing. A dataset is
+  // ready to continue once it's structurally valid, target or no target.
+  const canContinue = dataset !== null && dataset.validationStatus !== 'invalid'
 
   const value: DatasetIngestionContextValue = useMemo(() => ({
     stage,

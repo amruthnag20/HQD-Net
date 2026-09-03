@@ -2,7 +2,14 @@ import { Link } from 'react-router-dom'
 import { Check, Lock } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
 
-export type DiagnosticStageId = 'data' | 'preprocessing' | 'quantum' | 'predict' | 'explain' | 'benchmark'
+export type DiagnosticStageId =
+  | 'data'
+  | 'preprocessing'
+  | 'quantum'
+  | 'predict'
+  | 'explain'
+  | 'clinical'
+  | 'report'
 
 export type DiagnosticWorkflowNavProps = {
   currentStage: DiagnosticStageId
@@ -13,20 +20,26 @@ export type DiagnosticWorkflowNavProps = {
 
 type StageDef = {
   id: DiagnosticStageId
-  num: string
   label: string
   to?: string
 }
 
 const STAGES: StageDef[] = [
-  { id: 'data', num: '01', label: 'DATA', to: '/app/data' },
-  { id: 'preprocessing', num: '02', label: 'PREPROCESS', to: '/app/preprocessing' },
-  { id: 'quantum', num: '03', label: 'QUANTUM' },
-  { id: 'predict', num: '04', label: 'PREDICT' },
-  { id: 'explain', num: '05', label: 'EXPLAIN' },
-  { id: 'benchmark', num: '06', label: 'BENCHMARK' },
+  { id: 'data', label: 'Data', to: '/app/data' },
+  { id: 'preprocessing', label: 'Preprocess', to: '/app/preprocessing' },
+  { id: 'quantum', label: 'Model Analysis', to: '/app/model-ready' },
+  { id: 'predict', label: 'Comparison', to: '/app/comparison' },
+  { id: 'explain', label: 'Explain', to: '/app/explainability' },
+  { id: 'clinical', label: 'Clinical', to: '/app/clinical-interpretation' },
+  { id: 'report', label: 'Report', to: '/app/report' },
 ]
 
+/**
+ * Slim horizontal progress stepper shared by every workflow page. Deliberately
+ * calm — a thin connecting rail with small nodes, not a grid of bordered boxes.
+ * Same step logic as before: completed steps and the immediate next step (when
+ * unlocked) are clickable; everything else is inert.
+ */
 export function DiagnosticWorkflowNav({
   currentStage,
   datasetLoaded = false,
@@ -37,79 +50,79 @@ export function DiagnosticWorkflowNav({
 
   return (
     <nav
-      aria-label="Diagnostic Workflow Progress"
-      className={cn('w-full max-w-[860px] mx-auto my-4', className)}
+      aria-label="Diagnostic workflow progress"
+      className={cn('w-full max-w-[960px] mx-auto mb-8 mt-2 overflow-x-auto', className)}
     >
-      <ol className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+      <ol className="flex min-w-[560px] items-start px-1">
         {STAGES.map((stage, idx) => {
           const isActive = stage.id === currentStage
           const isCompleted = idx < currentIdx || (stage.id === 'data' && datasetLoaded && currentStage !== 'data')
-          const isNext = idx === currentIdx + 1 && (stage.id === 'preprocessing' ? canContinue : false)
+          const isNext = idx === currentIdx + 1 && canContinue
           const isLocked = !isActive && !isCompleted && !isNext
+          const isLast = idx === STAGES.length - 1
+          const clickable = (isCompleted || isNext) && stage.to
 
-          const content = (
+          const node = (
             <div
               className={cn(
-                'group flex flex-col items-center justify-center rounded border p-2 text-center transition-all duration-150 relative min-h-[58px]',
-                isActive && 'border-accent bg-accent/10 text-accent font-medium shadow-xs',
-                isCompleted && 'border-line-strong bg-surface text-primary hover:border-accent hover:bg-surface-raised cursor-pointer',
-                isNext && 'border-dashed border-accent/40 bg-surface/60 text-secondary hover:border-accent hover:text-primary cursor-pointer',
-                isLocked && 'border-line/40 bg-surface/30 text-muted/60 cursor-not-allowed select-none',
+                'flex size-7 shrink-0 items-center justify-center rounded-full border text-xs font-medium transition-colors',
+                isActive && 'border-accent bg-accent text-accent-fg shadow-sm',
+                isCompleted && 'border-accent/30 bg-accent-muted text-accent',
+                isNext && 'border-line-strong bg-surface text-secondary group-hover:border-accent group-hover:text-accent',
+                isLocked && 'border-line-subtle bg-surface text-disabled',
               )}
             >
-              <div className="flex items-center gap-1 font-mono text-[10px] tracking-wider mb-0.5">
-                {isCompleted ? (
-                  <Check className="size-3 text-success stroke-[2.5]" />
-                ) : isLocked ? (
-                  <Lock className="size-2.5 opacity-60" />
-                ) : (
-                  <span>{stage.num}</span>
-                )}
-                <span className={cn('text-[9px] uppercase tracking-widest', isActive && 'text-accent font-semibold')}>
-                  {stage.label}
-                </span>
-              </div>
-
-              <div className="font-mono text-[9px] uppercase tracking-tight">
-                {isActive ? (
-                  <span className="flex items-center gap-1 text-accent font-medium">
-                    <span className="size-1.5 rounded-full bg-accent animate-pulse" />
-                    ACTIVE
-                  </span>
-                ) : isCompleted ? (
-                  <span className="text-success text-[8.5px]">COMPLETED</span>
-                ) : isNext ? (
-                  <span className="text-secondary text-[8.5px]">READY</span>
-                ) : (
-                  <span className="text-muted/60 text-[8.5px]">LOCKED</span>
-                )}
-              </div>
+              {isCompleted ? (
+                <Check className="size-3.5 stroke-[2.5]" />
+              ) : isLocked ? (
+                <Lock className="size-3" />
+              ) : (
+                <span>{idx + 1}</span>
+              )}
             </div>
           )
 
-          if (isCompleted && stage.to) {
-            return (
-              <li key={stage.id} className="min-w-0">
-                <Link to={stage.to} className="focus-ring block rounded outline-none" title={`Return to ${stage.label}`}>
-                  {content}
-                </Link>
-              </li>
-            )
-          }
-
-          if (isNext && stage.to && canContinue) {
-            return (
-              <li key={stage.id} className="min-w-0">
-                <Link to={stage.to} className="focus-ring block rounded outline-none" title={`Proceed to ${stage.label}`}>
-                  {content}
-                </Link>
-              </li>
-            )
-          }
+          const label = (
+            <span
+              className={cn(
+                'mt-2 block text-center text-[11px] font-medium leading-tight',
+                isActive && 'text-primary',
+                isCompleted && 'text-secondary',
+                isNext && 'text-secondary group-hover:text-primary',
+                isLocked && 'text-disabled',
+              )}
+            >
+              {stage.label}
+            </span>
+          )
 
           return (
-            <li key={stage.id} className="min-w-0">
-              {content}
+            <li key={stage.id} className={cn('flex flex-1 flex-col items-center', !isLast && 'relative')}>
+              {!isLast && (
+                <div
+                  aria-hidden="true"
+                  className={cn(
+                    'absolute left-1/2 top-3.5 h-px w-full',
+                    isCompleted ? 'bg-accent/30' : 'bg-line-subtle',
+                  )}
+                />
+              )}
+              {clickable ? (
+                <Link
+                  to={stage.to!}
+                  className="focus-ring group relative z-10 flex flex-col items-center rounded outline-none"
+                  title={isCompleted ? `Return to ${stage.label}` : `Proceed to ${stage.label}`}
+                  aria-current={isActive ? 'step' : undefined}
+                >
+                  {node}
+                  {label}
+                </Link>
+              ) : (
+                <div className="relative z-10 flex flex-col items-center" aria-current={isActive ? 'step' : undefined}>
+                  {node}
+                  {label}
+                </div>
+              )}
             </li>
           )
         })}

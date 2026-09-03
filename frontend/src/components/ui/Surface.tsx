@@ -18,8 +18,8 @@ const elevationClass: Record<Elevation, string> = {
 const radiusClass: Record<NonNullable<SurfaceProps['radius']>, string> = {
   none: 'rounded-none',
   sm: 'rounded-sm',
-  md: 'rounded-md',
-  lg: 'rounded-lg',
+  md: 'rounded-lg',
+  lg: 'rounded-2xl',
 }
 
 /** Base elevated background block. Panel, Popover, and Drawer compose this. */
@@ -35,7 +35,7 @@ export function Surface({
       className={cn(
         elevationClass[elevation],
         radiusClass[radius],
-        bordered && 'border border-line',
+        bordered && 'border border-line-subtle shadow-sm',
         className,
       )}
       {...props}

@@ -40,9 +40,9 @@ export function DatasetDropzone({ stage, errorMessage, onUpload, onLoadSample, o
 
   if (stage === 'loading') {
     return (
-      <div className="w-full flex flex-col items-center justify-center gap-3 rounded-md border border-line bg-surface p-12 text-center">
+      <div className="w-full flex flex-col items-center justify-center gap-3 rounded-2xl border border-line-subtle bg-surface p-14 text-center">
         <Loader2 className="size-6 animate-spin text-accent" />
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">Parsing dataset</p>
+        <p className="text-sm font-medium text-primary">Parsing dataset</p>
         <p className="text-xs text-secondary">Analyzing structure…</p>
       </div>
     )
@@ -50,9 +50,9 @@ export function DatasetDropzone({ stage, errorMessage, onUpload, onLoadSample, o
 
   if (stage === 'error') {
     return (
-      <div className="w-full flex flex-col items-center justify-center gap-3 rounded-md border border-danger/30 bg-danger-muted p-12 text-center">
+      <div className="w-full flex flex-col items-center justify-center gap-3 rounded-2xl border border-danger/30 bg-danger-muted p-14 text-center">
         <FileWarning className="size-6 text-danger" />
-        <p className="font-mono text-xs uppercase tracking-widest text-danger">Dataset could not be loaded</p>
+        <p className="text-sm font-medium text-danger">Dataset could not be loaded</p>
         <p className="max-w-md text-xs text-secondary">{errorMessage}</p>
         <Button variant="secondary" size="sm" className="mt-2" onClick={onRetry}>
           Try again
@@ -69,16 +69,16 @@ export function DatasetDropzone({ stage, errorMessage, onUpload, onLoadSample, o
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        className={`w-full rounded-md border-2 border-dashed p-10 md:p-14 flex flex-col items-center justify-center text-center transition-colors duration-150 ${
+        className={`w-full rounded-2xl border-2 border-dashed p-12 md:p-16 flex flex-col items-center justify-center text-center transition-colors duration-150 ${
           isDragging ? 'border-accent bg-accent-muted' : 'border-line bg-surface hover:border-line-strong'
         }`}
       >
         <Upload className={`size-6 mb-3 ${isDragging ? 'text-accent' : 'text-muted'}`} strokeWidth={1.5} />
-        <p className="text-sm font-mono uppercase tracking-widest text-primary mb-1.5">
+        <p className="text-base font-medium text-primary mb-1.5">
           {isDragging ? 'Release to load dataset' : 'No dataset loaded'}
         </p>
         {!isDragging && (
-          <p className="text-xs text-secondary mb-6 max-w-sm">
+          <p className="text-sm text-secondary mb-6 max-w-sm">
             Upload a biomedical CSV dataset to begin ingestion.
           </p>
         )}
@@ -92,7 +92,7 @@ export function DatasetDropzone({ stage, errorMessage, onUpload, onLoadSample, o
       <button
         type="button"
         onClick={onLoadSample}
-        className="focus-ring rounded-sm border border-line-subtle px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-muted transition-colors hover:border-line-strong hover:bg-surface-subtle hover:text-primary"
+        className="focus-ring rounded-full border border-line-subtle px-3.5 py-1.5 text-xs font-medium text-muted transition-colors hover:border-line-strong hover:bg-surface-subtle hover:text-primary"
       >
         Load sample dataset
       </button>

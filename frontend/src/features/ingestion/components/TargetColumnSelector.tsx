@@ -30,18 +30,27 @@ const TARGET_TYPE_LABEL: Record<NonNullable<DatasetState['targetType']>, string>
 /** A custom, HQD-Net-styled listbox — deliberately not a native <select>, so
  *  each option can show its detected role (suggested / numeric / categorical
  *  / identifier / empty / constant) as inline badges, per the target column
- *  reference in the ingestion spec. */
+ *  reference in the ingestion spec.
+ *
+ *  Target selection is optional at this milestone: it belongs to a future
+ *  supervised-training stage, not to ingestion or preprocessing, so nothing
+ *  here blocks continuing without one — this is purely a preview of the
+ *  detection the eventual training step will reuse. */
 export function TargetColumnSelector({ dataset, onSelect }: Props) {
   const [isOpen, setIsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const handlePick = (name: string) => {
+  const handlePick = (name: string | null) => {
     onSelect(name)
     setIsOpen(false)
   }
 
   return (
-    <Panel eyebrow="Target variable" title="Prediction target">
+    <Panel eyebrow="Target variable (optional)" title="Prediction target">
+      <p className="mb-3 text-xs text-secondary leading-relaxed">
+        Not required to continue — this is only used later, for supervised classical/quantum
+        model training. Identifier columns are never suggested as a target.
+      </p>
       <div ref={containerRef} className="relative">
         <span id="target-column-label" className="mb-1.5 block text-sm font-medium text-secondary">
           Target column
@@ -63,13 +72,25 @@ export function TargetColumnSelector({ dataset, onSelect }: Props) {
               {dataset.targetColumn === dataset.suggestedTargetColumn && <Badge tone="info">SUGGESTED</Badge>}
             </span>
           ) : (
-            <span className="text-muted">Select a column…</span>
+            <span className="text-muted">None selected (optional)</span>
           )}
           <ChevronDown className={cn('size-4 text-muted transition-transform', isOpen && 'rotate-180')} aria-hidden="true" />
         </button>
 
         <Popover isOpen={isOpen} onClose={() => setIsOpen(false)} containerRef={containerRef} align="start" width={340} ariaLabel="Select target column">
           <ul role="listbox" aria-label="Target column" className="flex max-h-72 flex-col gap-0.5 overflow-y-auto">
+            <li role="option" aria-selected={dataset.targetColumn === null}>
+              <button
+                type="button"
+                onClick={() => handlePick(null)}
+                className={cn(
+                  'flex w-full items-center justify-between gap-3 rounded-md px-2.5 py-2 text-left transition-colors duration-100',
+                  dataset.targetColumn === null ? 'bg-accent-muted' : 'hover:bg-surface-subtle',
+                )}
+              >
+                <span className="font-mono text-sm text-muted italic">None (skip for now)</span>
+              </button>
+            </li>
             {dataset.columns.map((column) => {
               const isSuggested = column.name === dataset.suggestedTargetColumn
               const isSelected = column.name === dataset.targetColumn
@@ -102,12 +123,12 @@ export function TargetColumnSelector({ dataset, onSelect }: Props) {
       {dataset.targetColumn && dataset.targetType && (
         <div className="mt-4 flex flex-col gap-2">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Detected type</span>
+            <span className="text-xs text-muted">Detected type</span>
             <Badge tone="info">{TARGET_TYPE_LABEL[dataset.targetType]}</Badge>
           </div>
           {dataset.targetClasses && dataset.targetClasses.length > 0 && (
             <div className="flex flex-wrap items-center gap-1.5">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Classes</span>
+              <span className="text-xs text-muted">Classes</span>
               {dataset.targetClasses.map((cls) => (
                 <Badge key={cls} tone="neutral">
                   {cls}

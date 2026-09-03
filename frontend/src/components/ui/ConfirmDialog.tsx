@@ -31,7 +31,7 @@ export function ConfirmDialog({
           type="button"
           onClick={onClose}
           disabled={loading}
-          className="focus-ring px-4 py-2 border border-line font-mono text-xs text-secondary hover:text-primary hover:border-line-strong transition-colors uppercase tracking-wider disabled:opacity-50"
+          className="focus-ring rounded-lg px-4 py-2 border border-line text-sm font-medium text-secondary hover:text-primary hover:border-line-strong transition-colors disabled:opacity-50"
         >
           {cancelLabel}
         </button>
@@ -43,7 +43,7 @@ export function ConfirmDialog({
             onConfirm()
             onClose()
           }}
-          className={tone === 'danger' ? 'bg-danger text-canvas hover:bg-danger/90 font-mono text-xs tracking-wider uppercase' : 'font-mono text-xs tracking-wider uppercase'}
+          className={tone === 'danger' ? 'bg-danger text-canvas hover:bg-danger/90' : undefined}
         >
           {confirmLabel}
         </Button>

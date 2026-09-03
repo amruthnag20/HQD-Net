@@ -25,7 +25,7 @@ export function SettingsNavigator({ activeSection, onSelect }: Props) {
       </div>
 
       {/* Desktop Sidebar */}
-      <nav className="hidden lg:flex flex-col w-full border-r border-line-subtle pr-4 h-full min-h-[400px]">
+      <nav className="hidden lg:flex flex-col w-full border-r border-line-subtle pr-4 min-h-[400px]">
         {SETTINGS_SECTIONS.map((section) => {
           const isActive = activeSection === section.id
           return (

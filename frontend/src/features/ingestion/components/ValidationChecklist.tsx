@@ -19,7 +19,7 @@ const ICON_BY_SEVERITY: Record<ValidationCheck['severity'], React.ReactNode> = {
 
 const STATUS_COPY: Record<ValidationStatus, string> = {
   invalid: 'Not ready — resolve the errors above.',
-  'valid-with-warnings': 'Dataset valid with warnings — ready when you are.',
+  'valid-with-warnings': 'Dataset ready — a few columns will be handled automatically during preprocessing.',
   valid: 'Dataset ready for preprocessing.',
 }
 
@@ -36,13 +36,7 @@ export function ValidationChecklist({ checks, status, canContinue, onContinue, o
       </ul>
 
       <div className="mt-6 flex items-center justify-between gap-4 border-t border-line-subtle pt-4">
-        <p
-          className={
-            status === 'invalid'
-              ? 'font-mono text-xs uppercase tracking-widest text-danger'
-              : 'font-mono text-xs uppercase tracking-widest text-secondary'
-          }
-        >
+        <p className={status === 'invalid' ? 'text-sm font-medium text-danger' : 'text-sm font-medium text-secondary'}>
           {STATUS_COPY[status]}
         </p>
         <div className="flex items-center gap-2">

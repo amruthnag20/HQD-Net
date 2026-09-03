@@ -15,7 +15,7 @@ export function AnalysisDetail({ record, onClose }: Props) {
   const isFailed = record.status === 'FAILED'
 
   return (
-    <div className="w-full flex flex-col h-full relative">
+    <div className="w-full flex flex-col relative">
       {/* Mobile Back Button */}
       <button 
         onClick={onClose}

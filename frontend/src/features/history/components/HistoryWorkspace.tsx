@@ -80,7 +80,7 @@ export function HistoryWorkspace() {
   }
 
   return (
-    <div className="w-full flex flex-col min-h-[calc(100vh-100px)]">
+    <div className="w-full flex flex-col">
       
       {/* Header */}
       <div className="flex flex-col gap-2 mb-8">
@@ -99,7 +99,7 @@ export function HistoryWorkspace() {
       {mockHistoryData.length === 0 ? (
         <HistoryEmptyState type="no-history" />
       ) : (
-        <div className="flex flex-col xl:flex-row gap-12 relative w-full h-full pb-24">
+        <div className="flex flex-col xl:flex-row gap-12 relative w-full pb-24">
           
           {/* Left Column (List & Trend) */}
           <div className={`flex flex-col transition-all duration-300 w-full ${selectedId ? 'xl:w-[40%]' : 'xl:w-full'}`}>

@@ -20,7 +20,7 @@ export function IngestionWorkspace() {
   const [showResetConfirm, setShowResetConfirm] = useState(false)
 
   const handleContinue = () => {
-    if (!dataset || !dataset.targetColumn) return
+    if (!dataset) return
     navigate('/app/preprocessing')
   }
 
@@ -42,7 +42,7 @@ export function IngestionWorkspace() {
       <div className="w-full max-w-[860px] flex items-center justify-between mb-4 mt-2">
         <Link
           to="/app/home"
-          className="focus-ring inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-wider text-muted hover:text-primary transition-colors"
+          className="focus-ring inline-flex items-center gap-1 text-xs font-medium text-muted hover:text-primary transition-colors"
         >
           <ChevronLeft className="size-3.5" />
           Back to Workspace Home
@@ -52,24 +52,22 @@ export function IngestionWorkspace() {
           <button
             type="button"
             onClick={() => setShowResetConfirm(true)}
-            className="focus-ring inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-muted hover:text-danger transition-colors"
+            className="focus-ring inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-danger transition-colors"
           >
             <RotateCcw className="size-3" />
-            Reset Analysis
+            Reset analysis
           </button>
         )}
       </div>
 
-      <div className="mb-6 text-center md:mb-10">
-        <div className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted">
-          Stage 01 / Data Ingestion Foundation
-        </div>
-        <h1 className="font-display text-4xl tracking-wider text-primary lg:text-5xl">
-          {stage === 'ready' ? 'INSPECT & VALIDATE DATASET' : 'PROVIDE CLINICAL DATA'}
+      <div className="mb-8 w-full max-w-[860px]">
+        <h1 className="font-display text-3xl text-primary">
+          {stage === 'ready' ? 'Inspect & validate dataset' : 'Provide clinical data'}
         </h1>
-        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-secondary">
-          Upload a biomedical CSV dataset, confirm its structure, and select a
-          target variable before handing it to classical preprocessing.
+        <p className="mt-1.5 max-w-lg text-sm text-secondary">
+          Upload a biomedical CSV dataset and confirm its structure before handing it to classical
+          preprocessing. Selecting a target column is optional here — it's only needed later, for
+          supervised model training.
         </p>
       </div>
 
@@ -105,10 +103,10 @@ export function IngestionWorkspace() {
         isOpen={showResetConfirm}
         onClose={() => setShowResetConfirm(false)}
         onConfirm={handleConfirmReset}
-        title="START NEW ANALYSIS?"
+        title="Start new analysis?"
         description={`This will clear the current dataset (${dataset?.datasetName || 'uploaded data'}) and reset to the upload dropzone. Records in History remain intact.`}
-        confirmLabel="CLEAR & START NEW"
-        cancelLabel="CANCEL"
+        confirmLabel="Clear & start new"
+        cancelLabel="Cancel"
         tone="danger"
       />
     </div>

@@ -14,7 +14,7 @@ export function SettingsSection({ title, description, children }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.25 }}
-      className="w-full flex flex-col h-full"
+      className="w-full flex flex-col"
     >
       <div className="mb-10 pb-6 border-b border-line">
         <h2 className="font-display text-4xl text-primary tracking-wide uppercase">{title}</h2>
@@ -25,7 +25,7 @@ export function SettingsSection({ title, description, children }: Props) {
         )}
       </div>
       
-      <div className="flex-1 flex flex-col gap-12 pb-24">
+      <div className="flex flex-col gap-12 pb-24">
         {children}
       </div>
     </motion.div>

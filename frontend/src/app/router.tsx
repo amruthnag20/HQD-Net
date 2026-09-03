@@ -11,6 +11,11 @@ import { History } from '@/pages/History'
 import { Settings } from '@/pages/Settings'
 import { DataIngestion } from '@/pages/DataIngestion'
 import { Preprocessing } from '@/pages/Preprocessing'
+import { ModelAnalysis } from '@/pages/ModelAnalysis'
+import { ModelComparison } from '@/pages/ModelComparison'
+import ExplainabilityPage from '@/pages/Explainability'
+import ClinicalInterpretationPage from '@/pages/ClinicalInterpretation'
+import PatientReportPage from '@/pages/PatientReport'
 
 export const router = createBrowserRouter([
   {
@@ -42,8 +47,14 @@ export const router = createBrowserRouter([
           { path: 'home', element: <Home /> },
           { path: 'data', element: <DataIngestion /> },
           { path: 'preprocessing', element: <Preprocessing /> },
+          { path: 'model-ready', element: <ModelAnalysis /> },
+          { path: 'comparison', element: <ModelComparison /> },
+          { path: 'explainability', element: <ExplainabilityPage /> },
+          { path: 'clinical-interpretation', element: <ClinicalInterpretationPage /> },
+          { path: 'report', element: <PatientReportPage /> },
           { path: 'history', element: <History /> },
           { path: 'settings', element: <Settings /> },
+          { path: '*', element: <Navigate to="home" replace /> },
         ],
       },
     ],

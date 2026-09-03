@@ -95,7 +95,7 @@ export function Dialog({
             exit="exit"
             variants={prefersReducedMotion ? undefined : dialogVariants}
             className={cn(
-              'relative z-10 w-full border border-line bg-surface-raised p-6 shadow-popover rounded-lg',
+              'relative z-10 w-full border border-line-subtle bg-surface-raised p-6 shadow-popover rounded-2xl',
               maxWidth,
             )}
           >
@@ -112,7 +112,7 @@ export function Dialog({
 
             {title && (
               <div className="mb-4">
-                <h3 className="font-display text-2xl text-primary uppercase tracking-wide">
+                <h3 className="text-lg font-semibold text-primary">
                   {title}
                 </h3>
                 {description && (

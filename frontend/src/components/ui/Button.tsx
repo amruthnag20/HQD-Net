@@ -24,9 +24,9 @@ const variantClass: Record<Variant, string> = {
 }
 
 const sizeClass: Record<Size, string> = {
-  sm: 'h-8 px-3 text-xs gap-1.5 font-mono uppercase tracking-wider',
-  md: 'h-10 px-4 text-xs gap-2 font-mono uppercase tracking-wider',
-  lg: 'h-12 px-6 text-sm gap-2.5 font-mono uppercase tracking-widest',
+  sm: 'h-8 px-3 text-xs gap-1.5 font-medium',
+  md: 'h-10 px-4 text-sm gap-2 font-medium',
+  lg: 'h-12 px-6 text-sm gap-2.5 font-medium',
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
@@ -50,7 +50,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       disabled={disabled || loading}
       aria-busy={loading || undefined}
       className={cn(
-        'focus-ring group inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-all duration-150 ease-out',
+        'focus-ring group inline-flex items-center justify-center whitespace-nowrap rounded-lg font-medium transition-all duration-150 ease-out',
         'active:scale-[0.985] disabled:active:scale-100 disabled:cursor-not-allowed disabled:opacity-40',
         variantClass[variant],
         sizeClass[size],

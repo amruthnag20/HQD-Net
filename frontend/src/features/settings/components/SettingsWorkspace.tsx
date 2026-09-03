@@ -137,7 +137,7 @@ export function SettingsWorkspace() {
   }, [savedSettings, draftSettings])
 
   return (
-    <div className="w-full flex flex-col min-h-[calc(100vh-100px)] relative">
+    <div className="w-full flex flex-col relative">
       
       {/* Save Notification Toast */}
       <AnimatePresence>
@@ -193,7 +193,7 @@ export function SettingsWorkspace() {
         {/* Content Area */}
         <div className="flex-1 min-w-0 max-w-3xl relative">
           <AnimatePresence mode="wait">
-            <div key={activeSection} className="w-full h-full">
+            <div key={activeSection} className="w-full">
               {renderSection()}
             </div>
           </AnimatePresence>

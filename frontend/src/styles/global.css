@@ -251,3 +251,58 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Phase 7 — Patient Report print styles.
+ * When printing, remove app chrome and interactive/dev controls, and let the
+ * report document flow across pages as a clean, professional printout.
+ * ------------------------------------------------------------------------- */
+@media print {
+  /* Hide app chrome, dev inspectors, and anything explicitly print-hidden. */
+  aside,
+  header,
+  [data-dev-only],
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  /* Release the fixed-height / clipped scroll containers so content flows. */
+  html,
+  body,
+  [data-app-root],
+  #main-scroll-container {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+  [data-app-root] {
+    display: block !important;
+  }
+
+  @page {
+    margin: 15mm;
+  }
+
+  .report-print-root {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Force the dashboard card grid to a single column for print, regardless of
+   * how the browser evaluates the screen breakpoints at print time — cards
+   * read top-to-bottom like a document instead of getting sliced sideways
+   * across page breaks. */
+  .report-print-root .grid {
+    display: block !important;
+  }
+  .report-print-root .grid > * {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Keep each report section intact across page breaks where possible. */
+  .report-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

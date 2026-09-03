@@ -2,7 +2,7 @@ import { SettingsWorkspace } from '@/features/settings/components/SettingsWorksp
 
 export function Settings() {
   return (
-    <div className="flex flex-col min-h-[calc(100vh-var(--header-height))] relative">
+    <div className="w-full flex flex-col relative">
       <SettingsWorkspace />
     </div>
   )

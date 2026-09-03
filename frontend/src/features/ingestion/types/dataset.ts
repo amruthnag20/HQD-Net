@@ -54,6 +54,9 @@ export type DatasetState = {
   datasetName: string
   rowCount: number
   columnCount: number
+  /** Every parsed data row, uncapped — unlike `preview.rows`, which is
+   *  truncated for rendering. Phase 2 preprocessing computes over this. */
+  rows: string[][]
   columns: ColumnProfile[]
   numericColumns: string[]
   categoricalColumns: string[]

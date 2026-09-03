@@ -26,7 +26,7 @@ export function DatasetPreviewTable({ preview, columns }: Props) {
 
   return (
     <Panel eyebrow="Preview" title="First rows">
-      <div className="overflow-x-auto rounded-sm border border-line-subtle">
+      <div className="overflow-x-auto rounded-xl border border-line-subtle">
         <table className="w-full border-collapse text-left">
           <thead>
             <tr className="border-b border-line bg-surface-subtle">
@@ -62,7 +62,7 @@ export function DatasetPreviewTable({ preview, columns }: Props) {
       </div>
 
       <div className="mt-3 flex items-center justify-between">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
+        <p className="text-xs text-muted">
           Rows {preview.rows.length === 0 ? 0 : start + 1}–{Math.min(start + PAGE_SIZE, preview.rows.length)} of{' '}
           {preview.rows.length.toLocaleString()}
           {preview.truncated ? ' (preview capped)' : ''}
