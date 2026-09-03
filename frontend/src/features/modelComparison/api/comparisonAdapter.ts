@@ -52,7 +52,18 @@ export async function fetchBackendModelComparison(
     const mc = payload.model_comparison
     if (!mc || !mc.classical || !mc.quantum) return null
 
-    // Pass through directly – the backend has already shaped this to match the TS type.
+    // Ensure required fields that the backend may omit
+    if (!mc.generatedAt) {
+      mc.generatedAt = new Date().toISOString()
+    }
+    // Normalize foldCount: backend sends null, TS type expects number|undefined
+    if (mc.classical?.metrics && mc.classical.metrics.foldCount === null) {
+      mc.classical.metrics.foldCount = undefined
+    }
+    if (mc.quantum?.metrics && mc.quantum.metrics.foldCount === null) {
+      mc.quantum.metrics.foldCount = undefined
+    }
+
     return mc as ModelComparisonResult
   } catch {
     return null

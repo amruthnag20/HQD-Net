@@ -67,7 +67,7 @@ export function ModelPerformance({ classical, quantum }: ModelPerformanceProps) 
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <PerformanceColumn
-          title="Classical model (Logistic Regression)"
+          title={`Classical model (${classical?.modelName ?? 'Logistic Regression'})`}
           method={classical?.metrics?.evaluationMethod ?? 'In-browser leave-one-out CV'}
           metrics={classical?.metrics ?? null}
           pendingLabel="Metrics pending"

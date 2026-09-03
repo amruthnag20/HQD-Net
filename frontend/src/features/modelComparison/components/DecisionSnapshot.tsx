@@ -110,7 +110,7 @@ export function DecisionSnapshot({ result }: DecisionSnapshotProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div className="rounded-xl bg-surface-subtle p-4">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs text-muted">Classical ML (Logistic Regression)</span>
+            <span className="text-xs text-muted">Classical ML ({classical?.modelName ?? 'Logistic Regression'})</span>
             <Badge tone="neutral">Classical</Badge>
           </div>
           {classical ? (

@@ -17,7 +17,6 @@ import {
 } from './modelComparison-context'
 import type { ModelComparisonResult } from '../types/modelComparison'
 
-
 export function ModelComparisonProvider({ children }: { children: ReactNode }) {
   const { result: classicalResult } = useClassicalMl()
   const { processed } = usePreprocessing()
@@ -30,9 +29,10 @@ export function ModelComparisonProvider({ children }: { children: ReactNode }) {
   // Backend-generated RF vs VQC comparison (null until backend responds successfully)
   const [backendComparison, setBackendComparison] = useState<ModelComparisonResult | null>(null)
 
-  // Initial check of quantum backend connectivity
+  // Initial check of quantum backend connectivity + fetch backend comparison
   useEffect(() => {
     let cancelled = false
+
     async function init() {
       try {
         await checkQuantumBackend()
@@ -54,14 +54,17 @@ export function ModelComparisonProvider({ children }: { children: ReactNode }) {
         }
       }
     }
+
     void init()
-    return () => {
-      cancelled = true
-    }
+
     // Also attempt to fetch the backend RF vs VQC comparison
     void fetchBackendModelComparison().then((mc) => {
       if (mc && !cancelled) setBackendComparison(mc)
     })
+
+    return () => {
+      cancelled = true
+    }
   }, [selectedRowIndex])
 
   const checkBackendConnection = async () => {

@@ -1,9 +1,10 @@
-import { useCallback, useContext, useMemo, useState, type ReactNode } from 'react'
+import { useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { ExplainabilityContext } from '@/features/explainability/context/explainability-context'
 import { ModelComparisonContext } from '@/features/modelComparison/context/modelComparison-context'
 import { DatasetIngestionContext } from '@/features/ingestion/context/dataset-context'
 import {
   buildLiveClinicalInterpretation,
+  fetchBackendClinicalAnalysis,
   CLINICAL_INTERPRETATION_FIXTURES,
 } from '../api/clinicalInterpretationAdapter'
 import { ClinicalContext, type ClinicalContextValue } from './clinical-context'
@@ -42,12 +43,12 @@ const NOT_STARTED: ClinicalInterpretationResult = {
 /**
  * Assembles the shared clinical interpretation state.
  *
- * In LIVE mode it consumes the real upstream Explainability + Model Comparison
- * results and produces an honest result: model output is shown, but the clinical
- * interpretation layer (narrative, evidence, recommendations, precautions,
- * medication, priority) is reported as unavailable because no validated backend
- * clinical/RAG/LLM endpoint is connected. Selecting a fixture swaps in deterministic,
- * clearly-labelled DEMO content for UI verification.
+ * Priority chain:
+ *  1. Fixture mode → deterministic demo content.
+ *  2. Backend clinical analysis → real RF + VQC + RAG + clinical report from
+ *     POST /api/clinical-analysis (fetched once on mount).
+ *  3. Live fallback → honest but sparse result built from upstream
+ *     Explainability + Comparison contexts (no narrative / evidence).
  */
 export function ClinicalInterpretationProvider({ children }: { children: ReactNode }) {
   const explainabilityCtx = useContext(ExplainabilityContext)
@@ -60,18 +61,55 @@ export function ClinicalInterpretationProvider({ children }: { children: ReactNo
   const [selectedFindingId, setSelectedFindingId] = useState<string | null>(null)
   const [selectedEvidenceId, setSelectedEvidenceId] = useState<string | null>(null)
 
+  // Backend-generated clinical interpretation (null until backend responds)
+  const [backendClinical, setBackendClinical] = useState<ClinicalInterpretationResult | null>(null)
+
+  // Fetch backend clinical analysis on mount
+  useEffect(() => {
+    let cancelled = false
+    setIsLoading(true)
+
+    void fetchBackendClinicalAnalysis().then((result) => {
+      if (!cancelled) {
+        if (result) {
+          setBackendClinical(result)
+        }
+        setIsLoading(false)
+      }
+    }).catch(() => {
+      if (!cancelled) setIsLoading(false)
+    })
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
   const refresh = useCallback(() => {
-    // No backend clinical endpoint exists yet — refresh only clears transient error.
     setIsLoading(true)
     setError(null)
-    setIsLoading(false)
+    void fetchBackendClinicalAnalysis().then((result) => {
+      if (result) {
+        setBackendClinical(result)
+      }
+      setIsLoading(false)
+    }).catch(() => {
+      setIsLoading(false)
+    })
   }, [])
 
   const interpretation = useMemo((): ClinicalInterpretationResult => {
+    // 1. Fixtures always win when explicitly selected
     if (activeFixtureKey !== 'live' && CLINICAL_INTERPRETATION_FIXTURES[activeFixtureKey]) {
       return CLINICAL_INTERPRETATION_FIXTURES[activeFixtureKey]
     }
 
+    // 2. Backend clinical analysis (real RF + VQC + RAG pipeline)
+    if (activeFixtureKey === 'live' && backendClinical !== null) {
+      return backendClinical
+    }
+
+    // 3. Live fallback from upstream contexts
     const explanation = explainabilityCtx?.result ?? null
     if (!explanation) return NOT_STARTED
 
@@ -93,7 +131,7 @@ export function ClinicalInterpretationProvider({ children }: { children: ReactNo
       datasetName,
       model,
     })
-  }, [activeFixtureKey, explainabilityCtx?.result, comparisonCtx?.comparisonResult, datasetCtx?.dataset])
+  }, [activeFixtureKey, backendClinical, explainabilityCtx?.result, comparisonCtx?.comparisonResult, datasetCtx?.dataset])
 
   const value = useMemo(
     (): ClinicalContextValue => ({

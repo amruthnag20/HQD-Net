@@ -1,0 +1,870 @@
+{
+  "status": "success",
+  "sample_id": "PAT_1000",
+  "meta_summary": {
+    "system_name": "HQD-Net OS",
+    "active_modalities": [
+      "TABULAR"
+    ],
+    "llm_mode": "mock",
+    "llm_status": "DEMO / MOCK"
+  },
+  "latent_representation": {
+    "dimensions": 10,
+    "latent_biomarkers_vector": [
+      -0.1364784316701342,
+      2.3721214280562988,
+      0.12156979707113384,
+      0.6243289309037543,
+      -0.5115645808405613,
+      0.5057509868796303,
+      0.11480547820906133,
+      -0.34275811124719796,
+      0.47615782382988464,
+      -0.9837173311662464
+    ]
+  },
+  "prediction": {
+    "quantum": {
+      "verdict": "High Risk - Anomalous Multimodal Signature Detected",
+      "risk_score": 0.5007364153862,
+      "risk_percentage": "50.1%"
+    },
+    "classical": {
+      "svm_risk_score": 0.8221131402285045,
+      "random_forest_risk_score": 0.49060386061668393
+    }
+  },
+  "comparison": {
+    "quantum_lift_over_svm": -32.14
+  },
+  "explainability": [
+    {
+      "biomarker": "Body Mass Index (BMI)",
+      "attribution_weight": 0.24444444444444444,
+      "impact_percentage": "24.44%"
+    },
+    {
+      "biomarker": "Age Marker",
+      "attribution_weight": 0.2311111111111111,
+      "impact_percentage": "23.11%"
+    },
+    {
+      "biomarker": "Arterial Stiffness Index",
+      "attribution_weight": 0.16,
+      "impact_percentage": "16.00%"
+    },
+    {
+      "biomarker": "Creatinine Clearance",
+      "attribution_weight": 0.13777777777777778,
+      "impact_percentage": "13.78%"
+    },
+    {
+      "biomarker": "Cholesterol (LDL)",
+      "attribution_weight": 0.12,
+      "impact_percentage": "12.00%"
+    },
+    {
+      "biomarker": "Fasting Blood Glucose",
+      "attribution_weight": 0.04,
+      "impact_percentage": "4.00%"
+    },
+    {
+      "biomarker": "Genetic Risk Marker",
+      "attribution_weight": 0.04,
+      "impact_percentage": "4.00%"
+    },
+    {
+      "biomarker": "Troponin-T Level",
+      "attribution_weight": 0.013333333333333334,
+      "impact_percentage": "1.33%"
+    },
+    {
+      "biomarker": "Bone Mineral Density",
+      "attribution_weight": 0.008888888888888889,
+      "impact_percentage": "0.89%"
+    },
+    {
+      "biomarker": "Systolic Blood Pressure",
+      "attribution_weight": 0.0044444444444444444,
+      "impact_percentage": "0.44%"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "document_title": "2024 AHA/ACC Clinical Practice Guideline for Primary Prevention of Cardiovascular Disease and Biomarker Interpretation",
+      "source": "NIH National Library of Medicine / PubMed Central",
+      "page": 28,
+      "section": "Systolic Blood Pressure & Vascular Risk Stratification",
+      "publication_year": 2024,
+      "excerpt": "Stage 2 hypertension is defined as a persistent resting systolic blood pressure >= 140 mmHg or diastolic blood pressure >= 90 mmHg. Elevated systolic pressure directly accelerates arterial wall shear stress, left ventricular hypertrophic remodeling, and coronary endothelial dysfunction. Prompt initiation of dual antihypertensive combination therapy is strongly recommended for stage 2 hypertension with high predicted cardiovascular risk.",
+      "relevance_score": 0.601,
+      "reranking_score": 0.3405,
+      "provenance_status": "VERIFIED_PRIMARY",
+      "document_id": "DOC_NIH_PMC_10928341",
+      "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10928341/",
+      "doi": "10.1161/CIR.0000000000001201",
+      "pmid": "38491029",
+      "authors": "Whelton PK, Carey RM, Aronow WS, Casey DE Jr, Collins KJ, et al.",
+      "publisher": "American Heart Association / American College of Cardiology",
+      "license": "CC BY-NC 4.0 Open Access"
+    },
+    {
+      "id": "E2",
+      "document_title": "2025 Clinical Practice Guidelines for Multimodal Cardiovascular Risk Assessment",
+      "source": "American Heart Association / ACC Clinical Guidelines (2025)",
+      "page": 18,
+      "section": "Section 3.4: Systolic and Diastolic Blood Pressure Management",
+      "publication_year": 2025,
+      "excerpt": "Systolic blood pressure exceeding 130 mmHg or diastolic pressure exceeding 80 mmHg defines Stage 1 hypertension. Persistent arterial pressure combined with elevated LDL cholesterol (>130 mg/dL) accelerates atherogenesis and coronary artery stenosis.",
+      "relevance_score": 0.5788,
+      "reranking_score": 0.3214,
+      "provenance_status": "DEMO_SYNTHETIC",
+      "document_id": "DOC_CARDIO_001",
+      "source_url": null,
+      "doi": null,
+      "pmid": null,
+      "authors": null,
+      "publisher": null,
+      "license": null
+    },
+    {
+      "id": "E3",
+      "document_title": "Diagnostic Imaging Standards for Multimodal Cardiac and Thoracic Pathology",
+      "source": "Journal of Thoracic and Volumetric Imaging (2024)",
+      "page": 8,
+      "section": "Section 4.1: 2D Chest X-Ray Radiographic Markers",
+      "publication_year": 2024,
+      "excerpt": "Chest X-Ray radiographs evaluated via dense neural feature extraction (TorchXRayVision DenseNet-121 / MerMED ViT) detect cardiomegaly, pulmonary vascular congestion, and pleural effusions. Radiographic abnormalities combined with high-risk clinical biomarkers confirm advanced cardiopulmonary distress.",
+      "relevance_score": 0.5481,
+      "reranking_score": 0.2863,
+      "provenance_status": "DEMO_SYNTHETIC",
+      "document_id": "DOC_IMAGING_002",
+      "source_url": null,
+      "doi": null,
+      "pmid": null,
+      "authors": null,
+      "publisher": null,
+      "license": null
+    }
+  ],
+  "clinical_report": {
+    "sample_id": "PAT_1000",
+    "diagnostic_summary": "Multimodal diagnostic analysis for sample PAT_1000 yielded a verified quantum model risk score of 0.5007 (50.1%) with verdict: 'High Risk - Anomalous Multimodal Signature Detected'.",
+    "risk_assessment_interpretation": "The 10-qubit VQC model evaluated the multimodal clinical signature, assigning a risk score of 0.5007. For baseline comparison, the classical SVM model calculated a risk score of 0.8221, representing a model risk score difference of -32.14%. Retrieved clinical reference [E1] ('2024 AHA/ACC Clinical Practice Guideline for Primary Prevention of Cardiovascular Disease and Biomarker Interpretation') provides supporting evidence for biomarker assessment.",
+    "primary_biomarker_analysis": [
+      {
+        "biomarker": "Body Mass Index (BMI)",
+        "finding": "Identified as an influential model factor with attribution weight 0.2444 (24.44%). Grounded in medical literature [E1]."
+      },
+      {
+        "biomarker": "Age Marker",
+        "finding": "Identified as an influential model factor with attribution weight 0.2311 (23.11%). Grounded in medical literature [E2]."
+      },
+      {
+        "biomarker": "Arterial Stiffness Index",
+        "finding": "Identified as an influential model factor with attribution weight 0.1600 (16.00%). Grounded in medical literature [E3]."
+      }
+    ],
+    "clinical_recommendations": [
+      "Consider clinical correlation of key biomarkers per guideline recommendations in [E1].",
+      "Schedule follow-up evaluation and standard diagnostic verification."
+    ],
+    "limitations_and_disclaimer": "This report is generated for clinical decision support. Final diagnostic authority remains solely with the attending licensed medical practitioner."
+  },
+  "diagnostic_prediction": {
+    "disease_risk_score": 0.5007364153862,
+    "risk_percentage": "50.1%",
+    "verdict": "High Risk - Anomalous Multimodal Signature Detected"
+  },
+  "benchmarking_comparison": {
+    "quantum_risk_score": 0.5007364153862,
+    "classical_svm_risk": 0.8221131402285045,
+    "classical_rf_risk": 0.49060386061668393,
+    "quantum_lift_over_svm": "-32.14%"
+  },
+  "explainability_breakdown": [
+    {
+      "biomarker": "Body Mass Index (BMI)",
+      "attribution_weight": 0.24444444444444444,
+      "impact_percentage": "24.44%"
+    },
+    {
+      "biomarker": "Age Marker",
+      "attribution_weight": 0.2311111111111111,
+      "impact_percentage": "23.11%"
+    },
+    {
+      "biomarker": "Arterial Stiffness Index",
+      "attribution_weight": 0.16,
+      "impact_percentage": "16.00%"
+    },
+    {
+      "biomarker": "Creatinine Clearance",
+      "attribution_weight": 0.13777777777777778,
+      "impact_percentage": "13.78%"
+    },
+    {
+      "biomarker": "Cholesterol (LDL)",
+      "attribution_weight": 0.12,
+      "impact_percentage": "12.00%"
+    },
+    {
+      "biomarker": "Fasting Blood Glucose",
+      "attribution_weight": 0.04,
+      "impact_percentage": "4.00%"
+    },
+    {
+      "biomarker": "Genetic Risk Marker",
+      "attribution_weight": 0.04,
+      "impact_percentage": "4.00%"
+    },
+    {
+      "biomarker": "Troponin-T Level",
+      "attribution_weight": 0.013333333333333334,
+      "impact_percentage": "1.33%"
+    },
+    {
+      "biomarker": "Bone Mineral Density",
+      "attribution_weight": 0.008888888888888889,
+      "impact_percentage": "0.89%"
+    },
+    {
+      "biomarker": "Systolic Blood Pressure",
+      "attribution_weight": 0.0044444444444444444,
+      "impact_percentage": "0.44%"
+    }
+  ],
+  "generative_report": "### \ud83e\ude7a CLINICAL DIAGNOSTIC REPORT\n\n**Diagnostic Summary:** Multimodal diagnostic analysis for sample PAT_1000 yielded a verified quantum model risk score of 0.5007 (50.1%) with verdict: 'High Risk - Anomalous Multimodal Signature Detected'.\n\n**Risk Assessment Interpretation:** The 10-qubit VQC model evaluated the multimodal clinical signature, assigning a risk score of 0.5007. For baseline comparison, the classical SVM model calculated a risk score of 0.8221, representing a model risk score difference of -32.14%. Retrieved clinical reference [E1] ('2024 AHA/ACC Clinical Practice Guideline for Primary Prevention of Cardiovascular Disease and Biomarker Interpretation') provides supporting evidence for biomarker assessment.\n\n**Medical Disclaimer:** This report is generated for clinical decision support. Final diagnostic authority remains solely with the attending licensed medical practitioner.",
+  "telemetry_logs": [
+    "[1/4 Pipeline] Execution finished for sample PAT_1000.",
+    "[2/4 Quantum] Verified 10-qubit VQC risk score = 0.5007.",
+    "[3/4 RAG] Retrieved 3 medical evidence items.",
+    "[4/4 Clinical Report] Evidence-grounded interpretation generated."
+  ],
+  "cpm": {
+    "patient_id": "PAT_1000",
+    "age": 55.0,
+    "sex": "Male",
+    "height": 175.0,
+    "weight": 80.0,
+    "bmi": 26.1,
+    "systolic_bp": 140.0,
+    "diastolic_bp": 90.0,
+    "cholesterol": 2.0,
+    "glucose": 1.0,
+    "smoking": 0,
+    "alcohol": 0,
+    "physical_activity": 1,
+    "symptoms": [],
+    "medical_history": [],
+    "medications": [],
+    "lab_results": {},
+    "imaging_findings": {},
+    "ECG_findings": {},
+    "document_entities": [],
+    "source_provenance": {}
+  },
+  "input_medical_llm": {
+    "execution_status": "NO_FREE_TEXT_INPUT_STANDALONE_TABULAR",
+    "mediphi_available_on_disk": true,
+    "entities_extracted_count": 0
+  },
+  "candidate_parameter_space": {
+    "total_candidate_count": 12,
+    "parameters": [
+      {
+        "name": "Age",
+        "value": 55.0,
+        "unit": "years",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "demographic"
+      },
+      {
+        "name": "Sex / Gender",
+        "value": "Male",
+        "unit": "category",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "demographic"
+      },
+      {
+        "name": "Height",
+        "value": 175.0,
+        "unit": "cm",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "anthropometric"
+      },
+      {
+        "name": "Weight",
+        "value": 80.0,
+        "unit": "kg",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "anthropometric"
+      },
+      {
+        "name": "Body Mass Index (BMI)",
+        "value": 26.1,
+        "unit": "kg/m^2",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "anthropometric"
+      },
+      {
+        "name": "Systolic Blood Pressure",
+        "value": 140.0,
+        "unit": "mmHg",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "vital_sign"
+      },
+      {
+        "name": "Diastolic Blood Pressure",
+        "value": 90.0,
+        "unit": "mmHg",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "vital_sign"
+      },
+      {
+        "name": "Cholesterol Level",
+        "value": 2.0,
+        "unit": "category",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "lab_result"
+      },
+      {
+        "name": "Fasting Glucose",
+        "value": 1.0,
+        "unit": "category",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "lab_result"
+      },
+      {
+        "name": "Smoking Status",
+        "value": 0,
+        "unit": "binary",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "lifestyle"
+      },
+      {
+        "name": "Alcohol Intake",
+        "value": 0,
+        "unit": "binary",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "lifestyle"
+      },
+      {
+        "name": "Physical Activity",
+        "value": 1,
+        "unit": "binary",
+        "source": "tabular_input",
+        "confidence": 1.0,
+        "availability": true,
+        "clinical_category": "lifestyle"
+      }
+    ]
+  },
+  "parameter_priority_engine": {
+    "ranked_parameters": [
+      {
+        "parameter_name": "Systolic Blood Pressure",
+        "value": 140.0,
+        "unit": "mmHg",
+        "priority_score": 1.0,
+        "rank": 1,
+        "reason": "Category 'vital_sign' weight (0.95) + confidence (1.00) + clinical abnormality boost (+0.15)",
+        "clinical_category": "vital_sign",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Cholesterol Level",
+        "value": 2.0,
+        "unit": "category",
+        "priority_score": 0.97,
+        "rank": 2,
+        "reason": "Category 'lab_result' weight (0.90) + confidence (1.00) + clinical abnormality boost (+0.12)",
+        "clinical_category": "lab_result",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Body Mass Index (BMI)",
+        "value": 26.1,
+        "unit": "kg/m^2",
+        "priority_score": 0.925,
+        "rank": 3,
+        "reason": "Category 'anthropometric' weight (0.85) + confidence (1.00) + clinical abnormality boost (+0.10)",
+        "clinical_category": "anthropometric",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Diastolic Blood Pressure",
+        "value": 90.0,
+        "unit": "mmHg",
+        "priority_score": 0.875,
+        "rank": 4,
+        "reason": "Category 'vital_sign' weight (0.95) + confidence (1.00)",
+        "clinical_category": "vital_sign",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Fasting Glucose",
+        "value": 1.0,
+        "unit": "category",
+        "priority_score": 0.85,
+        "rank": 5,
+        "reason": "Category 'lab_result' weight (0.90) + confidence (1.00)",
+        "clinical_category": "lab_result",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Weight",
+        "value": 80.0,
+        "unit": "kg",
+        "priority_score": 0.825,
+        "rank": 6,
+        "reason": "Category 'anthropometric' weight (0.85) + confidence (1.00)",
+        "clinical_category": "anthropometric",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Height",
+        "value": 175.0,
+        "unit": "cm",
+        "priority_score": 0.825,
+        "rank": 7,
+        "reason": "Category 'anthropometric' weight (0.85) + confidence (1.00)",
+        "clinical_category": "anthropometric",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Sex / Gender",
+        "value": "Male",
+        "unit": "category",
+        "priority_score": 0.775,
+        "rank": 8,
+        "reason": "Category 'demographic' weight (0.75) + confidence (1.00)",
+        "clinical_category": "demographic",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Age",
+        "value": 55.0,
+        "unit": "years",
+        "priority_score": 0.775,
+        "rank": 9,
+        "reason": "Category 'demographic' weight (0.75) + confidence (1.00)",
+        "clinical_category": "demographic",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Smoking Status",
+        "value": 0,
+        "unit": "binary",
+        "priority_score": 0.75,
+        "rank": 10,
+        "reason": "Category 'lifestyle' weight (0.70) + confidence (1.00)",
+        "clinical_category": "lifestyle",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Physical Activity",
+        "value": 1,
+        "unit": "binary",
+        "priority_score": 0.75,
+        "rank": 11,
+        "reason": "Category 'lifestyle' weight (0.70) + confidence (1.00)",
+        "clinical_category": "lifestyle",
+        "source": "tabular_input"
+      },
+      {
+        "parameter_name": "Alcohol Intake",
+        "value": 0,
+        "unit": "binary",
+        "priority_score": 0.75,
+        "rank": 12,
+        "reason": "Category 'lifestyle' weight (0.70) + confidence (1.00)",
+        "clinical_category": "lifestyle",
+        "source": "tabular_input"
+      }
+    ]
+  },
+  "topk_selection": {
+    "configured_top_k": 10,
+    "total_candidate_count": 12,
+    "selected_feature_count": 10,
+    "selected_feature_names": [
+      "Systolic Blood Pressure",
+      "Cholesterol Level",
+      "Body Mass Index (BMI)",
+      "Diastolic Blood Pressure",
+      "Fasting Glucose",
+      "Weight",
+      "Height",
+      "Sex / Gender",
+      "Age",
+      "Smoking Status"
+    ],
+    "top_feature_priority_score": 1.0
+  },
+  "classical_ai_engine": {
+    "primary_model_name": "Random Forest (CVD)",
+    "primary_model_path": "C:\\Users\\jonna\\OneDrive\\Desktop\\hqd-net\\models\\classical\\random_forest\\random_forest_cvd.pkl",
+    "primary_risk_score": 0.8506153965612058,
+    "primary_risk_percentage": "85.1%",
+    "random_forest_cvd": {
+      "executed": true,
+      "model_path": "C:\\Users\\jonna\\OneDrive\\Desktop\\hqd-net\\models\\classical\\random_forest\\random_forest_cvd.pkl",
+      "input_schema": "12-D Named CVD Features (no scaling)",
+      "feature_names": [
+        "age_years",
+        "gender",
+        "height",
+        "weight",
+        "bmi",
+        "ap_hi",
+        "ap_lo",
+        "cholesterol",
+        "gluc",
+        "smoke",
+        "alco",
+        "active"
+      ],
+      "patient_probability": 0.8506153965612058,
+      "patient_classification": "High Risk",
+      "benchmark_held_out": {
+        "accuracy": 0.7324,
+        "precision": 0.7506,
+        "recall": 0.6877,
+        "f1": 0.7177,
+        "roc_auc": 0.801,
+        "note": "Metrics measured on held-out 20% test split of cardio_train.csv. NOT this patient's risk score."
+      },
+      "xai_attributions": [
+        {
+          "feature_name": "ap_hi",
+          "importance": 0.4123598983097111,
+          "impact_percentage": "41.24%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "age_years",
+          "importance": 0.14965680149562574,
+          "impact_percentage": "14.97%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "ap_lo",
+          "importance": 0.1442161900251457,
+          "impact_percentage": "14.42%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "cholesterol",
+          "importance": 0.07915222054006618,
+          "impact_percentage": "7.92%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "bmi",
+          "importance": 0.07544681733206407,
+          "impact_percentage": "7.54%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "weight",
+          "importance": 0.05367926100973763,
+          "impact_percentage": "5.37%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "height",
+          "importance": 0.04184317811841737,
+          "impact_percentage": "4.18%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "gluc",
+          "importance": 0.014892808176545027,
+          "impact_percentage": "1.49%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "active",
+          "importance": 0.009975837622090748,
+          "impact_percentage": "1.00%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "gender",
+          "importance": 0.00689134099403377,
+          "impact_percentage": "0.69%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "smoke",
+          "importance": 0.006570556576094524,
+          "impact_percentage": "0.66%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        },
+        {
+          "feature_name": "alco",
+          "importance": 0.005315089800468235,
+          "impact_percentage": "0.53%",
+          "direction": "positive",
+          "source": "Random Forest (MDI)"
+        }
+      ]
+    },
+    "svm_10d": {
+      "executed": true,
+      "model_path": "C:\\Users\\jonna\\OneDrive\\Desktop\\hqd-net\\classical_preprocessing\\svm_model.pkl",
+      "input_schema": "10-D Unified Latent Vector (PCA-projected)",
+      "patient_probability": 0.822113111267494,
+      "patient_classification": "High Risk"
+    },
+    "comparison_compatible": true,
+    "feature_space_documentation": "Random Forest: 12-D raw physiological features (age_years, gender, height, weight, bmi, ap_hi, ap_lo, cholesterol, gluc, smoke, alco, active). SVM / Quantum VQC: 10-D PCA-projected latent vector. Both models address the same CVD binary classification task on the same dataset."
+  },
+  "dual_model_verification": {
+    "classical_risk_score": 0.8506153965612058,
+    "quantum_risk_score": 0.5007364153862,
+    "absolute_difference": 0.3499,
+    "percentage_difference": "34.99%",
+    "agreement_status": "DISAGREEMENT",
+    "verification_status": "UNVERIFIED_DISAGREEMENT_CLINICIAN_REVIEW_REQUIRED",
+    "disagreement_analysis": "Concordance gap detected: Classical (85.1%) vs Quantum (50.1%) differ by 34.99%. Case requires expert clinician evaluation.",
+    "confidence_level": "MODERATE_PENDING_REVIEW",
+    "feature_space_compatible": true
+  },
+  "classical_xai": [
+    {
+      "feature_name": "ap_hi",
+      "importance": 0.4123598983097111,
+      "impact_percentage": "41.24%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "age_years",
+      "importance": 0.14965680149562574,
+      "impact_percentage": "14.97%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "ap_lo",
+      "importance": 0.1442161900251457,
+      "impact_percentage": "14.42%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "cholesterol",
+      "importance": 0.07915222054006618,
+      "impact_percentage": "7.92%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "bmi",
+      "importance": 0.07544681733206407,
+      "impact_percentage": "7.54%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "weight",
+      "importance": 0.05367926100973763,
+      "impact_percentage": "5.37%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "height",
+      "importance": 0.04184317811841737,
+      "impact_percentage": "4.18%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "gluc",
+      "importance": 0.014892808176545027,
+      "impact_percentage": "1.49%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "active",
+      "importance": 0.009975837622090748,
+      "impact_percentage": "1.00%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "gender",
+      "importance": 0.00689134099403377,
+      "impact_percentage": "0.69%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "smoke",
+      "importance": 0.006570556576094524,
+      "impact_percentage": "0.66%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    },
+    {
+      "feature_name": "alco",
+      "importance": 0.005315089800468235,
+      "impact_percentage": "0.53%",
+      "direction": "positive",
+      "source": "Random Forest (MDI)"
+    }
+  ],
+  "model_comparison": {
+    "status": "compatible",
+    "agreement": "agree",
+    "priority": "low",
+    "patientId": "PAT_1000",
+    "targetColumn": "cardio",
+    "datasetSource": "cardio_train.csv (Cardiovascular Disease Dataset)",
+    "inputCompatibility": {
+      "isCompatible": true,
+      "status": "compatible",
+      "reason": "Both models are trained on the same CVD binary classification task. Random Forest uses 12-D raw clinical features; Quantum VQC uses a 10-D PCA-projected latent vector of the same clinical inputs.",
+      "classicalDomain": "12-D Raw CVD Features (cardio_train.csv)",
+      "quantumDomain": "10-D PCA Latent Vector (cardio_train.csv)",
+      "featureOverlapCount": 12
+    },
+    "classical": {
+      "modelName": "Random Forest (CVD)",
+      "modelType": "random-forest",
+      "executionStatus": "trained",
+      "predictionLabel": "High Risk",
+      "confidencePercent": 85.1,
+      "probabilities": {
+        "Normal": 0.1494,
+        "High Risk": 0.8506
+      },
+      "featureCount": 12,
+      "featureNames": [
+        "age_years",
+        "gender",
+        "height",
+        "weight",
+        "bmi",
+        "ap_hi",
+        "ap_lo",
+        "cholesterol",
+        "gluc",
+        "smoke",
+        "alco",
+        "active"
+      ],
+      "inputDomain": "cardio_train.csv (12-D raw clinical features)",
+      "metrics": {
+        "accuracy": 0.7324,
+        "precision": 0.7506,
+        "recall": 0.6877,
+        "f1": 0.7177,
+        "rocAuc": 0.801,
+        "evaluationMethod": "Held-out 20% test split (80/20 stratified, random_state=42)",
+        "foldCount": null
+      },
+      "computationalMetadata": {
+        "architecture": "Random Forest (100 trees, max_depth=12)",
+        "framework": "scikit-learn (joblib artifact)",
+        "executionEnvironment": "Python FastAPI Backend (:8000)",
+        "numericPrecision": "float64"
+      }
+    },
+    "quantum": {
+      "modelName": "DressedVQC (10-Qubit)",
+      "modelType": "dressed-vqc",
+      "executionStatus": "complete",
+      "predictionLabel": "High Risk",
+      "confidencePercent": 50.1,
+      "probabilities": {
+        "Normal": 0.4993,
+        "High Risk": 0.5007
+      },
+      "featureCount": 10,
+      "featureNames": [
+        "z_00",
+        "z_01",
+        "z_02",
+        "z_03",
+        "z_04",
+        "z_05",
+        "z_06",
+        "z_07",
+        "z_08",
+        "z_09"
+      ],
+      "inputDomain": "10-D PCA Latent Vector (cardio_train.csv)",
+      "metrics": null,
+      "computationalMetadata": {
+        "architecture": "10-Qubit Dressed VQC (AngleEmbedding + 2 StronglyEntanglingLayers + Linear Post-Processing)",
+        "framework": "PennyLane + PyTorch",
+        "executionEnvironment": "Python FastAPI Backend (:8000)",
+        "numericPrecision": "float64",
+        "qubits": 10,
+        "layers": 2,
+        "ansatz": "StronglyEntanglingLayers",
+        "device": "default.qubit"
+      }
+    },
+    "difference": {
+      "predictedClassMatches": true,
+      "normalProbabilityDelta": 0.3499,
+      "probabilityGapPercentagePoints": 34.99,
+      "confidenceDelta": 34.99,
+      "summaryText": "Models agree on 'High Risk' classification (Classical RF: 85.1%, Quantum VQC: 50.1%)."
+    },
+    "benchmark_note": {
+      "classical_benchmark": {
+        "accuracy_pct": "73.24%",
+        "roc_auc": "0.8010",
+        "evaluation_set": "Held-out 20% test split of cardio_train.csv"
+      },
+      "patient_prediction": {
+        "classical_rf_patient_probability": 0.8506153965612058,
+        "quantum_vqc_patient_probability": 0.5007364153862,
+        "note": "Patient probability is generated at runtime for this patient only."
+      }
+    },
+    "isDemoFixture": false
+  }
+}
