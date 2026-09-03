@@ -8,12 +8,15 @@ import {
 } from '@/features/quantumMl/api/quantumApi'
 import {
   buildLiveComparisonResult,
+  fetchBackendModelComparison,
   DETERMINISTIC_FIXTURES,
 } from '../api/comparisonAdapter'
 import {
   ModelComparisonContext,
   type ModelComparisonContextValue,
 } from './modelComparison-context'
+import type { ModelComparisonResult } from '../types/modelComparison'
+
 
 export function ModelComparisonProvider({ children }: { children: ReactNode }) {
   const { result: classicalResult } = useClassicalMl()
@@ -24,6 +27,8 @@ export function ModelComparisonProvider({ children }: { children: ReactNode }) {
   const [quantumNativeResult, setQuantumNativeResult] = useState<NativeQuantumPredictResponse | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isBackendOnline, setIsBackendOnline] = useState<boolean>(false)
+  // Backend-generated RF vs VQC comparison (null until backend responds successfully)
+  const [backendComparison, setBackendComparison] = useState<ModelComparisonResult | null>(null)
 
   // Initial check of quantum backend connectivity
   useEffect(() => {
@@ -53,6 +58,10 @@ export function ModelComparisonProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true
     }
+    // Also attempt to fetch the backend RF vs VQC comparison
+    void fetchBackendModelComparison().then((mc) => {
+      if (mc && !cancelled) setBackendComparison(mc)
+    })
   }, [selectedRowIndex])
 
   const checkBackendConnection = async () => {
@@ -78,16 +87,22 @@ export function ModelComparisonProvider({ children }: { children: ReactNode }) {
   }
 
   const comparisonResult = useMemo(() => {
+    // 1. Demo fixtures take priority when explicitly selected
     if (activeFixtureKey !== 'live' && DETERMINISTIC_FIXTURES[activeFixtureKey]) {
       return DETERMINISTIC_FIXTURES[activeFixtureKey]
     }
+    // 2. Backend RF vs VQC comparison (Random Forest + Quantum VQC, server-generated)
+    if (activeFixtureKey === 'live' && backendComparison !== null) {
+      return backendComparison
+    }
+    // 3. Fallback: in-browser classical model + native VQC response
     return buildLiveComparisonResult(
       classicalResult,
       quantumNativeResult,
       processed,
       selectedRowIndex
     )
-  }, [activeFixtureKey, classicalResult, quantumNativeResult, processed, selectedRowIndex])
+  }, [activeFixtureKey, backendComparison, classicalResult, quantumNativeResult, processed, selectedRowIndex])
 
   const value: ModelComparisonContextValue = useMemo(
     () => ({

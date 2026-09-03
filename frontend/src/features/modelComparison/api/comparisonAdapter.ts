@@ -20,6 +20,47 @@ import type {
 } from '../types/modelComparison'
 
 /**
+ * Fetches a backend-generated Classical vs Quantum model comparison by calling
+ * POST /api/clinical-analysis and extracting the `model_comparison` block.
+ *
+ * The backend computes:
+ *  - Classical: Random Forest CVD (models/classical/random_forest/random_forest_cvd.pkl)
+ *               trained on 12-D raw clinical features. Patient probability is RUNTIME.
+ *  - Quantum:   10-Qubit Dressed VQC (quantum_core/vqc_model_weights.pth)
+ *               trained on 10-D PCA-projected latent vector. Patient probability is RUNTIME.
+ *
+ * Benchmark metrics (RF accuracy=73.24%, ROC-AUC=0.8010) are held-out performance stats
+ * reported inside `classical.metrics`, NOT this patient's risk score.
+ *
+ * Returns null if the backend is unavailable or the response is malformed.
+ */
+export async function fetchBackendModelComparison(
+  tabularFilePath: string = 'clinical_data_synthetic.csv',
+  baseUrl = 'http://localhost:8000'
+): Promise<ModelComparisonResult | null> {
+  try {
+    const res = await fetch(`${baseUrl}/api/clinical-analysis`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ tabular_file_path: tabularFilePath, backend_choice: 'VQC' }),
+    })
+    if (!res.ok) return null
+    const payload = await res.json()
+    if (payload.status !== 'success') return null
+
+    // The backend returns `model_comparison` shaped as ModelComparisonResult.
+    const mc = payload.model_comparison
+    if (!mc || !mc.classical || !mc.quantum) return null
+
+    // Pass through directly – the backend has already shaped this to match the TS type.
+    return mc as ModelComparisonResult
+  } catch {
+    return null
+  }
+}
+
+
+/**
  * Builds live comparison result from real runtime context.
  */
 export function buildLiveComparisonResult(
