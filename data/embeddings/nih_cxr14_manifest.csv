@@ -1,0 +1,652 @@
+image_id,patient_id,labels,split,embedding_dim,source,md5
+00000001_000.png,1,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),34bbe32eac574d4c631cdfe9e4a6fe15
+00000001_001.png,1,Cardiomegaly|Emphysema,train,768,NIH Chest X-ray 14 (Partial),c18ad0b2750487578cf9b0fce23f0a1e
+00000001_002.png,1,Cardiomegaly|Effusion,train,768,NIH Chest X-ray 14 (Partial),0ab809c2828e2a5f88fff47d7e7587e4
+00000002_000.png,2,No Finding,train,768,NIH Chest X-ray 14 (Partial),669c082360cf519ed1ed7427ba52ced6
+00000003_000.png,3,Hernia,train,768,NIH Chest X-ray 14 (Partial),074701897989d76f71f1c9d2bf59e638
+00000003_001.png,3,Hernia,train,768,NIH Chest X-ray 14 (Partial),e11186657ef7d4b8c396c0d32c384062
+00000003_002.png,3,Hernia,train,768,NIH Chest X-ray 14 (Partial),5342afd538b8fb2fab0a546dc8773e64
+00000003_003.png,3,Hernia|Infiltration,train,768,NIH Chest X-ray 14 (Partial),40f8ba052989338cd3dd95bc6e687cea
+00000003_004.png,3,Hernia,train,768,NIH Chest X-ray 14 (Partial),349ccfe4961fd538ecd71f48181b1fa6
+00000003_005.png,3,Hernia,train,768,NIH Chest X-ray 14 (Partial),1ed24b7d3cf84c5938c58650a8b0f43b
+00000003_006.png,3,Hernia,train,768,NIH Chest X-ray 14 (Partial),f2384e8d039a109335cb1cbabed19cab
+00000003_007.png,3,Hernia,train,768,NIH Chest X-ray 14 (Partial),46bfb58668bee020cd3bf91433ba1cd4
+00000005_000.png,5,No Finding,train,768,NIH Chest X-ray 14 (Partial),e54ee3e6e3c6ad9e0362ef513de022b2
+00000005_001.png,5,No Finding,train,768,NIH Chest X-ray 14 (Partial),4b9752e50090cd861736d8bb6d7d6a77
+00000005_002.png,5,No Finding,train,768,NIH Chest X-ray 14 (Partial),d3530815b37325162e14b9d5f5ef7103
+00000005_003.png,5,No Finding,train,768,NIH Chest X-ray 14 (Partial),afcdb50536ea438b799e7eaa75e0adfc
+00000005_004.png,5,No Finding,train,768,NIH Chest X-ray 14 (Partial),bd5270fc3e12f5f34e11dbec5ce38826
+00000005_005.png,5,No Finding,train,768,NIH Chest X-ray 14 (Partial),7da714f2b21b8ccba073c7beb5c18df1
+00000005_006.png,5,Infiltration,train,768,NIH Chest X-ray 14 (Partial),cdf9f40507df6d9438fd8a5db10fb0c0
+00000005_007.png,5,Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),864907a5cbe6126cad82149076727c95
+00000008_000.png,8,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),8a33c6f5b030133081b2fd53dbc610b6
+00000008_001.png,8,No Finding,train,768,NIH Chest X-ray 14 (Partial),200700bbc9a7707845ea6b387d452396
+00000008_002.png,8,Nodule,train,768,NIH Chest X-ray 14 (Partial),6d26c6027bc28752f229622e73682a7b
+00000009_000.png,9,Emphysema,train,768,NIH Chest X-ray 14 (Partial),2275b822fbd4d35ca5b8dec6aada4629
+00000011_000.png,11,Effusion,train,768,NIH Chest X-ray 14 (Partial),b9dceb786b7d0a3b59ea2167702f5e35
+00000011_001.png,11,No Finding,train,768,NIH Chest X-ray 14 (Partial),1594c1837c3e930ef5d07e8a755efd50
+00000011_002.png,11,No Finding,train,768,NIH Chest X-ray 14 (Partial),3f9d4a1ef4f7435acde55fb880c60f0c
+00000011_003.png,11,No Finding,train,768,NIH Chest X-ray 14 (Partial),b757bf4f1de9f6fe15c91ef920aa15e8
+00000011_004.png,11,No Finding,train,768,NIH Chest X-ray 14 (Partial),c825ba6d0ff1cc2f08726c9be4329c55
+00000011_005.png,11,Infiltration,train,768,NIH Chest X-ray 14 (Partial),d9829ae34ebfa213b277753dbb42f43d
+00000011_006.png,11,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),e429c8bafd301dd975c47e7fb4a08a98
+00000011_007.png,11,Infiltration,train,768,NIH Chest X-ray 14 (Partial),e178abb906f00174fb27e95393b0f3d2
+00000011_008.png,11,No Finding,train,768,NIH Chest X-ray 14 (Partial),861e1ca02520bf2ac1efbe0d9a308025
+00000012_000.png,12,Effusion|Mass,train,768,NIH Chest X-ray 14 (Partial),c97e955e1523f28f695ea82c215d38ad
+00000013_000.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),eec127c57ecaa7f6cfda1e39061545ef
+00000013_001.png,13,Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),5777a9dfa8e21ffe64bbfdbabbdb2467
+00000013_002.png,13,Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),cc02d410cb00040476cdd84c420a86d8
+00000013_003.png,13,Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),d21a25a28ac5de6d4b1b6576c472f139
+00000013_004.png,13,Effusion|Emphysema|Infiltration|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),08abd7567bc4d463558b78252ff59953
+00000013_005.png,13,Emphysema|Infiltration|Pleural_Thickening|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),4fb32b2726e4dd37a781495f7e88861f
+00000013_006.png,13,Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),8d8110b755a310838a7c1511367c42d0
+00000013_007.png,13,Infiltration,train,768,NIH Chest X-ray 14 (Partial),d3b1b6f0176222435b1651a9c4688bdb
+00000013_008.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),4222da361519ad28914fa547a6928ac9
+00000013_009.png,13,Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),96778ec1f99ef9187fba2cf180111616
+00000013_010.png,13,Effusion|Pneumonia|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),47b2056fefba92b583f600503691774f
+00000013_011.png,13,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),26c9993478c80b94edd7e03afe910cca
+00000013_012.png,13,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),e5679023a0e02c90cf6a2e29f5967285
+00000013_013.png,13,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),10bbf1f0800748950faae4a41f2aee8b
+00000013_014.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),28965ec9e383512e4e3c9b4cd5524c7c
+00000013_015.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),53b72f5d04095a86149a2226b670be78
+00000013_016.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),3d5824e0b046be65fc6df3a6f26f1f6d
+00000013_017.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),c1140fde4318f81a40a25b32cc5db45f
+00000013_018.png,13,Effusion|Infiltration|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),c6f7f66dabc87a6b34f6a028167de85d
+00000013_019.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),cde892f8a48f1d5dde1a7d9d87b47951
+00000013_020.png,13,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),9c0296a6cba0aaa846307471f00f8134
+00000013_021.png,13,Effusion,train,768,NIH Chest X-ray 14 (Partial),e89b5d9796d4d384f92fb8f97dd4e3d4
+00000013_022.png,13,Infiltration|Mass,train,768,NIH Chest X-ray 14 (Partial),ea77106607812ba2c5a777de928daaa4
+00000013_023.png,13,Infiltration|Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),c7c13e2fa664860ffd87af2f1c1d1d44
+00000013_024.png,13,Mass,train,768,NIH Chest X-ray 14 (Partial),1d9fb1bd0d645e6355953e6c118f1def
+00000013_025.png,13,Cardiomegaly|Infiltration|Mass|Nodule,train,768,NIH Chest X-ray 14 (Partial),2a1670e492ec6e34e687842f200fd6a8
+00000013_026.png,13,Cardiomegaly|Emphysema,train,768,NIH Chest X-ray 14 (Partial),6c96fba3b67885f3f4992c485e6435e0
+00000013_027.png,13,Cardiomegaly|Effusion|Emphysema|Mass,train,768,NIH Chest X-ray 14 (Partial),32f73b8039480fd3a89226f403cbcae1
+00000013_028.png,13,Cardiomegaly|Effusion|Emphysema|Mass,train,768,NIH Chest X-ray 14 (Partial),012ec24513e7d8a06a536c1e921c3138
+00000013_029.png,13,Cardiomegaly|Effusion|Emphysema|Mass,train,768,NIH Chest X-ray 14 (Partial),9480831f540ca7b63ebba50d49a7d70e
+00000013_030.png,13,Atelectasis|Cardiomegaly|Emphysema|Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),409496e00bfbb9fe9b6d2c23a39528ae
+00000013_031.png,13,Emphysema|Mass,train,768,NIH Chest X-ray 14 (Partial),6a99f9e08b5269f6d9673b443669aac0
+00000013_032.png,13,Emphysema|Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),9cf257a23b44713e6bb539591d3bfe1a
+00000013_033.png,13,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),c1d349b4b1d770e9b1c663aeae16177c
+00000013_034.png,13,Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),d646d727e53b7ec5a4366b564623abf1
+00000013_035.png,13,Atelectasis|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),e95c4d16e39b1d43b4d279e34911ae78
+00000013_036.png,13,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),b5b65240e247a8565f1a1822a1a79454
+00000013_037.png,13,Cardiomegaly|Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),6d1704bec9ddd76a88260b38130739dd
+00000013_038.png,13,No Finding,train,768,NIH Chest X-ray 14 (Partial),ae0c3b54b817270cf27a1f2e8d861aad
+00000013_039.png,13,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),7823a354961c91d1e08a799d421c4226
+00000013_040.png,13,Cardiomegaly|Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),cc29000613d84d8a3175c5e017f4cc62
+00000013_041.png,13,Emphysema,train,768,NIH Chest X-ray 14 (Partial),537460988db749f642e65caf921f67e1
+00000013_042.png,13,Emphysema,train,768,NIH Chest X-ray 14 (Partial),0798f8c44d0e641fef46fd2940a933e1
+00000013_043.png,13,Mass|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),04144b62cbfa4ba5556bfaecec4afa4e
+00000013_044.png,13,Cardiomegaly|Mass|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),31f786dd65007a10de8f122d6a3426bb
+00000013_045.png,13,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),80e4806b61172c56cbc7c040581d94ca
+00000013_046.png,13,Infiltration,train,768,NIH Chest X-ray 14 (Partial),0a587abe176a1abc311d24eb7c20bfe0
+00000015_000.png,15,No Finding,train,768,NIH Chest X-ray 14 (Partial),8fc4e5b0812365b7b5d9123e817803a8
+00000016_000.png,16,No Finding,train,768,NIH Chest X-ray 14 (Partial),ad38f1af56fff1b6554ae010ac316f8f
+00000017_000.png,17,Effusion|Infiltration|Nodule,train,768,NIH Chest X-ray 14 (Partial),224bd1e285a5af74c2c5f45c5b5ee143
+00000017_001.png,17,No Finding,train,768,NIH Chest X-ray 14 (Partial),851780a6b8dcdc5548843b290fb60ebc
+00000017_002.png,17,No Finding,train,768,NIH Chest X-ray 14 (Partial),843b8a69862bbf832c62fc113d673ffd
+00000018_000.png,18,No Finding,train,768,NIH Chest X-ray 14 (Partial),da9921729166ad9f9af64888f4913c5b
+00000020_000.png,20,Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),f6ac29062d9ae158cfce5771d993d2db
+00000020_001.png,20,Fibrosis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),67e33cc98331b15e29cf09c92e3d1125
+00000020_002.png,20,Fibrosis|Infiltration|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),76358e08f996dcb8ca9efebed25ee334
+00000021_000.png,21,Nodule,train,768,NIH Chest X-ray 14 (Partial),db767b69c65226df8e2a35c3cf58dda5
+00000021_001.png,21,Infiltration,train,768,NIH Chest X-ray 14 (Partial),bf3e615ddf7c62dca9fe0e1d5641c038
+00000022_000.png,22,No Finding,train,768,NIH Chest X-ray 14 (Partial),4a542710745a3cba1263e82736bfb83f
+00000022_001.png,22,Fibrosis,train,768,NIH Chest X-ray 14 (Partial),3e8e5d72ff64593985f93e3c9cfdf584
+00000025_000.png,25,Effusion,train,768,NIH Chest X-ray 14 (Partial),8cc08be5ef8e60c22a9f71aed9bdbe17
+00000026_000.png,26,Infiltration,train,768,NIH Chest X-ray 14 (Partial),b716e35ffd784b7337b01abcabfbb23e
+00000027_000.png,27,Emphysema,train,768,NIH Chest X-ray 14 (Partial),dee1bc531145db81d2cedb73713432ae
+00000030_000.png,30,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),40864f2796fcca3d7b700e3b2f274d53
+00000030_001.png,30,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),d8a4f76276f84661171156f54c70ea26
+00000031_000.png,31,No Finding,train,768,NIH Chest X-ray 14 (Partial),9e29db44d906396bb750126466d6be55
+00000032_000.png,32,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),13a2231fd739ebb70d6ffb7e88cf9da4
+00000032_001.png,32,Cardiomegaly|Edema|Effusion,train,768,NIH Chest X-ray 14 (Partial),bed92d48dd162a0a37c00d1c337e6ab6
+00000032_002.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),5b9dba53d83ea77b65d1b5763bd9465f
+00000032_003.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),a07ad1ed5c51b654082a2915ef463574
+00000032_004.png,32,Cardiomegaly|Edema|Effusion,train,768,NIH Chest X-ray 14 (Partial),cd7c73c14f25f83b45667f72090481dd
+00000032_005.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),60026e4b5e82ac4f4157b3efcffd8c53
+00000032_006.png,32,Atelectasis|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),9d257413beb1cc73bdd2d22a4ae9c9c7
+00000032_007.png,32,Cardiomegaly|Edema|Effusion,train,768,NIH Chest X-ray 14 (Partial),0f36741a4b4e03e7684eef5c56d7e37f
+00000032_008.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),5a6cda4bee9206d97b29310aa1540fc5
+00000032_009.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),9809556d22c1de6d8be298ea880fbd9b
+00000032_010.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),597a9b232c30ddb9e855a197f05d8bad
+00000032_011.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),bbd4ca81020224a9c95204952d41cdd6
+00000032_012.png,32,Atelectasis|Consolidation|Edema|Pneumonia,train,768,NIH Chest X-ray 14 (Partial),32641f836e80bbb10705a154ba8f6406
+00000032_013.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),510fae6cf92344678914d5c17887cf7c
+00000032_014.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),f42f28860d75e6b83ace040116dd4c83
+00000032_015.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),1103e1c5523e4b6ad59b4e3bafd45ecc
+00000032_016.png,32,Consolidation,train,768,NIH Chest X-ray 14 (Partial),59de24ed0fd18c6c543e04d89a89ec17
+00000032_017.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),9def95e2eb1f30022c0445088970c1e9
+00000032_018.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),2018005383cbe06d7bda74e9be6ce2c4
+00000032_019.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),e93efb8536cf52da449c80b46da1f4f3
+00000032_020.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),9846fc587dc6a84390bae486a596a556
+00000032_021.png,32,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),cc70199971eb356d87e5112b7fbab128
+00000032_022.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),83b4df41712c124bb58761a54131cd1e
+00000032_023.png,32,Edema|Infiltration,train,768,NIH Chest X-ray 14 (Partial),d07f0bd24c691fed8c434f15d1dbeb49
+00000032_024.png,32,Edema,train,768,NIH Chest X-ray 14 (Partial),99c4f1df9dafbf01f574e0368f1aa1a9
+00000032_025.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),a2fa2a04baf0a0f7569b903e37005ede
+00000032_026.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),04d8df35fe0dc649e6bf368bcb2596e6
+00000032_027.png,32,Cardiomegaly|Consolidation,train,768,NIH Chest X-ray 14 (Partial),5dff31d61dfdff441483ea0d81ec9f75
+00000032_028.png,32,Cardiomegaly|Infiltration,train,768,NIH Chest X-ray 14 (Partial),4420b6b3e7020f6ca5e61704bb80b2e6
+00000032_029.png,32,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),3fa94853d27b2b789925ccfe8d3cf8c1
+00000032_030.png,32,Cardiomegaly|Consolidation,train,768,NIH Chest X-ray 14 (Partial),27075cc5744b576104949b54fc6330ba
+00000032_031.png,32,Cardiomegaly|Infiltration,train,768,NIH Chest X-ray 14 (Partial),a39d5b56b72015c4105bf9ebb1d549fa
+00000032_032.png,32,Cardiomegaly|Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),1571ac71cd3cfb177211e2968060688f
+00000032_033.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),0c0ca5941ae580518eeb7b6d56445b05
+00000032_034.png,32,Atelectasis|Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),c0df786effae19e36dacc0c0a471763a
+00000032_035.png,32,Atelectasis|Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),40168eadf07a4db71b24549d0334a54f
+00000032_036.png,32,Atelectasis|Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),33871e3716c3df300dce11a5e56845ae
+00000032_037.png,32,Cardiomegaly|Edema|Infiltration,train,768,NIH Chest X-ray 14 (Partial),940ac9b4d1d3d0ca10f5e03bf0888dcd
+00000032_038.png,32,Consolidation|Infiltration,train,768,NIH Chest X-ray 14 (Partial),bd49c646994734980c17e35aebf52121
+00000032_039.png,32,Consolidation|Edema,train,768,NIH Chest X-ray 14 (Partial),854d459cd07a72a818c0c7504062c7f1
+00000032_040.png,32,Cardiomegaly|Edema,train,768,NIH Chest X-ray 14 (Partial),9fd06c4f45ca0963e47c02d8d23e6623
+00000032_041.png,32,Edema|Effusion|Infiltration|Nodule,train,768,NIH Chest X-ray 14 (Partial),178c3c32278eb1f9e1aac007545c1db8
+00000032_042.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),2c035810d06ec2a7588d00aaa77efab8
+00000032_043.png,32,Consolidation|Infiltration,train,768,NIH Chest X-ray 14 (Partial),0fcf138e7667ec95f4b8e792d683a106
+00000032_044.png,32,Cardiomegaly|Edema,train,768,NIH Chest X-ray 14 (Partial),f3bbcd46ec309b69fb7a8a7a1b0591ea
+00000032_045.png,32,Cardiomegaly|Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),60d2aab1958060f7b18ca123346abc37
+00000032_046.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),dd9009aeb97a289b29ffbdcb3fe3545d
+00000032_047.png,32,Infiltration,train,768,NIH Chest X-ray 14 (Partial),50ef87b8bf25aa604224d4de275d68f6
+00000032_048.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),4c61d0bfd8e851dd7655dce1f58412c3
+00000032_049.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),6068c29b24799c5066880e9fd524080d
+00000032_050.png,32,Atelectasis|Edema|Infiltration,train,768,NIH Chest X-ray 14 (Partial),9e6149e134a2c975cfcab641433d63d6
+00000032_051.png,32,No Finding,train,768,NIH Chest X-ray 14 (Partial),4443b1ecbc7c21e36c80afadfb0a1efc
+00000032_052.png,32,Atelectasis|Edema|Infiltration,train,768,NIH Chest X-ray 14 (Partial),89c98a4706d97236539ebe6cab6501c3
+00000032_053.png,32,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),f2b5d0448c533d8f8b77f53892680552
+00000032_054.png,32,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),d8f6a327eaf8cefa6c45b69c602ab5ab
+00000032_055.png,32,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),e56f40319a12dc14a88053dfbbb2bd46
+00000032_056.png,32,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),0a854e06ab721bdfd8648167a26066c5
+00000032_057.png,32,Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),3049c4db43aaa0c3a4ba8f1f5c596105
+00000032_058.png,32,Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),f6ba378d0150e6800d58563f60b590b6
+00000032_059.png,32,Cardiomegaly|Infiltration,train,768,NIH Chest X-ray 14 (Partial),e7430c8dac1482c42d545c34186f20ce
+00000032_060.png,32,Cardiomegaly|Edema,train,768,NIH Chest X-ray 14 (Partial),848b4b9bb3633feac5a14e137fb827a9
+00000033_000.png,33,Atelectasis|Cardiomegaly|Fibrosis,train,768,NIH Chest X-ray 14 (Partial),24ab8e9481e8dee38e8aff7e0b764394
+00000034_000.png,34,Emphysema,train,768,NIH Chest X-ray 14 (Partial),6de1e1b60ad72e34e68d4c45c14b95e8
+00000034_001.png,34,No Finding,train,768,NIH Chest X-ray 14 (Partial),6fdbf0d833a1465525501b8a96c82c67
+00000035_000.png,35,No Finding,train,768,NIH Chest X-ray 14 (Partial),dc97f338c77bacae01a40543f891a884
+00000035_001.png,35,No Finding,train,768,NIH Chest X-ray 14 (Partial),25792a1677ca9d3f41b1b09bed517bc1
+00000037_000.png,37,No Finding,train,768,NIH Chest X-ray 14 (Partial),c0bc7b16d442ae9bd00cce9cbd574182
+00000039_000.png,39,No Finding,train,768,NIH Chest X-ray 14 (Partial),ddf7b1e15492ce9ddb5f3562b5662832
+00000039_001.png,39,No Finding,train,768,NIH Chest X-ray 14 (Partial),df272c915450325eb2b238f80f0fd4e0
+00000039_002.png,39,No Finding,train,768,NIH Chest X-ray 14 (Partial),7276d195219d56e45f9245c08cf3b238
+00000039_003.png,39,No Finding,train,768,NIH Chest X-ray 14 (Partial),248d325de04c78a586a3d85c8c7bfd46
+00000039_004.png,39,Effusion,train,768,NIH Chest X-ray 14 (Partial),17c71a485d8679e50890a887554c71d0
+00000041_000.png,41,Emphysema|Infiltration,train,768,NIH Chest X-ray 14 (Partial),25a87f0336f8f59036c9ae0751333b41
+00000041_001.png,41,Emphysema,train,768,NIH Chest X-ray 14 (Partial),56d6ef30832b2d91333578d928d0239d
+00000041_002.png,41,Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),1d4be7f85ce7ee5fd998f5d6fd24b67d
+00000041_003.png,41,No Finding,train,768,NIH Chest X-ray 14 (Partial),260c42f486f15b69aa6636c7192ac507
+00000041_004.png,41,No Finding,train,768,NIH Chest X-ray 14 (Partial),40b497b07dd9d6248c8483f982ae7d8f
+00000041_005.png,41,Emphysema,train,768,NIH Chest X-ray 14 (Partial),6441d69ecb6f7328186571733d3624ac
+00000041_006.png,41,Effusion,train,768,NIH Chest X-ray 14 (Partial),ee3f181d4ebb88d9cbce1a40922d5153
+00000043_000.png,43,Infiltration,train,768,NIH Chest X-ray 14 (Partial),c757d0b3f57f30b1b246d33b5cb2888a
+00000044_000.png,44,Consolidation|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),cc93b6f8f2466363ab2c960b3541f391
+00000044_001.png,44,Infiltration|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),1a1bfc7f878e54fb576d3fdfe24e3bc2
+00000044_002.png,44,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),03fe61883cbbedb2442e2d075d9837ec
+00000046_000.png,46,No Finding,train,768,NIH Chest X-ray 14 (Partial),05c0da5fa7d9d3f4ba515d6c23b31f7a
+00000047_000.png,47,No Finding,train,768,NIH Chest X-ray 14 (Partial),48a43926c787c64c1f10ce5b505a3f32
+00000047_001.png,47,No Finding,train,768,NIH Chest X-ray 14 (Partial),006362215a6239c61a0007360a7c5a38
+00000047_002.png,47,No Finding,train,768,NIH Chest X-ray 14 (Partial),eb65828dc8d1ccf8fbc7096feaea8047
+00000047_003.png,47,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),ed8d13292e7b24169c5828879c1a1358
+00000047_004.png,47,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),24f32bdee618dc8affcc38283b37f8ab
+00000047_005.png,47,No Finding,train,768,NIH Chest X-ray 14 (Partial),31c3bbcb3206aeedb567bbb309cb9b4c
+00000047_006.png,47,Atelectasis|Effusion,train,768,NIH Chest X-ray 14 (Partial),38d3a404d4c7b727d1ed5556caa5db50
+00000047_007.png,47,No Finding,train,768,NIH Chest X-ray 14 (Partial),05c278b6776f2027e0a8f7f031e80ac5
+00000049_000.png,49,Nodule,train,768,NIH Chest X-ray 14 (Partial),51687c147ce7239a08fbc9fde4f6fcc7
+00000049_001.png,49,No Finding,train,768,NIH Chest X-ray 14 (Partial),5ac314afb18f91f64d0eed57094ba0d9
+00000049_002.png,49,No Finding,train,768,NIH Chest X-ray 14 (Partial),ac22b9858e25dbeb4e562a534caa43fa
+00000050_000.png,50,No Finding,train,768,NIH Chest X-ray 14 (Partial),4e72b4737e1b9e52ed6e25633f80b069
+00000050_001.png,50,No Finding,train,768,NIH Chest X-ray 14 (Partial),ec29cf7140477c6ed9e0d160043edc38
+00000050_002.png,50,No Finding,train,768,NIH Chest X-ray 14 (Partial),7a1b50c312a1390e6494afdd720fc4b5
+00000050_003.png,50,No Finding,train,768,NIH Chest X-ray 14 (Partial),e1f48a2cd3c311237f19d3830c6196c3
+00000051_000.png,51,Infiltration,train,768,NIH Chest X-ray 14 (Partial),0497c47540403c28a8e2ef0d33442b16
+00000053_000.png,53,Fibrosis|Infiltration|Nodule,train,768,NIH Chest X-ray 14 (Partial),6a6e9a3ff18d407ebc6d038823b1312c
+00000053_001.png,53,Atelectasis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),5ebb23789a6c0c415e247007bb4eef92
+00000054_000.png,54,Infiltration,train,768,NIH Chest X-ray 14 (Partial),c827057a4b8100ff59ab68b9098a023f
+00000054_001.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),72cda1017ddb20c206d4c9d3b633674d
+00000054_002.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),c244c6e0f953947f22799950da729f81
+00000054_003.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),5e224210da1e494ad7216befd62bca60
+00000054_004.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),714e9ac50d6c3723a4d0530e7ead6e46
+00000054_005.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),a80ce83506e39725d7e9f3cb74b0da66
+00000054_006.png,54,Infiltration,train,768,NIH Chest X-ray 14 (Partial),bb4835cd145ab85397120812c7f5ff30
+00000054_007.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),2dbd6991ab26e9ed53ca269263910234
+00000054_008.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),96d299c097c7898d993aae152fe528a6
+00000054_009.png,54,No Finding,train,768,NIH Chest X-ray 14 (Partial),61199708e4ef5864df9dbfae9c88fb31
+00000055_000.png,55,No Finding,train,768,NIH Chest X-ray 14 (Partial),ab584156d09fcd72bbf28ef26e93b9b4
+00000057_000.png,57,No Finding,train,768,NIH Chest X-ray 14 (Partial),e2879969bc57bc240d28a0ecd09eff8a
+00000057_001.png,57,No Finding,train,768,NIH Chest X-ray 14 (Partial),43149650a6faeadecaef22dce0508526
+00000057_002.png,57,Atelectasis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),61fad62ff02cbed6e28eb7f1f7ba3c57
+00000057_003.png,57,No Finding,train,768,NIH Chest X-ray 14 (Partial),32cfbeac8b29a284b0c3c523c513ab8d
+00000057_004.png,57,Infiltration,train,768,NIH Chest X-ray 14 (Partial),acd8dc05b9b98c889bc6dce7d4e59534
+00000058_000.png,58,Atelectasis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),7d56a21ac9d837d0f3bcafa474d7ae52
+00000060_000.png,60,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),cd3cd8201f769c11144e5db51b5e5b4c
+00000061_000.png,61,Infiltration|Nodule,train,768,NIH Chest X-ray 14 (Partial),ce2c341bf74b588d53ecab679551944e
+00000061_001.png,61,Mass,train,768,NIH Chest X-ray 14 (Partial),dd240c67790b8e8a06f148c1f5cfdd46
+00000061_002.png,61,Effusion,train,768,NIH Chest X-ray 14 (Partial),072f9697f9751c19a7d5389c59777046
+00000061_003.png,61,Effusion|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),f285e7c89c34967708e8df6f7adc2979
+00000061_004.png,61,Atelectasis|Effusion,train,768,NIH Chest X-ray 14 (Partial),f15fd596c61f267bd962631a3301e16c
+00000061_005.png,61,Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),5e1e50f27f79a66ea7eaf3f54255ef87
+00000061_006.png,61,Effusion,train,768,NIH Chest X-ray 14 (Partial),ab0b80a991967cc6eedf579cc4f47335
+00000061_007.png,61,Effusion,train,768,NIH Chest X-ray 14 (Partial),a14dddb2dae0b10502c8a7e29d3274a6
+00000061_008.png,61,Effusion,train,768,NIH Chest X-ray 14 (Partial),665c614b092236312a18b5f9d70b8401
+00000061_009.png,61,Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),8997cf81c86d570c3c1fcbb3fa32bd35
+00000061_010.png,61,Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),8e99cee813c7bd8c15110f79d2ea6349
+00000061_011.png,61,Effusion,train,768,NIH Chest X-ray 14 (Partial),f75ba5375b9d096be7bb480690d9177f
+00000061_012.png,61,Edema|Effusion|Infiltration|Pleural_Thickening|Pneumonia,train,768,NIH Chest X-ray 14 (Partial),ae63cc7bfc304b7f5dffbfc20e2dfc93
+00000061_013.png,61,Effusion|Fibrosis,train,768,NIH Chest X-ray 14 (Partial),6ad758b30175013dd32ef1b9a3b17624
+00000061_014.png,61,Effusion|Fibrosis,train,768,NIH Chest X-ray 14 (Partial),2d26c6b40d796e5c5f67eed29dfa88d7
+00000061_015.png,61,Pneumonia,train,768,NIH Chest X-ray 14 (Partial),fa4182663e5e31fbbe237b99dd010d23
+00000061_016.png,61,No Finding,train,768,NIH Chest X-ray 14 (Partial),16001279ac3a78192b91262952714b67
+00000061_017.png,61,Edema|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),def433955ac986a34043b57568cb19b6
+00000061_018.png,61,Infiltration,train,768,NIH Chest X-ray 14 (Partial),54f379ca2811791e6db0eb2310731725
+00000061_019.png,61,No Finding,train,768,NIH Chest X-ray 14 (Partial),1eb4aa056b8ea7b2cf18a84d363fb74f
+00000061_020.png,61,Edema|Effusion,train,768,NIH Chest X-ray 14 (Partial),c6779ca4ba930a32ac5249858406107a
+00000061_021.png,61,No Finding,train,768,NIH Chest X-ray 14 (Partial),1d55997dbf1b82177ac21866a1dd6a2c
+00000061_022.png,61,No Finding,train,768,NIH Chest X-ray 14 (Partial),6759bc959b27bdbda9f36c0380ba67be
+00000061_023.png,61,Consolidation|Effusion|Infiltration|Mass,train,768,NIH Chest X-ray 14 (Partial),99bd234b9d8996191e187bfc46e03bad
+00000061_024.png,61,Infiltration,train,768,NIH Chest X-ray 14 (Partial),56a34f61e2585267fd669838a0a542b0
+00000061_025.png,61,Consolidation|Effusion|Infiltration|Nodule,train,768,NIH Chest X-ray 14 (Partial),c14232b44a98e501641d9157cec6e559
+00000062_000.png,62,Infiltration,train,768,NIH Chest X-ray 14 (Partial),a8ff2bdd9a3b54f15b7fbe3cda4b3842
+00000063_000.png,63,Infiltration,train,768,NIH Chest X-ray 14 (Partial),20eb0079174897446db35c37ef83b56a
+00000064_000.png,64,No Finding,train,768,NIH Chest X-ray 14 (Partial),6194eab9d1d734e3b0bea8e8917e55b3
+00000065_000.png,65,No Finding,train,768,NIH Chest X-ray 14 (Partial),94f9579037efd842122f328983dab43c
+00000066_000.png,66,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),c1660c4c3a24411a5ac92e6619a43822
+00000067_000.png,67,Fibrosis,train,768,NIH Chest X-ray 14 (Partial),9ab5632c523d73e1a8b62cded811ad7c
+00000067_001.png,67,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),63994ad23def44b0a00993ff3b185c98
+00000067_002.png,67,No Finding,train,768,NIH Chest X-ray 14 (Partial),96de5a2aea52dc26c6f770f260d4df22
+00000068_000.png,68,No Finding,train,768,NIH Chest X-ray 14 (Partial),833c17d0c52403977947ad1155fc7c98
+00000069_000.png,69,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),13b93e0160b5997e122968b275a74e49
+00000070_000.png,70,No Finding,train,768,NIH Chest X-ray 14 (Partial),620343dfb55db1ba943ec87ee7787ed6
+00000073_000.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),f2a1972c1416ac04d4f2542812107124
+00000073_001.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),eb75d43d905f2eeb88ac49e40218b4bc
+00000073_002.png,73,Emphysema,train,768,NIH Chest X-ray 14 (Partial),6467f7c4ed31475367ebc272e4e98d67
+00000073_003.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),eca8521c22d0f7f2e8884e69a01ff064
+00000073_004.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),bedb6ddc1ca92bb69e33fe5995ef7ef4
+00000073_005.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),1a383192d563bcec5e92c997334bf8bd
+00000073_006.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),65c5b2d36c7c7f68e08438f9250d242f
+00000073_007.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),33e24daaff380ee1858c8edf415a5995
+00000073_008.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),53467edb490edeb43d7d7b9d64befc83
+00000073_009.png,73,No Finding,train,768,NIH Chest X-ray 14 (Partial),467695714e448c281c0a38507b58bf54
+00000074_000.png,74,Effusion,train,768,NIH Chest X-ray 14 (Partial),0f0b5ed72b9caafb34d933c04350006f
+00000075_000.png,75,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),815de6ec1d26f1128d2733ab9e9ff185
+00000075_001.png,75,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),cc2481c6ea7d336b318e8e37e287f9fb
+00000076_000.png,76,Effusion,train,768,NIH Chest X-ray 14 (Partial),373c6e2f41852fb12dfabcea30dc0880
+00000077_000.png,77,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),182543b2b31b9539afa0014693116af5
+00000078_000.png,78,No Finding,train,768,NIH Chest X-ray 14 (Partial),ce2822ddde2a7f3031afef5105153ddc
+00000078_001.png,78,Atelectasis|Effusion,train,768,NIH Chest X-ray 14 (Partial),a4036ffb55c34f0ab060e10b3aa5aeef
+00000078_002.png,78,Atelectasis|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),edcc25ce4469cddad880010c6ebac6a1
+00000079_000.png,79,Mass,train,768,NIH Chest X-ray 14 (Partial),97f1d6f004c56909334c958d64965c94
+00000080_000.png,80,No Finding,train,768,NIH Chest X-ray 14 (Partial),69a476c1cd91cb898016cdbc8e486de0
+00000080_001.png,80,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),b067ce28efac024326c7226a3905440e
+00000080_002.png,80,No Finding,train,768,NIH Chest X-ray 14 (Partial),e68c0dfcc5623a0e56c7801c6f175fa6
+00000080_003.png,80,No Finding,train,768,NIH Chest X-ray 14 (Partial),b24516b7a61b4c44cb82fc685d19737f
+00000080_004.png,80,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),34fefbf1889671db271d318eb7aecfd0
+00000080_005.png,80,No Finding,train,768,NIH Chest X-ray 14 (Partial),d327f051bbafb1ce0fdab3927128c83c
+00000081_000.png,81,No Finding,train,768,NIH Chest X-ray 14 (Partial),c18bfd3e05ae6a67e1d49cc1c9b1a4a4
+00000083_000.png,83,No Finding,train,768,NIH Chest X-ray 14 (Partial),e6998af5edcec269cc49e84eaaa0584d
+00000084_000.png,84,Effusion,train,768,NIH Chest X-ray 14 (Partial),25fcc91e5810a79ab1daa829a1f1e651
+00000084_001.png,84,Effusion,train,768,NIH Chest X-ray 14 (Partial),500a49b27ac1cc0b83739ec0fa6a9e0f
+00000086_000.png,86,No Finding,train,768,NIH Chest X-ray 14 (Partial),9073936418d615d50301270a41f7bb1d
+00000086_001.png,86,Emphysema,train,768,NIH Chest X-ray 14 (Partial),a64e785423302ec0c3897b15bd514511
+00000086_002.png,86,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),23a12cf3b2615f040f9abaf7980b5fad
+00000087_000.png,87,No Finding,train,768,NIH Chest X-ray 14 (Partial),fc06e83c29ce8b7dcfad126207e1ee34
+00000087_001.png,87,No Finding,train,768,NIH Chest X-ray 14 (Partial),1a94e37378c85a1f8b8fcd76d16df141
+00000089_000.png,89,Infiltration,train,768,NIH Chest X-ray 14 (Partial),2208a297e446b60abfb5f5621f3d37e1
+00000091_000.png,91,No Finding,train,768,NIH Chest X-ray 14 (Partial),9dc72c40c67039f248b99f01f5690f2e
+00000091_001.png,91,Nodule,train,768,NIH Chest X-ray 14 (Partial),389ca910a3e2fcc1c7ffdb4861b688c7
+00000091_002.png,91,Infiltration|Mass,train,768,NIH Chest X-ray 14 (Partial),b64d9da8aa1154e7e848ff6b8670fa04
+00000091_003.png,91,Mass,train,768,NIH Chest X-ray 14 (Partial),ee201a68168ecf54a0368026bd55e6b0
+00000091_004.png,91,Infiltration,train,768,NIH Chest X-ray 14 (Partial),5b9aaf4e3b44b95153080946860c37b1
+00000091_005.png,91,Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),b88ebc0d35ce1b71d73f9b10405a1166
+00000091_006.png,91,No Finding,train,768,NIH Chest X-ray 14 (Partial),4c30bf49d2fd1ac7eb416927df1aafbb
+00000091_007.png,91,No Finding,train,768,NIH Chest X-ray 14 (Partial),d3a3c1cc366e9ed7e710560146f4c2d8
+00000091_008.png,91,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),5044e352a8c28f5199c5911356dda4b1
+00000091_009.png,91,Effusion,train,768,NIH Chest X-ray 14 (Partial),bec965cfb57d86aa00279a9a78ace7e8
+00000091_010.png,91,Atelectasis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),81de1b04ff219133779a40c07cc77813
+00000092_000.png,92,No Finding,train,768,NIH Chest X-ray 14 (Partial),f2d59a3cf46263a0a3e3036c34eea0c7
+00000092_001.png,92,Effusion|Fibrosis,train,768,NIH Chest X-ray 14 (Partial),a72e1045f4182c05187c47b72980152f
+00000092_002.png,92,Fibrosis,train,768,NIH Chest X-ray 14 (Partial),000acec4b957d8ce3647e0e6887b062b
+00000092_003.png,92,Fibrosis,train,768,NIH Chest X-ray 14 (Partial),b4cf861f87fc4f262cb45ccbd2857be2
+00000094_000.png,94,No Finding,train,768,NIH Chest X-ray 14 (Partial),de09f4ca10ef8571bc9cdb1369e3ca2f
+00000095_000.png,95,No Finding,train,768,NIH Chest X-ray 14 (Partial),9add89aa7b48f76f332cebc5ee8899f4
+00000096_000.png,96,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),4c46d2b56ee6a060236d48c98b93e190
+00000096_001.png,96,Atelectasis|Cardiomegaly|Fibrosis,train,768,NIH Chest X-ray 14 (Partial),a27e3fdec6205cf57e25b2014d6e6e42
+00000096_002.png,96,Effusion,train,768,NIH Chest X-ray 14 (Partial),bde3b780c4648733b06970e2ad6247c9
+00000096_003.png,96,Atelectasis|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),08eef48361b954c98f3537780a02639f
+00000096_004.png,96,Atelectasis|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),7454b90ad4a59ea2d136a7d6ed0b2252
+00000096_005.png,96,Atelectasis|Cardiomegaly|Consolidation|Effusion,train,768,NIH Chest X-ray 14 (Partial),3a76ae1c7f36ea3f07fceedbc5af1d18
+00000096_006.png,96,Effusion,train,768,NIH Chest X-ray 14 (Partial),d0097186004c142ed580dd821a9f3837
+00000096_007.png,96,Consolidation|Effusion,train,768,NIH Chest X-ray 14 (Partial),3709094ad7ba819eb6f8e0e27ce13c6f
+00000096_008.png,96,No Finding,train,768,NIH Chest X-ray 14 (Partial),29d69ed206116e3539a3edb1e8c9e060
+00000097_000.png,97,No Finding,train,768,NIH Chest X-ray 14 (Partial),d735e8ed9e5751046a9ab133dadfb030
+00000098_000.png,98,No Finding,train,768,NIH Chest X-ray 14 (Partial),84181d8dee35be027a7c2bc9523d200a
+00000100_000.png,100,Atelectasis|Effusion|Infiltration,train,768,NIH Chest X-ray 14 (Partial),91896f8ed81bef2dc525b4241f024662
+00000100_001.png,100,No Finding,train,768,NIH Chest X-ray 14 (Partial),8196c9d6ff1e4c9703724b4d02d67435
+00000101_000.png,101,Nodule,train,768,NIH Chest X-ray 14 (Partial),b3738cc8c38eb2b222edd1ea28c0fe33
+00000102_000.png,102,Infiltration,train,768,NIH Chest X-ray 14 (Partial),01e93b43dd0adf1956efce2433715760
+00000103_000.png,103,Mass,train,768,NIH Chest X-ray 14 (Partial),267f6988f9a2c8739857ef3a96490afa
+00000103_001.png,103,Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),97b8511615fcce4a536d33b1232b90ea
+00000103_002.png,103,Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),3c7fbecf44a2b163e2571d2d7f15f1b9
+00000103_003.png,103,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),8fa43a4753090e28953e3e0b8ee2c679
+00000103_004.png,103,Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),a208fd96a603a4fb972a0e17331cad85
+00000103_005.png,103,Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),095a920a4ff4ad427121d7fec91a4106
+00000103_006.png,103,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),7124793d2a771bff72ae3c18f091a317
+00000103_007.png,103,Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),b66b016de86aeef4a7bf421c0baa8834
+00000103_008.png,103,Mass,train,768,NIH Chest X-ray 14 (Partial),f7e6bb54012389fe8339a9585a9c2e23
+00000103_009.png,103,Mass|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),7f95d7f36af2b143f29957a84eb4592f
+00000103_010.png,103,Atelectasis|Mass,train,768,NIH Chest X-ray 14 (Partial),c715a3af030850d475778bdfdea080d4
+00000103_011.png,103,Atelectasis|Mass,train,768,NIH Chest X-ray 14 (Partial),e45efdc5962ef1f6dc61dd214a38a3ce
+00000104_000.png,104,Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),c7ce4c286b1dd034bea5570e09deb841
+00000104_001.png,104,No Finding,train,768,NIH Chest X-ray 14 (Partial),88c47aa733c8fa33493d459d18558725
+00000105_000.png,105,No Finding,train,768,NIH Chest X-ray 14 (Partial),8948d5cb2b476a3b0b8947cd82b9bebc
+00000105_001.png,105,No Finding,train,768,NIH Chest X-ray 14 (Partial),2103f303d8b67a22ce1634bc4df26fe5
+00000105_002.png,105,Infiltration,train,768,NIH Chest X-ray 14 (Partial),e7da89f3fd0ce2688af645dd12b9dd5b
+00000105_003.png,105,No Finding,train,768,NIH Chest X-ray 14 (Partial),91ebb392ff1cb42ce22d7718b179e8a5
+00000105_004.png,105,Nodule,train,768,NIH Chest X-ray 14 (Partial),341dd638d2f4cf607756f81c0c235134
+00000105_005.png,105,Nodule,train,768,NIH Chest X-ray 14 (Partial),b78c0e44338a79192afd3168cf656024
+00000106_000.png,106,No Finding,train,768,NIH Chest X-ray 14 (Partial),1211e8eddc8a7dc10abf79992e5a46b6
+00000108_000.png,108,No Finding,train,768,NIH Chest X-ray 14 (Partial),0c5d2e12bd859a120838706447b760be
+00000108_001.png,108,No Finding,train,768,NIH Chest X-ray 14 (Partial),3ce9d37d3e11289938e8a5941e949722
+00000110_000.png,110,No Finding,train,768,NIH Chest X-ray 14 (Partial),60af66f5c4df6759e96d102bdde69b08
+00000111_000.png,111,Hernia,train,768,NIH Chest X-ray 14 (Partial),0530408e349ebc96ce3dc68e111fff8d
+00000112_000.png,112,Atelectasis|Effusion|Mass,train,768,NIH Chest X-ray 14 (Partial),51c15ffc4cb701f913e4fb2f2fa70da8
+00000112_001.png,112,No Finding,train,768,NIH Chest X-ray 14 (Partial),c8d908047091e032e049bb8a5b265696
+00000112_002.png,112,Consolidation,train,768,NIH Chest X-ray 14 (Partial),ca5630606cec0395edb9325f4109742a
+00000113_000.png,113,No Finding,train,768,NIH Chest X-ray 14 (Partial),251ea2fe97319fd46debc1e45e5b108a
+00000113_001.png,113,Atelectasis|Cardiomegaly|Effusion,train,768,NIH Chest X-ray 14 (Partial),d20c38bd2896da2da1ff9e0fc399ad9a
+00000115_000.png,115,No Finding,train,768,NIH Chest X-ray 14 (Partial),2230976e2a13d67ed036d8d38083a95d
+00000115_001.png,115,Infiltration,train,768,NIH Chest X-ray 14 (Partial),6d6aa2b1bbbebfdd1edd045519c930f3
+00000118_000.png,118,Emphysema,train,768,NIH Chest X-ray 14 (Partial),f3b02b7b3ba945c9a45760ea82e55778
+00000118_001.png,118,Atelectasis|Emphysema,train,768,NIH Chest X-ray 14 (Partial),cd54e839210d6cb3a4f29696bcbbcd4b
+00000118_002.png,118,Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),c9abf8b1d4acb6a267e4a9a38212af36
+00000118_003.png,118,Atelectasis|Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),7f5c8f134a1b8ee7bcb875b0f5d8a018
+00000118_004.png,118,Emphysema|Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),c10c0e7adf80db85ceb84739da015598
+00000118_005.png,118,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),ac6daa373a43cffd558b09ccc7c5317b
+00000118_006.png,118,Atelectasis|Emphysema,train,768,NIH Chest X-ray 14 (Partial),132ef6767a6ffd2714aad02ca347a2f2
+00000118_007.png,118,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),c189e4db90546d076ef3e2ff6cfb1e52
+00000118_008.png,118,No Finding,train,768,NIH Chest X-ray 14 (Partial),ec8644f1bb5e15897e17ab05a332957a
+00000118_009.png,118,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),dbe5a68aaef9c8e91d35d7e4c0b5e809
+00000118_010.png,118,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),675a42cc7a243af56afa623db9e88770
+00000118_011.png,118,Pneumothorax,train,768,NIH Chest X-ray 14 (Partial),4072ee3b47b034207ccc7d4e33511626
+00000118_012.png,118,No Finding,train,768,NIH Chest X-ray 14 (Partial),daa526474dc7f2921b59467273c06f65
+00000118_013.png,118,Infiltration,train,768,NIH Chest X-ray 14 (Partial),5c640d0d8b9fad4268d3e456018777e6
+00000118_014.png,118,No Finding,train,768,NIH Chest X-ray 14 (Partial),bc60364a145f16731384e0ca8e000300
+00000118_015.png,118,Effusion,train,768,NIH Chest X-ray 14 (Partial),f41aa969d6e51aa3cf6c8e7df1cae6fb
+00000118_016.png,118,No Finding,train,768,NIH Chest X-ray 14 (Partial),7e9935f8e13fa1656431b9f8931c2efa
+00000119_000.png,119,Infiltration,train,768,NIH Chest X-ray 14 (Partial),d4201f9aebc88c76921de187fa7ddee4
+00000119_001.png,119,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),9e61cb0596b5cf3d597bdf0c30b6ff58
+00000120_000.png,120,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),3fbeece1b47a121cd8a5efa30b080dd7
+00000121_000.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),e170cdbbf50da39a89c0c71e03f50322
+00000121_001.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),700964fdf595ff3a88a7d9558be7e48f
+00000121_002.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),1a877bab90e3a180a34eedf9540bb44b
+00000121_003.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),5452f89caf7522b4628d0848811757df
+00000121_004.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),e0ba6e597852ef021e854826c9c27840
+00000121_005.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),a66d4588eb8e7bfb45e9222d7798470c
+00000121_006.png,121,Effusion,train,768,NIH Chest X-ray 14 (Partial),aa375527df10f08256fc47a77b1722e9
+00000121_007.png,121,Effusion,train,768,NIH Chest X-ray 14 (Partial),bba7f0984b33d40e059ff3210427c46d
+00000121_008.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),53f0d11e43727fb0d736e5141d58c17f
+00000121_009.png,121,No Finding,train,768,NIH Chest X-ray 14 (Partial),8ca40bb11beaf9a07775cabbb8cf7e31
+00000123_000.png,123,Cardiomegaly|Emphysema,train,768,NIH Chest X-ray 14 (Partial),dd09f8c8554d3335070d2714846f2dd2
+00000124_000.png,124,Cardiomegaly|Infiltration,train,768,NIH Chest X-ray 14 (Partial),b91df98899e84666cb08c14637fd05f9
+00000125_000.png,125,Infiltration,train,768,NIH Chest X-ray 14 (Partial),753385868937b987a997f7ae5bb0fa38
+00000127_000.png,127,No Finding,train,768,NIH Chest X-ray 14 (Partial),8d08965055991a6909f0cf8923e40768
+00000127_001.png,127,No Finding,train,768,NIH Chest X-ray 14 (Partial),a7d1a7ed4bb0cf68efbe0c3bf2a7cb55
+00000127_002.png,127,Effusion,train,768,NIH Chest X-ray 14 (Partial),b78e18363229c45cc42dc04465600a5d
+00000127_003.png,127,Effusion,train,768,NIH Chest X-ray 14 (Partial),ab3d984bae00c6d58dda8f00d27fe9c5
+00000127_004.png,127,Effusion,train,768,NIH Chest X-ray 14 (Partial),e6c0c7261851331c27d06ff10d2eed5e
+00000127_005.png,127,Effusion,train,768,NIH Chest X-ray 14 (Partial),238645a1f0808f97a01e3931102e7ea1
+00000127_006.png,127,No Finding,train,768,NIH Chest X-ray 14 (Partial),9f8428092bfdfdc2d2612b653957c681
+00000127_007.png,127,Effusion,train,768,NIH Chest X-ray 14 (Partial),9d0cf3d6899a85b6d8f12eb4c142c523
+00000127_008.png,127,No Finding,train,768,NIH Chest X-ray 14 (Partial),2d90c9ee182241e7a7c9d86236fe3baf
+00000127_009.png,127,Atelectasis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),81c98a096abe800932b8481ad0008f31
+00000127_010.png,127,Atelectasis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),0d4399f9f7f937a28dc1c660d8ce0058
+00000128_000.png,128,Cardiomegaly|Nodule,train,768,NIH Chest X-ray 14 (Partial),b6897f8f619822776393f0ba4fcd6b47
+00000129_000.png,129,No Finding,train,768,NIH Chest X-ray 14 (Partial),b5eafe2bcdfe84e186224480d41e1c35
+00000129_001.png,129,No Finding,train,768,NIH Chest X-ray 14 (Partial),5dcd4e38c3c003a6fbe2599f73a94a53
+00000130_000.png,130,No Finding,train,768,NIH Chest X-ray 14 (Partial),ba87df2e98ff20e3b8dd9b994d2122e3
+00000131_000.png,131,Infiltration,train,768,NIH Chest X-ray 14 (Partial),9b56afdbbfbc4f064016e2e3a2c82173
+00000131_001.png,131,Cardiomegaly,train,768,NIH Chest X-ray 14 (Partial),22ac5defbc574c405e8cff22453441cb
+00000131_002.png,131,Cardiomegaly|Emphysema,train,768,NIH Chest X-ray 14 (Partial),32d18c44048122a73454541b7a743e6e
+00000132_000.png,132,No Finding,train,768,NIH Chest X-ray 14 (Partial),8d82ae0b8ce3b4e1c20384785fb12d8d
+00000132_001.png,132,Consolidation|Edema,train,768,NIH Chest X-ray 14 (Partial),ee63d54e051e5630a2f12b4edb8b0610
+00000132_002.png,132,Consolidation|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),95ef6f13b2c2e22c36c2964da1b44019
+00000132_003.png,132,Effusion,train,768,NIH Chest X-ray 14 (Partial),ccc5aeeaae5972b796997b6ba731fdb0
+00000132_004.png,132,Effusion|Fibrosis|Nodule|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),26fcca60977cbe76dfcbad529072527e
+00000132_005.png,132,Effusion|Fibrosis|Mass|Nodule|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),7e97171099cb13dd8b727ddd575645e3
+00000132_006.png,132,Infiltration,train,768,NIH Chest X-ray 14 (Partial),0117d0322dd4a4ddd3b4f0d17fc01b22
+00000133_000.png,133,Effusion|Nodule,train,768,NIH Chest X-ray 14 (Partial),1a590e423870642bde180acf9aa0805e
+00000133_001.png,133,No Finding,train,768,NIH Chest X-ray 14 (Partial),2bc58d7ce63c36e72605e46a67a796b8
+00000133_002.png,133,No Finding,train,768,NIH Chest X-ray 14 (Partial),6a167e9709176d0d955896fed2444768
+00000134_000.png,134,Infiltration,train,768,NIH Chest X-ray 14 (Partial),31c34647873d6f780b22983d8606ffdb
+00000137_000.png,137,No Finding,train,768,NIH Chest X-ray 14 (Partial),0c1d2079f279b8e23e310805a5902582
+00000137_001.png,137,No Finding,train,768,NIH Chest X-ray 14 (Partial),fce3fb1e639cef00b5c340f1606907e9
+00000138_000.png,138,No Finding,train,768,NIH Chest X-ray 14 (Partial),28e2daef5f9e2fdbea6bc7352311e6f4
+00000138_001.png,138,No Finding,train,768,NIH Chest X-ray 14 (Partial),ed239e762a7dc34677c6217ae3e34c8b
+00000138_002.png,138,Atelectasis|Fibrosis,train,768,NIH Chest X-ray 14 (Partial),7a46eb03778d6be84a60584fe963b5e5
+00000138_003.png,138,No Finding,train,768,NIH Chest X-ray 14 (Partial),1036499f58efc5a2f9ac58b190d4fc5f
+00000138_004.png,138,Nodule,train,768,NIH Chest X-ray 14 (Partial),0ea44fff71833945d119cce3f376b08d
+00000138_005.png,138,Effusion|Nodule|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),e19060c1ef2f47e91356aeeb0a04fddf
+00000138_006.png,138,Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),c8c09621d94805798cfd776429c4c2bc
+00000139_000.png,139,No Finding,train,768,NIH Chest X-ray 14 (Partial),7dd64e779e5e94a606e72f2ca753c3c5
+00000139_001.png,139,No Finding,train,768,NIH Chest X-ray 14 (Partial),e2ce3b2a74a67882bea494e19cac81c3
+00000139_002.png,139,No Finding,train,768,NIH Chest X-ray 14 (Partial),1eb0620260cf0ad340b3b5fdb4617def
+00000140_000.png,140,No Finding,train,768,NIH Chest X-ray 14 (Partial),ebddaca8572201a42813894838a7173e
+00000141_000.png,141,No Finding,train,768,NIH Chest X-ray 14 (Partial),3c991c1c5fbf13e131718d67ed737f82
+00000142_000.png,142,No Finding,train,768,NIH Chest X-ray 14 (Partial),f1c8f62294bc06a91146527ed1ca3c95
+00000144_000.png,144,No Finding,train,768,NIH Chest X-ray 14 (Partial),aa8463c275b6a5e918ae3a73af28557c
+00000144_001.png,144,Pneumonia,train,768,NIH Chest X-ray 14 (Partial),dac660c2e6a79092aadfd96b6aa09a22
+00000144_002.png,144,No Finding,train,768,NIH Chest X-ray 14 (Partial),96f483d7c8e8b6088bcea9cfd92075a7
+00000144_003.png,144,Effusion,train,768,NIH Chest X-ray 14 (Partial),701b1c870417ec22d2f33a025234a9b6
+00000145_000.png,145,Fibrosis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),ff3d087bcd1e3bd17b6bdc2da34be32b
+00000147_000.png,147,Infiltration,train,768,NIH Chest X-ray 14 (Partial),4373a14174f3ce1cc62a9ea9d16d87bb
+00000147_001.png,147,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),82a29614735066ebb2fe2de9f119123d
+00000147_002.png,147,Atelectasis|Effusion|Pleural_Thickening,train,768,NIH Chest X-ray 14 (Partial),d6201e315b1a29a46159063c5ef6ed4d
+00000148_000.png,148,No Finding,train,768,NIH Chest X-ray 14 (Partial),965e9b60062ab93ba656bf85033ab16b
+00000148_001.png,148,Effusion,train,768,NIH Chest X-ray 14 (Partial),7fe79521d2553860183645e423e12193
+00000148_002.png,148,Effusion|Fibrosis,train,768,NIH Chest X-ray 14 (Partial),91b463b99c22fe259cd430adafe62d02
+00000148_003.png,148,No Finding,train,768,NIH Chest X-ray 14 (Partial),ae6e26e6e1b08c7ebcd07d5c47368951
+00000149_000.png,149,No Finding,train,768,NIH Chest X-ray 14 (Partial),624305edfb1a3846a1b83fc46d720926
+00000149_001.png,149,No Finding,train,768,NIH Chest X-ray 14 (Partial),c9cd41b98473ed48481c163f9da76902
+00000149_002.png,149,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),1bcdccd338872e7656671b0ccd392bef
+00000149_003.png,149,No Finding,train,768,NIH Chest X-ray 14 (Partial),b233dc4fe23e2d901a4ef59dc4344e7d
+00000149_004.png,149,No Finding,train,768,NIH Chest X-ray 14 (Partial),60ed1f721972803b39f2aa2008dde50f
+00000149_005.png,149,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),6135035a3eb9672e09fb50882e79b6e5
+00000149_006.png,149,Atelectasis,train,768,NIH Chest X-ray 14 (Partial),9d67fc29c7a8ffc7a749de50752e32c8
+00000149_007.png,149,Fibrosis|Infiltration,train,768,NIH Chest X-ray 14 (Partial),02c507760a85af58f99fa13beaf7fa3e
+00000149_008.png,149,No Finding,train,768,NIH Chest X-ray 14 (Partial),f3bbd736e09beb44549819128af5f28d
+00000149_009.png,149,No Finding,train,768,NIH Chest X-ray 14 (Partial),877ecd0b700f645408310032f864b8d3
+00000151_000.png,151,No Finding,train,768,NIH Chest X-ray 14 (Partial),21fdd9a8808f9c476bc8c98eab2cdb08
+00000151_001.png,151,No Finding,train,768,NIH Chest X-ray 14 (Partial),237d91a32adaabbfa161761a1e8ed1c4
+00000151_002.png,151,No Finding,train,768,NIH Chest X-ray 14 (Partial),5a480756426de971f495e82cde847238
+00000152_000.png,152,No Finding,train,768,NIH Chest X-ray 14 (Partial),11cc00ad4e7b402bcd108176a7bd943b
+00000154_000.png,154,Infiltration,train,768,NIH Chest X-ray 14 (Partial),66f27f7307c14ec716206c65e225dcd9
+00000154_001.png,154,Infiltration|Nodule,train,768,NIH Chest X-ray 14 (Partial),fb369013a580ec02cafdee74d1863a6b
+00000156_000.png,156,Cardiomegaly|Infiltration,train,768,NIH Chest X-ray 14 (Partial),9c526478ddd7e89ce4f2e7bff5aec3e1
+00000156_001.png,156,Cardiomegaly|Effusion,train,768,NIH Chest X-ray 14 (Partial),e630adf8c8cc1d957e2af3cd4879de86
+00000157_000.png,157,Nodule,train,768,NIH Chest X-ray 14 (Partial),264a580d3894679fe6e14d3fe0e844bf
+00000158_000.png,158,No Finding,train,768,NIH Chest X-ray 14 (Partial),7c830485a7c92e55ccea27ce381bb20d
+00000160_000.png,160,No Finding,train,768,NIH Chest X-ray 14 (Partial),949a6f7a3e12ca5a9d3ced34b739abae
+00000161_000.png,161,No Finding,train,768,NIH Chest X-ray 14 (Partial),048c270f324c25403153acc19add3879
+00000162_000.png,162,No Finding,train,768,NIH Chest X-ray 14 (Partial),60bc48193f9d9a128deed769426bd0f8
+00000163_000.png,163,No Finding,train,768,NIH Chest X-ray 14 (Partial),67b3b6f43fcd9e27edaf4650550fb1f7
+00000163_001.png,163,No Finding,train,768,NIH Chest X-ray 14 (Partial),4446d6b108b320ea47c0dbe7afb4835f
+00000164_000.png,164,Nodule,train,768,NIH Chest X-ray 14 (Partial),a3c94c73f574c69a0cd6b9b40b7f76c9
+00000166_000.png,166,No Finding,train,768,NIH Chest X-ray 14 (Partial),6d8508962e7bb8de03f00de866f59778
+00000004_000.png,4,Mass|Nodule,val,768,NIH Chest X-ray 14 (Partial),b55beacac8c6ceba71076792919e94ee
+00000006_000.png,6,No Finding,val,768,NIH Chest X-ray 14 (Partial),0311aee19490cd5905d8cc8a142cb7c6
+00000007_000.png,7,No Finding,val,768,NIH Chest X-ray 14 (Partial),a5d1e934014bde9910771de950a9f258
+00000010_000.png,10,Infiltration,val,768,NIH Chest X-ray 14 (Partial),978536c998f2a03ba43dd868d29d5623
+00000024_000.png,24,Fibrosis,val,768,NIH Chest X-ray 14 (Partial),06366ce0ba0d171ea7cfb9e4e76c8fe1
+00000028_000.png,28,Pleural_Thickening,val,768,NIH Chest X-ray 14 (Partial),0fd722b03129f48980c0dd0302242c5c
+00000029_000.png,29,No Finding,val,768,NIH Chest X-ray 14 (Partial),f9ca122728a33353322527f20e83cceb
+00000040_000.png,40,No Finding,val,768,NIH Chest X-ray 14 (Partial),0e1639d7e818a1c4652879cca0bc07d0
+00000040_001.png,40,Emphysema,val,768,NIH Chest X-ray 14 (Partial),28a49aab310b714cb8a539dedaf014ea
+00000040_002.png,40,No Finding,val,768,NIH Chest X-ray 14 (Partial),4ccc8f7175c52ae8616ad96f3cd66481
+00000040_003.png,40,Consolidation|Mass,val,768,NIH Chest X-ray 14 (Partial),6a038d664409ccf51abfacc278d7a642
+00000042_000.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),8d22653bf7f85ddd4ac6cb4d5abf34a2
+00000042_001.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),b65270ba4491b9d54b2589fd048b52e3
+00000042_002.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),104f4d5c737cc0442534483b2102b6e8
+00000042_003.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),947b1b41e31c729381f2992170f44ac1
+00000042_004.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),13ec143c48b8a834997ad7ef5d9d5ac1
+00000042_005.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),3f95cb60a53ff144a947b2969c97a1fd
+00000042_006.png,42,Infiltration,val,768,NIH Chest X-ray 14 (Partial),c1c8aaac3afe4633a896546ea6690c9b
+00000042_007.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),ee03581a394eaeba84e64a1ff462d34a
+00000042_008.png,42,No Finding,val,768,NIH Chest X-ray 14 (Partial),2a5f5d2bdfba7be2d1f499caae52e552
+00000045_000.png,45,Cardiomegaly,val,768,NIH Chest X-ray 14 (Partial),02fcfe6903a3839c5aa47e566d03f547
+00000048_000.png,48,No Finding,val,768,NIH Chest X-ray 14 (Partial),87f5303de33ee9c62553310e966c6fbd
+00000059_000.png,59,No Finding,val,768,NIH Chest X-ray 14 (Partial),a484f6c2b6f34bed9e42feb05ab3f1ca
+00000059_001.png,59,No Finding,val,768,NIH Chest X-ray 14 (Partial),9a8859fce3bdae2339b9af07557b07b4
+00000072_000.png,72,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),26a60d10daba91f4157a7e74759612d2
+00000090_000.png,90,No Finding,val,768,NIH Chest X-ray 14 (Partial),2c1988e49b5d5b10ff3181ae8ad242c2
+00000090_001.png,90,No Finding,val,768,NIH Chest X-ray 14 (Partial),50b407b2c76f7203998ea464068bc2f1
+00000090_002.png,90,No Finding,val,768,NIH Chest X-ray 14 (Partial),8996b2bf9a0a09e8e36a92e01706e798
+00000090_003.png,90,Effusion,val,768,NIH Chest X-ray 14 (Partial),4a781b1d9636547eefa9fd6c6eea550b
+00000090_004.png,90,Atelectasis|Effusion,val,768,NIH Chest X-ray 14 (Partial),4d9502f9458765435447e8516e81649b
+00000090_005.png,90,Effusion|Emphysema|Infiltration,val,768,NIH Chest X-ray 14 (Partial),f12a6501cd8cb8656b868e0b0e84ccc0
+00000090_006.png,90,No Finding,val,768,NIH Chest X-ray 14 (Partial),e205f9524e3f0f307c02551246712bd5
+00000090_007.png,90,No Finding,val,768,NIH Chest X-ray 14 (Partial),328026cc35daffde04a717de633c8cbb
+00000090_008.png,90,Effusion,val,768,NIH Chest X-ray 14 (Partial),214a86acbe1d82669f923f7221f6faae
+00000090_009.png,90,Pneumothorax,val,768,NIH Chest X-ray 14 (Partial),8c440ce12c301d33b0d0d677a70c9d87
+00000090_010.png,90,No Finding,val,768,NIH Chest X-ray 14 (Partial),fdb71ad5d4526d37ae939f919f4c4177
+00000109_000.png,109,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),a1bdc7dae03e7087ddda8b4f3cffeca8
+00000109_001.png,109,Atelectasis|Effusion,val,768,NIH Chest X-ray 14 (Partial),4673f921d8db33b89efb37fc8819d638
+00000109_002.png,109,No Finding,val,768,NIH Chest X-ray 14 (Partial),881ff7a4b42dcedf6fdd9c0c69be92c2
+00000109_003.png,109,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),bb172084342e73fb0e8170eba2adc4e5
+00000109_004.png,109,No Finding,val,768,NIH Chest X-ray 14 (Partial),87b17c8634a258c0292dacf74b59f074
+00000109_005.png,109,No Finding,val,768,NIH Chest X-ray 14 (Partial),72449f918f872794c1f377607874d6df
+00000109_006.png,109,No Finding,val,768,NIH Chest X-ray 14 (Partial),175c31aa1864a390f3bc36bb78ee017c
+00000116_000.png,116,Cardiomegaly,val,768,NIH Chest X-ray 14 (Partial),8f54f90cdecd4b80438726cf04c1f3fb
+00000116_001.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),8a32c93f135288f9ab4fd8059e54d3c3
+00000116_002.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),eff067906c2c11c0f86bf8fa2ad8d4cd
+00000116_003.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),b50dd5c6deaaf5608b46ce6e83c91d5c
+00000116_004.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),37f370095fd35ebcfcf44b1e19115718
+00000116_005.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),8c223e25735e361c95244203b36c6719
+00000116_006.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),cbc1365630cde02f63f3815b04718312
+00000116_007.png,116,Consolidation|Effusion|Infiltration,val,768,NIH Chest X-ray 14 (Partial),acc60da85c99210f67e35da054af0c33
+00000116_008.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),764ce8a148c1095b5f658a3e095f35dc
+00000116_009.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),3cd59c6bffb4ec09e408a703530f0735
+00000116_010.png,116,Cardiomegaly|Effusion,val,768,NIH Chest X-ray 14 (Partial),ef2002c01c9e5565d9efed72345c15ec
+00000116_011.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),18dfe7e77227f599d4ea39f1fb868c99
+00000116_012.png,116,Pneumothorax,val,768,NIH Chest X-ray 14 (Partial),0c7d7a58f849e1319dd26cb85de3a5f8
+00000116_013.png,116,Cardiomegaly|Consolidation,val,768,NIH Chest X-ray 14 (Partial),b4f4d6ea977b5c864c9186f2495f11fb
+00000116_014.png,116,Consolidation,val,768,NIH Chest X-ray 14 (Partial),ff4ead9f4d6ccc97e12d5b8fe2e9ed0e
+00000116_015.png,116,Consolidation,val,768,NIH Chest X-ray 14 (Partial),b747a2af3d02b3c81c35c8ca7d366159
+00000116_016.png,116,Cardiomegaly,val,768,NIH Chest X-ray 14 (Partial),5344ec3bbe16c9e23b9a6df569e18298
+00000116_017.png,116,Consolidation|Effusion,val,768,NIH Chest X-ray 14 (Partial),fb5897eaec3c4cc4d7dbe0b3da8719eb
+00000116_018.png,116,Consolidation|Effusion,val,768,NIH Chest X-ray 14 (Partial),2a096a3cc44aeafbe02ab4f866e92d1a
+00000116_019.png,116,Consolidation,val,768,NIH Chest X-ray 14 (Partial),a0ec6a30a7c94278778278e04c5efc97
+00000116_020.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),67ef6fec83c1d4b4a4bdff2128adb262
+00000116_021.png,116,Effusion|Pneumothorax,val,768,NIH Chest X-ray 14 (Partial),9e8ba10cd29955cfa7ad87d6457b96bf
+00000116_022.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),b16e7f84b3bfc0091a08eec4d88f44f8
+00000116_023.png,116,Effusion|Infiltration,val,768,NIH Chest X-ray 14 (Partial),909ced01bff67aa30fcc831dbd74aca4
+00000116_024.png,116,Effusion|Infiltration,val,768,NIH Chest X-ray 14 (Partial),7f617cc20ff71124ad7da3b838078c45
+00000116_025.png,116,Effusion|Infiltration,val,768,NIH Chest X-ray 14 (Partial),4043c75bde19228b339cf00ef7472700
+00000116_026.png,116,Infiltration,val,768,NIH Chest X-ray 14 (Partial),9d7e656ee784df2695208ef624a08c3f
+00000116_027.png,116,No Finding,val,768,NIH Chest X-ray 14 (Partial),1bd822ed94db721d4911bf83b53db972
+00000116_028.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),9d0796e5dfab0fe814247bc4443d5795
+00000116_029.png,116,Atelectasis|Effusion,val,768,NIH Chest X-ray 14 (Partial),0590f38248c3a08c2836155c86569142
+00000116_030.png,116,No Finding,val,768,NIH Chest X-ray 14 (Partial),8eed6aa520f95859cd481f1e335b5aca
+00000116_031.png,116,Cardiomegaly|Consolidation,val,768,NIH Chest X-ray 14 (Partial),cfdd2d3ce9ae80be2560a5b0eae4423e
+00000116_032.png,116,Cardiomegaly|Consolidation,val,768,NIH Chest X-ray 14 (Partial),6130f8bf569014bb207f61265e0aaa01
+00000116_033.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),6429f64f0522a0b0d21686cfbfc8f552
+00000116_034.png,116,Cardiomegaly|Effusion|Pleural_Thickening,val,768,NIH Chest X-ray 14 (Partial),a2a016662e585f83e2d82109adcdc5be
+00000116_035.png,116,Atelectasis|Effusion,val,768,NIH Chest X-ray 14 (Partial),668ee0e17978778ee9a12be4a0dd484f
+00000116_036.png,116,Effusion,val,768,NIH Chest X-ray 14 (Partial),66b2b51c23ef8d917a6ee210afd62086
+00000116_037.png,116,Cardiomegaly|Effusion,val,768,NIH Chest X-ray 14 (Partial),32f7046cfe7db27d9f4d6ef835525051
+00000116_038.png,116,No Finding,val,768,NIH Chest X-ray 14 (Partial),eb90ad3a231d21028cee1f04699616c4
+00000116_039.png,116,No Finding,val,768,NIH Chest X-ray 14 (Partial),8fbfbf19d08acde341ec49a43ea16357
+00000116_040.png,116,Cardiomegaly|Consolidation,val,768,NIH Chest X-ray 14 (Partial),bede41a0ea2d3477091c1034ac1501c4
+00000122_000.png,122,No Finding,val,768,NIH Chest X-ray 14 (Partial),da53503b1d6321c71e77e67f5fc13322
+00000126_000.png,126,No Finding,val,768,NIH Chest X-ray 14 (Partial),7db30c977980692a7adc1a4e6905f9ce
+00000135_000.png,135,No Finding,val,768,NIH Chest X-ray 14 (Partial),91261e1e8f4c3c470b4ffa564ccb167d
+00000135_001.png,135,No Finding,val,768,NIH Chest X-ray 14 (Partial),a1f87238ce8a16a4ee365d2a58ec2aa1
+00000136_000.png,136,No Finding,val,768,NIH Chest X-ray 14 (Partial),5354d136ef703edda23ca3370ee35550
+00000143_000.png,143,No Finding,val,768,NIH Chest X-ray 14 (Partial),d3ad1f56b053007d9ba79b23dd9d469d
+00000143_001.png,143,No Finding,val,768,NIH Chest X-ray 14 (Partial),16dc092c8de807356e29052e0d25d661
+00000143_002.png,143,Effusion|Infiltration,val,768,NIH Chest X-ray 14 (Partial),a5281738ac5e2241ca3147ba4aefeafd
+00000143_003.png,143,No Finding,val,768,NIH Chest X-ray 14 (Partial),df279b7b6fab3d22d23e06b33eecdf01
+00000143_004.png,143,No Finding,val,768,NIH Chest X-ray 14 (Partial),fc6c34cf3b2d79d1dbb82b7cbda25555
+00000143_005.png,143,No Finding,val,768,NIH Chest X-ray 14 (Partial),34e9e1e91e3bb4787739b60c35f7854e
+00000143_006.png,143,Infiltration,val,768,NIH Chest X-ray 14 (Partial),eb6f7137eb67e7f71fdcbd0fb05ac367
+00000143_007.png,143,No Finding,val,768,NIH Chest X-ray 14 (Partial),52888ce81fc00e918b13bf70fa75507e
+00000143_008.png,143,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),0ea2a5d1a2464e5506898310964c0080
+00000143_009.png,143,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),dde504c5321cc1f22a64a88a61912748
+00000143_010.png,143,No Finding,val,768,NIH Chest X-ray 14 (Partial),d826cc85170aae2c2d74c8e7065d0ebf
+00000143_011.png,143,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),89b54ff1c365057a92b75409e0615b66
+00000143_012.png,143,Atelectasis|Effusion|Infiltration,val,768,NIH Chest X-ray 14 (Partial),dfe9d360df14a3d59cee779368957bee
+00000150_000.png,150,Effusion,val,768,NIH Chest X-ray 14 (Partial),1d041f6b3f6568ad08814c30e5976bb5
+00000150_001.png,150,No Finding,val,768,NIH Chest X-ray 14 (Partial),07bb9b7c95ca3647f0ace293d98851b6
+00000150_002.png,150,Atelectasis|Infiltration,val,768,NIH Chest X-ray 14 (Partial),533bb35b4702c4a492923d1e624d93de
+00000150_003.png,150,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),2def7dfd778765a8d1b83627620d168f
+00000150_004.png,150,Atelectasis|Effusion,val,768,NIH Chest X-ray 14 (Partial),384469b973b4b75686bb37802601bce4
+00000150_005.png,150,No Finding,val,768,NIH Chest X-ray 14 (Partial),fb453bacc9b407cbd7898f530f667127
+00000153_000.png,153,No Finding,val,768,NIH Chest X-ray 14 (Partial),ea2b8c90f6b01600adc67bfc6ea86f02
+00000153_001.png,153,Atelectasis,val,768,NIH Chest X-ray 14 (Partial),7523e7f6843205cbf0bb34fbb9384825
+00000155_000.png,155,Cardiomegaly,val,768,NIH Chest X-ray 14 (Partial),734eb160754c9ce93f7adc9d8132b023
+00000155_001.png,155,No Finding,val,768,NIH Chest X-ray 14 (Partial),73eb309fc1f5ff7c64cdc44b3186a558
+00000159_000.png,159,Fibrosis,val,768,NIH Chest X-ray 14 (Partial),3fcceee45b3a14352a095a05614473a2
+00000165_000.png,165,No Finding,val,768,NIH Chest X-ray 14 (Partial),2a138ec16154ea5bbef7f2e670184595
+00000165_001.png,165,Pneumonia,val,768,NIH Chest X-ray 14 (Partial),60adf8deba7e421fe4085975ceed0afc
+00000165_002.png,165,No Finding,val,768,NIH Chest X-ray 14 (Partial),afd72f82381cffdbbba29698a30a295e
+00000165_003.png,165,Emphysema,val,768,NIH Chest X-ray 14 (Partial),555f73f20f7ac22917f6539bd2728ecd
+00000165_004.png,165,Pleural_Thickening,val,768,NIH Chest X-ray 14 (Partial),8c12e51255b48f7305261a0ffdef77ff
+00000165_005.png,165,Pleural_Thickening,val,768,NIH Chest X-ray 14 (Partial),e61abdf479fcb50e30a61c11e0a19036
+00000165_006.png,165,Pleural_Thickening,val,768,NIH Chest X-ray 14 (Partial),9de5ac97f114852857a82f668afe66ea
+00000165_007.png,165,Nodule,val,768,NIH Chest X-ray 14 (Partial),e8cc0125bc9eabeb6a6661eea5bc5dd9
+00000165_008.png,165,No Finding,val,768,NIH Chest X-ray 14 (Partial),68a9377768c0ba0217a1b07d331f161c
+00000167_000.png,167,No Finding,val,768,NIH Chest X-ray 14 (Partial),b7794d47499f2828165ca199efc7c340
+00000167_001.png,167,No Finding,val,768,NIH Chest X-ray 14 (Partial),c2dd0d3a57ee56835411345206447259
+00000014_000.png,14,No Finding,test,768,NIH Chest X-ray 14 (Partial),ab105e7d9d08f92e12a27c1afc2c7433
+00000019_000.png,19,Atelectasis|Effusion|Pleural_Thickening,test,768,NIH Chest X-ray 14 (Partial),088fc9b84db9ea6035ca35d8505ffdab
+00000023_000.png,23,No Finding,test,768,NIH Chest X-ray 14 (Partial),25ada0dffcd2bd63db6efeaef8d03c62
+00000023_001.png,23,No Finding,test,768,NIH Chest X-ray 14 (Partial),4e9de85b6e1ad74026a15ab056fd8293
+00000023_002.png,23,Effusion|Infiltration,test,768,NIH Chest X-ray 14 (Partial),2bb74c1cadbcf72e0d95d075e60c5386
+00000023_003.png,23,No Finding,test,768,NIH Chest X-ray 14 (Partial),02764e1630b871afc3b3ca9de2ce5339
+00000023_004.png,23,Infiltration|Mass|Nodule,test,768,NIH Chest X-ray 14 (Partial),3df5574cdb35ea480f013271fd0d15a4
+00000036_000.png,36,Effusion|Infiltration,test,768,NIH Chest X-ray 14 (Partial),326692f7df4644927d8a2c4df16f1222
+00000038_000.png,38,Cardiomegaly|Effusion,test,768,NIH Chest X-ray 14 (Partial),be2c623973c7978a5269f82054a577ff
+00000038_001.png,38,Atelectasis|Infiltration,test,768,NIH Chest X-ray 14 (Partial),07aa0820a9c72b66680ef0bc38dcf62a
+00000038_002.png,38,No Finding,test,768,NIH Chest X-ray 14 (Partial),b5f4915b35d321d916417092924038c4
+00000038_003.png,38,Cardiomegaly,test,768,NIH Chest X-ray 14 (Partial),6c787942cb2bb9bcf31c02e9c819bd0f
+00000038_004.png,38,No Finding,test,768,NIH Chest X-ray 14 (Partial),06839b1ba93211b8fb9f2e83237fd66f
+00000038_005.png,38,No Finding,test,768,NIH Chest X-ray 14 (Partial),bc7eaf6f4fec18ef909d80d5ff23f3b6
+00000038_006.png,38,Atelectasis|Infiltration,test,768,NIH Chest X-ray 14 (Partial),027e89d3889fd1efa834661cf6e899af
+00000038_007.png,38,No Finding,test,768,NIH Chest X-ray 14 (Partial),d094e1530202c005bc49f051cc4b844b
+00000052_000.png,52,No Finding,test,768,NIH Chest X-ray 14 (Partial),fceb9545da3267a044478f1b33f668f6
+00000052_001.png,52,No Finding,test,768,NIH Chest X-ray 14 (Partial),b17d3fe364ea69cb2765881bc016567d
+00000056_000.png,56,Nodule|Pneumonia,test,768,NIH Chest X-ray 14 (Partial),b77249bbf55aac93bb9246ea6652b08c
+00000056_001.png,56,Effusion,test,768,NIH Chest X-ray 14 (Partial),bd032c2a153666065f874377b9b507c9
+00000071_000.png,71,Nodule,test,768,NIH Chest X-ray 14 (Partial),00fe9210fb174df2fd17ecd7dd636b38
+00000071_001.png,71,Pneumothorax,test,768,NIH Chest X-ray 14 (Partial),570f8cfe743503b7d27c0d8f97f57c4d
+00000071_002.png,71,Effusion,test,768,NIH Chest X-ray 14 (Partial),ff49268f2a2c3d45dd4fa050f9ee6fe0
+00000071_003.png,71,No Finding,test,768,NIH Chest X-ray 14 (Partial),43ee7740e9c1f844c8310d13be914f7e
+00000071_004.png,71,Nodule,test,768,NIH Chest X-ray 14 (Partial),a6f1ae888fc72f6a5335a7687cba46b8
+00000071_005.png,71,Effusion|Infiltration,test,768,NIH Chest X-ray 14 (Partial),6add4482696cd3f6a493c5b9a2d1b865
+00000071_006.png,71,Effusion|Infiltration,test,768,NIH Chest X-ray 14 (Partial),906eac6949703fd73b8a463058c3df06
+00000071_007.png,71,Effusion,test,768,NIH Chest X-ray 14 (Partial),e7e487f7b6b6c54827ab55a1892e45ec
+00000071_008.png,71,Mass,test,768,NIH Chest X-ray 14 (Partial),24c56758f43effcec49abcb54abb1048
+00000082_000.png,82,No Finding,test,768,NIH Chest X-ray 14 (Partial),fc5ae2c4b039ff7d2db3a8fff41a70dc
+00000085_000.png,85,No Finding,test,768,NIH Chest X-ray 14 (Partial),d34b30a15003253f53497107bbb1af6c
+00000088_000.png,88,Cardiomegaly|Effusion,test,768,NIH Chest X-ray 14 (Partial),09f8a2975c856e27d1a88dde0cab46c0
+00000093_000.png,93,Nodule,test,768,NIH Chest X-ray 14 (Partial),ece446488a1b6da8e9e5a41c6d6148b6
+00000093_001.png,93,Nodule,test,768,NIH Chest X-ray 14 (Partial),6b53725439a6d11a03f973a49c9e3ce5
+00000093_002.png,93,No Finding,test,768,NIH Chest X-ray 14 (Partial),3d5ad882c80cb9a222d9bc3ae69fd062
+00000099_000.png,99,Atelectasis|Effusion,test,768,NIH Chest X-ray 14 (Partial),f950c4a0fafa91b55498ab2260c1e83f
+00000099_001.png,99,Atelectasis|Effusion,test,768,NIH Chest X-ray 14 (Partial),9061cbed2c6b4e1b01712e2c0a8f76b3
+00000099_002.png,99,Effusion,test,768,NIH Chest X-ray 14 (Partial),3f9c6789b6b7422cadab5d2032000ec4
+00000099_003.png,99,Effusion,test,768,NIH Chest X-ray 14 (Partial),592e5294cb5a33139e88a38dc20cc3e5
+00000099_004.png,99,Infiltration,test,768,NIH Chest X-ray 14 (Partial),62bba55c0180ebbc8a8d76165718ffd7
+00000099_005.png,99,Atelectasis|Effusion|Infiltration,test,768,NIH Chest X-ray 14 (Partial),838004cc5dda187d446996f217057d9d
+00000099_006.png,99,No Finding,test,768,NIH Chest X-ray 14 (Partial),020e8ac9fbcc66e680a291ce2d8343a1
+00000099_007.png,99,Consolidation|Effusion,test,768,NIH Chest X-ray 14 (Partial),8d605bcd5d1c01773dd58e0cfe06d75f
+00000099_008.png,99,Effusion,test,768,NIH Chest X-ray 14 (Partial),5ac53edc5fc1a0b4034d79b7c9856277
+00000099_009.png,99,Effusion,test,768,NIH Chest X-ray 14 (Partial),97fa55495b06e6ed70520a539e718a3e
+00000099_010.png,99,Atelectasis|Effusion,test,768,NIH Chest X-ray 14 (Partial),8804f4149e8075d4f0df201e7f1eb1e3
+00000099_011.png,99,Atelectasis|Consolidation,test,768,NIH Chest X-ray 14 (Partial),02348e80ab64c6618b8755ee382908f9
+00000099_012.png,99,Effusion,test,768,NIH Chest X-ray 14 (Partial),7230c2a829e70799f9f65dd2fab172ad
+00000099_013.png,99,Effusion|Fibrosis,test,768,NIH Chest X-ray 14 (Partial),edbfd36d3e7a215a1e4f40b50a39f020
+00000107_000.png,107,No Finding,test,768,NIH Chest X-ray 14 (Partial),9f5e2099dc8564f10fe1c678a34d45ff
+00000107_001.png,107,Pleural_Thickening,test,768,NIH Chest X-ray 14 (Partial),bc179725483c351f72ddf2ae724e2cec
+00000114_000.png,114,Infiltration,test,768,NIH Chest X-ray 14 (Partial),badf558511fc868df570e739b3ef8277
+00000117_000.png,117,Effusion,test,768,NIH Chest X-ray 14 (Partial),f05ed8ca8855248f41291351faadeb6c
+00000117_001.png,117,Effusion,test,768,NIH Chest X-ray 14 (Partial),acef203c3c7b62740590c16ed083aaa8
+00000146_000.png,146,No Finding,test,768,NIH Chest X-ray 14 (Partial),20d8a70c81575eaf702abd567482eb8b

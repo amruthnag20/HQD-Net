@@ -1,0 +1,7 @@
+"Outcome","Group","Median","IQR","Difference","CI","P_value"
+"Diagnostic Performance","Conventional Resources",74,"63%-84%",NA,NA,NA
+"Diagnostic Performance","With LLM",76,"66%-87%",2,"95% CI, -4 to 8",0.6
+"Time per Case","Conventional Resources",565,"456-788",-82,"95% CI, -195 to 31",0.2
+"Time per Case","With LLM",519,"371-668",NA,"95% CI, -195 to 31",0.2
+"LLM Alone","LLM Alone",92,"82%-97%",16,"95% CI, 2-30",0.03
+"LLM Alone","Conventional Resources",NA,NA,NA,NA,NA

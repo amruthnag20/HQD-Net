@@ -1,0 +1,2109 @@
+image_id,patient_id,labels,age,gender,view,split
+00000001_000.png,00000001,Cardiomegaly,058Y,M,PA,train
+00000001_001.png,00000001,Cardiomegaly|Emphysema,058Y,M,PA,train
+00000001_002.png,00000001,Cardiomegaly|Effusion,058Y,M,PA,train
+00000002_000.png,00000002,No Finding,081Y,M,PA,train
+00000003_000.png,00000003,Hernia,081Y,F,PA,train
+00000003_001.png,00000003,Hernia,074Y,F,PA,train
+00000003_002.png,00000003,Hernia,075Y,F,PA,train
+00000003_003.png,00000003,Hernia|Infiltration,076Y,F,PA,train
+00000003_004.png,00000003,Hernia,077Y,F,PA,train
+00000003_005.png,00000003,Hernia,078Y,F,PA,train
+00000003_006.png,00000003,Hernia,079Y,F,PA,train
+00000003_007.png,00000003,Hernia,080Y,F,PA,train
+00000005_000.png,00000005,No Finding,069Y,F,PA,train
+00000005_001.png,00000005,No Finding,069Y,F,AP,train
+00000005_002.png,00000005,No Finding,069Y,F,AP,train
+00000005_003.png,00000005,No Finding,069Y,F,PA,train
+00000005_004.png,00000005,No Finding,070Y,F,PA,train
+00000005_005.png,00000005,No Finding,070Y,F,PA,train
+00000005_006.png,00000005,Infiltration,070Y,F,PA,train
+00000005_007.png,00000005,Effusion|Infiltration,070Y,F,PA,train
+00000008_000.png,00000008,Cardiomegaly,069Y,F,PA,train
+00000008_001.png,00000008,No Finding,070Y,F,PA,train
+00000008_002.png,00000008,Nodule,073Y,F,PA,train
+00000009_000.png,00000009,Emphysema,073Y,M,PA,train
+00000011_000.png,00000011,Effusion,075Y,M,PA,train
+00000011_001.png,00000011,No Finding,075Y,M,PA,train
+00000011_002.png,00000011,No Finding,075Y,M,PA,train
+00000011_003.png,00000011,No Finding,075Y,M,PA,train
+00000011_004.png,00000011,No Finding,075Y,M,PA,train
+00000011_005.png,00000011,Infiltration,075Y,M,AP,train
+00000011_006.png,00000011,Atelectasis,075Y,M,PA,train
+00000011_007.png,00000011,Infiltration,075Y,M,PA,train
+00000011_008.png,00000011,No Finding,075Y,M,PA,train
+00000012_000.png,00000012,Effusion|Mass,076Y,M,PA,train
+00000013_000.png,00000013,No Finding,061Y,M,PA,train
+00000013_001.png,00000013,Emphysema|Pneumothorax,060Y,M,AP,train
+00000013_002.png,00000013,Emphysema|Pneumothorax,060Y,M,AP,train
+00000013_003.png,00000013,Pleural_Thickening,060Y,M,AP,train
+00000013_004.png,00000013,Effusion|Emphysema|Infiltration|Pneumothorax,060Y,M,AP,train
+00000013_005.png,00000013,Emphysema|Infiltration|Pleural_Thickening|Pneumothorax,060Y,M,AP,train
+00000013_006.png,00000013,Effusion|Infiltration,060Y,M,AP,train
+00000013_007.png,00000013,Infiltration,060Y,M,AP,train
+00000013_008.png,00000013,No Finding,060Y,M,AP,train
+00000013_009.png,00000013,Pleural_Thickening,060Y,M,AP,train
+00000013_010.png,00000013,Effusion|Pneumonia|Pneumothorax,060Y,M,AP,train
+00000013_011.png,00000013,Pneumothorax,060Y,M,AP,train
+00000013_012.png,00000013,Pneumothorax,060Y,M,AP,train
+00000013_013.png,00000013,Pneumothorax,060Y,M,AP,train
+00000013_014.png,00000013,No Finding,061Y,M,PA,train
+00000013_015.png,00000013,No Finding,061Y,M,PA,train
+00000013_016.png,00000013,No Finding,061Y,M,PA,train
+00000013_017.png,00000013,No Finding,061Y,M,PA,train
+00000013_018.png,00000013,Effusion|Infiltration|Pneumothorax,060Y,M,AP,train
+00000013_019.png,00000013,No Finding,062Y,M,PA,train
+00000013_020.png,00000013,Pneumothorax,062Y,M,PA,train
+00000013_021.png,00000013,Effusion,062Y,M,PA,train
+00000013_022.png,00000013,Infiltration|Mass,056Y,M,PA,train
+00000013_023.png,00000013,Infiltration|Mass|Pneumothorax,057Y,M,AP,train
+00000013_024.png,00000013,Mass,057Y,M,AP,train
+00000013_025.png,00000013,Cardiomegaly|Infiltration|Mass|Nodule,056Y,M,PA,train
+00000013_026.png,00000013,Cardiomegaly|Emphysema,057Y,M,AP,train
+00000013_027.png,00000013,Cardiomegaly|Effusion|Emphysema|Mass,057Y,M,AP,train
+00000013_028.png,00000013,Cardiomegaly|Effusion|Emphysema|Mass,057Y,M,AP,train
+00000013_029.png,00000013,Cardiomegaly|Effusion|Emphysema|Mass,057Y,M,AP,train
+00000013_030.png,00000013,Atelectasis|Cardiomegaly|Emphysema|Mass|Pneumothorax,057Y,M,AP,train
+00000013_031.png,00000013,Emphysema|Mass,057Y,M,AP,train
+00000013_032.png,00000013,Emphysema|Mass|Pneumothorax,057Y,M,AP,train
+00000013_033.png,00000013,Pneumothorax,056Y,M,PA,train
+00000013_034.png,00000013,Emphysema|Pneumothorax,056Y,M,PA,train
+00000013_035.png,00000013,Atelectasis|Pneumothorax,056Y,M,PA,train
+00000013_036.png,00000013,Pneumothorax,056Y,M,PA,train
+00000013_037.png,00000013,Cardiomegaly|Emphysema|Pneumothorax,056Y,M,PA,train
+00000013_038.png,00000013,No Finding,056Y,M,PA,train
+00000013_039.png,00000013,Pneumothorax,056Y,M,PA,train
+00000013_040.png,00000013,Cardiomegaly|Emphysema|Pneumothorax,056Y,M,PA,train
+00000013_041.png,00000013,Emphysema,056Y,M,PA,train
+00000013_042.png,00000013,Emphysema,056Y,M,PA,train
+00000013_043.png,00000013,Mass|Pleural_Thickening,056Y,M,PA,train
+00000013_044.png,00000013,Cardiomegaly|Mass|Pleural_Thickening,056Y,M,PA,train
+00000013_045.png,00000013,Cardiomegaly,056Y,M,PA,train
+00000013_046.png,00000013,Infiltration,056Y,M,PA,train
+00000015_000.png,00000015,No Finding,070Y,M,AP,train
+00000016_000.png,00000016,No Finding,071Y,M,PA,train
+00000017_000.png,00000017,Effusion|Infiltration|Nodule,077Y,M,PA,train
+00000017_001.png,00000017,No Finding,077Y,M,AP,train
+00000017_002.png,00000017,No Finding,078Y,M,AP,train
+00000018_000.png,00000018,No Finding,075Y,M,PA,train
+00000020_000.png,00000020,Pleural_Thickening,053Y,M,PA,train
+00000020_001.png,00000020,Fibrosis|Infiltration,047Y,M,PA,train
+00000020_002.png,00000020,Fibrosis|Infiltration|Pleural_Thickening,048Y,M,PA,train
+00000021_000.png,00000021,Nodule,078Y,M,PA,train
+00000021_001.png,00000021,Infiltration,080Y,M,PA,train
+00000022_000.png,00000022,No Finding,048Y,M,PA,train
+00000022_001.png,00000022,Fibrosis,049Y,M,PA,train
+00000025_000.png,00000025,Effusion,071Y,M,PA,train
+00000026_000.png,00000026,Infiltration,068Y,M,PA,train
+00000027_000.png,00000027,Emphysema,073Y,M,PA,train
+00000030_000.png,00000030,Atelectasis,074Y,M,PA,train
+00000030_001.png,00000030,Atelectasis,079Y,M,PA,train
+00000031_000.png,00000031,No Finding,071Y,F,PA,train
+00000032_000.png,00000032,Cardiomegaly,055Y,F,AP,train
+00000032_001.png,00000032,Cardiomegaly|Edema|Effusion,055Y,F,AP,train
+00000032_002.png,00000032,No Finding,055Y,F,AP,train
+00000032_003.png,00000032,No Finding,055Y,F,AP,train
+00000032_004.png,00000032,Cardiomegaly|Edema|Effusion,055Y,F,AP,train
+00000032_005.png,00000032,No Finding,055Y,F,AP,train
+00000032_006.png,00000032,Atelectasis|Effusion|Infiltration,055Y,F,AP,train
+00000032_007.png,00000032,Cardiomegaly|Edema|Effusion,055Y,F,AP,train
+00000032_008.png,00000032,No Finding,055Y,F,AP,train
+00000032_009.png,00000032,No Finding,055Y,F,AP,train
+00000032_010.png,00000032,No Finding,055Y,F,AP,train
+00000032_011.png,00000032,Infiltration,055Y,F,AP,train
+00000032_012.png,00000032,Atelectasis|Consolidation|Edema|Pneumonia,055Y,F,AP,train
+00000032_013.png,00000032,Infiltration,055Y,F,AP,train
+00000032_014.png,00000032,Infiltration,055Y,F,AP,train
+00000032_015.png,00000032,Infiltration,055Y,F,AP,train
+00000032_016.png,00000032,Consolidation,055Y,F,AP,train
+00000032_017.png,00000032,Infiltration,055Y,F,AP,train
+00000032_018.png,00000032,Infiltration,055Y,F,AP,train
+00000032_019.png,00000032,No Finding,055Y,F,AP,train
+00000032_020.png,00000032,No Finding,055Y,F,AP,train
+00000032_021.png,00000032,Cardiomegaly,055Y,F,AP,train
+00000032_022.png,00000032,No Finding,055Y,F,AP,train
+00000032_023.png,00000032,Edema|Infiltration,055Y,F,AP,train
+00000032_024.png,00000032,Edema,055Y,F,AP,train
+00000032_025.png,00000032,No Finding,055Y,F,AP,train
+00000032_026.png,00000032,Infiltration,055Y,F,AP,train
+00000032_027.png,00000032,Cardiomegaly|Consolidation,055Y,F,AP,train
+00000032_028.png,00000032,Cardiomegaly|Infiltration,055Y,F,AP,train
+00000032_029.png,00000032,Cardiomegaly,055Y,F,AP,train
+00000032_030.png,00000032,Cardiomegaly|Consolidation,055Y,F,AP,train
+00000032_031.png,00000032,Cardiomegaly|Infiltration,055Y,F,AP,train
+00000032_032.png,00000032,Cardiomegaly|Edema|Effusion|Infiltration,055Y,F,AP,train
+00000032_033.png,00000032,Infiltration,055Y,F,AP,train
+00000032_034.png,00000032,Atelectasis|Edema|Effusion|Infiltration,055Y,F,AP,train
+00000032_035.png,00000032,Atelectasis|Edema|Effusion|Infiltration,055Y,F,AP,train
+00000032_036.png,00000032,Atelectasis|Edema|Effusion|Infiltration,055Y,F,AP,train
+00000032_037.png,00000032,Cardiomegaly|Edema|Infiltration,055Y,F,AP,train
+00000032_038.png,00000032,Consolidation|Infiltration,055Y,F,AP,train
+00000032_039.png,00000032,Consolidation|Edema,055Y,F,AP,train
+00000032_040.png,00000032,Cardiomegaly|Edema,055Y,F,AP,train
+00000032_041.png,00000032,Edema|Effusion|Infiltration|Nodule,055Y,F,AP,train
+00000032_042.png,00000032,No Finding,055Y,F,AP,train
+00000032_043.png,00000032,Consolidation|Infiltration,055Y,F,AP,train
+00000032_044.png,00000032,Cardiomegaly|Edema,055Y,F,AP,train
+00000032_045.png,00000032,Cardiomegaly|Edema|Effusion|Infiltration,055Y,F,AP,train
+00000032_046.png,00000032,No Finding,055Y,F,AP,train
+00000032_047.png,00000032,Infiltration,055Y,F,AP,train
+00000032_048.png,00000032,No Finding,055Y,F,AP,train
+00000032_049.png,00000032,No Finding,055Y,F,AP,train
+00000032_050.png,00000032,Atelectasis|Edema|Infiltration,055Y,F,AP,train
+00000032_051.png,00000032,No Finding,055Y,F,AP,train
+00000032_052.png,00000032,Atelectasis|Edema|Infiltration,055Y,F,AP,train
+00000032_053.png,00000032,Cardiomegaly,055Y,F,AP,train
+00000032_054.png,00000032,Atelectasis,055Y,F,AP,train
+00000032_055.png,00000032,Cardiomegaly,055Y,F,AP,train
+00000032_056.png,00000032,Cardiomegaly,055Y,F,AP,train
+00000032_057.png,00000032,Edema|Effusion|Infiltration,055Y,F,AP,train
+00000032_058.png,00000032,Edema|Effusion|Infiltration,055Y,F,AP,train
+00000032_059.png,00000032,Cardiomegaly|Infiltration,055Y,F,AP,train
+00000032_060.png,00000032,Cardiomegaly|Edema,055Y,F,AP,train
+00000033_000.png,00000033,Atelectasis|Cardiomegaly|Fibrosis,072Y,F,PA,train
+00000034_000.png,00000034,Emphysema,074Y,M,PA,train
+00000034_001.png,00000034,No Finding,076Y,M,PA,train
+00000035_000.png,00000035,No Finding,079Y,M,PA,train
+00000035_001.png,00000035,No Finding,080Y,M,PA,train
+00000037_000.png,00000037,No Finding,072Y,M,PA,train
+00000039_000.png,00000039,No Finding,076Y,M,PA,train
+00000039_001.png,00000039,No Finding,075Y,M,PA,train
+00000039_002.png,00000039,No Finding,076Y,M,AP,train
+00000039_003.png,00000039,No Finding,075Y,M,PA,train
+00000039_004.png,00000039,Effusion,075Y,M,PA,train
+00000041_000.png,00000041,Emphysema|Infiltration,062Y,F,PA,train
+00000041_001.png,00000041,Emphysema,062Y,F,AP,train
+00000041_002.png,00000041,Emphysema|Pneumothorax,062Y,F,PA,train
+00000041_003.png,00000041,No Finding,062Y,F,PA,train
+00000041_004.png,00000041,No Finding,062Y,F,PA,train
+00000041_005.png,00000041,Emphysema,062Y,F,PA,train
+00000041_006.png,00000041,Effusion,062Y,F,PA,train
+00000043_000.png,00000043,Infiltration,066Y,M,PA,train
+00000044_000.png,00000044,Consolidation|Effusion|Infiltration,079Y,M,PA,train
+00000044_001.png,00000044,Infiltration|Pleural_Thickening,078Y,M,PA,train
+00000044_002.png,00000044,Cardiomegaly,078Y,M,PA,train
+00000046_000.png,00000046,No Finding,057Y,M,PA,train
+00000047_000.png,00000047,No Finding,073Y,F,PA,train
+00000047_001.png,00000047,No Finding,073Y,F,PA,train
+00000047_002.png,00000047,No Finding,073Y,F,PA,train
+00000047_003.png,00000047,Atelectasis,074Y,F,AP,train
+00000047_004.png,00000047,Atelectasis,073Y,F,PA,train
+00000047_005.png,00000047,No Finding,074Y,F,AP,train
+00000047_006.png,00000047,Atelectasis|Effusion,073Y,F,PA,train
+00000047_007.png,00000047,No Finding,073Y,F,PA,train
+00000049_000.png,00000049,Nodule,091Y,F,PA,train
+00000049_001.png,00000049,No Finding,092Y,F,PA,train
+00000049_002.png,00000049,No Finding,087Y,F,PA,train
+00000050_000.png,00000050,No Finding,078Y,M,AP,train
+00000050_001.png,00000050,No Finding,079Y,M,PA,train
+00000050_002.png,00000050,No Finding,073Y,M,PA,train
+00000050_003.png,00000050,No Finding,073Y,M,PA,train
+00000051_000.png,00000051,Infiltration,055Y,M,PA,train
+00000053_000.png,00000053,Fibrosis|Infiltration|Nodule,071Y,M,PA,train
+00000053_001.png,00000053,Atelectasis|Infiltration,071Y,M,AP,train
+00000054_000.png,00000054,Infiltration,071Y,F,PA,train
+00000054_001.png,00000054,No Finding,072Y,F,PA,train
+00000054_002.png,00000054,No Finding,074Y,F,PA,train
+00000054_003.png,00000054,No Finding,063Y,F,PA,train
+00000054_004.png,00000054,No Finding,064Y,F,PA,train
+00000054_005.png,00000054,No Finding,064Y,F,PA,train
+00000054_006.png,00000054,Infiltration,065Y,F,PA,train
+00000054_007.png,00000054,No Finding,067Y,F,PA,train
+00000054_008.png,00000054,No Finding,069Y,F,PA,train
+00000054_009.png,00000054,No Finding,069Y,F,PA,train
+00000055_000.png,00000055,No Finding,081Y,F,PA,train
+00000057_000.png,00000057,No Finding,071Y,M,PA,train
+00000057_001.png,00000057,No Finding,071Y,M,AP,train
+00000057_002.png,00000057,Atelectasis|Infiltration,071Y,M,PA,train
+00000057_003.png,00000057,No Finding,062Y,M,PA,train
+00000057_004.png,00000057,Infiltration,070Y,M,PA,train
+00000058_000.png,00000058,Atelectasis|Infiltration,045Y,F,PA,train
+00000060_000.png,00000060,Atelectasis,075Y,M,PA,train
+00000061_000.png,00000061,Infiltration|Nodule,077Y,M,PA,train
+00000061_001.png,00000061,Mass,077Y,M,PA,train
+00000061_002.png,00000061,Effusion,077Y,M,PA,train
+00000061_003.png,00000061,Effusion|Pleural_Thickening,077Y,M,PA,train
+00000061_004.png,00000061,Atelectasis|Effusion,077Y,M,AP,train
+00000061_005.png,00000061,Effusion|Infiltration,077Y,M,AP,train
+00000061_006.png,00000061,Effusion,077Y,M,AP,train
+00000061_007.png,00000061,Effusion,078Y,M,AP,train
+00000061_008.png,00000061,Effusion,078Y,M,AP,train
+00000061_009.png,00000061,Effusion|Infiltration,077Y,M,AP,train
+00000061_010.png,00000061,Effusion|Infiltration,077Y,M,AP,train
+00000061_011.png,00000061,Effusion,077Y,M,AP,train
+00000061_012.png,00000061,Edema|Effusion|Infiltration|Pleural_Thickening|Pneumonia,077Y,M,AP,train
+00000061_013.png,00000061,Effusion|Fibrosis,077Y,M,AP,train
+00000061_014.png,00000061,Effusion|Fibrosis,077Y,M,AP,train
+00000061_015.png,00000061,Pneumonia,077Y,M,AP,train
+00000061_016.png,00000061,No Finding,077Y,M,AP,train
+00000061_017.png,00000061,Edema|Effusion|Infiltration,077Y,M,AP,train
+00000061_018.png,00000061,Infiltration,077Y,M,AP,train
+00000061_019.png,00000061,No Finding,077Y,M,AP,train
+00000061_020.png,00000061,Edema|Effusion,077Y,M,AP,train
+00000061_021.png,00000061,No Finding,077Y,M,AP,train
+00000061_022.png,00000061,No Finding,077Y,M,AP,train
+00000061_023.png,00000061,Consolidation|Effusion|Infiltration|Mass,077Y,M,AP,train
+00000061_024.png,00000061,Infiltration,077Y,M,AP,train
+00000061_025.png,00000061,Consolidation|Effusion|Infiltration|Nodule,077Y,M,AP,train
+00000062_000.png,00000062,Infiltration,068Y,F,PA,train
+00000063_000.png,00000063,Infiltration,063Y,M,PA,train
+00000064_000.png,00000064,No Finding,057Y,M,PA,train
+00000065_000.png,00000065,No Finding,046Y,M,PA,train
+00000066_000.png,00000066,Atelectasis,056Y,F,PA,train
+00000067_000.png,00000067,Fibrosis,062Y,F,PA,train
+00000067_001.png,00000067,Atelectasis,065Y,F,PA,train
+00000067_002.png,00000067,No Finding,066Y,F,PA,train
+00000068_000.png,00000068,No Finding,065Y,F,PA,train
+00000069_000.png,00000069,Cardiomegaly,077Y,F,PA,train
+00000070_000.png,00000070,No Finding,050Y,F,PA,train
+00000073_000.png,00000073,No Finding,061Y,F,PA,train
+00000073_001.png,00000073,No Finding,062Y,F,PA,train
+00000073_002.png,00000073,Emphysema,063Y,F,AP,train
+00000073_003.png,00000073,No Finding,064Y,F,PA,train
+00000073_004.png,00000073,No Finding,064Y,F,PA,train
+00000073_005.png,00000073,No Finding,065Y,F,PA,train
+00000073_006.png,00000073,No Finding,066Y,F,PA,train
+00000073_007.png,00000073,No Finding,066Y,F,PA,train
+00000073_008.png,00000073,No Finding,067Y,F,PA,train
+00000073_009.png,00000073,No Finding,068Y,F,PA,train
+00000074_000.png,00000074,Effusion,076Y,M,PA,train
+00000075_000.png,00000075,Cardiomegaly,062Y,F,PA,train
+00000075_001.png,00000075,Cardiomegaly,061Y,F,PA,train
+00000076_000.png,00000076,Effusion,080Y,M,PA,train
+00000077_000.png,00000077,Cardiomegaly,061Y,M,PA,train
+00000078_000.png,00000078,No Finding,073Y,F,PA,train
+00000078_001.png,00000078,Atelectasis|Effusion,073Y,F,PA,train
+00000078_002.png,00000078,Atelectasis|Effusion|Infiltration,073Y,F,AP,train
+00000079_000.png,00000079,Mass,063Y,M,PA,train
+00000080_000.png,00000080,No Finding,064Y,F,PA,train
+00000080_001.png,00000080,Atelectasis,066Y,F,PA,train
+00000080_002.png,00000080,No Finding,067Y,F,PA,train
+00000080_003.png,00000080,No Finding,067Y,F,AP,train
+00000080_004.png,00000080,Atelectasis,067Y,F,PA,train
+00000080_005.png,00000080,No Finding,067Y,F,PA,train
+00000081_000.png,00000081,No Finding,067Y,M,PA,train
+00000083_000.png,00000083,No Finding,056Y,F,PA,train
+00000084_000.png,00000084,Effusion,057Y,F,PA,train
+00000084_001.png,00000084,Effusion,057Y,F,PA,train
+00000086_000.png,00000086,No Finding,076Y,M,PA,train
+00000086_001.png,00000086,Emphysema,063Y,M,PA,train
+00000086_002.png,00000086,Atelectasis,063Y,M,PA,train
+00000087_000.png,00000087,No Finding,071Y,F,AP,train
+00000087_001.png,00000087,No Finding,071Y,F,PA,train
+00000089_000.png,00000089,Infiltration,061Y,F,PA,train
+00000091_000.png,00000091,No Finding,069Y,M,PA,train
+00000091_001.png,00000091,Nodule,070Y,M,AP,train
+00000091_002.png,00000091,Infiltration|Mass,069Y,M,PA,train
+00000091_003.png,00000091,Mass,069Y,M,PA,train
+00000091_004.png,00000091,Infiltration,069Y,M,PA,train
+00000091_005.png,00000091,Effusion|Infiltration,070Y,M,PA,train
+00000091_006.png,00000091,No Finding,070Y,M,PA,train
+00000091_007.png,00000091,No Finding,070Y,M,AP,train
+00000091_008.png,00000091,Atelectasis,070Y,M,AP,train
+00000091_009.png,00000091,Effusion,070Y,M,AP,train
+00000091_010.png,00000091,Atelectasis|Infiltration,070Y,M,AP,train
+00000092_000.png,00000092,No Finding,054Y,F,PA,train
+00000092_001.png,00000092,Effusion|Fibrosis,056Y,F,PA,train
+00000092_002.png,00000092,Fibrosis,057Y,F,PA,train
+00000092_003.png,00000092,Fibrosis,058Y,F,PA,train
+00000094_000.png,00000094,No Finding,063Y,M,PA,train
+00000095_000.png,00000095,No Finding,050Y,F,PA,train
+00000096_000.png,00000096,Cardiomegaly,067Y,F,PA,train
+00000096_001.png,00000096,Atelectasis|Cardiomegaly|Fibrosis,067Y,F,AP,train
+00000096_002.png,00000096,Effusion,067Y,F,PA,train
+00000096_003.png,00000096,Atelectasis|Effusion|Infiltration,067Y,F,PA,train
+00000096_004.png,00000096,Atelectasis|Effusion|Infiltration,067Y,F,PA,train
+00000096_005.png,00000096,Atelectasis|Cardiomegaly|Consolidation|Effusion,067Y,F,PA,train
+00000096_006.png,00000096,Effusion,067Y,F,PA,train
+00000096_007.png,00000096,Consolidation|Effusion,067Y,F,PA,train
+00000096_008.png,00000096,No Finding,067Y,F,PA,train
+00000097_000.png,00000097,No Finding,083Y,F,PA,train
+00000098_000.png,00000098,No Finding,063Y,F,PA,train
+00000100_000.png,00000100,Atelectasis|Effusion|Infiltration,060Y,M,PA,train
+00000100_001.png,00000100,No Finding,064Y,M,PA,train
+00000101_000.png,00000101,Nodule,033Y,M,PA,train
+00000102_000.png,00000102,Infiltration,061Y,F,PA,train
+00000103_000.png,00000103,Mass,060Y,M,PA,train
+00000103_001.png,00000103,Mass|Pneumothorax,060Y,M,PA,train
+00000103_002.png,00000103,Mass|Pneumothorax,060Y,M,PA,train
+00000103_003.png,00000103,Pneumothorax,060Y,M,PA,train
+00000103_004.png,00000103,Mass|Pneumothorax,060Y,M,PA,train
+00000103_005.png,00000103,Mass|Pneumothorax,060Y,M,PA,train
+00000103_006.png,00000103,Pneumothorax,060Y,M,PA,train
+00000103_007.png,00000103,Mass|Pneumothorax,060Y,M,PA,train
+00000103_008.png,00000103,Mass,060Y,M,PA,train
+00000103_009.png,00000103,Mass|Pneumothorax,060Y,M,PA,train
+00000103_010.png,00000103,Atelectasis|Mass,060Y,M,PA,train
+00000103_011.png,00000103,Atelectasis|Mass,059Y,M,PA,train
+00000104_000.png,00000104,Pleural_Thickening,068Y,F,PA,train
+00000104_001.png,00000104,No Finding,069Y,F,PA,train
+00000105_000.png,00000105,No Finding,064Y,M,PA,train
+00000105_001.png,00000105,No Finding,052Y,M,PA,train
+00000105_002.png,00000105,Infiltration,052Y,M,AP,train
+00000105_003.png,00000105,No Finding,052Y,M,PA,train
+00000105_004.png,00000105,Nodule,053Y,M,PA,train
+00000105_005.png,00000105,Nodule,055Y,M,PA,train
+00000106_000.png,00000106,No Finding,060Y,F,PA,train
+00000108_000.png,00000108,No Finding,042Y,F,PA,train
+00000108_001.png,00000108,No Finding,042Y,F,AP,train
+00000110_000.png,00000110,No Finding,048Y,F,PA,train
+00000111_000.png,00000111,Hernia,087Y,F,PA,train
+00000112_000.png,00000112,Atelectasis|Effusion|Mass,049Y,M,PA,train
+00000112_001.png,00000112,No Finding,049Y,M,AP,train
+00000112_002.png,00000112,Consolidation,050Y,M,PA,train
+00000113_000.png,00000113,No Finding,073Y,M,PA,train
+00000113_001.png,00000113,Atelectasis|Cardiomegaly|Effusion,073Y,M,PA,train
+00000115_000.png,00000115,No Finding,049Y,F,PA,train
+00000115_001.png,00000115,Infiltration,056Y,F,PA,train
+00000118_000.png,00000118,Emphysema,073Y,M,AP,train
+00000118_001.png,00000118,Atelectasis|Emphysema,073Y,M,PA,train
+00000118_002.png,00000118,Emphysema|Pneumothorax,073Y,M,PA,train
+00000118_003.png,00000118,Atelectasis|Emphysema|Pneumothorax,073Y,M,PA,train
+00000118_004.png,00000118,Emphysema|Pneumothorax,073Y,M,PA,train
+00000118_005.png,00000118,Pneumothorax,073Y,M,PA,train
+00000118_006.png,00000118,Atelectasis|Emphysema,073Y,M,PA,train
+00000118_007.png,00000118,Atelectasis,073Y,M,PA,train
+00000118_008.png,00000118,No Finding,073Y,M,PA,train
+00000118_009.png,00000118,Pneumothorax,073Y,M,AP,train
+00000118_010.png,00000118,Pneumothorax,073Y,M,PA,train
+00000118_011.png,00000118,Pneumothorax,073Y,M,PA,train
+00000118_012.png,00000118,No Finding,073Y,M,PA,train
+00000118_013.png,00000118,Infiltration,073Y,M,PA,train
+00000118_014.png,00000118,No Finding,073Y,M,PA,train
+00000118_015.png,00000118,Effusion,073Y,M,PA,train
+00000118_016.png,00000118,No Finding,073Y,M,PA,train
+00000119_000.png,00000119,Infiltration,060Y,M,PA,train
+00000119_001.png,00000119,Atelectasis,056Y,M,AP,train
+00000120_000.png,00000120,Atelectasis,081Y,F,PA,train
+00000121_000.png,00000121,No Finding,046Y,M,PA,train
+00000121_001.png,00000121,No Finding,053Y,M,PA,train
+00000121_002.png,00000121,No Finding,053Y,M,PA,train
+00000121_003.png,00000121,No Finding,053Y,M,PA,train
+00000121_004.png,00000121,No Finding,054Y,M,AP,train
+00000121_005.png,00000121,No Finding,053Y,M,PA,train
+00000121_006.png,00000121,Effusion,053Y,M,PA,train
+00000121_007.png,00000121,Effusion,053Y,M,PA,train
+00000121_008.png,00000121,No Finding,053Y,M,PA,train
+00000121_009.png,00000121,No Finding,054Y,M,AP,train
+00000123_000.png,00000123,Cardiomegaly|Emphysema,050Y,M,PA,train
+00000124_000.png,00000124,Cardiomegaly|Infiltration,069Y,M,PA,train
+00000125_000.png,00000125,Infiltration,048Y,F,PA,train
+00000127_000.png,00000127,No Finding,056Y,F,PA,train
+00000127_001.png,00000127,No Finding,056Y,F,PA,train
+00000127_002.png,00000127,Effusion,056Y,F,AP,train
+00000127_003.png,00000127,Effusion,056Y,F,AP,train
+00000127_004.png,00000127,Effusion,056Y,F,AP,train
+00000127_005.png,00000127,Effusion,056Y,F,AP,train
+00000127_006.png,00000127,No Finding,056Y,F,AP,train
+00000127_007.png,00000127,Effusion,056Y,F,AP,train
+00000127_008.png,00000127,No Finding,056Y,F,PA,train
+00000127_009.png,00000127,Atelectasis|Infiltration,056Y,F,AP,train
+00000127_010.png,00000127,Atelectasis|Infiltration,056Y,F,AP,train
+00000128_000.png,00000128,Cardiomegaly|Nodule,066Y,F,PA,train
+00000129_000.png,00000129,No Finding,066Y,F,PA,train
+00000129_001.png,00000129,No Finding,067Y,F,PA,train
+00000130_000.png,00000130,No Finding,052Y,F,PA,train
+00000131_000.png,00000131,Infiltration,063Y,M,PA,train
+00000131_001.png,00000131,Cardiomegaly,066Y,M,PA,train
+00000131_002.png,00000131,Cardiomegaly|Emphysema,055Y,M,PA,train
+00000132_000.png,00000132,No Finding,059Y,F,PA,train
+00000132_001.png,00000132,Consolidation|Edema,060Y,F,PA,train
+00000132_002.png,00000132,Consolidation|Pleural_Thickening,060Y,F,PA,train
+00000132_003.png,00000132,Effusion,062Y,F,PA,train
+00000132_004.png,00000132,Effusion|Fibrosis|Nodule|Pleural_Thickening,063Y,F,PA,train
+00000132_005.png,00000132,Effusion|Fibrosis|Mass|Nodule|Pleural_Thickening,064Y,F,PA,train
+00000132_006.png,00000132,Infiltration,064Y,F,PA,train
+00000133_000.png,00000133,Effusion|Nodule,067Y,M,PA,train
+00000133_001.png,00000133,No Finding,068Y,M,PA,train
+00000133_002.png,00000133,No Finding,068Y,M,AP,train
+00000134_000.png,00000134,Infiltration,076Y,F,AP,train
+00000137_000.png,00000137,No Finding,052Y,M,PA,train
+00000137_001.png,00000137,No Finding,052Y,M,AP,train
+00000138_000.png,00000138,No Finding,061Y,F,PA,train
+00000138_001.png,00000138,No Finding,062Y,F,PA,train
+00000138_002.png,00000138,Atelectasis|Fibrosis,063Y,F,PA,train
+00000138_003.png,00000138,No Finding,064Y,F,PA,train
+00000138_004.png,00000138,Nodule,065Y,F,PA,train
+00000138_005.png,00000138,Effusion|Nodule|Pleural_Thickening,066Y,F,PA,train
+00000138_006.png,00000138,Pleural_Thickening,068Y,F,PA,train
+00000139_000.png,00000139,No Finding,058Y,F,PA,train
+00000139_001.png,00000139,No Finding,058Y,F,PA,train
+00000139_002.png,00000139,No Finding,058Y,F,PA,train
+00000140_000.png,00000140,No Finding,025Y,F,PA,train
+00000141_000.png,00000141,No Finding,031Y,M,PA,train
+00000142_000.png,00000142,No Finding,047Y,M,PA,train
+00000144_000.png,00000144,No Finding,083Y,M,PA,train
+00000144_001.png,00000144,Pneumonia,083Y,M,AP,train
+00000144_002.png,00000144,No Finding,083Y,M,AP,train
+00000144_003.png,00000144,Effusion,083Y,M,PA,train
+00000145_000.png,00000145,Fibrosis|Infiltration,067Y,F,PA,train
+00000147_000.png,00000147,Infiltration,066Y,F,PA,train
+00000147_001.png,00000147,Atelectasis,066Y,F,PA,train
+00000147_002.png,00000147,Atelectasis|Effusion|Pleural_Thickening,067Y,F,AP,train
+00000148_000.png,00000148,No Finding,059Y,M,PA,train
+00000148_001.png,00000148,Effusion,062Y,M,PA,train
+00000148_002.png,00000148,Effusion|Fibrosis,061Y,M,PA,train
+00000148_003.png,00000148,No Finding,061Y,M,PA,train
+00000149_000.png,00000149,No Finding,068Y,M,PA,train
+00000149_001.png,00000149,No Finding,070Y,M,PA,train
+00000149_002.png,00000149,Atelectasis,070Y,M,PA,train
+00000149_003.png,00000149,No Finding,070Y,M,PA,train
+00000149_004.png,00000149,No Finding,070Y,M,PA,train
+00000149_005.png,00000149,Atelectasis,071Y,M,AP,train
+00000149_006.png,00000149,Atelectasis,071Y,M,AP,train
+00000149_007.png,00000149,Fibrosis|Infiltration,071Y,M,PA,train
+00000149_008.png,00000149,No Finding,070Y,M,PA,train
+00000149_009.png,00000149,No Finding,070Y,M,PA,train
+00000151_000.png,00000151,No Finding,054Y,M,PA,train
+00000151_001.png,00000151,No Finding,055Y,M,PA,train
+00000151_002.png,00000151,No Finding,057Y,M,PA,train
+00000152_000.png,00000152,No Finding,065Y,M,PA,train
+00000154_000.png,00000154,Infiltration,054Y,F,PA,train
+00000154_001.png,00000154,Infiltration|Nodule,056Y,F,PA,train
+00000156_000.png,00000156,Cardiomegaly|Infiltration,081Y,M,AP,train
+00000156_001.png,00000156,Cardiomegaly|Effusion,081Y,M,AP,train
+00000157_000.png,00000157,Nodule,040Y,F,PA,train
+00000158_000.png,00000158,No Finding,058Y,F,PA,train
+00000160_000.png,00000160,No Finding,069Y,F,PA,train
+00000161_000.png,00000161,No Finding,067Y,F,PA,train
+00000162_000.png,00000162,No Finding,070Y,F,PA,train
+00000163_000.png,00000163,No Finding,070Y,M,PA,train
+00000163_001.png,00000163,No Finding,070Y,M,PA,train
+00000164_000.png,00000164,Nodule,069Y,M,PA,train
+00000166_000.png,00000166,No Finding,070Y,M,PA,train
+00000168_000.png,00000168,No Finding,064Y,M,PA,train
+00000168_001.png,00000168,No Finding,065Y,M,AP,train
+00000169_000.png,00000169,No Finding,073Y,M,PA,train
+00000169_001.png,00000169,No Finding,074Y,M,PA,train
+00000172_000.png,00000172,No Finding,078Y,F,PA,train
+00000172_001.png,00000172,No Finding,081Y,F,PA,train
+00000172_002.png,00000172,No Finding,082Y,F,PA,train
+00000172_003.png,00000172,No Finding,083Y,F,PA,train
+00000172_004.png,00000172,No Finding,085Y,F,PA,train
+00000172_005.png,00000172,No Finding,085Y,F,PA,train
+00000172_006.png,00000172,No Finding,087Y,F,PA,train
+00000175_000.png,00000175,No Finding,060Y,M,PA,train
+00000175_001.png,00000175,Atelectasis,060Y,M,AP,train
+00000175_002.png,00000175,Atelectasis,060Y,M,AP,train
+00000176_000.png,00000176,No Finding,073Y,F,PA,train
+00000176_001.png,00000176,Cardiomegaly,074Y,F,PA,train
+00000176_002.png,00000176,Atelectasis|Cardiomegaly|Fibrosis,077Y,F,PA,train
+00000177_000.png,00000177,No Finding,064Y,M,PA,train
+00000177_001.png,00000177,No Finding,065Y,M,PA,train
+00000177_002.png,00000177,No Finding,066Y,M,PA,train
+00000177_003.png,00000177,No Finding,055Y,M,PA,train
+00000177_004.png,00000177,No Finding,059Y,M,PA,train
+00000177_005.png,00000177,No Finding,060Y,M,PA,train
+00000178_000.png,00000178,Infiltration,047Y,M,PA,train
+00000179_000.png,00000179,No Finding,063Y,M,AP,train
+00000179_001.png,00000179,Infiltration,063Y,M,AP,train
+00000179_002.png,00000179,Atelectasis|Infiltration,063Y,M,AP,train
+00000179_003.png,00000179,Infiltration,063Y,M,AP,train
+00000179_004.png,00000179,Consolidation|Infiltration,063Y,M,AP,train
+00000179_005.png,00000179,Consolidation|Infiltration,063Y,M,AP,train
+00000179_006.png,00000179,Atelectasis|Effusion,063Y,M,AP,train
+00000179_007.png,00000179,Consolidation|Effusion,063Y,M,AP,train
+00000181_000.png,00000181,No Finding,046Y,F,PA,train
+00000181_001.png,00000181,Fibrosis,047Y,F,PA,train
+00000181_002.png,00000181,No Finding,050Y,F,AP,train
+00000181_003.png,00000181,Effusion,050Y,F,AP,train
+00000181_004.png,00000181,No Finding,050Y,F,AP,train
+00000181_005.png,00000181,Effusion,050Y,F,AP,train
+00000181_006.png,00000181,Infiltration,050Y,F,AP,train
+00000181_007.png,00000181,Infiltration,050Y,F,AP,train
+00000181_008.png,00000181,Infiltration,050Y,F,AP,train
+00000181_009.png,00000181,Infiltration,050Y,F,AP,train
+00000181_010.png,00000181,Infiltration,050Y,F,AP,train
+00000181_011.png,00000181,Atelectasis|Infiltration|Pleural_Thickening,050Y,F,AP,train
+00000181_012.png,00000181,No Finding,050Y,F,AP,train
+00000181_013.png,00000181,Consolidation|Infiltration|Mass,050Y,F,AP,train
+00000181_014.png,00000181,No Finding,050Y,F,AP,train
+00000181_015.png,00000181,Consolidation|Infiltration,050Y,F,AP,train
+00000181_016.png,00000181,Infiltration,050Y,F,AP,train
+00000181_017.png,00000181,Infiltration,050Y,F,AP,train
+00000181_018.png,00000181,Consolidation|Infiltration,050Y,F,AP,train
+00000181_019.png,00000181,Effusion,050Y,F,AP,train
+00000181_020.png,00000181,No Finding,050Y,F,AP,train
+00000181_021.png,00000181,Infiltration,050Y,F,AP,train
+00000181_022.png,00000181,No Finding,050Y,F,AP,train
+00000181_023.png,00000181,No Finding,050Y,F,AP,train
+00000181_024.png,00000181,No Finding,050Y,F,AP,train
+00000181_025.png,00000181,No Finding,050Y,F,AP,train
+00000181_026.png,00000181,No Finding,050Y,F,AP,train
+00000181_027.png,00000181,No Finding,050Y,F,AP,train
+00000181_028.png,00000181,Consolidation|Infiltration,050Y,F,AP,train
+00000181_029.png,00000181,Consolidation|Infiltration,050Y,F,AP,train
+00000181_030.png,00000181,Infiltration,050Y,F,AP,train
+00000181_031.png,00000181,No Finding,050Y,F,AP,train
+00000181_032.png,00000181,Infiltration,050Y,F,AP,train
+00000181_033.png,00000181,Consolidation,050Y,F,AP,train
+00000181_034.png,00000181,No Finding,050Y,F,AP,train
+00000181_035.png,00000181,Infiltration,050Y,F,AP,train
+00000181_036.png,00000181,Infiltration,050Y,F,AP,train
+00000181_037.png,00000181,Consolidation,050Y,F,AP,train
+00000181_038.png,00000181,Consolidation,050Y,F,AP,train
+00000181_039.png,00000181,No Finding,050Y,F,AP,train
+00000181_040.png,00000181,Atelectasis,050Y,F,AP,train
+00000181_041.png,00000181,No Finding,050Y,F,AP,train
+00000181_042.png,00000181,Effusion,050Y,F,AP,train
+00000181_043.png,00000181,Consolidation|Infiltration,050Y,F,AP,train
+00000181_044.png,00000181,Atelectasis|Infiltration,050Y,F,AP,train
+00000181_045.png,00000181,Atelectasis|Infiltration,050Y,F,AP,train
+00000181_046.png,00000181,Infiltration,050Y,F,AP,train
+00000181_047.png,00000181,Consolidation,050Y,F,AP,train
+00000181_048.png,00000181,Atelectasis|Effusion,050Y,F,AP,train
+00000181_049.png,00000181,No Finding,050Y,F,AP,train
+00000181_050.png,00000181,Atelectasis,050Y,F,AP,train
+00000181_051.png,00000181,No Finding,050Y,F,AP,train
+00000181_052.png,00000181,Fibrosis,050Y,F,PA,train
+00000181_053.png,00000181,No Finding,051Y,F,AP,train
+00000181_054.png,00000181,Atelectasis|Effusion,050Y,F,PA,train
+00000181_055.png,00000181,Edema|Effusion,050Y,F,PA,train
+00000181_056.png,00000181,No Finding,050Y,F,PA,train
+00000181_057.png,00000181,No Finding,050Y,F,PA,train
+00000181_058.png,00000181,Effusion,052Y,F,AP,train
+00000181_059.png,00000181,Effusion,052Y,F,AP,train
+00000181_060.png,00000181,Effusion,052Y,F,AP,train
+00000181_061.png,00000181,Atelectasis|Effusion|Infiltration,052Y,F,AP,train
+00000181_062.png,00000181,Effusion|Infiltration,052Y,F,PA,train
+00000181_063.png,00000181,No Finding,055Y,F,AP,train
+00000181_064.png,00000181,No Finding,055Y,F,AP,train
+00000181_065.png,00000181,No Finding,055Y,F,AP,train
+00000183_000.png,00000183,Infiltration,080Y,F,PA,train
+00000183_001.png,00000183,No Finding,081Y,F,PA,train
+00000183_002.png,00000183,Infiltration,081Y,F,PA,train
+00000184_000.png,00000184,No Finding,060Y,M,PA,train
+00000184_001.png,00000184,No Finding,065Y,M,PA,train
+00000186_000.png,00000186,No Finding,064Y,M,PA,train
+00000187_000.png,00000187,Pleural_Thickening,049Y,M,PA,train
+00000187_001.png,00000187,No Finding,050Y,M,PA,train
+00000187_002.png,00000187,No Finding,051Y,M,PA,train
+00000188_000.png,00000188,No Finding,053Y,M,PA,train
+00000188_001.png,00000188,No Finding,045Y,M,PA,train
+00000190_000.png,00000190,No Finding,030Y,M,PA,train
+00000190_001.png,00000190,No Finding,031Y,M,PA,train
+00000190_002.png,00000190,No Finding,033Y,M,PA,train
+00000190_003.png,00000190,No Finding,032Y,M,PA,train
+00000190_004.png,00000190,No Finding,032Y,M,PA,train
+00000190_005.png,00000190,No Finding,034Y,M,PA,train
+00000191_000.png,00000191,No Finding,084Y,M,PA,train
+00000192_000.png,00000192,No Finding,087Y,M,PA,train
+00000193_000.png,00000193,No Finding,054Y,M,AP,train
+00000193_001.png,00000193,No Finding,054Y,M,AP,train
+00000193_002.png,00000193,No Finding,055Y,M,AP,train
+00000193_003.png,00000193,No Finding,055Y,M,AP,train
+00000193_004.png,00000193,No Finding,055Y,M,AP,train
+00000193_005.png,00000193,No Finding,055Y,M,AP,train
+00000193_006.png,00000193,Atelectasis|Infiltration,055Y,M,AP,train
+00000193_007.png,00000193,No Finding,055Y,M,AP,train
+00000193_008.png,00000193,No Finding,055Y,M,AP,train
+00000193_009.png,00000193,No Finding,055Y,M,AP,train
+00000193_010.png,00000193,No Finding,055Y,M,AP,train
+00000193_011.png,00000193,No Finding,055Y,M,AP,train
+00000193_012.png,00000193,No Finding,055Y,M,AP,train
+00000193_013.png,00000193,No Finding,055Y,M,AP,train
+00000193_014.png,00000193,No Finding,055Y,M,AP,train
+00000193_015.png,00000193,No Finding,055Y,M,AP,train
+00000193_016.png,00000193,No Finding,055Y,M,AP,train
+00000193_017.png,00000193,No Finding,055Y,M,AP,train
+00000193_018.png,00000193,No Finding,055Y,M,AP,train
+00000193_019.png,00000193,No Finding,055Y,M,AP,train
+00000195_000.png,00000195,No Finding,054Y,M,PA,train
+00000196_000.png,00000196,No Finding,033Y,M,PA,train
+00000197_000.png,00000197,No Finding,068Y,M,PA,train
+00000197_001.png,00000197,No Finding,068Y,M,PA,train
+00000197_002.png,00000197,No Finding,070Y,M,PA,train
+00000197_003.png,00000197,No Finding,070Y,M,PA,train
+00000198_000.png,00000198,No Finding,070Y,M,PA,train
+00000199_000.png,00000199,No Finding,055Y,F,PA,train
+00000199_001.png,00000199,Fibrosis,056Y,F,PA,train
+00000199_002.png,00000199,Fibrosis|Nodule,046Y,F,PA,train
+00000199_003.png,00000199,No Finding,047Y,F,PA,train
+00000199_004.png,00000199,Fibrosis,048Y,F,PA,train
+00000199_005.png,00000199,Nodule,050Y,F,PA,train
+00000200_000.png,00000200,Nodule,075Y,M,PA,train
+00000200_001.png,00000200,Cardiomegaly,077Y,M,PA,train
+00000202_000.png,00000202,No Finding,066Y,M,AP,train
+00000202_001.png,00000202,No Finding,066Y,M,AP,train
+00000203_000.png,00000203,Atelectasis,057Y,M,PA,train
+00000204_000.png,00000204,Fibrosis,037Y,M,PA,train
+00000204_001.png,00000204,Fibrosis|Nodule,027Y,M,PA,train
+00000204_002.png,00000204,Nodule|Pleural_Thickening,029Y,M,PA,train
+00000204_003.png,00000204,No Finding,032Y,M,PA,train
+00000204_004.png,00000204,Fibrosis,033Y,M,PA,train
+00000204_005.png,00000204,Fibrosis|Nodule,033Y,M,PA,train
+00000205_000.png,00000205,No Finding,065Y,F,PA,train
+00000205_001.png,00000205,Infiltration,070Y,F,PA,train
+00000206_000.png,00000206,No Finding,030Y,M,PA,train
+00000206_001.png,00000206,No Finding,030Y,M,PA,train
+00000207_000.png,00000207,No Finding,083Y,F,PA,train
+00000208_000.png,00000208,Atelectasis|Effusion|Pleural_Thickening,040Y,M,PA,train
+00000211_000.png,00000211,Cardiomegaly,055Y,F,PA,train
+00000211_001.png,00000211,Cardiomegaly,056Y,F,PA,train
+00000211_002.png,00000211,Cardiomegaly,056Y,F,AP,train
+00000211_003.png,00000211,No Finding,056Y,F,PA,train
+00000211_004.png,00000211,Cardiomegaly|Edema|Effusion|Infiltration,058Y,F,PA,train
+00000211_005.png,00000211,Cardiomegaly|Infiltration,058Y,F,PA,train
+00000211_006.png,00000211,Cardiomegaly|Edema|Effusion|Fibrosis|Infiltration,058Y,F,PA,train
+00000211_007.png,00000211,Cardiomegaly|Edema,058Y,F,PA,train
+00000211_008.png,00000211,Cardiomegaly|Effusion,058Y,F,PA,train
+00000211_009.png,00000211,Cardiomegaly|Consolidation|Edema|Effusion,058Y,F,PA,train
+00000211_010.png,00000211,Atelectasis|Cardiomegaly|Effusion|Infiltration,058Y,F,PA,train
+00000211_011.png,00000211,Cardiomegaly|Effusion,058Y,F,PA,train
+00000211_012.png,00000211,Effusion,059Y,F,PA,train
+00000211_013.png,00000211,Cardiomegaly|Edema|Effusion|Infiltration|Pneumonia,059Y,F,AP,train
+00000211_014.png,00000211,Cardiomegaly|Effusion,059Y,F,AP,train
+00000211_015.png,00000211,Effusion|Infiltration,059Y,F,AP,train
+00000211_016.png,00000211,Cardiomegaly|Infiltration,059Y,F,AP,train
+00000211_017.png,00000211,No Finding,059Y,F,AP,train
+00000211_018.png,00000211,Cardiomegaly|Effusion|Pneumonia,059Y,F,AP,train
+00000211_019.png,00000211,Atelectasis|Cardiomegaly|Infiltration|Pneumothorax,059Y,F,AP,train
+00000211_020.png,00000211,No Finding,059Y,F,PA,train
+00000211_021.png,00000211,Cardiomegaly|Effusion,059Y,F,PA,train
+00000211_022.png,00000211,Cardiomegaly,059Y,F,PA,train
+00000211_023.png,00000211,Pneumothorax,059Y,F,PA,train
+00000211_024.png,00000211,Cardiomegaly|Effusion,059Y,F,AP,train
+00000211_025.png,00000211,Effusion,059Y,F,AP,train
+00000211_026.png,00000211,Effusion,059Y,F,AP,train
+00000211_027.png,00000211,Effusion|Pleural_Thickening,059Y,F,PA,train
+00000211_028.png,00000211,Effusion,059Y,F,PA,train
+00000211_029.png,00000211,Effusion,059Y,F,PA,train
+00000211_030.png,00000211,No Finding,059Y,F,PA,train
+00000211_031.png,00000211,Fibrosis|Pleural_Thickening,059Y,F,PA,train
+00000211_032.png,00000211,Effusion,059Y,F,PA,train
+00000211_033.png,00000211,No Finding,059Y,F,PA,train
+00000211_034.png,00000211,Cardiomegaly|Effusion,059Y,F,PA,train
+00000211_035.png,00000211,Cardiomegaly|Effusion|Mass,059Y,F,PA,train
+00000211_036.png,00000211,No Finding,059Y,F,PA,train
+00000211_037.png,00000211,Cardiomegaly|Effusion|Infiltration,059Y,F,AP,train
+00000211_038.png,00000211,Cardiomegaly,060Y,F,AP,train
+00000211_039.png,00000211,Cardiomegaly|Edema,060Y,F,AP,train
+00000211_040.png,00000211,Infiltration,060Y,F,AP,train
+00000211_041.png,00000211,Cardiomegaly|Effusion|Pleural_Thickening,060Y,F,AP,train
+00000211_042.png,00000211,No Finding,060Y,F,AP,train
+00000211_043.png,00000211,Cardiomegaly,060Y,F,AP,train
+00000212_000.png,00000212,Edema|Effusion,031Y,M,PA,train
+00000214_000.png,00000214,No Finding,079Y,M,PA,train
+00000215_000.png,00000215,Infiltration,036Y,M,PA,train
+00000219_000.png,00000219,Atelectasis,078Y,M,PA,train
+00000219_001.png,00000219,Atelectasis,079Y,M,PA,train
+00000219_002.png,00000219,No Finding,079Y,M,PA,train
+00000219_003.png,00000219,No Finding,080Y,M,PA,train
+00000220_000.png,00000220,No Finding,066Y,M,PA,train
+00000221_000.png,00000221,Cardiomegaly|Infiltration,073Y,M,PA,train
+00000223_000.png,00000223,No Finding,053Y,M,PA,train
+00000225_000.png,00000225,No Finding,063Y,F,PA,train
+00000225_001.png,00000225,No Finding,064Y,F,PA,train
+00000226_000.png,00000226,No Finding,056Y,F,PA,train
+00000227_000.png,00000227,No Finding,043Y,M,PA,train
+00000227_001.png,00000227,No Finding,046Y,M,PA,train
+00000228_000.png,00000228,No Finding,043Y,M,PA,train
+00000229_000.png,00000229,No Finding,028Y,M,PA,train
+00000230_000.png,00000230,No Finding,059Y,M,PA,train
+00000230_001.png,00000230,Infiltration,060Y,M,AP,train
+00000230_002.png,00000230,Atelectasis|Infiltration,060Y,M,AP,train
+00000230_003.png,00000230,Infiltration,060Y,M,AP,train
+00000230_004.png,00000230,Infiltration|Mass,060Y,M,AP,train
+00000230_005.png,00000230,Infiltration,060Y,M,AP,train
+00000230_006.png,00000230,No Finding,060Y,M,AP,train
+00000230_007.png,00000230,No Finding,060Y,M,AP,train
+00000231_000.png,00000231,Infiltration,056Y,F,AP,train
+00000231_001.png,00000231,No Finding,056Y,F,AP,train
+00000231_002.png,00000231,Effusion,056Y,F,AP,train
+00000231_003.png,00000231,Pneumothorax,056Y,F,AP,train
+00000231_004.png,00000231,Effusion|Mass,056Y,F,PA,train
+00000231_005.png,00000231,No Finding,056Y,F,PA,train
+00000231_006.png,00000231,Effusion,056Y,F,AP,train
+00000231_007.png,00000231,No Finding,056Y,F,PA,train
+00000231_008.png,00000231,No Finding,056Y,F,PA,train
+00000231_009.png,00000231,Effusion|Fibrosis|Infiltration,056Y,F,PA,train
+00000231_010.png,00000231,No Finding,056Y,F,PA,train
+00000231_011.png,00000231,Effusion|Pneumothorax,056Y,F,PA,train
+00000231_012.png,00000231,No Finding,056Y,F,PA,train
+00000231_013.png,00000231,No Finding,056Y,F,PA,train
+00000232_000.png,00000232,Fibrosis,045Y,M,PA,train
+00000232_001.png,00000232,Fibrosis|Nodule|Pleural_Thickening,046Y,M,PA,train
+00000233_000.png,00000233,Cardiomegaly,066Y,F,PA,train
+00000235_000.png,00000235,No Finding,076Y,F,AP,train
+00000238_000.png,00000238,Atelectasis,049Y,M,PA,train
+00000238_001.png,00000238,No Finding,049Y,M,PA,train
+00000238_002.png,00000238,Consolidation,049Y,M,PA,train
+00000239_000.png,00000239,No Finding,042Y,F,PA,train
+00000239_001.png,00000239,No Finding,047Y,F,PA,train
+00000239_002.png,00000239,Infiltration,049Y,F,PA,train
+00000239_003.png,00000239,No Finding,049Y,F,PA,train
+00000239_004.png,00000239,No Finding,051Y,F,PA,train
+00000239_005.png,00000239,No Finding,052Y,F,PA,train
+00000240_000.png,00000240,Cardiomegaly,062Y,F,PA,train
+00000242_000.png,00000242,Consolidation,061Y,F,PA,train
+00000242_001.png,00000242,No Finding,064Y,F,PA,train
+00000242_002.png,00000242,No Finding,052Y,F,PA,train
+00000242_003.png,00000242,No Finding,053Y,F,PA,train
+00000242_004.png,00000242,No Finding,057Y,F,PA,train
+00000242_005.png,00000242,Infiltration,059Y,F,PA,train
+00000243_000.png,00000243,No Finding,067Y,M,PA,train
+00000243_001.png,00000243,Emphysema,069Y,M,PA,train
+00000245_000.png,00000245,No Finding,025Y,M,AP,train
+00000245_001.png,00000245,Fibrosis|Pleural_Thickening,029Y,M,PA,train
+00000245_002.png,00000245,Infiltration,032Y,M,AP,train
+00000246_000.png,00000246,No Finding,050Y,M,PA,train
+00000246_001.png,00000246,Infiltration,051Y,M,PA,train
+00000246_002.png,00000246,No Finding,051Y,M,PA,train
+00000246_003.png,00000246,No Finding,051Y,M,AP,train
+00000246_004.png,00000246,No Finding,051Y,M,AP,train
+00000246_005.png,00000246,Emphysema,051Y,M,AP,train
+00000246_006.png,00000246,Emphysema,051Y,M,AP,train
+00000246_007.png,00000246,No Finding,051Y,M,AP,train
+00000246_008.png,00000246,Pneumothorax,051Y,M,PA,train
+00000246_009.png,00000246,No Finding,051Y,M,PA,train
+00000246_010.png,00000246,Pleural_Thickening,051Y,M,PA,train
+00000246_011.png,00000246,Infiltration,051Y,M,PA,train
+00000246_012.png,00000246,Consolidation|Pneumothorax,051Y,M,PA,train
+00000246_013.png,00000246,Effusion|Infiltration|Pneumothorax,051Y,M,PA,train
+00000246_014.png,00000246,Consolidation,051Y,M,PA,train
+00000246_015.png,00000246,Consolidation,051Y,M,PA,train
+00000246_016.png,00000246,Consolidation|Mass,051Y,M,PA,train
+00000246_017.png,00000246,Infiltration,051Y,M,PA,train
+00000246_018.png,00000246,No Finding,044Y,M,PA,train
+00000246_019.png,00000246,No Finding,045Y,M,PA,train
+00000247_000.png,00000247,Pleural_Thickening,043Y,M,PA,train
+00000248_000.png,00000248,Emphysema|Mass,087Y,M,PA,train
+00000248_001.png,00000248,No Finding,087Y,M,AP,train
+00000248_002.png,00000248,Emphysema,087Y,M,AP,train
+00000248_003.png,00000248,No Finding,087Y,M,AP,train
+00000248_004.png,00000248,Effusion|Mass,087Y,M,AP,train
+00000248_005.png,00000248,Atelectasis|Effusion|Mass,087Y,M,AP,train
+00000248_006.png,00000248,Atelectasis|Infiltration,087Y,M,AP,train
+00000248_007.png,00000248,Atelectasis|Infiltration,087Y,M,AP,train
+00000248_008.png,00000248,Atelectasis,087Y,M,AP,train
+00000248_009.png,00000248,Atelectasis,087Y,M,AP,train
+00000248_010.png,00000248,Atelectasis,087Y,M,AP,train
+00000248_011.png,00000248,No Finding,087Y,M,AP,train
+00000248_012.png,00000248,No Finding,087Y,M,PA,train
+00000248_013.png,00000248,Mass,087Y,M,AP,train
+00000248_014.png,00000248,Effusion|Pleural_Thickening,087Y,M,AP,train
+00000248_015.png,00000248,Mass,087Y,M,AP,train
+00000248_016.png,00000248,Mass,087Y,M,AP,train
+00000248_017.png,00000248,Mass,087Y,M,PA,train
+00000248_018.png,00000248,Mass,087Y,M,AP,train
+00000248_019.png,00000248,Atelectasis|Infiltration|Mass,087Y,M,AP,train
+00000248_020.png,00000248,Atelectasis|Infiltration|Mass|Pleural_Thickening,087Y,M,AP,train
+00000248_021.png,00000248,No Finding,087Y,M,AP,train
+00000248_022.png,00000248,Effusion|Infiltration|Mass,087Y,M,PA,train
+00000248_023.png,00000248,Mass,087Y,M,AP,train
+00000248_024.png,00000248,Mass,087Y,M,AP,train
+00000248_025.png,00000248,No Finding,087Y,M,PA,train
+00000248_026.png,00000248,No Finding,087Y,M,PA,train
+00000248_027.png,00000248,Effusion|Pleural_Thickening,087Y,M,PA,train
+00000249_000.png,00000249,No Finding,040Y,M,PA,train
+00000250_000.png,00000250,No Finding,049Y,M,PA,train
+00000250_001.png,00000250,Atelectasis|Nodule,049Y,M,AP,train
+00000250_002.png,00000250,No Finding,049Y,M,PA,train
+00000250_003.png,00000250,Nodule,050Y,M,AP,train
+00000250_004.png,00000250,Mass,049Y,M,PA,train
+00000250_005.png,00000250,Infiltration,050Y,M,AP,train
+00000250_006.png,00000250,No Finding,050Y,M,AP,train
+00000250_007.png,00000250,Infiltration,050Y,M,AP,train
+00000250_008.png,00000250,Effusion,050Y,M,AP,train
+00000250_009.png,00000250,No Finding,050Y,M,AP,train
+00000250_010.png,00000250,Consolidation|Effusion,049Y,M,PA,train
+00000250_011.png,00000250,No Finding,049Y,M,PA,train
+00000250_012.png,00000250,No Finding,050Y,M,AP,train
+00000250_013.png,00000250,No Finding,050Y,M,AP,train
+00000250_014.png,00000250,Infiltration|Mass,052Y,M,PA,train
+00000250_015.png,00000250,Mass,052Y,M,PA,train
+00000250_016.png,00000250,Atelectasis|Infiltration|Mass,052Y,M,PA,train
+00000251_000.png,00000251,No Finding,044Y,M,AP,train
+00000251_001.png,00000251,Atelectasis,044Y,M,AP,train
+00000251_002.png,00000251,Atelectasis,044Y,M,AP,train
+00000251_003.png,00000251,Atelectasis,044Y,M,PA,train
+00000251_004.png,00000251,No Finding,044Y,M,AP,train
+00000253_000.png,00000253,No Finding,037Y,M,PA,train
+00000255_000.png,00000255,No Finding,052Y,F,PA,train
+00000255_001.png,00000255,No Finding,052Y,F,AP,train
+00000255_002.png,00000255,No Finding,053Y,F,AP,train
+00000255_003.png,00000255,No Finding,053Y,F,AP,train
+00000255_004.png,00000255,Effusion|Infiltration,056Y,F,AP,train
+00000255_005.png,00000255,No Finding,056Y,F,AP,train
+00000256_000.png,00000256,Infiltration,046Y,F,PA,train
+00000258_000.png,00000258,Infiltration,039Y,F,PA,train
+00000259_000.png,00000259,No Finding,042Y,F,PA,train
+00000260_000.png,00000260,No Finding,053Y,F,PA,train
+00000261_000.png,00000261,Effusion|Infiltration,039Y,F,PA,train
+00000261_001.png,00000261,Consolidation|Effusion,040Y,F,PA,train
+00000261_002.png,00000261,Pneumonia,040Y,F,AP,train
+00000261_003.png,00000261,Effusion|Infiltration,039Y,F,PA,train
+00000261_004.png,00000261,Pneumothorax,040Y,F,AP,train
+00000261_005.png,00000261,Effusion|Infiltration,041Y,F,PA,train
+00000261_006.png,00000261,Consolidation|Infiltration|Nodule,042Y,F,PA,train
+00000261_007.png,00000261,Infiltration|Pneumonia,041Y,F,PA,train
+00000263_000.png,00000263,No Finding,068Y,M,PA,train
+00000264_000.png,00000264,No Finding,046Y,M,PA,train
+00000270_000.png,00000270,Atelectasis,050Y,F,PA,train
+00000270_001.png,00000270,Atelectasis,051Y,F,PA,train
+00000270_002.png,00000270,Atelectasis,052Y,F,PA,train
+00000271_000.png,00000271,No Finding,042Y,F,PA,train
+00000271_001.png,00000271,No Finding,042Y,F,PA,train
+00000271_002.png,00000271,No Finding,042Y,F,AP,train
+00000271_003.png,00000271,No Finding,043Y,F,PA,train
+00000271_004.png,00000271,Cardiomegaly,045Y,F,PA,train
+00000272_000.png,00000272,Cardiomegaly,028Y,F,PA,train
+00000272_001.png,00000272,No Finding,029Y,F,PA,train
+00000272_002.png,00000272,No Finding,030Y,F,PA,train
+00000272_003.png,00000272,No Finding,031Y,F,PA,train
+00000272_004.png,00000272,No Finding,032Y,F,PA,train
+00000272_005.png,00000272,No Finding,035Y,F,PA,train
+00000272_006.png,00000272,No Finding,036Y,F,PA,train
+00000275_000.png,00000275,Nodule,060Y,F,PA,train
+00000275_001.png,00000275,Atelectasis|Consolidation,060Y,F,AP,train
+00000275_002.png,00000275,Atelectasis,060Y,F,AP,train
+00000275_003.png,00000275,Pneumothorax,060Y,F,AP,train
+00000275_004.png,00000275,No Finding,055Y,F,PA,train
+00000277_000.png,00000277,No Finding,065Y,F,PA,train
+00000277_001.png,00000277,Infiltration,055Y,F,PA,train
+00000277_002.png,00000277,No Finding,057Y,F,PA,train
+00000279_000.png,00000279,No Finding,068Y,M,PA,train
+00000280_000.png,00000280,No Finding,042Y,M,PA,train
+00000280_001.png,00000280,No Finding,044Y,M,PA,train
+00000280_002.png,00000280,Fibrosis,045Y,M,PA,train
+00000280_003.png,00000280,Pleural_Thickening,046Y,M,PA,train
+00000281_000.png,00000281,No Finding,066Y,F,PA,train
+00000281_001.png,00000281,No Finding,070Y,F,PA,train
+00000281_002.png,00000281,No Finding,072Y,F,PA,train
+00000282_000.png,00000282,Consolidation|Effusion|Infiltration|Nodule,065Y,F,PA,train
+00000282_001.png,00000282,No Finding,065Y,F,PA,train
+00000283_000.png,00000283,No Finding,065Y,M,PA,train
+00000284_000.png,00000284,Hernia,086Y,F,PA,train
+00000284_001.png,00000284,Hernia,081Y,F,PA,train
+00000284_002.png,00000284,Hernia,082Y,F,PA,train
+00000284_003.png,00000284,Hernia,083Y,F,PA,train
+00000284_004.png,00000284,Cardiomegaly|Hernia,084Y,F,PA,train
+00000284_005.png,00000284,Cardiomegaly|Effusion|Hernia,085Y,F,PA,train
+00000285_000.png,00000285,No Finding,049Y,M,PA,train
+00000285_001.png,00000285,Infiltration,049Y,M,PA,train
+00000285_002.png,00000285,No Finding,049Y,M,AP,train
+00000285_003.png,00000285,No Finding,049Y,M,PA,train
+00000285_004.png,00000285,No Finding,049Y,M,PA,train
+00000285_005.png,00000285,Pneumothorax,049Y,M,PA,train
+00000285_006.png,00000285,Pneumothorax,049Y,M,PA,train
+00000285_007.png,00000285,Infiltration|Pneumothorax,049Y,M,PA,train
+00000286_000.png,00000286,Fibrosis|Pleural_Thickening,064Y,F,PA,train
+00000287_000.png,00000287,Cardiomegaly,037Y,F,PA,train
+00000288_000.png,00000288,Infiltration,068Y,F,PA,train
+00000288_001.png,00000288,No Finding,062Y,F,PA,train
+00000288_002.png,00000288,No Finding,063Y,F,PA,train
+00000288_003.png,00000288,No Finding,065Y,F,PA,train
+00000288_004.png,00000288,Atelectasis|Infiltration,066Y,F,PA,train
+00000290_000.png,00000290,No Finding,064Y,F,PA,train
+00000290_001.png,00000290,No Finding,064Y,F,AP,train
+00000290_002.png,00000290,No Finding,064Y,F,AP,train
+00000290_003.png,00000290,No Finding,066Y,F,AP,train
+00000291_000.png,00000291,No Finding,064Y,M,PA,train
+00000294_000.png,00000294,Cardiomegaly,059Y,F,PA,train
+00000294_001.png,00000294,No Finding,062Y,F,PA,train
+00000295_000.png,00000295,No Finding,056Y,F,PA,train
+00000296_000.png,00000296,Pneumothorax,062Y,M,PA,train
+00000296_001.png,00000296,Emphysema,062Y,M,PA,train
+00000296_002.png,00000296,Pneumothorax,062Y,M,PA,train
+00000296_003.png,00000296,No Finding,052Y,M,PA,train
+00000297_000.png,00000297,Infiltration,049Y,M,PA,train
+00000298_000.png,00000298,No Finding,072Y,F,PA,train
+00000299_000.png,00000299,No Finding,065Y,F,PA,train
+00000301_000.png,00000301,No Finding,054Y,F,PA,train
+00000301_001.png,00000301,No Finding,053Y,F,PA,train
+00000302_000.png,00000302,Atelectasis|Fibrosis,047Y,M,PA,train
+00000303_000.png,00000303,Atelectasis,081Y,M,PA,train
+00000307_000.png,00000307,Atelectasis,057Y,M,PA,train
+00000309_000.png,00000309,No Finding,042Y,M,AP,train
+00000311_000.png,00000311,Fibrosis,046Y,M,PA,train
+00000311_001.png,00000311,No Finding,047Y,M,PA,train
+00000312_000.png,00000312,No Finding,086Y,M,PA,train
+00000312_001.png,00000312,Emphysema,086Y,M,PA,train
+00000312_002.png,00000312,No Finding,086Y,M,PA,train
+00000313_000.png,00000313,Infiltration,033Y,M,PA,train
+00000314_000.png,00000314,Atelectasis,063Y,M,PA,train
+00000316_000.png,00000316,Fibrosis,035Y,M,PA,train
+00000316_001.png,00000316,Fibrosis,029Y,M,PA,train
+00000318_000.png,00000318,No Finding,063Y,F,PA,train
+00000318_001.png,00000318,No Finding,064Y,F,PA,train
+00000318_002.png,00000318,No Finding,066Y,F,PA,train
+00000318_003.png,00000318,No Finding,067Y,F,PA,train
+00000318_004.png,00000318,No Finding,054Y,F,PA,train
+00000318_005.png,00000318,No Finding,056Y,F,PA,train
+00000318_006.png,00000318,No Finding,057Y,F,PA,train
+00000318_007.png,00000318,No Finding,057Y,F,PA,train
+00000318_008.png,00000318,No Finding,059Y,F,PA,train
+00000318_009.png,00000318,No Finding,060Y,F,PA,train
+00000318_010.png,00000318,Infiltration,062Y,F,PA,train
+00000321_000.png,00000321,No Finding,071Y,F,PA,train
+00000321_001.png,00000321,Infiltration,074Y,F,PA,train
+00000321_002.png,00000321,No Finding,075Y,F,PA,train
+00000321_003.png,00000321,No Finding,077Y,F,PA,train
+00000321_004.png,00000321,No Finding,078Y,F,PA,train
+00000321_005.png,00000321,No Finding,078Y,F,PA,train
+00000322_000.png,00000322,Pleural_Thickening,032Y,M,PA,train
+00000322_001.png,00000322,No Finding,033Y,M,AP,train
+00000322_002.png,00000322,No Finding,033Y,M,AP,train
+00000322_003.png,00000322,Mass,034Y,M,PA,train
+00000322_004.png,00000322,No Finding,034Y,M,AP,train
+00000322_005.png,00000322,No Finding,035Y,M,PA,train
+00000322_006.png,00000322,No Finding,035Y,M,PA,train
+00000322_007.png,00000322,Nodule,035Y,M,AP,train
+00000322_008.png,00000322,No Finding,035Y,M,PA,train
+00000322_009.png,00000322,Infiltration|Pleural_Thickening|Pneumothorax,035Y,M,PA,train
+00000322_010.png,00000322,Pneumothorax,035Y,M,PA,train
+00000322_011.png,00000322,Consolidation,035Y,M,PA,train
+00000322_012.png,00000322,No Finding,035Y,M,PA,train
+00000322_013.png,00000322,Effusion,035Y,M,PA,train
+00000322_014.png,00000322,Atelectasis|Infiltration,035Y,M,PA,train
+00000323_000.png,00000323,No Finding,057Y,F,PA,train
+00000324_000.png,00000324,Infiltration,030Y,M,AP,train
+00000324_001.png,00000324,Infiltration|Nodule,031Y,M,PA,train
+00000324_002.png,00000324,No Finding,032Y,M,PA,train
+00000324_003.png,00000324,Fibrosis,032Y,M,PA,train
+00000324_004.png,00000324,Infiltration|Mass,032Y,M,PA,train
+00000324_005.png,00000324,No Finding,033Y,M,AP,train
+00000324_006.png,00000324,No Finding,033Y,M,AP,train
+00000324_007.png,00000324,Fibrosis,033Y,M,PA,train
+00000324_008.png,00000324,No Finding,034Y,M,AP,train
+00000324_009.png,00000324,No Finding,034Y,M,AP,train
+00000324_010.png,00000324,Infiltration,034Y,M,AP,train
+00000324_011.png,00000324,Infiltration,034Y,M,AP,train
+00000324_012.png,00000324,No Finding,033Y,M,PA,train
+00000324_013.png,00000324,No Finding,034Y,M,AP,train
+00000324_014.png,00000324,No Finding,034Y,M,AP,train
+00000324_015.png,00000324,Atelectasis,036Y,M,AP,train
+00000324_016.png,00000324,Atelectasis,036Y,M,AP,train
+00000324_017.png,00000324,No Finding,036Y,M,AP,train
+00000325_000.png,00000325,No Finding,081Y,M,AP,train
+00000326_000.png,00000326,Mass,062Y,F,PA,train
+00000327_000.png,00000327,No Finding,061Y,F,PA,train
+00000327_001.png,00000327,No Finding,062Y,F,PA,train
+00000327_002.png,00000327,No Finding,054Y,F,PA,train
+00000327_003.png,00000327,No Finding,058Y,F,PA,train
+00000327_004.png,00000327,Infiltration,059Y,F,PA,train
+00000328_000.png,00000328,No Finding,040Y,M,PA,train
+00000329_000.png,00000329,No Finding,078Y,M,PA,train
+00000330_000.png,00000330,Cardiomegaly,057Y,F,PA,train
+00000331_000.png,00000331,Infiltration,060Y,F,PA,train
+00000331_001.png,00000331,Atelectasis,061Y,F,PA,train
+00000331_002.png,00000331,No Finding,067Y,F,PA,train
+00000332_000.png,00000332,No Finding,053Y,F,PA,train
+00000332_001.png,00000332,No Finding,054Y,F,AP,train
+00000334_000.png,00000334,Fibrosis,062Y,F,PA,train
+00000334_001.png,00000334,No Finding,063Y,F,PA,train
+00000334_002.png,00000334,Emphysema,066Y,F,PA,train
+00000334_003.png,00000334,No Finding,067Y,F,PA,train
+00000334_004.png,00000334,Emphysema,068Y,F,PA,train
+00000334_005.png,00000334,No Finding,069Y,F,PA,train
+00000335_000.png,00000335,No Finding,038Y,M,PA,train
+00000336_000.png,00000336,Nodule,075Y,F,PA,train
+00000337_000.png,00000337,Atelectasis|Effusion|Mass,075Y,M,PA,train
+00000338_000.png,00000338,Cardiomegaly,059Y,M,PA,train
+00000339_000.png,00000339,No Finding,057Y,F,PA,train
+00000339_001.png,00000339,Infiltration,063Y,F,PA,train
+00000340_000.png,00000340,No Finding,076Y,F,PA,train
+00000340_001.png,00000340,Infiltration|Nodule,077Y,F,PA,train
+00000340_002.png,00000340,No Finding,079Y,F,PA,train
+00000340_003.png,00000340,Emphysema,079Y,F,PA,train
+00000341_000.png,00000341,No Finding,052Y,M,PA,train
+00000342_000.png,00000342,No Finding,056Y,M,PA,train
+00000343_000.png,00000343,Infiltration,058Y,F,PA,train
+00000344_000.png,00000344,Consolidation|Infiltration|Mass|Pleural_Thickening,033Y,M,AP,train
+00000344_001.png,00000344,Effusion|Infiltration,033Y,M,AP,train
+00000344_002.png,00000344,Effusion,033Y,M,AP,train
+00000344_003.png,00000344,Atelectasis|Effusion|Infiltration,033Y,M,PA,train
+00000344_004.png,00000344,Nodule,025Y,M,PA,train
+00000345_000.png,00000345,No Finding,043Y,F,PA,train
+00000349_000.png,00000349,No Finding,057Y,M,PA,train
+00000350_000.png,00000350,No Finding,058Y,M,PA,train
+00000352_000.png,00000352,No Finding,055Y,F,PA,train
+00000353_000.png,00000353,Emphysema,063Y,M,PA,train
+00000355_000.png,00000355,No Finding,061Y,F,PA,train
+00000356_000.png,00000356,No Finding,030Y,F,AP,train
+00000356_001.png,00000356,No Finding,031Y,F,AP,train
+00000357_000.png,00000357,No Finding,073Y,F,PA,train
+00000358_000.png,00000358,No Finding,061Y,F,PA,train
+00000358_001.png,00000358,Infiltration|Pleural_Thickening,068Y,F,PA,train
+00000359_000.png,00000359,No Finding,080Y,F,PA,train
+00000359_001.png,00000359,No Finding,081Y,F,PA,train
+00000359_002.png,00000359,Emphysema,082Y,F,PA,train
+00000359_003.png,00000359,No Finding,083Y,F,PA,train
+00000359_004.png,00000359,No Finding,070Y,F,PA,train
+00000359_005.png,00000359,No Finding,071Y,F,PA,train
+00000359_006.png,00000359,No Finding,072Y,F,PA,train
+00000359_007.png,00000359,Fibrosis,074Y,F,PA,train
+00000359_008.png,00000359,Fibrosis,075Y,F,PA,train
+00000359_009.png,00000359,No Finding,076Y,F,PA,train
+00000359_010.png,00000359,No Finding,076Y,F,PA,train
+00000360_000.png,00000360,No Finding,044Y,M,PA,train
+00000360_001.png,00000360,No Finding,045Y,M,PA,train
+00000360_002.png,00000360,No Finding,045Y,M,PA,train
+00000360_003.png,00000360,Emphysema,046Y,M,AP,train
+00000360_004.png,00000360,Emphysema,046Y,M,AP,train
+00000360_005.png,00000360,Atelectasis|Pneumothorax,046Y,M,PA,train
+00000360_006.png,00000360,Atelectasis|Effusion|Emphysema|Pleural_Thickening,046Y,M,PA,train
+00000360_007.png,00000360,No Finding,046Y,M,PA,train
+00000360_008.png,00000360,Infiltration,046Y,M,PA,train
+00000361_000.png,00000361,Nodule,061Y,F,PA,train
+00000362_000.png,00000362,No Finding,063Y,M,PA,train
+00000362_001.png,00000362,No Finding,063Y,M,PA,train
+00000362_002.png,00000362,No Finding,063Y,M,PA,train
+00000362_003.png,00000362,No Finding,063Y,M,PA,train
+00000362_004.png,00000362,No Finding,063Y,M,PA,train
+00000362_005.png,00000362,No Finding,063Y,M,PA,train
+00000363_000.png,00000363,Fibrosis|Infiltration,083Y,M,PA,train
+00000363_001.png,00000363,Consolidation,083Y,M,PA,train
+00000363_002.png,00000363,Effusion|Pleural_Thickening,083Y,M,PA,train
+00000364_000.png,00000364,No Finding,029Y,F,AP,train
+00000364_001.png,00000364,No Finding,030Y,F,PA,train
+00000365_000.png,00000365,No Finding,052Y,F,PA,train
+00000367_000.png,00000367,Infiltration,067Y,F,PA,train
+00000368_000.png,00000368,No Finding,036Y,M,AP,train
+00000368_001.png,00000368,Atelectasis,036Y,M,AP,train
+00000368_002.png,00000368,Atelectasis,036Y,M,AP,train
+00000368_003.png,00000368,Pneumothorax,036Y,M,AP,train
+00000368_004.png,00000368,Atelectasis,035Y,M,PA,train
+00000368_005.png,00000368,No Finding,035Y,M,AP,train
+00000368_006.png,00000368,Atelectasis,035Y,M,AP,train
+00000368_007.png,00000368,Atelectasis,035Y,M,PA,train
+00000368_008.png,00000368,Atelectasis,035Y,M,AP,train
+00000368_009.png,00000368,No Finding,035Y,M,AP,train
+00000368_010.png,00000368,No Finding,035Y,M,AP,train
+00000368_011.png,00000368,Atelectasis,035Y,M,AP,train
+00000369_000.png,00000369,No Finding,067Y,F,PA,train
+00000370_000.png,00000370,Nodule,065Y,F,PA,train
+00000370_001.png,00000370,No Finding,066Y,F,PA,train
+00000370_002.png,00000370,No Finding,068Y,F,PA,train
+00000370_003.png,00000370,No Finding,055Y,F,PA,train
+00000370_004.png,00000370,No Finding,058Y,F,PA,train
+00000370_005.png,00000370,No Finding,059Y,F,PA,train
+00000370_006.png,00000370,Atelectasis|Nodule,060Y,F,PA,train
+00000370_007.png,00000370,No Finding,060Y,F,PA,train
+00000370_008.png,00000370,Nodule,060Y,F,PA,train
+00000370_009.png,00000370,No Finding,061Y,F,PA,train
+00000370_010.png,00000370,Infiltration,062Y,F,PA,train
+00000370_011.png,00000370,Infiltration,064Y,F,PA,train
+00000373_000.png,00000373,No Finding,022Y,F,PA,train
+00000373_001.png,00000373,No Finding,027Y,F,PA,train
+00000376_000.png,00000376,Pleural_Thickening,042Y,M,PA,train
+00000376_001.png,00000376,No Finding,045Y,M,PA,train
+00000376_002.png,00000376,Emphysema,046Y,M,PA,train
+00000376_003.png,00000376,No Finding,047Y,M,PA,train
+00000376_004.png,00000376,No Finding,048Y,M,PA,train
+00000376_005.png,00000376,Emphysema|Pneumothorax,048Y,M,AP,train
+00000376_006.png,00000376,Infiltration,048Y,M,PA,train
+00000376_007.png,00000376,Emphysema|Mass,048Y,M,PA,train
+00000376_008.png,00000376,Atelectasis|Edema|Mass,049Y,M,AP,train
+00000376_009.png,00000376,Infiltration,049Y,M,AP,train
+00000376_010.png,00000376,Infiltration,049Y,M,AP,train
+00000376_011.png,00000376,No Finding,049Y,M,PA,train
+00000376_012.png,00000376,No Finding,049Y,M,PA,train
+00000376_013.png,00000376,No Finding,049Y,M,PA,train
+00000376_014.png,00000376,Pleural_Thickening,050Y,M,AP,train
+00000378_000.png,00000378,No Finding,061Y,M,PA,train
+00000379_000.png,00000379,No Finding,080Y,F,PA,train
+00000379_001.png,00000379,No Finding,080Y,F,AP,train
+00000380_000.png,00000380,No Finding,034Y,F,PA,train
+00000383_000.png,00000383,Nodule,066Y,F,PA,train
+00000383_001.png,00000383,Nodule,066Y,F,PA,train
+00000383_002.png,00000383,Nodule,066Y,F,PA,train
+00000384_000.png,00000384,No Finding,051Y,M,PA,train
+00000385_000.png,00000385,Hernia|Infiltration,070Y,F,PA,train
+00000385_001.png,00000385,Hernia,071Y,F,PA,train
+00000385_002.png,00000385,No Finding,064Y,F,PA,train
+00000385_003.png,00000385,No Finding,066Y,F,PA,train
+00000385_004.png,00000385,No Finding,066Y,F,PA,train
+00000385_005.png,00000385,Infiltration,068Y,F,PA,train
+00000386_000.png,00000386,No Finding,042Y,M,PA,train
+00000387_000.png,00000387,Fibrosis,067Y,F,PA,train
+00000387_001.png,00000387,Fibrosis,068Y,F,PA,train
+00000387_002.png,00000387,No Finding,069Y,F,PA,train
+00000390_000.png,00000390,No Finding,021Y,F,PA,train
+00000390_001.png,00000390,No Finding,030Y,F,PA,train
+00000391_000.png,00000391,No Finding,085Y,F,PA,train
+00000391_001.png,00000391,No Finding,076Y,F,PA,train
+00000391_002.png,00000391,No Finding,078Y,F,PA,train
+00000391_003.png,00000391,No Finding,079Y,F,PA,train
+00000391_004.png,00000391,No Finding,080Y,F,PA,train
+00000391_005.png,00000391,No Finding,081Y,F,PA,train
+00000391_006.png,00000391,Infiltration,082Y,F,PA,train
+00000391_007.png,00000391,No Finding,083Y,F,PA,train
+00000391_008.png,00000391,Infiltration,084Y,F,PA,train
+00000391_009.png,00000391,No Finding,084Y,F,PA,train
+00000393_000.png,00000393,No Finding,033Y,M,PA,train
+00000394_000.png,00000394,No Finding,073Y,M,PA,train
+00000395_000.png,00000395,No Finding,073Y,M,PA,train
+00000397_000.png,00000397,No Finding,055Y,F,PA,train
+00000398_000.png,00000398,No Finding,062Y,F,PA,train
+00000398_001.png,00000398,Effusion,064Y,F,PA,train
+00000398_002.png,00000398,Infiltration|Pneumonia,065Y,F,PA,train
+00000398_003.png,00000398,Cardiomegaly|Fibrosis,065Y,F,AP,train
+00000398_004.png,00000398,No Finding,065Y,F,PA,train
+00000398_005.png,00000398,No Finding,066Y,F,PA,train
+00000398_006.png,00000398,Cardiomegaly,068Y,F,AP,train
+00000398_007.png,00000398,No Finding,069Y,F,AP,train
+00000398_008.png,00000398,Infiltration,069Y,F,AP,train
+00000399_000.png,00000399,Nodule,034Y,F,PA,train
+00000399_001.png,00000399,No Finding,035Y,F,PA,train
+00000400_000.png,00000400,Mass,060Y,M,PA,train
+00000404_000.png,00000404,Atelectasis|Consolidation|Effusion|Mass|Pleural_Thickening,072Y,M,AP,train
+00000404_001.png,00000404,Atelectasis|Consolidation|Effusion|Mass|Pleural_Thickening,072Y,M,AP,train
+00000404_002.png,00000404,Pneumothorax,073Y,M,PA,train
+00000407_000.png,00000407,No Finding,070Y,F,PA,train
+00000407_001.png,00000407,Fibrosis,071Y,F,PA,train
+00000409_000.png,00000409,Effusion,065Y,F,PA,train
+00000409_001.png,00000409,Cardiomegaly|Effusion|Infiltration,066Y,F,AP,train
+00000410_000.png,00000410,No Finding,060Y,F,PA,train
+00000410_001.png,00000410,No Finding,060Y,F,PA,train
+00000410_002.png,00000410,Effusion,060Y,F,PA,train
+00000411_000.png,00000411,Infiltration,078Y,F,PA,train
+00000412_000.png,00000412,No Finding,056Y,M,PA,train
+00000412_001.png,00000412,No Finding,058Y,M,PA,train
+00000412_002.png,00000412,No Finding,058Y,M,PA,train
+00000412_003.png,00000412,No Finding,059Y,M,PA,train
+00000413_000.png,00000413,No Finding,042Y,M,PA,train
+00000417_000.png,00000417,No Finding,038Y,M,AP,train
+00000417_001.png,00000417,No Finding,038Y,M,AP,train
+00000417_002.png,00000417,No Finding,038Y,M,PA,train
+00000417_003.png,00000417,No Finding,038Y,M,PA,train
+00000417_004.png,00000417,No Finding,038Y,M,PA,train
+00000417_005.png,00000417,Pneumothorax,038Y,M,AP,train
+00000420_000.png,00000420,No Finding,063Y,F,PA,train
+00000420_001.png,00000420,No Finding,066Y,F,PA,train
+00000421_000.png,00000421,Atelectasis,071Y,M,AP,train
+00000421_001.png,00000421,Atelectasis|Emphysema,071Y,M,PA,train
+00000422_000.png,00000422,No Finding,080Y,F,PA,train
+00000422_001.png,00000422,No Finding,071Y,F,PA,train
+00000422_002.png,00000422,No Finding,072Y,F,PA,train
+00000422_003.png,00000422,No Finding,075Y,F,PA,train
+00000422_004.png,00000422,No Finding,075Y,F,PA,train
+00000422_005.png,00000422,No Finding,077Y,F,PA,train
+00000422_006.png,00000422,Infiltration,078Y,F,PA,train
+00000422_007.png,00000422,Infiltration,078Y,F,PA,train
+00000423_000.png,00000423,No Finding,030Y,M,PA,train
+00000424_000.png,00000424,Nodule,064Y,M,PA,train
+00000426_000.png,00000426,No Finding,050Y,M,PA,train
+00000426_001.png,00000426,Fibrosis,052Y,M,PA,train
+00000426_002.png,00000426,No Finding,053Y,M,PA,train
+00000426_003.png,00000426,No Finding,054Y,M,PA,train
+00000427_000.png,00000427,No Finding,077Y,F,PA,train
+00000427_001.png,00000427,No Finding,081Y,F,PA,train
+00000428_000.png,00000428,No Finding,058Y,M,PA,train
+00000430_000.png,00000430,No Finding,065Y,F,PA,train
+00000430_001.png,00000430,No Finding,068Y,F,PA,train
+00000430_002.png,00000430,No Finding,071Y,F,PA,train
+00000431_000.png,00000431,Atelectasis,050Y,M,AP,train
+00000431_001.png,00000431,No Finding,051Y,M,PA,train
+00000431_002.png,00000431,Infiltration,052Y,M,PA,train
+00000431_003.png,00000431,No Finding,054Y,M,PA,train
+00000432_000.png,00000432,Cardiomegaly|Emphysema,072Y,F,PA,train
+00000433_000.png,00000433,No Finding,050Y,F,PA,train
+00000434_000.png,00000434,No Finding,050Y,F,PA,train
+00000435_000.png,00000435,Cardiomegaly|Effusion|Mass,067Y,M,PA,train
+00000436_000.png,00000436,No Finding,080Y,F,PA,train
+00000437_000.png,00000437,No Finding,057Y,F,PA,train
+00000438_000.png,00000438,No Finding,064Y,M,PA,train
+00000439_000.png,00000439,No Finding,049Y,F,PA,train
+00000440_000.png,00000440,No Finding,061Y,M,PA,train
+00000440_001.png,00000440,No Finding,062Y,M,PA,train
+00000441_000.png,00000441,Atelectasis,049Y,M,PA,train
+00000442_000.png,00000442,Cardiomegaly|Edema|Infiltration|Nodule,049Y,F,AP,train
+00000442_001.png,00000442,Cardiomegaly|Effusion|Infiltration,049Y,F,PA,train
+00000442_002.png,00000442,Cardiomegaly|Effusion,049Y,F,PA,train
+00000442_003.png,00000442,Cardiomegaly,045Y,F,PA,train
+00000443_000.png,00000443,No Finding,046Y,M,PA,train
+00000443_001.png,00000443,No Finding,046Y,M,AP,train
+00000443_002.png,00000443,No Finding,047Y,M,PA,train
+00000443_003.png,00000443,No Finding,043Y,M,PA,train
+00000443_004.png,00000443,No Finding,044Y,M,AP,train
+00000443_005.png,00000443,Mass,044Y,M,AP,train
+00000444_000.png,00000444,Infiltration,048Y,M,PA,train
+00000444_001.png,00000444,No Finding,045Y,M,AP,train
+00000444_002.png,00000444,No Finding,045Y,M,AP,train
+00000444_003.png,00000444,No Finding,044Y,M,PA,train
+00000445_000.png,00000445,No Finding,063Y,F,PA,train
+00000446_000.png,00000446,Infiltration,066Y,M,PA,train
+00000446_001.png,00000446,No Finding,066Y,M,PA,train
+00000447_000.png,00000447,No Finding,057Y,F,PA,train
+00000447_001.png,00000447,No Finding,062Y,F,PA,train
+00000447_002.png,00000447,No Finding,063Y,F,PA,train
+00000447_003.png,00000447,No Finding,064Y,F,PA,train
+00000447_004.png,00000447,No Finding,065Y,F,PA,train
+00000447_005.png,00000447,Infiltration,066Y,F,PA,train
+00000448_000.png,00000448,Cardiomegaly,048Y,M,PA,train
+00000448_001.png,00000448,No Finding,048Y,M,PA,train
+00000450_000.png,00000450,Infiltration,062Y,F,AP,train
+00000450_001.png,00000450,No Finding,062Y,F,AP,train
+00000450_002.png,00000450,No Finding,062Y,F,AP,train
+00000450_003.png,00000450,No Finding,062Y,F,AP,train
+00000450_004.png,00000450,No Finding,062Y,F,AP,train
+00000450_005.png,00000450,No Finding,062Y,F,AP,train
+00000450_006.png,00000450,No Finding,062Y,F,AP,train
+00000450_007.png,00000450,No Finding,061Y,F,PA,train
+00000450_008.png,00000450,No Finding,062Y,F,AP,train
+00000453_000.png,00000453,No Finding,063Y,M,PA,train
+00000454_000.png,00000454,No Finding,028Y,M,PA,train
+00000455_000.png,00000455,No Finding,047Y,F,PA,train
+00000456_000.png,00000456,No Finding,055Y,M,PA,train
+00000456_001.png,00000456,No Finding,058Y,M,PA,train
+00000458_000.png,00000458,No Finding,051Y,F,PA,train
+00000458_001.png,00000458,Infiltration,053Y,F,PA,train
+00000458_002.png,00000458,No Finding,053Y,F,PA,train
+00000459_000.png,00000459,No Finding,055Y,F,PA,train
+00000459_001.png,00000459,No Finding,055Y,F,AP,train
+00000459_002.png,00000459,No Finding,055Y,F,PA,train
+00000459_003.png,00000459,Infiltration,056Y,F,PA,train
+00000459_004.png,00000459,No Finding,056Y,F,AP,train
+00000459_005.png,00000459,No Finding,056Y,F,AP,train
+00000459_006.png,00000459,No Finding,056Y,F,PA,train
+00000459_007.png,00000459,No Finding,056Y,F,AP,train
+00000459_008.png,00000459,No Finding,056Y,F,AP,train
+00000459_009.png,00000459,No Finding,056Y,F,PA,train
+00000459_010.png,00000459,Infiltration,056Y,F,AP,train
+00000459_011.png,00000459,No Finding,056Y,F,AP,train
+00000459_012.png,00000459,No Finding,056Y,F,PA,train
+00000459_013.png,00000459,No Finding,056Y,F,PA,train
+00000459_014.png,00000459,No Finding,056Y,F,PA,train
+00000459_015.png,00000459,No Finding,056Y,F,PA,train
+00000459_016.png,00000459,Infiltration,056Y,F,PA,train
+00000459_017.png,00000459,Nodule,057Y,F,AP,train
+00000459_018.png,00000459,Infiltration,057Y,F,PA,train
+00000459_019.png,00000459,No Finding,057Y,F,PA,train
+00000459_020.png,00000459,Atelectasis|Infiltration,057Y,F,PA,train
+00000459_021.png,00000459,No Finding,057Y,F,PA,train
+00000459_022.png,00000459,No Finding,057Y,F,AP,train
+00000459_023.png,00000459,No Finding,057Y,F,PA,train
+00000459_024.png,00000459,Consolidation,058Y,F,PA,train
+00000459_025.png,00000459,No Finding,059Y,F,PA,train
+00000459_026.png,00000459,No Finding,058Y,F,PA,train
+00000459_027.png,00000459,Infiltration,054Y,F,AP,train
+00000459_028.png,00000459,No Finding,054Y,F,PA,train
+00000459_029.png,00000459,Atelectasis|Cardiomegaly|Effusion|Infiltration,054Y,F,PA,train
+00000459_030.png,00000459,Fibrosis|Infiltration,054Y,F,AP,train
+00000459_031.png,00000459,Atelectasis,055Y,F,AP,train
+00000459_032.png,00000459,Cardiomegaly|Effusion,054Y,F,AP,train
+00000459_033.png,00000459,No Finding,054Y,F,AP,train
+00000459_034.png,00000459,Edema,055Y,F,AP,train
+00000459_035.png,00000459,Infiltration,054Y,F,AP,train
+00000459_036.png,00000459,No Finding,054Y,F,AP,train
+00000459_037.png,00000459,Infiltration,054Y,F,AP,train
+00000459_038.png,00000459,No Finding,054Y,F,AP,train
+00000459_039.png,00000459,Infiltration,054Y,F,AP,train
+00000459_040.png,00000459,No Finding,054Y,F,AP,train
+00000459_041.png,00000459,Edema|Infiltration|Pneumonia,054Y,F,AP,train
+00000459_042.png,00000459,Edema,054Y,F,AP,train
+00000459_043.png,00000459,Edema,054Y,F,AP,train
+00000459_044.png,00000459,Edema,054Y,F,AP,train
+00000459_045.png,00000459,Cardiomegaly|Effusion,054Y,F,AP,train
+00000459_046.png,00000459,No Finding,054Y,F,AP,train
+00000459_047.png,00000459,Consolidation|Infiltration,054Y,F,AP,train
+00000459_048.png,00000459,Infiltration,054Y,F,AP,train
+00000459_049.png,00000459,Infiltration,054Y,F,AP,train
+00000459_050.png,00000459,No Finding,055Y,F,AP,train
+00000459_051.png,00000459,Edema|Infiltration|Nodule,054Y,F,AP,train
+00000459_052.png,00000459,Infiltration,054Y,F,PA,train
+00000459_053.png,00000459,Edema,054Y,F,PA,train
+00000459_054.png,00000459,Infiltration,054Y,F,PA,train
+00000459_055.png,00000459,No Finding,055Y,F,AP,train
+00000459_056.png,00000459,Cardiomegaly|Effusion|Infiltration,055Y,F,AP,train
+00000459_057.png,00000459,No Finding,055Y,F,PA,train
+00000459_058.png,00000459,Edema|Infiltration,055Y,F,PA,train
+00000460_000.png,00000460,Infiltration,040Y,M,PA,train
+00000461_000.png,00000461,Fibrosis,081Y,F,PA,train
+00000461_001.png,00000461,No Finding,084Y,F,PA,train
+00000461_002.png,00000461,No Finding,087Y,F,PA,train
+00000463_000.png,00000463,No Finding,076Y,F,PA,train
+00000463_001.png,00000463,No Finding,077Y,F,PA,train
+00000465_000.png,00000465,Infiltration,060Y,F,PA,train
+00000465_001.png,00000465,No Finding,063Y,F,PA,train
+00000467_000.png,00000467,Atelectasis|Consolidation,052Y,M,PA,train
+00000467_001.png,00000467,No Finding,052Y,M,AP,train
+00000467_002.png,00000467,Consolidation,052Y,M,AP,train
+00000467_003.png,00000467,Consolidation,052Y,M,AP,train
+00000467_004.png,00000467,Infiltration|Nodule,052Y,M,AP,train
+00000467_005.png,00000467,Nodule,052Y,M,AP,train
+00000467_006.png,00000467,Consolidation|Infiltration|Nodule,052Y,M,AP,train
+00000467_007.png,00000467,Infiltration,052Y,M,AP,train
+00000467_008.png,00000467,No Finding,052Y,M,AP,train
+00000467_009.png,00000467,No Finding,052Y,M,AP,train
+00000467_010.png,00000467,No Finding,052Y,M,AP,train
+00000467_011.png,00000467,Emphysema|Pneumothorax,052Y,M,AP,train
+00000467_012.png,00000467,Consolidation|Infiltration,052Y,M,AP,train
+00000467_013.png,00000467,Pneumothorax,052Y,M,AP,train
+00000467_014.png,00000467,Pneumothorax,052Y,M,AP,train
+00000468_000.png,00000468,Infiltration,031Y,M,AP,train
+00000468_001.png,00000468,Infiltration,031Y,M,AP,train
+00000468_002.png,00000468,Atelectasis,031Y,M,PA,train
+00000468_003.png,00000468,Infiltration,031Y,M,AP,train
+00000468_004.png,00000468,Infiltration|Pneumothorax,031Y,M,PA,train
+00000468_005.png,00000468,Emphysema|Pneumothorax,031Y,M,PA,train
+00000468_006.png,00000468,Pneumothorax,031Y,M,AP,train
+00000468_007.png,00000468,Emphysema|Infiltration,031Y,M,AP,train
+00000468_008.png,00000468,Infiltration|Pneumothorax,031Y,M,AP,train
+00000468_009.png,00000468,Infiltration|Pneumothorax,031Y,M,AP,train
+00000468_010.png,00000468,Infiltration|Pneumothorax,031Y,M,AP,train
+00000468_011.png,00000468,Pneumothorax,031Y,M,AP,train
+00000468_012.png,00000468,Infiltration|Nodule,031Y,M,AP,train
+00000468_013.png,00000468,Atelectasis|Infiltration,031Y,M,AP,train
+00000468_014.png,00000468,Pneumothorax,031Y,M,AP,train
+00000468_015.png,00000468,No Finding,031Y,M,AP,train
+00000468_016.png,00000468,Pneumothorax,031Y,M,AP,train
+00000468_017.png,00000468,Atelectasis|Pneumothorax,031Y,M,AP,train
+00000468_018.png,00000468,Pneumothorax,031Y,M,AP,train
+00000468_019.png,00000468,Atelectasis|Pneumothorax,059Y,M,AP,train
+00000468_020.png,00000468,Atelectasis|Pneumothorax,031Y,M,AP,train
+00000468_021.png,00000468,No Finding,031Y,M,AP,train
+00000468_022.png,00000468,Atelectasis,031Y,M,AP,train
+00000468_023.png,00000468,Atelectasis,031Y,M,AP,train
+00000468_024.png,00000468,No Finding,031Y,M,AP,train
+00000468_025.png,00000468,No Finding,031Y,M,AP,train
+00000468_026.png,00000468,Atelectasis,031Y,M,AP,train
+00000468_027.png,00000468,No Finding,031Y,M,AP,train
+00000468_028.png,00000468,Atelectasis,031Y,M,AP,train
+00000468_029.png,00000468,Cardiomegaly|Infiltration|Nodule|Pneumonia,031Y,M,AP,train
+00000468_030.png,00000468,No Finding,031Y,M,AP,train
+00000468_031.png,00000468,Atelectasis,031Y,M,AP,train
+00000468_032.png,00000468,Atelectasis,031Y,M,AP,train
+00000468_033.png,00000468,Atelectasis,031Y,M,PA,train
+00000468_034.png,00000468,Consolidation,031Y,M,PA,train
+00000468_035.png,00000468,Pleural_Thickening,031Y,M,AP,train
+00000468_036.png,00000468,No Finding,031Y,M,AP,train
+00000468_037.png,00000468,Fibrosis,031Y,M,PA,train
+00000468_038.png,00000468,No Finding,031Y,M,PA,train
+00000468_039.png,00000468,No Finding,031Y,M,AP,train
+00000468_040.png,00000468,Infiltration|Pneumonia|Pneumothorax,031Y,M,PA,train
+00000468_041.png,00000468,Infiltration,031Y,M,PA,train
+00000468_042.png,00000468,No Finding,032Y,M,PA,train
+00000468_043.png,00000468,No Finding,023Y,M,AP,train
+00000468_044.png,00000468,No Finding,023Y,M,PA,train
+00000468_045.png,00000468,No Finding,023Y,M,AP,train
+00000468_046.png,00000468,No Finding,023Y,M,AP,train
+00000468_047.png,00000468,Infiltration,023Y,M,AP,train
+00000468_048.png,00000468,No Finding,024Y,M,PA,train
+00000468_049.png,00000468,No Finding,024Y,M,AP,train
+00000468_050.png,00000468,No Finding,024Y,M,AP,train
+00000468_051.png,00000468,No Finding,025Y,M,PA,train
+00000468_052.png,00000468,No Finding,026Y,M,AP,train
+00000468_053.png,00000468,No Finding,026Y,M,AP,train
+00000468_054.png,00000468,No Finding,026Y,M,AP,train
+00000468_055.png,00000468,Infiltration,027Y,M,AP,train
+00000468_056.png,00000468,No Finding,028Y,M,AP,train
+00000468_057.png,00000468,No Finding,028Y,M,PA,train
+00000468_058.png,00000468,No Finding,029Y,M,AP,train
+00000468_059.png,00000468,No Finding,028Y,M,PA,train
+00000468_060.png,00000468,Atelectasis|Pleural_Thickening,030Y,M,AP,train
+00000469_000.png,00000469,No Finding,065Y,M,PA,train
+00000469_001.png,00000469,No Finding,059Y,M,PA,train
+00000469_002.png,00000469,No Finding,060Y,M,PA,train
+00000470_000.png,00000470,No Finding,057Y,F,PA,train
+00000472_000.png,00000472,No Finding,042Y,F,PA,train
+00000473_000.png,00000473,No Finding,057Y,F,PA,train
+00000474_000.png,00000474,No Finding,083Y,M,PA,train
+00000475_000.png,00000475,No Finding,045Y,M,PA,train
+00000477_000.png,00000477,No Finding,040Y,F,PA,train
+00000478_000.png,00000478,Infiltration,063Y,F,PA,train
+00000478_001.png,00000478,Pleural_Thickening,064Y,F,PA,train
+00000478_002.png,00000478,No Finding,070Y,F,PA,train
+00000479_000.png,00000479,No Finding,064Y,F,PA,train
+00000480_000.png,00000480,No Finding,032Y,M,PA,train
+00000481_000.png,00000481,No Finding,056Y,M,PA,train
+00000481_001.png,00000481,No Finding,056Y,M,PA,train
+00000482_000.png,00000482,Infiltration,068Y,F,PA,train
+00000485_000.png,00000485,Infiltration,071Y,F,PA,train
+00000486_000.png,00000486,No Finding,058Y,M,PA,train
+00000486_001.png,00000486,No Finding,059Y,M,PA,train
+00000486_002.png,00000486,No Finding,062Y,M,PA,train
+00000486_003.png,00000486,No Finding,064Y,M,PA,train
+00000486_004.png,00000486,No Finding,065Y,M,PA,train
+00000488_000.png,00000488,Infiltration,036Y,F,AP,train
+00000488_001.png,00000488,Infiltration,036Y,F,AP,train
+00000488_002.png,00000488,No Finding,036Y,F,AP,train
+00000488_003.png,00000488,No Finding,036Y,F,AP,train
+00000489_000.png,00000489,Infiltration,042Y,M,PA,train
+00000489_001.png,00000489,Infiltration,042Y,M,AP,train
+00000489_002.png,00000489,No Finding,043Y,M,AP,train
+00000489_003.png,00000489,Consolidation,043Y,M,AP,train
+00000489_004.png,00000489,Consolidation|Infiltration,043Y,M,AP,train
+00000489_005.png,00000489,No Finding,043Y,M,AP,train
+00000489_006.png,00000489,Atelectasis|Effusion,043Y,M,AP,train
+00000489_007.png,00000489,Pleural_Thickening,042Y,M,PA,train
+00000489_008.png,00000489,Effusion|Fibrosis|Infiltration,042Y,M,PA,train
+00000490_000.png,00000490,Infiltration,058Y,M,PA,train
+00000490_001.png,00000490,No Finding,054Y,M,AP,train
+00000490_002.png,00000490,No Finding,054Y,M,AP,train
+00000490_003.png,00000490,No Finding,054Y,M,AP,train
+00000490_004.png,00000490,No Finding,054Y,M,AP,train
+00000490_005.png,00000490,No Finding,054Y,M,AP,train
+00000490_006.png,00000490,No Finding,054Y,M,AP,train
+00000491_000.png,00000491,Consolidation,034Y,M,AP,train
+00000491_001.png,00000491,No Finding,034Y,M,AP,train
+00000491_002.png,00000491,Consolidation,035Y,M,AP,train
+00000491_003.png,00000491,Consolidation,037Y,M,PA,train
+00000491_004.png,00000491,Consolidation|Effusion|Infiltration,037Y,M,AP,train
+00000491_005.png,00000491,No Finding,037Y,M,PA,train
+00000491_006.png,00000491,Consolidation|Pneumothorax,038Y,M,PA,train
+00000491_007.png,00000491,Consolidation|Edema|Effusion|Pneumothorax,038Y,M,PA,train
+00000491_008.png,00000491,Consolidation|Pneumothorax,038Y,M,PA,train
+00000491_009.png,00000491,Consolidation|Effusion|Infiltration|Nodule,038Y,M,PA,train
+00000491_010.png,00000491,Consolidation|Pneumothorax,038Y,M,PA,train
+00000491_011.png,00000491,Pneumothorax,038Y,M,PA,train
+00000491_012.png,00000491,Infiltration|Pneumothorax,037Y,M,AP,train
+00000491_013.png,00000491,Pneumothorax,037Y,M,AP,train
+00000491_014.png,00000491,Consolidation|Pneumothorax,037Y,M,AP,train
+00000491_015.png,00000491,Consolidation,037Y,M,AP,train
+00000491_016.png,00000491,No Finding,037Y,M,AP,train
+00000491_017.png,00000491,No Finding,037Y,M,AP,train
+00000491_018.png,00000491,Effusion,037Y,M,AP,train
+00000491_019.png,00000491,No Finding,026Y,M,AP,train
+00000491_020.png,00000491,Consolidation,027Y,M,PA,train
+00000491_021.png,00000491,Mass,027Y,M,AP,train
+00000491_022.png,00000491,Infiltration|Mass,028Y,M,PA,train
+00000491_023.png,00000491,Fibrosis,028Y,M,PA,train
+00000491_024.png,00000491,No Finding,029Y,M,AP,train
+00000491_025.png,00000491,Infiltration,029Y,M,AP,train
+00000493_000.png,00000493,Pneumothorax,035Y,F,AP,train
+00000495_000.png,00000495,No Finding,069Y,M,PA,train
+00000496_000.png,00000496,No Finding,056Y,F,AP,train
+00000497_000.png,00000497,No Finding,022Y,M,PA,train
+00000498_000.png,00000498,No Finding,067Y,M,PA,train
+00000498_001.png,00000498,No Finding,070Y,M,PA,train
+00000498_002.png,00000498,No Finding,062Y,M,PA,train
+00000498_003.png,00000498,Cardiomegaly,065Y,M,PA,train
+00000499_000.png,00000499,No Finding,028Y,F,AP,train
+00000499_001.png,00000499,No Finding,029Y,F,AP,train
+00000499_002.png,00000499,Atelectasis|Effusion|Infiltration|Nodule,029Y,F,PA,train
+00000499_003.png,00000499,Effusion|Infiltration,029Y,F,PA,train
+00000499_004.png,00000499,Infiltration|Nodule,031Y,F,AP,train
+00000499_005.png,00000499,No Finding,032Y,F,AP,train
+00000499_006.png,00000499,Infiltration,034Y,F,AP,train
+00000499_007.png,00000499,Consolidation,035Y,F,AP,train
+00000499_008.png,00000499,Pneumonia,034Y,F,PA,train
+00000499_009.png,00000499,Consolidation|Mass,034Y,F,PA,train
+00000499_010.png,00000499,Nodule,034Y,F,PA,train
+00000499_011.png,00000499,Nodule,034Y,F,PA,train
+00000499_012.png,00000499,Consolidation,035Y,F,AP,train
+00000501_000.png,00000501,Infiltration,038Y,M,PA,train
+00000502_000.png,00000502,No Finding,041Y,M,PA,train
+00000502_001.png,00000502,No Finding,042Y,M,PA,train
+00000502_002.png,00000502,Infiltration,043Y,M,AP,train
+00000502_003.png,00000502,Infiltration,043Y,M,AP,train
+00000502_004.png,00000502,Infiltration,043Y,M,AP,train
+00000502_005.png,00000502,Infiltration,043Y,M,AP,train
+00000502_006.png,00000502,Pneumothorax,043Y,M,AP,train
+00000502_007.png,00000502,Infiltration,043Y,M,AP,train
+00000502_008.png,00000502,Infiltration,043Y,M,AP,train
+00000502_009.png,00000502,No Finding,043Y,M,AP,train
+00000502_010.png,00000502,No Finding,043Y,M,AP,train
+00000502_011.png,00000502,Infiltration,043Y,M,AP,train
+00000502_012.png,00000502,No Finding,043Y,M,AP,train
+00000502_013.png,00000502,Infiltration,043Y,M,AP,train
+00000502_014.png,00000502,No Finding,043Y,M,PA,train
+00000502_015.png,00000502,No Finding,043Y,M,PA,train
+00000502_016.png,00000502,Infiltration,044Y,M,PA,train
+00000505_000.png,00000505,No Finding,073Y,F,PA,train
+00000505_001.png,00000505,No Finding,074Y,F,PA,train
+00000506_000.png,00000506,No Finding,021Y,M,AP,train
+00000506_001.png,00000506,No Finding,021Y,M,AP,train
+00000506_002.png,00000506,No Finding,021Y,M,AP,train
+00000506_003.png,00000506,Infiltration,021Y,M,AP,train
+00000506_004.png,00000506,No Finding,021Y,M,AP,train
+00000506_005.png,00000506,No Finding,021Y,M,AP,train
+00000506_006.png,00000506,Infiltration,021Y,M,AP,train
+00000506_007.png,00000506,No Finding,021Y,M,AP,train
+00000506_008.png,00000506,No Finding,024Y,M,AP,train
+00000506_009.png,00000506,Infiltration,024Y,M,AP,train
+00000506_010.png,00000506,Infiltration,024Y,M,AP,train
+00000506_011.png,00000506,No Finding,027Y,M,PA,train
+00000506_012.png,00000506,Effusion,027Y,M,PA,train
+00000506_013.png,00000506,Edema|Effusion|Pneumonia,028Y,M,AP,train
+00000506_014.png,00000506,No Finding,028Y,M,AP,train
+00000506_015.png,00000506,Edema|Effusion|Infiltration|Pneumonia,028Y,M,AP,train
+00000506_016.png,00000506,Edema|Effusion|Pneumonia,028Y,M,AP,train
+00000506_017.png,00000506,Effusion|Infiltration,027Y,M,PA,train
+00000506_018.png,00000506,Effusion,027Y,M,PA,train
+00000506_019.png,00000506,Effusion,028Y,M,PA,train
+00000506_020.png,00000506,Edema|Infiltration|Pleural_Thickening,028Y,M,AP,train
+00000506_021.png,00000506,No Finding,028Y,M,AP,train
+00000506_022.png,00000506,Infiltration,028Y,M,AP,train
+00000506_023.png,00000506,Atelectasis,028Y,M,AP,train
+00000506_024.png,00000506,Atelectasis,028Y,M,AP,train
+00000506_025.png,00000506,Atelectasis|Infiltration,028Y,M,AP,train
+00000506_026.png,00000506,No Finding,028Y,M,AP,train
+00000506_027.png,00000506,No Finding,028Y,M,AP,train
+00000506_028.png,00000506,No Finding,028Y,M,AP,train
+00000506_029.png,00000506,No Finding,028Y,M,AP,train
+00000506_030.png,00000506,No Finding,028Y,M,AP,train
+00000506_031.png,00000506,Infiltration|Pleural_Thickening,028Y,M,AP,train
+00000506_032.png,00000506,Effusion,028Y,M,AP,train
+00000507_000.png,00000507,No Finding,026Y,M,PA,train
+00000508_000.png,00000508,Consolidation|Fibrosis,022Y,M,AP,train
+00000508_001.png,00000508,Infiltration,027Y,M,PA,train
+00000508_002.png,00000508,No Finding,028Y,M,AP,train
+00000509_000.png,00000509,No Finding,071Y,F,PA,train
+00000509_001.png,00000509,No Finding,075Y,F,PA,train
+00000510_000.png,00000510,No Finding,032Y,F,PA,train
+00000511_000.png,00000511,No Finding,057Y,M,PA,train
+00000511_001.png,00000511,No Finding,057Y,M,PA,train
+00000512_000.png,00000512,Effusion,031Y,M,PA,train
+00000512_001.png,00000512,Cardiomegaly|Effusion,031Y,M,AP,train
+00000512_002.png,00000512,Cardiomegaly,031Y,M,AP,train
+00000517_000.png,00000517,Fibrosis,069Y,F,PA,train
+00000517_001.png,00000517,Fibrosis,063Y,F,AP,train
+00000517_002.png,00000517,No Finding,064Y,F,PA,train
+00000517_003.png,00000517,No Finding,065Y,F,PA,train
+00000517_004.png,00000517,No Finding,067Y,F,PA,train
+00000517_005.png,00000517,No Finding,068Y,F,PA,train
+00000517_006.png,00000517,Pleural_Thickening,068Y,F,PA,train
+00000519_000.png,00000519,No Finding,034Y,F,PA,train
+00000520_000.png,00000520,No Finding,063Y,M,PA,train
+00000521_000.png,00000521,No Finding,032Y,M,PA,train
+00000523_000.png,00000523,No Finding,057Y,F,PA,train
+00000524_000.png,00000524,No Finding,048Y,M,PA,train
+00000524_001.png,00000524,Fibrosis|Pleural_Thickening,051Y,M,PA,train
+00000524_002.png,00000524,Fibrosis,052Y,M,PA,train
+00000524_003.png,00000524,Infiltration,056Y,M,PA,train
+00000525_000.png,00000525,No Finding,037Y,M,PA,train
+00000526_000.png,00000526,No Finding,053Y,M,PA,train
+00000526_001.png,00000526,No Finding,053Y,M,PA,train
+00000527_000.png,00000527,No Finding,056Y,M,PA,train
+00000528_000.png,00000528,Mass|Pleural_Thickening,051Y,F,PA,train
+00000528_001.png,00000528,Effusion|Infiltration|Mass,051Y,F,PA,train
+00000529_000.png,00000529,Fibrosis,069Y,F,PA,train
+00000529_001.png,00000529,Infiltration,074Y,F,PA,train
+00000530_000.png,00000530,No Finding,044Y,F,PA,train
+00000531_000.png,00000531,Infiltration,050Y,M,PA,train
+00000531_001.png,00000531,No Finding,051Y,M,PA,train
+00000531_002.png,00000531,Infiltration,047Y,M,PA,train
+00000531_003.png,00000531,No Finding,048Y,M,PA,train
+00000531_004.png,00000531,No Finding,048Y,M,PA,train
+00000531_005.png,00000531,No Finding,049Y,M,PA,train
+00000531_006.png,00000531,No Finding,049Y,M,PA,train
+00000536_000.png,00000536,Fibrosis,038Y,M,PA,train
+00000537_000.png,00000537,Nodule,059Y,M,PA,train
+00000540_000.png,00000540,No Finding,071Y,F,PA,train
+00000540_001.png,00000540,Atelectasis|Effusion|Infiltration,071Y,F,AP,train
+00000540_002.png,00000540,No Finding,071Y,F,AP,train
+00000541_000.png,00000541,No Finding,053Y,F,PA,train
+00000541_001.png,00000541,No Finding,054Y,F,PA,train
+00000541_002.png,00000541,No Finding,048Y,F,PA,train
+00000541_003.png,00000541,No Finding,048Y,F,PA,train
+00000541_004.png,00000541,No Finding,051Y,F,PA,train
+00000542_000.png,00000542,No Finding,050Y,F,PA,train
+00000542_001.png,00000542,No Finding,052Y,F,PA,train
+00000544_000.png,00000544,No Finding,068Y,F,PA,train
+00000545_000.png,00000545,Effusion|Infiltration,046Y,M,PA,train
+00000545_001.png,00000545,Pleural_Thickening,048Y,M,PA,train
+00000545_002.png,00000545,No Finding,036Y,M,PA,train
+00000545_003.png,00000545,No Finding,037Y,M,PA,train
+00000545_004.png,00000545,Fibrosis,038Y,M,PA,train
+00000545_005.png,00000545,No Finding,039Y,M,PA,train
+00000545_006.png,00000545,No Finding,039Y,M,PA,train
+00000545_007.png,00000545,No Finding,041Y,M,PA,train
+00000545_008.png,00000545,No Finding,042Y,M,PA,train
+00000545_009.png,00000545,Nodule,042Y,M,PA,train
+00000545_010.png,00000545,No Finding,044Y,M,PA,train
+00000548_000.png,00000548,No Finding,024Y,M,PA,train
+00000548_001.png,00000548,Infiltration,027Y,M,PA,train
+00000548_002.png,00000548,Infiltration,028Y,M,PA,train
+00000548_003.png,00000548,Infiltration,029Y,M,PA,train
+00000550_000.png,00000550,No Finding,057Y,M,PA,train
+00000551_000.png,00000551,No Finding,069Y,F,PA,train
+00000552_000.png,00000552,No Finding,072Y,F,PA,train
+00000552_001.png,00000552,Fibrosis,076Y,F,PA,train
+00000552_002.png,00000552,No Finding,078Y,F,PA,train
+00000552_003.png,00000552,No Finding,078Y,F,PA,train
+00000553_000.png,00000553,No Finding,041Y,M,PA,train
+00000555_000.png,00000555,No Finding,045Y,M,PA,train
+00000556_000.png,00000556,Nodule,063Y,F,PA,train
+00000556_001.png,00000556,No Finding,064Y,F,PA,train
+00000556_002.png,00000556,No Finding,065Y,F,PA,train
+00000556_003.png,00000556,No Finding,068Y,F,PA,train
+00000557_000.png,00000557,No Finding,059Y,F,PA,train
+00000558_000.png,00000558,No Finding,049Y,F,PA,train
+00000559_000.png,00000559,No Finding,061Y,M,PA,train
+00000560_000.png,00000560,No Finding,053Y,F,PA,train
+00000560_001.png,00000560,No Finding,053Y,F,AP,train
+00000560_002.png,00000560,Effusion|Infiltration,053Y,F,AP,train
+00000561_000.png,00000561,No Finding,064Y,M,PA,train
+00000561_001.png,00000561,No Finding,065Y,M,PA,train
+00000561_002.png,00000561,No Finding,058Y,M,PA,train
+00000561_003.png,00000561,No Finding,061Y,M,PA,train
+00000563_000.png,00000563,No Finding,065Y,M,PA,train
+00000564_000.png,00000564,No Finding,017Y,M,PA,train
+00000565_000.png,00000565,No Finding,018Y,F,PA,train
+00000567_000.png,00000567,No Finding,053Y,M,PA,train
+00000568_000.png,00000568,No Finding,035Y,M,AP,train
+00000569_000.png,00000569,Infiltration,073Y,F,PA,train
+00000569_001.png,00000569,No Finding,066Y,F,PA,train
+00000569_002.png,00000569,No Finding,067Y,F,PA,train
+00000569_003.png,00000569,No Finding,068Y,F,PA,train
+00000569_004.png,00000569,Fibrosis,069Y,F,PA,train
+00000569_005.png,00000569,Nodule,070Y,F,PA,train
+00000569_006.png,00000569,No Finding,071Y,F,PA,train
+00000570_000.png,00000570,No Finding,053Y,M,PA,train
+00000570_001.png,00000570,No Finding,059Y,M,PA,train
+00000571_000.png,00000571,Effusion|Infiltration,054Y,M,PA,train
+00000571_001.png,00000571,Effusion|Infiltration|Pleural_Thickening,056Y,M,PA,train
+00000571_002.png,00000571,No Finding,047Y,M,PA,train
+00000571_003.png,00000571,No Finding,048Y,M,PA,train
+00000571_004.png,00000571,Infiltration,049Y,M,PA,train
+00000571_005.png,00000571,Fibrosis,052Y,M,PA,train
+00000572_000.png,00000572,No Finding,058Y,M,PA,train
+00000572_001.png,00000572,Effusion,058Y,M,PA,train
+00000572_002.png,00000572,Effusion,058Y,M,AP,train
+00000573_000.png,00000573,Fibrosis,054Y,M,PA,train
+00000573_001.png,00000573,No Finding,054Y,M,PA,train
+00000573_002.png,00000573,Fibrosis|Infiltration,054Y,M,PA,train
+00000573_003.png,00000573,Fibrosis,054Y,M,PA,train
+00000573_004.png,00000573,Fibrosis,055Y,M,AP,train
+00000573_005.png,00000573,No Finding,055Y,M,AP,train
+00000573_006.png,00000573,No Finding,055Y,M,AP,train
+00000573_007.png,00000573,Consolidation,055Y,M,PA,train
+00000573_008.png,00000573,Fibrosis|Infiltration|Pneumonia,045Y,M,PA,train
+00000573_009.png,00000573,No Finding,045Y,M,PA,train
+00000573_010.png,00000573,Consolidation|Pleural_Thickening,047Y,M,PA,train
+00000573_011.png,00000573,No Finding,047Y,M,PA,train
+00000573_012.png,00000573,Nodule,052Y,M,PA,train
+00000574_000.png,00000574,Consolidation|Mass|Nodule|Pneumothorax,063Y,F,PA,train
+00000575_000.png,00000575,No Finding,042Y,F,PA,train
+00000576_000.png,00000576,No Finding,043Y,M,PA,train
+00000576_001.png,00000576,No Finding,044Y,M,PA,train
+00000576_002.png,00000576,No Finding,046Y,M,PA,train
+00000577_000.png,00000577,No Finding,069Y,M,PA,train
+00000577_001.png,00000577,No Finding,073Y,M,PA,train
+00000577_002.png,00000577,No Finding,075Y,M,PA,train
+00000577_003.png,00000577,Atelectasis|Infiltration,075Y,M,AP,train
+00000578_000.png,00000578,Cardiomegaly,042Y,M,PA,train
+00000579_000.png,00000579,No Finding,051Y,F,AP,train
+00000579_001.png,00000579,Cardiomegaly|Pleural_Thickening,060Y,F,PA,train
+00000580_000.png,00000580,Nodule,063Y,M,PA,train
+00000580_001.png,00000580,Mass|Pleural_Thickening,065Y,M,PA,train
+00000580_002.png,00000580,Effusion|Infiltration,066Y,M,PA,train
+00000580_003.png,00000580,No Finding,053Y,M,PA,train
+00000580_004.png,00000580,No Finding,055Y,M,PA,train
+00000580_005.png,00000580,Effusion|Fibrosis|Infiltration,057Y,M,PA,train
+00000580_006.png,00000580,Pleural_Thickening,060Y,M,PA,train
+00000580_007.png,00000580,Infiltration|Pleural_Thickening,061Y,M,PA,train
+00000580_008.png,00000580,Atelectasis|Pleural_Thickening,061Y,M,PA,train
+00000581_000.png,00000581,No Finding,050Y,F,PA,train
+00000582_000.png,00000582,No Finding,052Y,M,PA,train
+00000584_000.png,00000584,No Finding,055Y,M,PA,train
+00000585_000.png,00000585,Atelectasis,022Y,M,PA,train
+00000586_000.png,00000586,Fibrosis,063Y,F,PA,train
+00000586_001.png,00000586,Infiltration,065Y,F,PA,train
+00000587_000.png,00000587,No Finding,076Y,M,PA,train
+00000589_000.png,00000589,No Finding,064Y,M,PA,train
+00000590_000.png,00000590,No Finding,024Y,M,PA,train
+00000591_000.png,00000591,No Finding,062Y,M,AP,train
+00000591_001.png,00000591,Effusion,063Y,M,PA,train
+00000591_002.png,00000591,Effusion,063Y,M,PA,train
+00000591_003.png,00000591,Effusion,063Y,M,AP,train
+00000591_004.png,00000591,Effusion|Infiltration|Pleural_Thickening|Pneumonia,063Y,M,PA,train
+00000591_005.png,00000591,Effusion,063Y,M,PA,train
+00000591_006.png,00000591,Effusion|Infiltration,064Y,M,PA,train
+00000591_007.png,00000591,Effusion|Pleural_Thickening,064Y,M,PA,train
+00000591_008.png,00000591,Atelectasis|Consolidation,064Y,M,PA,train
+00000591_009.png,00000591,Effusion,063Y,M,PA,train
+00000591_010.png,00000591,Effusion,063Y,M,PA,train
+00000591_011.png,00000591,Effusion,065Y,M,PA,train
+00000591_012.png,00000591,Effusion,064Y,M,PA,train
+00000591_013.png,00000591,Effusion|Infiltration,064Y,M,PA,train
+00000591_014.png,00000591,Effusion,065Y,M,PA,train
+00000591_015.png,00000591,Effusion,065Y,M,PA,train
+00000591_016.png,00000591,Effusion|Infiltration,065Y,M,PA,train
+00000591_017.png,00000591,Effusion,066Y,M,AP,train
+00000591_018.png,00000591,Effusion,065Y,M,PA,train
+00000591_019.png,00000591,Effusion,065Y,M,PA,train
+00000592_000.png,00000592,Mass,056Y,F,PA,train
+00000592_001.png,00000592,Effusion|Mass,058Y,F,PA,train
+00000592_002.png,00000592,Mass,059Y,F,PA,train
+00000593_000.png,00000593,No Finding,077Y,M,PA,train
+00000594_000.png,00000594,No Finding,067Y,M,PA,train
+00000595_000.png,00000595,Pleural_Thickening,070Y,F,PA,train
+00000596_000.png,00000596,Atelectasis,058Y,F,PA,train
+00000597_000.png,00000597,No Finding,061Y,F,PA,train
+00000597_001.png,00000597,No Finding,062Y,F,PA,train
+00000597_002.png,00000597,No Finding,064Y,F,PA,train
+00000599_000.png,00000599,No Finding,060Y,F,PA,train
+00000600_000.png,00000600,No Finding,024Y,M,PA,train
+00000601_000.png,00000601,Mass,071Y,M,PA,train
+00000602_000.png,00000602,No Finding,054Y,M,PA,train
+00000604_000.png,00000604,No Finding,054Y,F,PA,train
+00000605_000.png,00000605,No Finding,060Y,F,AP,train
+00000606_000.png,00000606,No Finding,024Y,F,PA,train
+00000607_000.png,00000607,Cardiomegaly,071Y,M,PA,train
+00000608_000.png,00000608,Atelectasis|Nodule|Pleural_Thickening,080Y,F,PA,train
+00000608_001.png,00000608,Atelectasis|Cardiomegaly,080Y,F,PA,train
+00000608_002.png,00000608,Effusion|Infiltration,079Y,F,AP,train
+00000608_003.png,00000608,Pneumothorax,079Y,F,AP,train
+00000609_000.png,00000609,No Finding,019Y,F,PA,train
+00000609_001.png,00000609,No Finding,022Y,F,PA,train
+00000610_000.png,00000610,No Finding,049Y,F,PA,train
+00000610_001.png,00000610,No Finding,055Y,F,PA,train
+00000612_000.png,00000612,No Finding,050Y,M,PA,train
+00000613_000.png,00000613,Fibrosis,061Y,M,PA,train
+00000613_001.png,00000613,No Finding,061Y,M,PA,train
+00000613_002.png,00000613,No Finding,064Y,M,PA,train
+00000613_003.png,00000613,No Finding,065Y,M,PA,train
+00000613_004.png,00000613,No Finding,065Y,M,PA,train
+00000616_000.png,00000616,No Finding,034Y,M,PA,train
+00000617_000.png,00000617,No Finding,063Y,F,PA,train
+00000618_000.png,00000618,No Finding,054Y,F,PA,train
+00000618_001.png,00000618,Mass,053Y,F,PA,train
+00000618_002.png,00000618,Mass,053Y,F,PA,train
+00000618_003.png,00000618,No Finding,053Y,F,PA,train
+00000618_004.png,00000618,No Finding,053Y,F,AP,train
+00000618_005.png,00000618,Infiltration|Mass,053Y,F,PA,train
+00000618_006.png,00000618,Mass,053Y,F,PA,train
+00000618_007.png,00000618,Mass,053Y,F,AP,train
+00000618_008.png,00000618,Consolidation|Mass,054Y,F,PA,train
+00000618_009.png,00000618,No Finding,053Y,F,AP,train
+00000618_010.png,00000618,No Finding,053Y,F,AP,train
+00000618_011.png,00000618,Consolidation|Mass,054Y,F,PA,train
+00000619_000.png,00000619,No Finding,046Y,M,PA,train
+00000619_001.png,00000619,Infiltration|Pleural_Thickening,047Y,M,PA,train
+00000619_002.png,00000619,No Finding,049Y,M,PA,train
+00000620_000.png,00000620,Infiltration,049Y,F,PA,train
+00000620_001.png,00000620,No Finding,051Y,F,PA,train
+00000620_002.png,00000620,No Finding,054Y,F,PA,train
+00000622_000.png,00000622,Effusion|Nodule|Pleural_Thickening,075Y,F,PA,train
+00000624_000.png,00000624,Infiltration,056Y,F,PA,train
+00000624_001.png,00000624,Mass,056Y,F,AP,train
+00000624_002.png,00000624,Infiltration,056Y,F,AP,train
+00000624_003.png,00000624,No Finding,056Y,F,AP,train
+00000624_004.png,00000624,No Finding,050Y,F,PA,train
+00000624_005.png,00000624,No Finding,050Y,F,PA,train
+00000624_006.png,00000624,No Finding,055Y,F,PA,train
+00000628_000.png,00000628,No Finding,031Y,F,PA,train
+00000628_001.png,00000628,No Finding,031Y,F,AP,train
+00000628_002.png,00000628,No Finding,028Y,F,PA,train
+00000629_000.png,00000629,No Finding,023Y,F,AP,train
+00000630_000.png,00000630,No Finding,052Y,F,PA,train
+00000631_000.png,00000631,No Finding,025Y,M,PA,train
+00000631_001.png,00000631,No Finding,026Y,M,AP,train
+00000631_002.png,00000631,Consolidation|Pneumothorax,026Y,M,AP,train
+00000631_003.png,00000631,Emphysema|Pneumothorax,025Y,M,PA,train
+00000631_004.png,00000631,Pneumothorax,025Y,M,PA,train
+00000631_005.png,00000631,No Finding,026Y,M,AP,train
+00000631_006.png,00000631,No Finding,025Y,M,PA,train
+00000631_007.png,00000631,No Finding,025Y,M,PA,train
+00000631_008.png,00000631,Atelectasis|Effusion|Infiltration|Pleural_Thickening,026Y,M,PA,train
+00000632_000.png,00000632,No Finding,043Y,M,PA,train
+00000632_001.png,00000632,No Finding,045Y,M,AP,train
+00000632_002.png,00000632,No Finding,045Y,M,PA,train
+00000632_003.png,00000632,No Finding,045Y,M,PA,train
+00000632_004.png,00000632,No Finding,046Y,M,PA,train
+00000632_005.png,00000632,No Finding,047Y,M,PA,train
+00000632_006.png,00000632,No Finding,048Y,M,PA,train
+00000632_007.png,00000632,No Finding,049Y,M,AP,train
+00000632_008.png,00000632,Atelectasis,049Y,M,AP,train
+00000632_009.png,00000632,Atelectasis,049Y,M,AP,train
+00000632_010.png,00000632,No Finding,049Y,M,AP,train
+00000632_011.png,00000632,Effusion,048Y,M,PA,train
+00000632_012.png,00000632,No Finding,049Y,M,PA,train
+00000632_013.png,00000632,Atelectasis|Infiltration,049Y,M,PA,train
+00000633_000.png,00000633,No Finding,057Y,F,PA,train
+00000633_001.png,00000633,No Finding,057Y,F,PA,train
+00000634_000.png,00000634,Hernia,071Y,F,PA,train
+00000634_001.png,00000634,Infiltration,072Y,F,PA,train
+00000634_002.png,00000634,No Finding,073Y,F,PA,train
+00000634_003.png,00000634,Infiltration,074Y,F,PA,train
+00000634_004.png,00000634,Nodule,061Y,F,PA,train
+00000634_005.png,00000634,No Finding,065Y,F,PA,train
+00000634_006.png,00000634,No Finding,068Y,F,PA,train
+00000634_007.png,00000634,No Finding,068Y,F,PA,train
+00000634_008.png,00000634,No Finding,070Y,F,PA,train
+00000635_000.png,00000635,Fibrosis|Infiltration,048Y,F,PA,train
+00000635_001.png,00000635,Infiltration,051Y,F,PA,train
+00000637_000.png,00000637,No Finding,055Y,F,PA,train
+00000638_000.png,00000638,No Finding,056Y,F,PA,train
+00000642_000.png,00000642,Atelectasis,049Y,M,PA,train
+00000643_000.png,00000643,No Finding,040Y,F,PA,train
+00000643_001.png,00000643,No Finding,040Y,F,AP,train
+00000643_002.png,00000643,Atelectasis|Infiltration|Pneumothorax,040Y,F,PA,train
+00000643_003.png,00000643,Atelectasis|Infiltration|Pneumothorax,040Y,F,PA,train
+00000643_004.png,00000643,Effusion|Pneumothorax,040Y,F,PA,train
+00000643_005.png,00000643,Pneumothorax,040Y,F,PA,train
+00000643_006.png,00000643,Pneumothorax,040Y,F,PA,train
+00000643_007.png,00000643,Pneumothorax,040Y,F,PA,train
+00000643_008.png,00000643,Nodule|Pneumothorax,040Y,F,PA,train
+00000644_000.png,00000644,No Finding,056Y,F,PA,train
+00000644_001.png,00000644,No Finding,057Y,F,PA,train
+00000645_000.png,00000645,No Finding,070Y,M,PA,train
+00000645_001.png,00000645,No Finding,060Y,M,PA,train
+00000646_000.png,00000646,Infiltration,061Y,F,PA,train
+00000646_001.png,00000646,Nodule,062Y,F,PA,train
+00000646_002.png,00000646,No Finding,064Y,F,PA,train
+00000646_003.png,00000646,No Finding,052Y,F,PA,train
+00000646_004.png,00000646,No Finding,053Y,F,PA,train
+00000646_005.png,00000646,No Finding,054Y,F,PA,train
+00000646_006.png,00000646,Cardiomegaly|Effusion,056Y,F,PA,train
+00000646_007.png,00000646,No Finding,059Y,F,PA,train
+00000648_000.png,00000648,No Finding,042Y,F,PA,train
+00000648_001.png,00000648,Infiltration,046Y,F,PA,train
+00000649_000.png,00000649,Pleural_Thickening,058Y,M,PA,train
+00000651_000.png,00000651,No Finding,039Y,F,PA,train
+00000652_000.png,00000652,No Finding,046Y,F,PA,train
+00000652_001.png,00000652,No Finding,049Y,F,PA,train
+00000652_002.png,00000652,No Finding,049Y,F,PA,train
+00000652_003.png,00000652,No Finding,050Y,F,AP,train
+00000652_004.png,00000652,No Finding,050Y,F,AP,train
+00000652_005.png,00000652,No Finding,050Y,F,AP,train
+00000652_006.png,00000652,Edema|Infiltration,050Y,F,AP,train
+00000652_007.png,00000652,Edema,050Y,F,AP,train
+00000652_008.png,00000652,No Finding,049Y,F,PA,train
+00000652_009.png,00000652,Atelectasis|Consolidation|Infiltration,050Y,F,AP,train
+00000652_010.png,00000652,No Finding,051Y,F,AP,train
+00000652_011.png,00000652,No Finding,050Y,F,PA,train
+00000652_012.png,00000652,Infiltration,050Y,F,PA,train
+00000652_013.png,00000652,Infiltration,051Y,F,AP,train
+00000652_014.png,00000652,No Finding,051Y,F,AP,train
+00000652_015.png,00000652,No Finding,051Y,F,AP,train
+00000652_016.png,00000652,Infiltration|Nodule,051Y,F,AP,train
+00000652_017.png,00000652,No Finding,051Y,F,AP,train
+00000652_018.png,00000652,No Finding,051Y,F,AP,train
+00000652_019.png,00000652,No Finding,051Y,F,AP,train
+00000652_020.png,00000652,No Finding,051Y,F,AP,train
+00000652_021.png,00000652,No Finding,051Y,F,AP,train
+00000652_022.png,00000652,No Finding,051Y,F,AP,train
+00000652_023.png,00000652,No Finding,051Y,F,AP,train
+00000652_024.png,00000652,No Finding,052Y,F,PA,train
+00000652_025.png,00000652,Infiltration,051Y,F,PA,train
+00000652_026.png,00000652,Atelectasis|Consolidation,052Y,F,AP,train
+00000653_000.png,00000653,No Finding,077Y,M,PA,train
+00000653_001.png,00000653,No Finding,078Y,M,PA,train
+00000655_000.png,00000655,Atelectasis|Infiltration,051Y,M,AP,train
+00000655_001.png,00000655,Atelectasis|Infiltration,051Y,M,AP,train
+00000655_002.png,00000655,Atelectasis|Effusion,051Y,M,AP,train
+00000655_003.png,00000655,Atelectasis|Effusion,051Y,M,AP,train
+00000655_004.png,00000655,Atelectasis,052Y,M,AP,train
+00000655_005.png,00000655,No Finding,052Y,M,AP,train
+00000655_006.png,00000655,No Finding,051Y,M,PA,train
+00000656_000.png,00000656,Infiltration,027Y,F,PA,train
+00000657_000.png,00000657,No Finding,059Y,F,PA,train
+00000659_000.png,00000659,No Finding,040Y,M,PA,train
+00000659_001.png,00000659,No Finding,041Y,M,PA,train
+00000659_002.png,00000659,No Finding,042Y,M,PA,train
+00000660_000.png,00000660,No Finding,061Y,F,PA,train
+00000661_000.png,00000661,Cardiomegaly,057Y,M,PA,train
+00000661_001.png,00000661,Cardiomegaly|Infiltration,052Y,M,PA,train
+00000662_000.png,00000662,No Finding,058Y,F,PA,train
+00000662_001.png,00000662,No Finding,059Y,F,PA,train
+00000662_002.png,00000662,No Finding,061Y,F,PA,train
+00000662_003.png,00000662,No Finding,049Y,F,PA,train
+00000662_004.png,00000662,No Finding,051Y,F,PA,train
+00000662_005.png,00000662,No Finding,052Y,F,PA,train
+00000662_006.png,00000662,No Finding,053Y,F,PA,train
+00000662_007.png,00000662,No Finding,053Y,F,PA,train
+00000662_008.png,00000662,No Finding,055Y,F,PA,train
+00000662_009.png,00000662,Infiltration,055Y,F,PA,train
+00000662_010.png,00000662,Infiltration,056Y,F,PA,train
+00000664_000.png,00000664,No Finding,027Y,F,PA,train
+00000665_000.png,00000665,No Finding,058Y,M,PA,train
+00000666_000.png,00000666,Infiltration,075Y,M,AP,train
+00000669_000.png,00000669,No Finding,047Y,M,PA,train
+00000670_000.png,00000670,No Finding,054Y,F,PA,train
+00000671_000.png,00000671,No Finding,028Y,F,PA,train
+00000672_000.png,00000672,Fibrosis,054Y,F,PA,train
+00000673_000.png,00000673,No Finding,047Y,F,PA,train
+00000674_000.png,00000674,No Finding,074Y,F,PA,train
+00000675_000.png,00000675,No Finding,058Y,M,PA,train
+00000676_000.png,00000676,Fibrosis,070Y,F,PA,train
+00000676_001.png,00000676,No Finding,060Y,F,PA,train
+00000676_002.png,00000676,Infiltration,064Y,F,PA,train
+00000676_003.png,00000676,No Finding,065Y,F,PA,train
+00000676_004.png,00000676,Fibrosis,069Y,F,PA,train
+00000677_000.png,00000677,Infiltration,050Y,F,PA,train
+00000678_000.png,00000678,Edema,030Y,F,AP,train
+00000679_000.png,00000679,No Finding,031Y,M,PA,train
+00000681_000.png,00000681,No Finding,056Y,F,PA,train
+00000682_000.png,00000682,No Finding,063Y,F,PA,train
+00000682_001.png,00000682,Emphysema,064Y,F,PA,train
+00000682_002.png,00000682,Emphysema,067Y,F,PA,train
+00000682_003.png,00000682,No Finding,068Y,F,PA,train
+00000682_004.png,00000682,No Finding,069Y,F,PA,train
+00000683_000.png,00000683,No Finding,065Y,F,PA,train
+00000683_001.png,00000683,No Finding,056Y,F,PA,train
+00000683_002.png,00000683,Cardiomegaly,058Y,F,PA,train
+00000683_003.png,00000683,No Finding,060Y,F,PA,train
+00000683_004.png,00000683,Infiltration,061Y,F,PA,train
+00000683_005.png,00000683,No Finding,062Y,F,PA,train
+00000685_000.png,00000685,No Finding,060Y,M,PA,train
+00000686_000.png,00000686,Infiltration,081Y,F,PA,train
+00000687_000.png,00000687,No Finding,066Y,M,PA,train
+00000688_000.png,00000688,Atelectasis,060Y,F,PA,train
+00000688_001.png,00000688,Cardiomegaly,064Y,F,PA,train
+00000688_002.png,00000688,Atelectasis|Pneumonia,065Y,F,PA,train
+00000689_000.png,00000689,No Finding,060Y,M,PA,train
+00000691_000.png,00000691,No Finding,057Y,M,PA,train
+00000692_000.png,00000692,No Finding,046Y,F,PA,train
+00000693_000.png,00000693,No Finding,065Y,M,AP,train
+00000693_001.png,00000693,Atelectasis|Nodule,058Y,M,PA,train
+00000693_002.png,00000693,Infiltration,059Y,M,PA,train
+00000693_003.png,00000693,Atelectasis|Infiltration|Nodule,059Y,M,PA,train
+00000693_004.png,00000693,Mass,062Y,M,PA,train
+00000693_005.png,00000693,No Finding,062Y,M,AP,train
+00000693_006.png,00000693,Atelectasis|Infiltration,062Y,M,PA,train
+00000694_000.png,00000694,No Finding,048Y,M,PA,train
+00000694_001.png,00000694,No Finding,047Y,M,PA,train
+00000694_002.png,00000694,Infiltration,048Y,M,PA,train
+00000694_003.png,00000694,No Finding,049Y,M,PA,train
+00000695_000.png,00000695,Nodule,055Y,F,PA,train
+00000696_000.png,00000696,No Finding,019Y,F,PA,train
+00000697_000.png,00000697,No Finding,063Y,M,PA,train
+00000697_001.png,00000697,No Finding,064Y,M,PA,train
+00000697_002.png,00000697,Atelectasis,065Y,M,PA,train
+00000697_003.png,00000697,No Finding,066Y,M,PA,train
+00000697_004.png,00000697,No Finding,054Y,M,PA,train
+00000697_005.png,00000697,No Finding,055Y,M,PA,train
+00000697_006.png,00000697,Nodule,058Y,M,PA,train
+00000697_007.png,00000697,Atelectasis,058Y,M,PA,train
+00000697_008.png,00000697,No Finding,059Y,M,PA,train
+00000697_009.png,00000697,Infiltration,060Y,M,PA,train
+00000697_010.png,00000697,Infiltration,062Y,M,PA,train
+00000698_000.png,00000698,No Finding,042Y,F,PA,train
+00000699_000.png,00000699,No Finding,056Y,M,PA,train
+00000699_001.png,00000699,No Finding,056Y,M,PA,train
+00000701_000.png,00000701,No Finding,056Y,M,PA,train
+00000702_000.png,00000702,No Finding,017Y,F,PA,train
+00000702_001.png,00000702,No Finding,022Y,F,PA,train
+00000702_002.png,00000702,No Finding,023Y,F,PA,train
+00000702_003.png,00000702,No Finding,026Y,F,PA,train
+00000703_000.png,00000703,No Finding,019Y,F,AP,train
+00000704_000.png,00000704,No Finding,040Y,M,PA,train
+00000704_001.png,00000704,No Finding,040Y,M,PA,train
+00000704_002.png,00000704,No Finding,040Y,M,PA,train
+00000704_003.png,00000704,No Finding,041Y,M,PA,train
+00000706_000.png,00000706,No Finding,038Y,M,PA,train
+00000707_000.png,00000707,Emphysema|Infiltration|Nodule,045Y,M,AP,train
+00000707_001.png,00000707,Atelectasis|Emphysema,045Y,M,AP,train
+00000707_002.png,00000707,Atelectasis|Effusion,044Y,M,PA,train
+00000707_003.png,00000707,Atelectasis,044Y,M,PA,train
+00000707_004.png,00000707,Atelectasis,045Y,M,PA,train
+00000708_000.png,00000708,No Finding,040Y,M,AP,train
+00000709_000.png,00000709,No Finding,069Y,F,PA,train
+00000709_001.png,00000709,Infiltration,071Y,F,PA,train
+00000709_002.png,00000709,Infiltration,072Y,F,PA,train
+00000709_003.png,00000709,No Finding,060Y,F,PA,train
+00000709_004.png,00000709,No Finding,062Y,F,PA,train
+00000709_005.png,00000709,No Finding,063Y,F,PA,train
+00000709_006.png,00000709,No Finding,065Y,F,PA,train
+00000709_007.png,00000709,No Finding,066Y,F,PA,train
+00000709_008.png,00000709,Infiltration,067Y,F,PA,train
+00000710_000.png,00000710,Infiltration|Mass,056Y,F,PA,train
+00000710_001.png,00000710,Fibrosis,057Y,F,AP,train
+00000710_002.png,00000710,No Finding,057Y,F,AP,train
+00000710_003.png,00000710,Fibrosis|Pneumonia,057Y,F,PA,train
+00000710_004.png,00000710,Mass,057Y,F,AP,train
+00000710_005.png,00000710,Effusion|Emphysema,058Y,F,PA,train
+00000710_006.png,00000710,No Finding,059Y,F,PA,train
+00000711_000.png,00000711,Mass,043Y,F,PA,train
+00000711_001.png,00000711,No Finding,045Y,F,AP,train
+00000711_002.png,00000711,No Finding,045Y,F,AP,train
+00000711_003.png,00000711,Effusion|Infiltration,045Y,F,AP,train
+00000711_004.png,00000711,Atelectasis|Infiltration,045Y,F,AP,train
+00000711_005.png,00000711,Mass,034Y,F,AP,train
+00000711_006.png,00000711,Mass,034Y,F,AP,train
+00000711_007.png,00000711,Mass,034Y,F,PA,train
+00000711_008.png,00000711,Nodule,034Y,F,PA,train
+00000711_009.png,00000711,Atelectasis|Nodule,035Y,F,AP,train
+00000711_010.png,00000711,Nodule,035Y,F,AP,train
+00000711_011.png,00000711,Emphysema,035Y,F,AP,train
+00000711_012.png,00000711,Atelectasis|Emphysema,035Y,F,AP,train
+00000713_000.png,00000713,Fibrosis,041Y,M,PA,train
+00000716_000.png,00000716,Nodule,038Y,F,PA,train
+00000716_001.png,00000716,No Finding,030Y,F,PA,train
+00000716_002.png,00000716,No Finding,031Y,F,PA,train
+00000716_003.png,00000716,No Finding,033Y,F,PA,train
+00000717_000.png,00000717,No Finding,052Y,M,PA,train
+00000718_000.png,00000718,No Finding,032Y,F,PA,train
+00000718_001.png,00000718,No Finding,033Y,F,AP,train
+00000720_000.png,00000720,No Finding,046Y,M,PA,train
+00000720_001.png,00000720,No Finding,046Y,M,PA,train
+00000720_002.png,00000720,Atelectasis|Effusion,046Y,M,AP,train
+00000720_003.png,00000720,Infiltration,046Y,M,AP,train
+00000720_004.png,00000720,Atelectasis|Consolidation|Effusion|Infiltration,046Y,M,AP,train
+00000720_005.png,00000720,Atelectasis,047Y,M,AP,train
+00000720_006.png,00000720,Effusion|Infiltration,047Y,M,PA,train
+00000721_000.png,00000721,Nodule,029Y,M,PA,train
+00000721_001.png,00000721,No Finding,031Y,M,PA,train
+00000722_000.png,00000722,No Finding,029Y,M,PA,train
+00000723_000.png,00000723,No Finding,054Y,M,PA,train
+00000723_001.png,00000723,No Finding,054Y,M,PA,train
+00000723_002.png,00000723,Fibrosis|Infiltration,040Y,M,PA,train
+00000723_003.png,00000723,Effusion|Fibrosis,041Y,M,PA,train
+00000723_004.png,00000723,Atelectasis|Infiltration,045Y,M,PA,train
+00000723_005.png,00000723,Atelectasis|Infiltration,048Y,M,PA,train
+00000724_000.png,00000724,Fibrosis,056Y,F,PA,train
+00000725_000.png,00000725,No Finding,058Y,M,PA,train
+00000727_000.png,00000727,Atelectasis,049Y,F,PA,train
+00000727_001.png,00000727,No Finding,054Y,F,PA,train
+00000727_002.png,00000727,No Finding,054Y,F,PA,train
+00000727_003.png,00000727,No Finding,054Y,F,PA,train
+00000727_004.png,00000727,No Finding,055Y,F,AP,train
+00000727_005.png,00000727,No Finding,055Y,F,PA,train
+00000727_006.png,00000727,Effusion|Infiltration,055Y,F,PA,train
+00000727_007.png,00000727,No Finding,056Y,F,PA,train
+00000727_008.png,00000727,No Finding,058Y,F,PA,train
+00000727_009.png,00000727,Infiltration,058Y,F,PA,train
+00000728_000.png,00000728,Cardiomegaly,030Y,M,PA,train
+00000729_000.png,00000729,No Finding,052Y,M,PA,train
+00000730_000.png,00000730,No Finding,022Y,F,PA,train
+00000731_000.png,00000731,No Finding,053Y,M,PA,train
+00000731_001.png,00000731,No Finding,054Y,M,PA,train
+00000731_002.png,00000731,No Finding,055Y,M,PA,train
+00000731_003.png,00000731,Fibrosis|Nodule,042Y,M,PA,train
+00000731_004.png,00000731,No Finding,043Y,M,PA,train
+00000731_005.png,00000731,No Finding,046Y,M,PA,train
+00000731_006.png,00000731,No Finding,050Y,M,PA,train
+00000731_007.png,00000731,No Finding,051Y,M,PA,train
+00000731_008.png,00000731,No Finding,052Y,M,PA,train
+00000732_000.png,00000732,Effusion,085Y,F,PA,train
+00000732_001.png,00000732,Emphysema,085Y,F,AP,train
+00000732_002.png,00000732,Pneumothorax,085Y,F,AP,train
+00000732_003.png,00000732,No Finding,085Y,F,PA,train
+00000732_004.png,00000732,Cardiomegaly|Effusion|Fibrosis|Pleural_Thickening|Pneumothorax,085Y,F,PA,train
+00000732_005.png,00000732,Cardiomegaly|Effusion|Fibrosis|Pleural_Thickening|Pneumothorax,085Y,F,AP,train
+00000732_006.png,00000732,Effusion|Emphysema,085Y,F,PA,train
+00000732_007.png,00000732,Effusion|Pneumothorax,085Y,F,PA,train
+00000732_008.png,00000732,Cardiomegaly|Effusion|Pleural_Thickening,086Y,F,PA,train
+00000732_009.png,00000732,Effusion,087Y,F,PA,train
+00000732_010.png,00000732,No Finding,087Y,F,PA,train
+00000733_000.png,00000733,Nodule,065Y,M,PA,train
+00000733_001.png,00000733,Fibrosis|Infiltration,067Y,M,PA,train
+00000733_002.png,00000733,Fibrosis,071Y,M,PA,train
+00000733_003.png,00000733,Fibrosis,072Y,M,PA,train
+00000734_000.png,00000734,Infiltration,088Y,M,PA,train
+00000735_000.png,00000735,Nodule,068Y,M,PA,train
+00000738_000.png,00000738,No Finding,026Y,F,PA,train
+00000739_000.png,00000739,No Finding,059Y,M,PA,train
+00000739_001.png,00000739,No Finding,062Y,M,PA,train
+00000740_000.png,00000740,Atelectasis|Cardiomegaly,080Y,M,AP,train
+00000740_001.png,00000740,No Finding,080Y,M,AP,train
+00000742_000.png,00000742,Effusion,067Y,M,PA,train
+00000742_001.png,00000742,Atelectasis|Effusion|Infiltration,067Y,M,PA,train
+00000742_002.png,00000742,Effusion,068Y,M,PA,train
+00000742_003.png,00000742,No Finding,068Y,M,PA,train
+00000742_004.png,00000742,No Finding,070Y,M,AP,train
+00000743_000.png,00000743,No Finding,077Y,F,PA,train
+00000743_001.png,00000743,No Finding,064Y,F,PA,train
+00000743_002.png,00000743,No Finding,066Y,F,PA,train
+00000743_003.png,00000743,No Finding,070Y,F,PA,train
+00000744_000.png,00000744,No Finding,069Y,M,PA,train
+00000744_001.png,00000744,Nodule,072Y,M,PA,train
+00000744_002.png,00000744,Infiltration,072Y,M,AP,train
+00000744_003.png,00000744,Consolidation|Infiltration|Pneumothorax,072Y,M,AP,train
+00000744_004.png,00000744,Pneumothorax,072Y,M,PA,train
+00000744_005.png,00000744,Atelectasis|Pneumothorax,072Y,M,PA,train
+00000744_006.png,00000744,Atelectasis|Pneumothorax,072Y,M,PA,train
+00000744_007.png,00000744,Mass|Pneumothorax,072Y,M,PA,train
+00000744_008.png,00000744,Mass|Pneumothorax,072Y,M,PA,train
+00000744_009.png,00000744,Mass|Pneumothorax,072Y,M,PA,train
+00000744_010.png,00000744,Effusion|Mass|Pneumothorax,072Y,M,PA,train
+00000744_011.png,00000744,Mass|Pneumothorax,072Y,M,PA,train
+00000744_012.png,00000744,Mass|Pneumothorax,072Y,M,PA,train
+00000744_013.png,00000744,No Finding,073Y,M,PA,train
+00000747_000.png,00000747,No Finding,058Y,M,PA,train
+00000747_001.png,00000747,No Finding,057Y,M,AP,train
+00000748_000.png,00000748,No Finding,024Y,F,PA,train
