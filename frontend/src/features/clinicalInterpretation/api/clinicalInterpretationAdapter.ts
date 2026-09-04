@@ -39,89 +39,154 @@ export async function fetchBackendClinicalAnalysis(
     const report = payload.clinical_report || {}
     const prediction = payload.prediction?.quantum || payload.diagnostic_prediction || {}
     const evidence = payload.evidence || []
-    const explainability = payload.explainability || []
+    const classicalXai: any[] = payload.classical_xai || []
 
+    // Map evidence using exact backend field names; do not invent missing fields
     const mappedEvidence: MedicalEvidence[] = evidence.map((e: any, idx: number) => ({
       id: e.id || `EVIDENCE-${idx + 1}`,
       title: e.document_title || 'Medical Literature Evidence',
-      sourceType: 'peer-reviewed-study',
-      authors: e.authors || null,
-      year: e.publication_year || 2024,
-      source: e.source || 'Medical Knowledge Base (RAG)',
-      identifier: e.doi || e.pmid || e.document_id || `ID-${idx + 1}`,
-      url: e.source_url || null,
-      citationLabel: `Evidence #${idx + 1}`,
-      relevance: (e.relevance_score || 0.8) > 0.7 ? 'high' : (e.relevance_score || 0.8) > 0.4 ? 'medium' : 'low',
-      relevanceScore: e.relevance_score || 0.85,
-      strength: 'strong',
+      sourceType: 'peer-reviewed-study' as const,
+      authors: e.authors ?? null,
+      year: e.publication_year ?? null,
+      source: e.source ?? null,
+      // Use DOI or PMID when present; do not invent a fallback ID
+      identifier: e.doi ?? e.pmid ?? e.document_id ?? null,
+      url: e.source_url ?? null,
+      // Use the evidence ID as the citation label since backend uses [E1], [E2]
+      citationLabel: e.id ? `[${String(e.id)}]` : `Evidence #${idx + 1}`,
+      relevance: e.relevance_score != null
+        ? (e.relevance_score > 0.7 ? 'high' : e.relevance_score > 0.4 ? 'medium' : 'low') as const
+        : null,
+      relevanceScore: e.relevance_score ?? null,
+      // Backend does not return qualitative evidence strength — do not invent
+      strength: null,
       matchedFindingIds: [],
-      excerpt: e.excerpt || '',
+      excerpt: e.excerpt ?? null,
       isDemo: false,
     }))
 
-    const mappedFindings: ClinicalFinding[] = (report.primary_biomarker_analysis || []).map((b: any, idx: number) => ({
-      id: `biomarker-${idx + 1}`,
-      label: b.biomarker || b.label || `Biomarker ${idx + 1}`,
-      description: b.clinical_relevance || b.description || 'Observed biomarker signal.',
-      category: idx === 0 ? 'primary' : 'secondary',
-      provenance: 'clinically-interpreted',
-      relatedFeature: b.biomarker || null,
-      contribution: b.contribution || null,
-      relatedEvidenceIds: mappedEvidence.map((ev) => ev.id),
+    // Build set of valid evidence IDs for deterministic [E1] citation extraction
+    const evidenceIdSet = new Set(mappedEvidence.map((ev) => ev.id))
+
+    // Deterministically extract [E1], [E2] etc. from prose text.
+    // Returns only IDs that actually exist in the evidence array — no invented links.
+    function extractCitationIds(text: string | null | undefined): string[] {
+      if (!text) return []
+      const tags = text.match(/\[E\d+\]/g) ?? []
+      return tags
+        .map((tag) => tag.replace(/\[|\]/g, ''))  // '[E1]' → 'E1'
+        .filter((id) => evidenceIdSet.has(id))
+    }
+
+    // Map primary_biomarker_analysis into ClinicalFinding.
+    // Backend field name is `finding` (not `description` or `clinical_relevance`).
+    // relatedEvidenceIds extracted deterministically from [E1] citation markers.
+    // Do NOT invent clinical severity, abnormality, or numeric contribution.
+    const mappedFindings: ClinicalFinding[] = (report.primary_biomarker_analysis || []).map(
+      (b: any, idx: number) => {
+        const findingText: string = b.finding ?? b.description ?? ''
+        return {
+          id: `biomarker-${idx + 1}`,
+          label: b.biomarker || `Biomarker ${idx + 1}`,
+          description: findingText || null,
+          category: (idx === 0 ? 'primary' : 'secondary') as ClinicalFinding['category'],
+          provenance: 'clinically-interpreted' as const,
+          relatedFeature: b.biomarker ?? null,
+          // Backend does not return numeric contribution per finding
+          contribution: null,
+          relatedEvidenceIds: extractCitationIds(findingText),
+        }
+      }
+    )
+
+    // Risk factors from classical_xai (Random Forest MDI feature importances).
+    // These are MODEL FEATURE ATTRIBUTIONS — not clinical diagnoses or risk classifications.
+    // Do NOT assign clinical severity, 'Flagged', or invented evidenceStrength values.
+    const mappedRiskFactors = classicalXai.map((xai: any, idx: number) => ({
+      id: `xai-${idx + 1}`,
+      name: xai.feature_name || `Feature ${idx + 1}`,
+      value: xai.impact_percentage ? `Impact: ${xai.impact_percentage}` : null,
+      contribution: typeof xai.importance === 'number' ? xai.importance : null,
+      // Describe the source of the value, not a clinical verdict
+      status: xai.source ?? 'Random Forest (MDI) Feature Importance',
+      // Backend does not supply clinical evidence strength for MDI attributions
+      evidenceStrength: null as const,
+      provenance: 'explainability' as const,
+      relatedEvidenceIds: [],
     }))
 
-    const mappedRecommendations: ClinicalRecommendation[] = (report.clinical_recommendations || []).map((rec: any, idx: number) => ({
-      id: `rec-${idx + 1}`,
-      title: typeof rec === 'string' ? rec : rec.title || 'Clinical Recommendation',
-      description: typeof rec === 'string' ? rec : rec.description || '',
-      rationale: 'Generated from evidence-grounded Clinical LLM reasoning.',
-      category: 'follow-up',
-      priority: 'medium',
-      relatedEvidenceIds: mappedEvidence.map((ev) => ev.id),
-    }))
+    // Recommendations: backend provides plain text strings.
+    // category and priority are NOT in the backend response — do not assign defaults.
+    const mappedRecommendations: ClinicalRecommendation[] = (
+      report.clinical_recommendations || []
+    ).map((rec: any, idx: number) => {
+      const recText = typeof rec === 'string' ? rec : (rec.title ?? '')
+      return {
+        id: `rec-${idx + 1}`,
+        title: recText || 'Clinical Recommendation',
+        description: null,
+        rationale: null,
+        // 'other' is the honest default when backend provides no category
+        category: 'other' as const,
+        // Backend does not return priority — null is honest; 'medium' would be invented
+        priority: null,
+        relatedEvidenceIds: extractCitationIds(recText),
+      }
+    })
+
+    // Priority: read from model_comparison.priority (backend-generated).
+    // Do NOT hardcode 'high'.
+    const backendPriority = payload.model_comparison?.priority ?? null
+    const mappedPriority: ClinicalInterpretationResult['priority'] =
+      backendPriority === 'low' ||
+      backendPriority === 'medium' ||
+      backendPriority === 'high' ||
+      backendPriority === 'urgent' ||
+      backendPriority === 'review'
+        ? backendPriority
+        : 'undetermined'
 
     return {
       status: 'available',
       sampleId: payload.sample_id || 'PAT-1000',
       datasetName: tabularFilePath,
       selectedModel: 'DressedVQC (Quantum)',
-      predictionLabel: prediction.verdict || 'Normal',
-      modelProbabilities: {
-        Normal: 1 - (prediction.risk_score || 0.5),
-        'High Risk': prediction.risk_score || 0.5,
-      },
+      predictionLabel: prediction.verdict ?? null,
+      modelProbabilities:
+        prediction.risk_score != null
+          ? {
+              Normal: parseFloat((1 - (prediction.risk_score as number)).toFixed(4)),
+              'High Risk': parseFloat((prediction.risk_score as number).toFixed(4)),
+            }
+          : null,
       narrative: {
-        summary: report.diagnostic_summary || null,
-        keyFindings: report.risk_assessment_interpretation || null,
-        riskInterpretation: report.risk_assessment_interpretation || null,
-        evidenceContext: 'Retrieved from verified Medical Knowledge Base via BM25 RAG.',
-        recommendedNextSteps: report.limitations_and_disclaimer || null,
+        summary: report.diagnostic_summary ?? null,
+        keyFindings: report.risk_assessment_interpretation ?? null,
+        riskInterpretation: report.risk_assessment_interpretation ?? null,
+        // evidenceContext is not a distinct backend field — do not invent a static string
+        evidenceContext: null,
+        recommendedNextSteps: report.limitations_and_disclaimer ?? null,
       },
       keyFindings: mappedFindings,
-      riskFactors: explainability.map((ex: any, idx: number) => ({
-        id: `rf-${idx + 1}`,
-        name: ex.biomarker || `Feature ${idx + 1}`,
-        value: `Attribution Weight: ${(ex.attribution_weight || 0).toFixed(4)}`,
-        contribution: ex.attribution_weight || 0,
-        status: 'Flagged by QuXAI Parameter-Shift Analysis',
-        evidenceStrength: 'strong',
-        provenance: 'clinically-interpreted',
-        relatedEvidenceIds: mappedEvidence.map((ev) => ev.id),
-      })),
+      riskFactors: mappedRiskFactors,
       evidence: mappedEvidence,
       recommendations: mappedRecommendations,
-      precautions: [
-        {
-          id: 'prec-1',
-          title: 'Clinical Decision Support Safeguard',
-          description: report.limitations_and_disclaimer || 'Model outputs are decision support tools and do not replace professional clinical judgment.',
-          severity: 'caution',
-          relatedEvidenceIds: [],
-        },
-      ],
+      precautions: report.limitations_and_disclaimer
+        ? [
+            {
+              id: 'prec-1',
+              title: 'Clinical Decision Support Disclaimer',
+              description: report.limitations_and_disclaimer as string,
+              // This is a general system disclaimer, not a patient-specific severity verdict
+              severity: 'info' as const,
+              relatedEvidenceIds: [],
+            },
+          ]
+        : [],
       medicationInformation: [],
-      priority: 'high',
-      interpretationConfidence: 0.92,
+      priority: mappedPriority,
+      // interpretationConfidence is not returned by the backend — null is honest
+      interpretationConfidence: null,
       warnings: [],
       metadata: {
         model: 'HQD-Net Post-Quantum Pipeline',
