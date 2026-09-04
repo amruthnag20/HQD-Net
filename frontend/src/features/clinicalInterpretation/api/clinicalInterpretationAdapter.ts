@@ -142,7 +142,8 @@ export async function fetchBackendClinicalAnalysis(
       backendPriority === 'medium' ||
       backendPriority === 'high' ||
       backendPriority === 'urgent' ||
-      backendPriority === 'review'
+      backendPriority === 'review' ||
+      backendPriority === 'review-required'
         ? backendPriority
         : 'undetermined'
 

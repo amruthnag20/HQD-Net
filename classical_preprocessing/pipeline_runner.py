@@ -90,6 +90,7 @@ class HQDNetPipelineRunner:
         # ---------------------------------------------------------------------
         tab_matrix = None
         tab_sample_ids = None
+        raw_12d_features = None
 
         if tabular_input is not None:
             if isinstance(tabular_input, (str, Path, pd.DataFrame)):
@@ -104,6 +105,23 @@ class HQDNetPipelineRunner:
                         raise ValueError(f"Unsupported tabular file format: {filePath}")
                 else:
                     df = tabular_input
+
+                # Extract 12-D features from row 0 if available
+                rf_feature_cols = [
+                    "age_years", "gender", "height", "weight", "bmi",
+                    "ap_hi", "ap_lo", "cholesterol", "gluc", "smoke", "alco", "active"
+                ]
+                has_rf_cols = all(c in df.columns for c in rf_feature_cols)
+                if has_rf_cols:
+                    raw_12d_features = df[rf_feature_cols].iloc[0].values.astype(np.float64)
+                else:
+                    non_id_cols = [
+                        c for c in df.columns
+                        if c.lower() not in ["patient_id", "sample_id", "id", "diagnosis", "target", "cardio"]
+                    ]
+                    num_cols = df[non_id_cols].select_dtypes(include=[np.number]).columns
+                    if len(num_cols) >= 12:
+                        raw_12d_features = df[num_cols[:12]].iloc[0].values.astype(np.float64)
 
                 tab_pipe = TabularPreprocessingPipeline()
                 tab_res = tab_pipe.fit_transform(df)
@@ -125,6 +143,8 @@ class HQDNetPipelineRunner:
                     tab_matrix = arr.reshape(1, -1)
                 else:
                     tab_matrix = arr
+                if tab_matrix.shape[1] >= 12:
+                    raw_12d_features = tab_matrix[0, :12]
                 tab_sample_ids = sample_ids or [f"PATIENT_{i+1:03d}" for i in range(len(tab_matrix))]
 
             active_modalities.append("TABULAR")
@@ -286,6 +306,7 @@ class HQDNetPipelineRunner:
                 "quantum_lift_over_svm": f"{quantum_lift:+.2f}%",
             },
             "explainability_breakdown": explainability_breakdown,
+            "raw_12d_features": raw_12d_features.tolist() if raw_12d_features is not None else None,
             "generative_report": narrative,
             "generative_narrative_report": narrative,
             "telemetry_logs": telemetry_logs,

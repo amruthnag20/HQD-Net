@@ -54,6 +54,7 @@ export function ClinicalInterpretationProvider({ children }: { children: ReactNo
   const explainabilityCtx = useContext(ExplainabilityContext)
   const comparisonCtx = useContext(ModelComparisonContext)
   const datasetCtx = useContext(DatasetIngestionContext)
+  const activeDatasetName = datasetCtx?.dataset?.datasetName || 'clinical_data_synthetic.csv'
 
   const [activeFixtureKey, setActiveFixtureKey] = useState<string>('live')
   const [isLoading, setIsLoading] = useState(false)
@@ -64,31 +65,11 @@ export function ClinicalInterpretationProvider({ children }: { children: ReactNo
   // Backend-generated clinical interpretation (null until backend responds)
   const [backendClinical, setBackendClinical] = useState<ClinicalInterpretationResult | null>(null)
 
-  // Fetch backend clinical analysis on mount
-  useEffect(() => {
-    let cancelled = false
-    setIsLoading(true)
-
-    void fetchBackendClinicalAnalysis().then((result) => {
-      if (!cancelled) {
-        if (result) {
-          setBackendClinical(result)
-        }
-        setIsLoading(false)
-      }
-    }).catch(() => {
-      if (!cancelled) setIsLoading(false)
-    })
-
-    return () => {
-      cancelled = true
-    }
-  }, [])
-
-  const refresh = useCallback(() => {
+  const fetchAnalysis = useCallback((datasetPath: string) => {
     setIsLoading(true)
     setError(null)
-    void fetchBackendClinicalAnalysis().then((result) => {
+
+    void fetchBackendClinicalAnalysis(datasetPath).then((result) => {
       if (result) {
         setBackendClinical(result)
       }
@@ -97,6 +78,15 @@ export function ClinicalInterpretationProvider({ children }: { children: ReactNo
       setIsLoading(false)
     })
   }, [])
+
+  // Fetch backend clinical analysis whenever active dataset changes
+  useEffect(() => {
+    fetchAnalysis(activeDatasetName)
+  }, [activeDatasetName, fetchAnalysis])
+
+  const refresh = useCallback(() => {
+    fetchAnalysis(activeDatasetName)
+  }, [activeDatasetName, fetchAnalysis])
 
   const interpretation = useMemo((): ClinicalInterpretationResult => {
     // 1. Fixtures always win when explicitly selected

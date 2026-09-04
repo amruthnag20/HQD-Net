@@ -45,6 +45,7 @@ export type ClinicalPriority =
   | 'high'
   | 'urgent'
   | 'review'
+  | 'review-required'
   | 'undetermined'
 
 /** Types of medical evidence sources the backend/RAG layer may return. */

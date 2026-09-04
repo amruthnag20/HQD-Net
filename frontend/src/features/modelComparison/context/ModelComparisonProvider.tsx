@@ -1,6 +1,7 @@
-import { useState, useEffect, useMemo, type ReactNode } from 'react'
+import { useState, useEffect, useMemo, useContext, type ReactNode } from 'react'
 import { useClassicalMl } from '@/features/classicalMl/hooks/useClassicalMl'
 import { usePreprocessing } from '@/features/preprocessing/hooks/usePreprocessing'
+import { DatasetIngestionContext } from '@/features/ingestion/context/dataset-context'
 import {
   checkQuantumBackend,
   runNativeVqcVerification,
@@ -20,6 +21,8 @@ import type { ModelComparisonResult } from '../types/modelComparison'
 export function ModelComparisonProvider({ children }: { children: ReactNode }) {
   const { result: classicalResult } = useClassicalMl()
   const { processed } = usePreprocessing()
+  const datasetCtx = useContext(DatasetIngestionContext)
+  const activeDatasetName = datasetCtx?.dataset?.datasetName || 'clinical_data_synthetic.csv'
 
   const [activeFixtureKey, setActiveFixtureKey] = useState<string>('live')
   const [selectedRowIndex, setSelectedRowIndex] = useState<number>(0)
@@ -58,14 +61,14 @@ export function ModelComparisonProvider({ children }: { children: ReactNode }) {
     void init()
 
     // Also attempt to fetch the backend RF vs VQC comparison
-    void fetchBackendModelComparison().then((mc) => {
+    void fetchBackendModelComparison(activeDatasetName).then((mc) => {
       if (mc && !cancelled) setBackendComparison(mc)
     })
 
     return () => {
       cancelled = true
     }
-  }, [selectedRowIndex])
+  }, [selectedRowIndex, activeDatasetName])
 
   const checkBackendConnection = async () => {
     try {

@@ -78,20 +78,26 @@ def run_clinical_analysis(
             return build_api_error_payload("PREPROCESSING_ERROR", raw_payload.get("error_message", "Unknown error"))
 
         # 2. Build Structured Common Patient Model (CPM)
-        cpm = CommonPatientModel(patient_id="PAT_1000")
-        if raw_features and len(raw_features) >= 12:
-            cpm.age = float(raw_features[0])
-            cpm.sex = "Male" if raw_features[1] == 2 else "Female"
-            cpm.height = float(raw_features[2])
-            cpm.weight = float(raw_features[3])
-            cpm.bmi = float(raw_features[4])
-            cpm.systolic_bp = float(raw_features[5])
-            cpm.diastolic_bp = float(raw_features[6])
-            cpm.cholesterol = float(raw_features[7])
-            cpm.glucose = float(raw_features[8])
-            cpm.smoking = int(raw_features[9])
-            cpm.alcohol = int(raw_features[10])
-            cpm.physical_activity = int(raw_features[11])
+        sample_ids_list = raw_payload.get("meta_summary", {}).get("sample_ids", [])
+        sample_id = str(sample_ids_list[0]) if sample_ids_list else "PAT_1000"
+
+        cpm = CommonPatientModel(patient_id=sample_id)
+        extracted_12d = raw_payload.get("raw_12d_features")
+        effective_raw_features = raw_features if (raw_features and len(raw_features) >= 12) else extracted_12d
+
+        if effective_raw_features and len(effective_raw_features) >= 12:
+            cpm.age = float(effective_raw_features[0])
+            cpm.sex = "Male" if effective_raw_features[1] in [2, "2", "Male"] else "Female"
+            cpm.height = float(effective_raw_features[2])
+            cpm.weight = float(effective_raw_features[3])
+            cpm.bmi = float(effective_raw_features[4])
+            cpm.systolic_bp = float(effective_raw_features[5])
+            cpm.diastolic_bp = float(effective_raw_features[6])
+            cpm.cholesterol = float(effective_raw_features[7])
+            cpm.glucose = float(effective_raw_features[8])
+            cpm.smoking = int(effective_raw_features[9])
+            cpm.alcohol = int(effective_raw_features[10])
+            cpm.physical_activity = int(effective_raw_features[11])
 
         # 3. Input Medical LLM Semantic Normalization (if document text provided or fallback)
         if document_text:
@@ -120,11 +126,11 @@ def run_clinical_analysis(
 
         # 8. Classical AI Engine (RF 12-D + SVM 10-D + Classical XAI)
         raw_12d = None
-        if raw_features and len(raw_features) >= 12:
-            raw_12d = torch.tensor(raw_features[:12]).numpy()
+        if effective_raw_features and len(effective_raw_features) >= 12:
+            raw_12d = np.array(effective_raw_features[:12], dtype=np.float64)
         
         latent_10d = raw_payload.get("latent_representation", {}).get("latent_biomarkers_vector")
-        latent_10d_arr = torch.tensor(latent_10d).numpy() if latent_10d else torch.zeros(10).numpy()
+        latent_10d_arr = np.array(latent_10d, dtype=np.float64) if latent_10d else np.zeros(10, dtype=np.float64)
 
         classical_result = _CLASSICAL_ENGINE.run_classical_inference(
             raw_12d_features=raw_12d,
